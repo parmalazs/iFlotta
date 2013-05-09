@@ -36,15 +36,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1982C53D173BC78D00665C7F /* iFlotta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlotta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1982C53D173BC78D00665C7F /* iFlott.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlott.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1982C540173BC78D00665C7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1982C542173BC78D00665C7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1982C544173BC78D00665C7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1982C546173BC78D00665C7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		1982C54A173BC78D00665C7F /* iFlotta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iFlotta-Info.plist"; sourceTree = "<group>"; };
+		1982C54A173BC78D00665C7F /* iFlott-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iFlott-Info.plist"; sourceTree = "<group>"; };
 		1982C54C173BC78D00665C7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1982C54E173BC78D00665C7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1982C550173BC78D00665C7F /* iFlotta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iFlotta-Prefix.pch"; sourceTree = "<group>"; };
+		1982C550173BC78D00665C7F /* iFlott-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iFlott-Prefix.pch"; sourceTree = "<group>"; };
 		1982C551173BC78D00665C7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1982C552173BC78D00665C7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1982C554173BC78D00665C7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		1982C53E173BC78D00665C7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1982C53D173BC78D00665C7F /* iFlotta.app */,
+				1982C53D173BC78D00665C7F /* iFlott.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,10 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				1982C595173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld */,
-				1982C54A173BC78D00665C7F /* iFlotta-Info.plist */,
+				1982C54A173BC78D00665C7F /* iFlott-Info.plist */,
 				1982C54B173BC78D00665C7F /* InfoPlist.strings */,
 				1982C54E173BC78D00665C7F /* main.m */,
-				1982C550173BC78D00665C7F /* iFlotta-Prefix.pch */,
+				1982C550173BC78D00665C7F /* iFlott-Prefix.pch */,
 				1982C554173BC78D00665C7F /* Default.png */,
 				1982C556173BC78D00665C7F /* Default@2x.png */,
 				1982C558173BC78D00665C7F /* Default-568h@2x.png */,
@@ -198,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1982C53C173BC78D00665C7F /* iFlotta */ = {
+		1982C53C173BC78D00665C7F /* iFlott */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1982C55F173BC78D00665C7F /* Build configuration list for PBXNativeTarget "iFlotta" */;
+			buildConfigurationList = 1982C55F173BC78D00665C7F /* Build configuration list for PBXNativeTarget "iFlott" */;
 			buildPhases = (
 				1982C539173BC78D00665C7F /* Sources */,
 				1982C53A173BC78D00665C7F /* Frameworks */,
@@ -210,9 +210,9 @@
 			);
 			dependencies = (
 			);
-			name = iFlotta;
+			name = iFlott;
 			productName = iFlotta;
-			productReference = 1982C53D173BC78D00665C7F /* iFlotta.app */;
+			productReference = 1982C53D173BC78D00665C7F /* iFlott.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +224,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Csüti";
 			};
-			buildConfigurationList = 1982C538173BC78D00665C7F /* Build configuration list for PBXProject "iFlotta" */;
+			buildConfigurationList = 1982C538173BC78D00665C7F /* Build configuration list for PBXProject "iFlott" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,7 +236,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1982C53C173BC78D00665C7F /* iFlotta */,
+				1982C53C173BC78D00665C7F /* iFlott */,
 			);
 		};
 /* End PBXProject section */
@@ -355,9 +355,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iFlotta/iFlotta-Prefix.pch";
-				INFOPLIST_FILE = "iFlotta/iFlotta-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iFlotta/iFlott-Prefix.pch";
+				INFOPLIST_FILE = "iFlotta/iFlott-Info.plist";
+				PRODUCT_NAME = iFlott;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -366,9 +366,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iFlotta/iFlotta-Prefix.pch";
-				INFOPLIST_FILE = "iFlotta/iFlotta-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iFlotta/iFlott-Prefix.pch";
+				INFOPLIST_FILE = "iFlotta/iFlott-Info.plist";
+				PRODUCT_NAME = iFlott;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -376,7 +376,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1982C538173BC78D00665C7F /* Build configuration list for PBXProject "iFlotta" */ = {
+		1982C538173BC78D00665C7F /* Build configuration list for PBXProject "iFlott" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1982C55D173BC78D00665C7F /* Debug */,
@@ -385,13 +385,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1982C55F173BC78D00665C7F /* Build configuration list for PBXNativeTarget "iFlotta" */ = {
+		1982C55F173BC78D00665C7F /* Build configuration list for PBXNativeTarget "iFlott" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1982C560173BC78D00665C7F /* Debug */,
 				1982C561173BC78D00665C7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
