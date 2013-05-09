@@ -7,10 +7,10 @@
 //
 
 #import "LoginViewController.h"
-#import "NSDictionary.h"
 #import "AppDelegate.h"
 #import "Sofor.h"
 #import "DataBaseUtil.h"
+#import "JsonUtil.h"
 
 @interface LoginViewController ()
 
@@ -39,7 +39,7 @@
     [DataBaseUtil deleteAllObjects:@"Sofor" :context ];
     
     // Json feldolgozása
-    NSDictionary* jsonDictionary =[NSDictionary dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/querySoforTable.php"];
+    NSDictionary* jsonDictionary =[JsonUtil dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/querySoforTable.php"];
     NSArray* rows = [jsonDictionary objectForKey:@"rows"]; 
     
     for (NSDictionary *result in rows) {
