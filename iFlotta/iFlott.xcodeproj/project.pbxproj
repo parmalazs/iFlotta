@@ -19,7 +19,6 @@
 		1982C559173BC78D00665C7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1982C558173BC78D00665C7F /* Default-568h@2x.png */; };
 		1982C564173BC7AF00665C7F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C563173BC7AF00665C7F /* LoginViewController.m */; };
 		1982C566173BC7D000665C7F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1982C565173BC7D000665C7F /* MainStoryboard.storyboard */; };
-		1982C569173BC9F600665C7F /* NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C568173BC9F600665C7F /* NSDictionary.m */; };
 		1982C597173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1982C595173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld */; };
 		1982C5A3173BE96800665C7F /* Munkatipus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5A2173BE96800665C7F /* Munkatipus.m */; };
 		1982C5A6173BE96A00665C7F /* Munkaeszkoz.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5A5173BE96A00665C7F /* Munkaeszkoz.m */; };
@@ -33,6 +32,7 @@
 		1982C5BE173BE96F00665C7F /* Autokep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5BD173BE96F00665C7F /* Autokep.m */; };
 		1982C5C1173BE97000665C7F /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C0173BE96F00665C7F /* Partner.m */; };
 		1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C4173C1B2800665C7F /* DataBaseUtil.m */; };
+		19C51E57173C6D920000B353 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E56173C6D920000B353 /* JsonUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +53,6 @@
 		1982C562173BC7AF00665C7F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		1982C563173BC7AF00665C7F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		1982C565173BC7D000665C7F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		1982C567173BC9F600665C7F /* NSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDictionary.h; path = ../../../iFlotta/Flotta/NSDictionary.h; sourceTree = "<group>"; };
-		1982C568173BC9F600665C7F /* NSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionary.m; path = ../../../iFlotta/Flotta/NSDictionary.m; sourceTree = "<group>"; };
 		1982C596173BD3A100665C7F /* iFlottaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iFlottaDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1982C5A1173BE96800665C7F /* Munkatipus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munkatipus.h; sourceTree = "<group>"; };
 		1982C5A2173BE96800665C7F /* Munkatipus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munkatipus.m; sourceTree = "<group>"; };
@@ -80,6 +78,8 @@
 		1982C5C0173BE96F00665C7F /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
 		1982C5C3173C1B2700665C7F /* DataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseUtil.h; sourceTree = "<group>"; };
 		1982C5C4173C1B2800665C7F /* DataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseUtil.m; sourceTree = "<group>"; };
+		19C51E55173C6D920000B353 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
+		19C51E56173C6D920000B353 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,10 +158,10 @@
 		1982C56A173BCA0700665C7F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				1982C567173BC9F600665C7F /* NSDictionary.h */,
-				1982C568173BC9F600665C7F /* NSDictionary.m */,
 				1982C5C3173C1B2700665C7F /* DataBaseUtil.h */,
 				1982C5C4173C1B2800665C7F /* DataBaseUtil.m */,
+				19C51E55173C6D920000B353 /* JsonUtil.h */,
+				19C51E56173C6D920000B353 /* JsonUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -264,7 +264,6 @@
 				1982C54F173BC78D00665C7F /* main.m in Sources */,
 				1982C553173BC78D00665C7F /* AppDelegate.m in Sources */,
 				1982C564173BC7AF00665C7F /* LoginViewController.m in Sources */,
-				1982C569173BC9F600665C7F /* NSDictionary.m in Sources */,
 				1982C597173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld in Sources */,
 				1982C5A3173BE96800665C7F /* Munkatipus.m in Sources */,
 				1982C5A6173BE96A00665C7F /* Munkaeszkoz.m in Sources */,
@@ -278,6 +277,7 @@
 				1982C5BE173BE96F00665C7F /* Autokep.m in Sources */,
 				1982C5C1173BE97000665C7F /* Partner.m in Sources */,
 				1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */,
+				19C51E57173C6D920000B353 /* JsonUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
