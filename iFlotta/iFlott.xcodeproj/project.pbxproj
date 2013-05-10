@@ -35,6 +35,14 @@
 		19C51E57173C6D920000B353 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E56173C6D920000B353 /* JsonUtil.m */; };
 		19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */; };
 		19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E5C173C89030000B353 /* MainPageTableViewController.m */; };
+		19C649FF173D3DF4005B7F2A /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C649FE173D3DF4005B7F2A /* MainTableViewCell.m */; };
+		19C64A01173D44F1005B7F2A /* autok.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C64A00173D44F1005B7F2A /* autok.png */; };
+		19C64A03173D4543005B7F2A /* kontaktok.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C64A02173D4543005B7F2A /* kontaktok.png */; };
+		19C64A05173D45AD005B7F2A /* navigacio.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C64A04173D45AD005B7F2A /* navigacio.png */; };
+		19C64A08173D5A78005B7F2A /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A07173D5A78005B7F2A /* ContactViewController.m */; };
+		19C64A0B173D5A9C005B7F2A /* CarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A0A173D5A9C005B7F2A /* CarsViewController.m */; };
+		19C64A0E173D5EC1005B7F2A /* AdminTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A0D173D5EC1005B7F2A /* AdminTabBarController.m */; };
+		19C64A11173D5FCF005B7F2A /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A10173D5FCE005B7F2A /* JobsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +94,19 @@
 		19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageNavigationViewController.m; sourceTree = "<group>"; };
 		19C51E5B173C89030000B353 /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
 		19C51E5C173C89030000B353 /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
+		19C649FD173D3DF4005B7F2A /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		19C649FE173D3DF4005B7F2A /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		19C64A00173D44F1005B7F2A /* autok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autok.png; sourceTree = "<group>"; };
+		19C64A02173D4543005B7F2A /* kontaktok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kontaktok.png; sourceTree = "<group>"; };
+		19C64A04173D45AD005B7F2A /* navigacio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigacio.png; sourceTree = "<group>"; };
+		19C64A06173D5A78005B7F2A /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		19C64A07173D5A78005B7F2A /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		19C64A09173D5A9C005B7F2A /* CarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarsViewController.h; sourceTree = "<group>"; };
+		19C64A0A173D5A9C005B7F2A /* CarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarsViewController.m; sourceTree = "<group>"; };
+		19C64A0C173D5EC1005B7F2A /* AdminTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminTabBarController.h; sourceTree = "<group>"; };
+		19C64A0D173D5EC1005B7F2A /* AdminTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminTabBarController.m; sourceTree = "<group>"; };
+		19C64A0F173D5FCE005B7F2A /* JobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsViewController.h; sourceTree = "<group>"; };
+		19C64A10173D5FCE005B7F2A /* JobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +155,9 @@
 		1982C548173BC78D00665C7F /* iFlotta */ = {
 			isa = PBXGroup;
 			children = (
+				19C64A04173D45AD005B7F2A /* navigacio.png */,
+				19C64A02173D4543005B7F2A /* kontaktok.png */,
+				19C64A00173D44F1005B7F2A /* autok.png */,
 				1982C565173BC7D000665C7F /* MainStoryboard.storyboard */,
 				1982C551173BC78D00665C7F /* AppDelegate.h */,
 				1982C552173BC78D00665C7F /* AppDelegate.m */,
@@ -141,6 +165,16 @@
 				1982C56A173BCA0700665C7F /* Utils */,
 				1982C549173BC78D00665C7F /* Supporting Files */,
 				1982C5C2173BEF5700665C7F /* Model */,
+				19C649FD173D3DF4005B7F2A /* MainTableViewCell.h */,
+				19C649FE173D3DF4005B7F2A /* MainTableViewCell.m */,
+				19C64A06173D5A78005B7F2A /* ContactViewController.h */,
+				19C64A07173D5A78005B7F2A /* ContactViewController.m */,
+				19C64A09173D5A9C005B7F2A /* CarsViewController.h */,
+				19C64A0A173D5A9C005B7F2A /* CarsViewController.m */,
+				19C64A0C173D5EC1005B7F2A /* AdminTabBarController.h */,
+				19C64A0D173D5EC1005B7F2A /* AdminTabBarController.m */,
+				19C64A0F173D5FCE005B7F2A /* JobsViewController.h */,
+				19C64A10173D5FCE005B7F2A /* JobsViewController.m */,
 			);
 			path = iFlotta;
 			sourceTree = "<group>";
@@ -269,6 +303,9 @@
 				1982C557173BC78D00665C7F /* Default@2x.png in Resources */,
 				1982C559173BC78D00665C7F /* Default-568h@2x.png in Resources */,
 				1982C566173BC7D000665C7F /* MainStoryboard.storyboard in Resources */,
+				19C64A01173D44F1005B7F2A /* autok.png in Resources */,
+				19C64A03173D4543005B7F2A /* kontaktok.png in Resources */,
+				19C64A05173D45AD005B7F2A /* navigacio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +335,11 @@
 				19C51E57173C6D920000B353 /* JsonUtil.m in Sources */,
 				19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */,
 				19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */,
+				19C649FF173D3DF4005B7F2A /* MainTableViewCell.m in Sources */,
+				19C64A08173D5A78005B7F2A /* ContactViewController.m in Sources */,
+				19C64A0B173D5A9C005B7F2A /* CarsViewController.m in Sources */,
+				19C64A0E173D5EC1005B7F2A /* AdminTabBarController.m in Sources */,
+				19C64A11173D5FCF005B7F2A /* JobsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

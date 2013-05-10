@@ -10,4 +10,8 @@
 
 @interface MainPageTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *ImageElements;
+@property (nonatomic, strong) NSArray *labelElements;
+@property (nonatomic, strong) UIImage *ImageNavigate;
+
 @end

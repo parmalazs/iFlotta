@@ -7,6 +7,11 @@
 //
 
 #import "MainPageTableViewController.h"
+#import "MainTableViewCell.h"
+#import "CarsViewController.h"
+#import "ContactViewController.h"
+#import "JobsViewController.h"
+#import "AdminTabBarController.h"
 
 @interface MainPageTableViewController ()
 
@@ -32,6 +37,23 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.labelElements = [[NSArray alloc]
+                     initWithObjects:@"Autók",
+                     @"Munkák",
+                     @"Kontaktok",
+                     @"Térkép",
+                     @"Adminfunkciók", nil];
+    
+    self.ImageElements = [[NSArray alloc]
+                      initWithObjects:@"autok.png",
+                      @"autok.png",
+                      @"kontaktok.png",
+                      @"kontaktok.png",
+                      @"autok.png", nil];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,21 +67,38 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.labelElements count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    static NSString *CellIdentifier = @"mainTableViewCell";
+    
+    MainTableViewCell *cell = [tableView
+                              dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[MainTableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
     
     // Configure the cell...
+    cell.labelElement.text = [self.labelElements
+                           objectAtIndex: [indexPath row]];
+    
+    UIImage *imageElement = [UIImage imageNamed:
+                         [self.ImageElements objectAtIndex: [indexPath row]]];
+    
+    cell.imageElement.image = imageElement;
+    
+    cell.imageNavigate.image = [UIImage imageNamed: @"navigacio.png"];
     
     return cell;
 }
@@ -117,6 +156,41 @@
     NSString*mystring;
     mystring = [self.tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     NSLog(@"%@",mystring);
+    
+    switch (indexPath.row) {
+        case 2:
+            {
+                ContactViewController *contactViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactViewController"];
+                [self.navigationController pushViewController:contactViewController animated:YES];
+            }   
+            break;
+        case 0:
+            {
+                CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"carsViewController"];
+                [self.navigationController pushViewController:carsViewController animated:YES];
+            }
+            break;
+        case 1:
+        {
+                JobsViewController *jobsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsViewController"];
+                [self.navigationController pushViewController:jobsViewController animated:YES];
+        }
+            break;
+        case 3:
+        {
+            // Térkép
+        }
+            break;
+        case 4:
+        {
+            AdminTabBarController *adminTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adminTabBarController"];
+            [self.navigationController pushViewController:adminTabBarController animated:YES];
+        }
+            break;
+            
+            
+    }
+
     
 }
 
