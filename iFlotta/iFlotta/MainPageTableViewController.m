@@ -9,9 +9,9 @@
 #import "MainPageTableViewController.h"
 #import "MainTableViewCell.h"
 #import "CarsViewController.h"
-#import "ContactViewController.h"
+#import "ContactTabBarController.h"
 #import "JobsViewController.h"
-#import "AdminTabBarController.h"
+#import "AdminPageViewController.h"
 
 @interface MainPageTableViewController ()
 
@@ -51,8 +51,6 @@
                       @"kontaktok.png",
                       @"kontaktok.png",
                       @"autok.png", nil];
-    
-    
     
 }
 
@@ -160,8 +158,8 @@
     switch (indexPath.row) {
         case 2:
             {
-                ContactViewController *contactViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactViewController"];
-                [self.navigationController pushViewController:contactViewController animated:YES];
+                ContactTabBarController *contactTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactTabBarController"];
+                [self.navigationController pushViewController:contactTabBarController animated:YES];
             }   
             break;
         case 0:
@@ -183,8 +181,8 @@
             break;
         case 4:
         {
-            AdminTabBarController *adminTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adminTabBarController"];
-            [self.navigationController pushViewController:adminTabBarController animated:YES];
+            AdminPageViewController *adminPageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adminPageViewController"];
+            [self.navigationController pushViewController:adminPageViewController animated:YES];
         }
             break;
             

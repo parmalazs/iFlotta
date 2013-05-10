@@ -1,5 +1,5 @@
 //
-//  ContactViewController.h
+//  ContactTabBarController.h
 //  iFlott
 //
 //  Created by Csüti on 5/10/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactViewController : UITableViewController
+@interface ContactTabBarController : UITabBarController
 
 @end

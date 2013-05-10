@@ -1,18 +1,18 @@
 //
-//  AdminTabBarController.m
+//  ContactTabBarController.m
 //  iFlott
 //
 //  Created by Csüti on 5/10/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "AdminTabBarController.h"
+#import "ContactTabBarController.h"
 
-@interface AdminTabBarController ()
+@interface ContactTabBarController ()
 
 @end
 
-@implementation AdminTabBarController
+@implementation ContactTabBarController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

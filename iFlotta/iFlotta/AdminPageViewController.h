@@ -1,5 +1,5 @@
 //
-//  AdminTabBarController.h
+//  AdminPageViewController.h
 //  iFlott
 //
 //  Created by Csüti on 5/10/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AdminTabBarController : UITabBarController
+@interface AdminPageViewController : UIPageViewController
 
 @end

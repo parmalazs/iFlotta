@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIZ-4K-5Vx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-301" y="-47"/>
+            <point key="canvasLocation" x="-607" y="-47"/>
         </scene>
         <!--Main Page Table View Controller - iFlotta-->
         <scene sceneID="5Wn-Ry-Qku">
@@ -141,14 +141,14 @@
                     </navigationItem>
                     <connections>
                         <segue destination="ErY-Ue-ijr" kind="push" id="LrU-6m-fZP"/>
-                        <segue destination="eex-Os-jcg" kind="push" id="pEq-6V-iP7"/>
-                        <segue destination="6Bi-tZ-RpT" kind="push" id="XG1-OS-WW5"/>
                         <segue destination="rva-k4-eB3" kind="push" id="zfx-mA-46a"/>
+                        <segue destination="EyN-6l-lw3" kind="push" id="irW-gd-loQ"/>
+                        <segue destination="wcu-uo-cED" kind="push" id="Mhg-7K-9Ti"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ek-Lj-1I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631" y="-376"/>
+            <point key="canvasLocation" x="219" y="-47"/>
         </scene>
         <!--Cars View Controller - Autók-->
         <scene sceneID="jTj-5A-Ncw">
@@ -210,36 +210,6 @@
             </objects>
             <point key="canvasLocation" x="1090" y="-1112"/>
         </scene>
-        <!--Contact View Controller - Kontaktok-->
-        <scene sceneID="3iB-ZN-Qu3">
-            <objects>
-                <tableViewController storyboardIdentifier="contactViewController" id="eex-Os-jcg" customClass="ContactViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="y2z-zo-bkC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5Re-Ja-NuS">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="eex-Os-jcg" id="gs4-LF-Soo"/>
-                            <outlet property="delegate" destination="eex-Os-jcg" id="Mrf-MB-xKM"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Kontaktok" id="YAq-La-K0K"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlz-Yw-gvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1100" y="73"/>
-        </scene>
         <!--Main Page Navigation View Controller-->
         <scene sceneID="hex-aO-kn5">
             <objects>
@@ -254,68 +224,78 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEN-XU-UXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-47"/>
+            <point key="canvasLocation" x="-217" y="-47"/>
         </scene>
         <!--View Controller - Item 2-->
-        <scene sceneID="Ayw-GS-gkD">
+        <scene sceneID="Pt0-lw-Cot">
             <objects>
-                <viewController id="iVR-qc-ThJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="15b-t0-ggR">
+                <viewController id="ID3-5F-E4A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bjA-Rg-Al7">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="AOP-Q0-NiZ"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="vWD-pV-wFz"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2bW-6o-ZU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zij-06-fEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="931"/>
+            <point key="canvasLocation" x="1688" y="977"/>
         </scene>
         <!--View Controller - Item 1-->
-        <scene sceneID="KGu-WL-7uh">
+        <scene sceneID="2wG-zm-6wi">
             <objects>
-                <viewController id="86m-uF-f6J" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9Cd-P2-pcH">
+                <viewController id="4F8-zQ-G70" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Otb-xV-rXE">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="gv0-E6-XT2"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="5Bc-Fu-fxm"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y5G-S3-ftg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdm-4f-Jp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="367"/>
+            <point key="canvasLocation" x="1688" y="413"/>
         </scene>
-        <!--Admin Tab Bar Controller-->
-        <scene sceneID="Ud4-GK-qaw">
+        <!--Admin Page View Controller - Adminfunkciók-->
+        <scene sceneID="ydZ-fc-OlA">
             <objects>
-                <tabBarController storyboardIdentifier="adminTabBarController" definesPresentationContext="YES" id="6Bi-tZ-RpT" customClass="AdminTabBarController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="TsA-8A-qn3"/>
+                <pageViewController storyboardIdentifier="adminPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="wcu-uo-cED" customClass="AdminPageViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Adminfunkciók" id="hvD-Yy-emr"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Hd-kT-Cw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="105"/>
+        </scene>
+        <!--Contact Tab Bar Controller - Kontaktok-->
+        <scene sceneID="09A-WQ-xdy">
+            <objects>
+                <tabBarController storyboardIdentifier="contactTabBarController" definesPresentationContext="YES" id="EyN-6l-lw3" customClass="ContactTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Kontaktok" id="j9n-2J-yra"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Kof-Xl-QzT">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="TNd-Lm-JDK">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="86m-uF-f6J" kind="relationship" relationship="viewControllers" id="5BH-if-Sgk"/>
-                        <segue destination="iVR-qc-ThJ" kind="relationship" relationship="viewControllers" id="X7k-rS-eTe"/>
+                        <segue destination="4F8-zQ-G70" kind="relationship" relationship="viewControllers" id="1LB-Sk-R5J"/>
+                        <segue destination="ID3-5F-E4A" kind="relationship" relationship="viewControllers" id="24L-vW-Pd1"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ct-L2-YAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9d0-U4-JYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="649"/>
+            <point key="canvasLocation" x="1100" y="689"/>
         </scene>
     </scenes>
     <classes>
-        <class className="AdminTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminTabBarController.h"/>
+        <class className="AdminPageViewController" superclassName="UIPageViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminPageViewController.h"/>
         </class>
         <class className="CarsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsViewController.h"/>
         </class>
-        <class className="ContactViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
+        <class className="ContactTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
         </class>
         <class className="JobsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JobsViewController.h"/>
