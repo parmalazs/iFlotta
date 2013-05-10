@@ -33,6 +33,8 @@
 		1982C5C1173BE97000665C7F /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C0173BE96F00665C7F /* Partner.m */; };
 		1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C4173C1B2800665C7F /* DataBaseUtil.m */; };
 		19C51E57173C6D920000B353 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E56173C6D920000B353 /* JsonUtil.m */; };
+		19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */; };
+		19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E5C173C89030000B353 /* MainPageTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,10 @@
 		1982C5C4173C1B2800665C7F /* DataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseUtil.m; sourceTree = "<group>"; };
 		19C51E55173C6D920000B353 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		19C51E56173C6D920000B353 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
+		19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageNavigationViewController.h; sourceTree = "<group>"; };
+		19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageNavigationViewController.m; sourceTree = "<group>"; };
+		19C51E5B173C89030000B353 /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
+		19C51E5C173C89030000B353 /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +134,12 @@
 		1982C548173BC78D00665C7F /* iFlotta */ = {
 			isa = PBXGroup;
 			children = (
-				1982C56A173BCA0700665C7F /* Utils */,
-				1982C562173BC7AF00665C7F /* LoginViewController.h */,
-				1982C563173BC7AF00665C7F /* LoginViewController.m */,
+				1982C565173BC7D000665C7F /* MainStoryboard.storyboard */,
 				1982C551173BC78D00665C7F /* AppDelegate.h */,
 				1982C552173BC78D00665C7F /* AppDelegate.m */,
+				19C51E5E173C90F30000B353 /* ViewController */,
+				1982C56A173BCA0700665C7F /* Utils */,
 				1982C549173BC78D00665C7F /* Supporting Files */,
-				1982C565173BC7D000665C7F /* MainStoryboard.storyboard */,
 				1982C5C2173BEF5700665C7F /* Model */,
 			);
 			path = iFlotta;
@@ -193,6 +198,19 @@
 				1982C5A2173BE96800665C7F /* Munkatipus.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		19C51E5E173C90F30000B353 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				19C51E5B173C89030000B353 /* MainPageTableViewController.h */,
+				19C51E5C173C89030000B353 /* MainPageTableViewController.m */,
+				1982C562173BC7AF00665C7F /* LoginViewController.h */,
+				1982C563173BC7AF00665C7F /* LoginViewController.m */,
+				19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */,
+				19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +296,8 @@
 				1982C5C1173BE97000665C7F /* Partner.m in Sources */,
 				1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */,
 				19C51E57173C6D920000B353 /* JsonUtil.m in Sources */,
+				19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */,
+				19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

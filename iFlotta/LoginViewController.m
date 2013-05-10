@@ -11,6 +11,8 @@
 #import "Sofor.h"
 #import "DataBaseUtil.h"
 #import "JsonUtil.h"
+#import "MainPageNavigationViewController.h"
+
 
 @interface LoginViewController ()
 
@@ -84,8 +86,18 @@
         NSString* tmpPassword = [proba valueForKey:@"soforPass"];
         
         if ([tmpLogin isEqualToString:self.userName.text] && [tmpPassword isEqualToString:self.userPassword.text] )
+        {
             // ide majd a navigációt kell beilleszteni a következő page-re
-            NSLog(@"Megyezik");
+            MainPageNavigationViewController *mainPage = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"MainPageStoryboardID"];
+        
+        [self presentViewController:mainPage animated:YES completion:^{
+            
+        }];
+        }
+        else
+        {
+            // hibaüzenet feldobása
+        }
     }
 }
 
