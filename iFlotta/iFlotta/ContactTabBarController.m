@@ -9,6 +9,7 @@
 #import "ContactTabBarController.h"
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
+#import "SearchViewController.h"
 
 @interface ContactTabBarController ()
 
@@ -37,4 +38,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)searchButton:(id)sender {
+    
+    SearchViewController *searchViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"searchViewController"];
+    [self.navigationController pushViewController:searchViewController animated:YES];
+}
 @end

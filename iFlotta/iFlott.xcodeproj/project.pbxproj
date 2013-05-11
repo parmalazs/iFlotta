@@ -46,6 +46,7 @@
 		19C64A11173D5FCF005B7F2A /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A10173D5FCE005B7F2A /* JobsViewController.m */; };
 		19C64A14173D7646005B7F2A /* ContactTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A13173D7646005B7F2A /* ContactTabBarController.m */; };
 		19C64A17173D772D005B7F2A /* AdminPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A16173D772C005B7F2A /* AdminPageViewController.m */; };
+		19D21429173E941E00600DD1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D21428173E941E00600DD1 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,14 @@
 		19C64A13173D7646005B7F2A /* ContactTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTabBarController.m; sourceTree = "<group>"; };
 		19C64A15173D772C005B7F2A /* AdminPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminPageViewController.h; sourceTree = "<group>"; };
 		19C64A16173D772C005B7F2A /* AdminPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminPageViewController.m; sourceTree = "<group>"; };
+		19D2141E173E668A00600DD1 /* PagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagerViewController.h; sourceTree = "<group>"; };
+		19D2141F173E668A00600DD1 /* PagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagerViewController.m; sourceTree = "<group>"; };
+		19D21420173E668A00600DD1 /* CustomPagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPagerViewController.h; sourceTree = "<group>"; };
+		19D21421173E668A00600DD1 /* CustomPagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPagerViewController.m; sourceTree = "<group>"; };
+		19D21422173E67CF00600DD1 /* AdminPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdminPageControl.h; sourceTree = "<group>"; };
+		19D21423173E67CF00600DD1 /* AdminPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdminPageControl.m; sourceTree = "<group>"; };
+		19D21427173E941D00600DD1 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		19D21428173E941E00600DD1 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +173,10 @@
 		1982C548173BC78D00665C7F /* iFlotta */ = {
 			isa = PBXGroup;
 			children = (
+				19D2141E173E668A00600DD1 /* PagerViewController.h */,
+				19D2141F173E668A00600DD1 /* PagerViewController.m */,
+				19D21420173E668A00600DD1 /* CustomPagerViewController.h */,
+				19D21421173E668A00600DD1 /* CustomPagerViewController.m */,
 				19C64A18173D7AFB005B7F2A /* Resources */,
 				1982C565173BC7D000665C7F /* MainStoryboard.storyboard */,
 				1982C551173BC78D00665C7F /* AppDelegate.h */,
@@ -172,6 +185,8 @@
 				1982C56A173BCA0700665C7F /* Utils */,
 				1982C549173BC78D00665C7F /* Supporting Files */,
 				1982C5C2173BEF5700665C7F /* Model */,
+				19D21427173E941D00600DD1 /* SearchViewController.h */,
+				19D21428173E941E00600DD1 /* SearchViewController.m */,
 			);
 			path = iFlotta;
 			sourceTree = "<group>";
@@ -234,6 +249,8 @@
 		19C51E5E173C90F30000B353 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				19D21422173E67CF00600DD1 /* AdminPageControl.h */,
+				19D21423173E67CF00600DD1 /* AdminPageControl.m */,
 				19C649FD173D3DF4005B7F2A /* MainTableViewCell.h */,
 				19C649FE173D3DF4005B7F2A /* MainTableViewCell.m */,
 				19C64A09173D5A9C005B7F2A /* CarsViewController.h */,
@@ -366,6 +383,7 @@
 				19BBA209173DB86500631B16 /* SiteViewController.m in Sources */,
 				19BBA20C173DBC2D00631B16 /* DriverViewController.m in Sources */,
 				19BBA20F173DBCE700631B16 /* PartnerViewController.m in Sources */,
+				19D21429173E941E00600DD1 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

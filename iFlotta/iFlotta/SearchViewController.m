@@ -1,18 +1,18 @@
 //
-//  CarsViewController.m
+//  SearchViewController.m
 //  iFlott
 //
-//  Created by Csüti on 5/10/13.
+//  Created by Csüti on 5/11/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "CarsViewController.h"
+#import "SearchViewController.h"
 
-@interface CarsViewController ()
+@interface SearchViewController ()
 
 @end
 
-@implementation CarsViewController
+@implementation SearchViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,12 +44,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
@@ -102,6 +104,7 @@
     return YES;
 }
 */
+
 
 #pragma mark - Table view delegate
 

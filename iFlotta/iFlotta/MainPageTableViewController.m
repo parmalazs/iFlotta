@@ -15,6 +15,9 @@
 #import "SiteViewController.h"
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
+#import "PagerViewController.h"
+#import "CustomPagerViewController.h"
+
 
 
 @interface MainPageTableViewController ()
@@ -35,28 +38,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.labelElements = [[NSArray alloc]
-                     initWithObjects:@"Autók",
-                     @"Munkák",
-                     @"Kontaktok",
-                     @"Telephelyek",
-                     @"Térkép",
-                     @"Adminfunkciók", nil];
+                          initWithObjects:@"Autók",
+                          @"Munkák",
+                          @"Kontaktok",
+                          @"Telephelyek",
+                          @"Térkép",
+                          @"Adminfunkciók", nil];
     
     self.ImageElements = [[NSArray alloc]
-                      initWithObjects:@"autok.png",
-                      @"autok.png",
-                      @"kontaktok.png",
-                      @"kontaktok.png",
-                      @"kontaktok.png",
-                      @"autok.png", nil];
+                          initWithObjects:@"autok.png",
+                          @"autok.png",
+                          @"kontaktok.png",
+                          @"kontaktok.png",
+                          @"kontaktok.png",
+                          @"autok.png", nil];
     
 }
 
@@ -86,7 +89,7 @@
     static NSString *CellIdentifier = @"mainTableViewCell";
     
     MainTableViewCell *cell = [tableView
-                              dequeueReusableCellWithIdentifier:CellIdentifier];
+                               dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[MainTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
@@ -95,10 +98,10 @@
     
     // Configure the cell...
     cell.labelElement.text = [self.labelElements
-                           objectAtIndex: [indexPath row]];
+                              objectAtIndex: [indexPath row]];
     
     UIImage *imageElement = [UIImage imageNamed:
-                         [self.ImageElements objectAtIndex: [indexPath row]]];
+                             [self.ImageElements objectAtIndex: [indexPath row]]];
     
     cell.imageElement.image = imageElement;
     
@@ -108,43 +111,43 @@
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 #pragma mark - Table view delegate
 
@@ -163,21 +166,21 @@
     
     switch (indexPath.row) {
         case 2:
-            {
-                ContactTabBarController *contactTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactTabBarController"];
-                [self.navigationController pushViewController:contactTabBarController animated:YES];
-            }   
+        {
+            ContactTabBarController *contactTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactTabBarController"];
+            [self.navigationController pushViewController:contactTabBarController animated:YES];
+        }
             break;
         case 0:
-            {
-                CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"carsViewController"];
-                [self.navigationController pushViewController:carsViewController animated:YES];
-            }
+        {
+            CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"carsViewController"];
+            [self.navigationController pushViewController:carsViewController animated:YES];
+        }
             break;
         case 1:
         {
-                JobsViewController *jobsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsViewController"];
-                [self.navigationController pushViewController:jobsViewController animated:YES];
+            JobsViewController *jobsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsViewController"];
+            [self.navigationController pushViewController:jobsViewController animated:YES];
         }
             break;
         case 3:
@@ -200,8 +203,13 @@
             
             
     }
-
+    
     
 }
 
+- (IBAction)infoButton:(id)sender {
+    CustomPagerViewController *customPagerViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"customPagerViewController"];
+    [self.navigationController pushViewController:customPagerViewController animated:YES];
+    
+}
 @end

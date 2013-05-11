@@ -28,14 +28,14 @@
                                     <action selector="userLoginButton:" destination="tAV-fz-0yK" eventType="touchUpInside" id="tB3-Zj-5za"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46o-SW-qG3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sofor1" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46o-SW-qG3">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="137" id="fHn-rm-dcx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2s1-C4-oks">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sofor1" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2s1-C4-oks">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -137,7 +137,11 @@
                         <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="iFlotta" id="e7Q-Qg-0q9">
-                        <barButtonItem key="rightBarButtonItem" title="Info" style="plain" id="bhD-kr-WIG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Info" style="plain" id="bhD-kr-WIG">
+                            <connections>
+                                <action selector="infoButton:" destination="iO8-hD-0Gc" id="vNP-QE-ZPY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="ErY-Ue-ijr" kind="push" id="LrU-6m-fZP"/>
@@ -275,9 +279,36 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="QyG-8U-m0X">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem style="plain" id="Ap8-Kb-5HQ">
+                                    <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="RL2-V4-uZx">
+                                        <rect key="frame" x="6" y="8" width="161" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="nyille"/>
+                                            <segment title="nyilfel"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </barButtonItem>
+                                <barButtonItem width="19" style="plain" systemItem="fixedSpace" id="x1W-HR-Q3R"/>
+                                <barButtonItem style="plain" id="ZS4-pX-m9v">
+                                    <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="TYr-dc-arE">
+                                        <rect key="frame" x="196" y="8" width="117" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Név"/>
+                                            <segment title="Cim"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NqH-R2-CNA">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -296,6 +327,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5j-Il-Zv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1858" y="-325"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="RUE-t3-geJ">
+            <objects>
+                <tableViewController storyboardIdentifier="searchViewController" id="bZ5-6N-kUQ" customClass="SearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="irg-X5-nxR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VEX-iA-AXd">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bZ5-6N-kUQ" id="rGe-oL-lA7"/>
+                            <outlet property="delegate" destination="bZ5-6N-kUQ" id="1bP-XA-iKw"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="mPO-ca-PNh" id="ieK-pg-m68"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpZ-oL-7n4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="mPO-ca-PNh">
+                    <connections>
+                        <outlet property="delegate" destination="bZ5-6N-kUQ" id="HVQ-KR-rWu"/>
+                        <outlet property="searchContentsController" destination="bZ5-6N-kUQ" id="geW-ZO-k3k"/>
+                        <outlet property="searchResultsDataSource" destination="bZ5-6N-kUQ" id="g5x-8I-Jb0"/>
+                        <outlet property="searchResultsDelegate" destination="bZ5-6N-kUQ" id="6Xy-sJ-CIY"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2238" y="-327"/>
         </scene>
         <!--Partner View Controller - Partnerek-->
         <scene sceneID="dXe-rF-lEp">
@@ -331,7 +404,13 @@
         <scene sceneID="09A-WQ-xdy">
             <objects>
                 <tabBarController storyboardIdentifier="contactTabBarController" definesPresentationContext="YES" id="EyN-6l-lw3" customClass="ContactTabBarController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Kontaktok" id="j9n-2J-yra"/>
+                    <navigationItem key="navigationItem" title="Kontaktok" id="j9n-2J-yra">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="h7T-2r-CBj">
+                            <connections>
+                                <action selector="searchButton:" destination="EyN-6l-lw3" id="5Pi-LV-sH5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TNd-Lm-JDK">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -341,6 +420,7 @@
                     <connections>
                         <segue destination="dyO-81-vpy" kind="relationship" relationship="viewControllers" id="8Lo-xP-Hvv"/>
                         <segue destination="XJI-Av-4vP" kind="relationship" relationship="viewControllers" id="k75-Rr-1aC"/>
+                        <segue destination="bZ5-6N-kUQ" kind="push" id="OvT-pP-Vh3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9d0-U4-JYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -357,6 +437,9 @@
         </class>
         <class className="ContactTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchButton:"/>
+            </relationships>
         </class>
         <class className="DriverViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverViewController.h"/>
@@ -377,6 +460,9 @@
         </class>
         <class className="MainPageTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="infoButton:"/>
+            </relationships>
         </class>
         <class className="MainTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewCell.h"/>
@@ -391,6 +477,9 @@
         </class>
         <class className="PartnerViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerViewController.h"/>
+        </class>
+        <class className="SearchViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
         </class>
         <class className="SiteViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>

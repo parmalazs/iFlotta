@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ContactTabBarController : UITabBarController
+- (IBAction)searchButton:(id)sender;
 
 @end
