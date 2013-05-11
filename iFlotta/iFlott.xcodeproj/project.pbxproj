@@ -32,6 +32,9 @@
 		1982C5BE173BE96F00665C7F /* Autokep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5BD173BE96F00665C7F /* Autokep.m */; };
 		1982C5C1173BE97000665C7F /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C0173BE96F00665C7F /* Partner.m */; };
 		1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C4173C1B2800665C7F /* DataBaseUtil.m */; };
+		19BBA209173DB86500631B16 /* SiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA208173DB86500631B16 /* SiteViewController.m */; };
+		19BBA20C173DBC2D00631B16 /* DriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA20B173DBC2D00631B16 /* DriverViewController.m */; };
+		19BBA20F173DBCE700631B16 /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA20E173DBCE700631B16 /* PartnerViewController.m */; };
 		19C51E57173C6D920000B353 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E56173C6D920000B353 /* JsonUtil.m */; };
 		19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */; };
 		19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E5C173C89030000B353 /* MainPageTableViewController.m */; };
@@ -88,6 +91,12 @@
 		1982C5C0173BE96F00665C7F /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
 		1982C5C3173C1B2700665C7F /* DataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseUtil.h; sourceTree = "<group>"; };
 		1982C5C4173C1B2800665C7F /* DataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseUtil.m; sourceTree = "<group>"; };
+		19BBA207173DB86500631B16 /* SiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteViewController.h; sourceTree = "<group>"; };
+		19BBA208173DB86500631B16 /* SiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteViewController.m; sourceTree = "<group>"; };
+		19BBA20A173DBC2D00631B16 /* DriverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverViewController.h; sourceTree = "<group>"; };
+		19BBA20B173DBC2D00631B16 /* DriverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverViewController.m; sourceTree = "<group>"; };
+		19BBA20D173DBCE700631B16 /* PartnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerViewController.h; sourceTree = "<group>"; };
+		19BBA20E173DBCE700631B16 /* PartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerViewController.m; sourceTree = "<group>"; };
 		19C51E55173C6D920000B353 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		19C51E56173C6D920000B353 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 		19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageNavigationViewController.h; sourceTree = "<group>"; };
@@ -241,6 +250,12 @@
 				1982C563173BC7AF00665C7F /* LoginViewController.m */,
 				19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */,
 				19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */,
+				19BBA207173DB86500631B16 /* SiteViewController.h */,
+				19BBA208173DB86500631B16 /* SiteViewController.m */,
+				19BBA20A173DBC2D00631B16 /* DriverViewController.h */,
+				19BBA20B173DBC2D00631B16 /* DriverViewController.m */,
+				19BBA20D173DBCE700631B16 /* PartnerViewController.h */,
+				19BBA20E173DBCE700631B16 /* PartnerViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -348,6 +363,9 @@
 				19C64A11173D5FCF005B7F2A /* JobsViewController.m in Sources */,
 				19C64A14173D7646005B7F2A /* ContactTabBarController.m in Sources */,
 				19C64A17173D772D005B7F2A /* AdminPageViewController.m in Sources */,
+				19BBA209173DB86500631B16 /* SiteViewController.m in Sources */,
+				19BBA20C173DBC2D00631B16 /* DriverViewController.m in Sources */,
+				19BBA20F173DBCE700631B16 /* PartnerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

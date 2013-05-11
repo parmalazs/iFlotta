@@ -7,6 +7,8 @@
 //
 
 #import "ContactTabBarController.h"
+#import "DriverViewController.h"
+#import "PartnerViewController.h"
 
 @interface ContactTabBarController ()
 

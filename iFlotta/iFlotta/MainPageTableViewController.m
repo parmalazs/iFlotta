@@ -12,6 +12,10 @@
 #import "ContactTabBarController.h"
 #import "JobsViewController.h"
 #import "AdminPageViewController.h"
+#import "SiteViewController.h"
+#import "DriverViewController.h"
+#import "PartnerViewController.h"
+
 
 @interface MainPageTableViewController ()
 
@@ -42,12 +46,14 @@
                      initWithObjects:@"Autók",
                      @"Munkák",
                      @"Kontaktok",
+                     @"Telephelyek",
                      @"Térkép",
                      @"Adminfunkciók", nil];
     
     self.ImageElements = [[NSArray alloc]
                       initWithObjects:@"autok.png",
                       @"autok.png",
+                      @"kontaktok.png",
                       @"kontaktok.png",
                       @"kontaktok.png",
                       @"autok.png", nil];
@@ -176,10 +182,16 @@
             break;
         case 3:
         {
-            // Térkép
+            SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"siteViewController"];
+            [self.navigationController pushViewController:siteViewController animated:YES];
         }
             break;
         case 4:
+        {
+            // Térkép
+        }
+            break;
+        case 5:
         {
             AdminPageViewController *adminPageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adminPageViewController"];
             [self.navigationController pushViewController:adminPageViewController animated:YES];
