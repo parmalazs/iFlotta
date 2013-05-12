@@ -9,6 +9,7 @@
 #import "SiteViewController.h"
 #import "DataBaseUtil.h"
 #import "SiteTableViewCell.h"
+#import "SiteDetailsViewController.h"
 
 
 @interface SiteViewController ()
@@ -30,11 +31,8 @@
 {
     [super viewDidLoad];
 
-    
     self.siteLabels = [DataBaseUtil fetchRequest:@"Telephely"];
-    for (NSManagedObject *proba in self.siteLabels) {
-        NSLog(@"Aktuális label: %@",[proba valueForKey:@"telephelyNev"]);
-    }
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -121,18 +119,11 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Részletező oldalra kell átmennie
-    
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    
+{  
+    SiteDetailsViewController *siteDetailsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"siteDetailsViewController"];
+
+    siteDetailsViewController.siteData = [self.siteLabels objectAtIndex: [indexPath row]];
+    [self.navigationController pushViewController:siteDetailsViewController animated:YES];
     
 }
 

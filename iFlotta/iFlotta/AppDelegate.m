@@ -22,17 +22,7 @@
     // Override point for customization after application launch.
     //self.window.backgroundColor = [UIColor whiteColor];
     //[self.window makeKeyAndVisible];
-    /*
-    NSManagedObjectContext* context = [self managedObjectContext];
-    
-    //NSLog(@"Sikertelen mentés: %@", [_managedObjectModel entities]);
-    
-    NSManagedObject* sofor = [NSEntityDescription
-                                 insertNewObjectForEntityForName:@"Sofor"
-                                 inManagedObjectContext:context];
-    NSString* soforLogin = [NSString stringWithFormat:@"Sofor %d", arc4random_uniform(1000)];
-    [sofor setValue:soforLogin forKey:@"soforNev"];
-    */
+
     
     [self initDatabase];
     

@@ -26,6 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.siteName.text = [self.siteData valueForKey:@"telephelyNev"];
+    self.siteAddress.text = [self.siteData valueForKey:@"telephelyCim"];
+    self.sitePhone.text = [self.siteData valueForKey:@"telephelyTelefonszam"];
+    self.siteMail.text = [self.siteData valueForKey:@"telephelyEmail"];
+    
+    
 	// Do any additional setup after loading the view.
 }
 

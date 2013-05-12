@@ -110,6 +110,10 @@
         
         NSString* telephelyTelefonszam = [result valueForKey:@"telephelyTelefonszam"];
         [aktTelephely setValue:telephelyTelefonszam forKey:@"telephelyTelefonszam"];
+        
+        NSString* telephelyEmail = [result valueForKey:@"telephelyEmail"];
+        [aktTelephely setValue:telephelyEmail forKey:@"telephelyEmail"];
+        
     }
     
     [self saveContext:context];

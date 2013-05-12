@@ -212,9 +212,85 @@
                     <view key="view" contentMode="scaleToFill" id="Cvy-Fc-NZg">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TelephelyNév" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-tB-zeK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="a4J-R7-bvi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cim" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEw-ZL-INv">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="GWU-o5-oCb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="cim" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfO-yc-mey">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Telefonszám" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8P-8M-LC0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="gWx-DV-Lb2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muc-uQ-gH4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="4kD-GR-1Um"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0C-vT-5Iv">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="aWV-1T-fYi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="e-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppJ-Hb-pUi">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z0C-vT-5Iv" firstAttribute="leading" secondItem="muc-uQ-gH4" secondAttribute="leading" type="default" id="1Ap-OF-gv8"/>
+                            <constraint firstItem="muc-uQ-gH4" firstAttribute="leading" secondItem="U8P-8M-LC0" secondAttribute="leading" type="default" id="67M-n7-uD1"/>
+                            <constraint firstItem="muc-uQ-gH4" firstAttribute="trailing" secondItem="ppJ-Hb-pUi" secondAttribute="trailing" type="default" id="B9T-jS-oUC"/>
+                            <constraint firstItem="sBj-tB-zeK" firstAttribute="top" secondItem="Cvy-Fc-NZg" secondAttribute="top" constant="18" id="Gis-Hs-Pic"/>
+                            <constraint firstItem="tfO-yc-mey" firstAttribute="leading" secondItem="zEw-ZL-INv" secondAttribute="leading" type="default" id="OEx-PL-vgr"/>
+                            <constraint firstItem="zEw-ZL-INv" firstAttribute="leading" secondItem="sBj-tB-zeK" secondAttribute="leading" type="default" id="Qqu-BS-LDw"/>
+                            <constraint firstAttribute="bottom" secondItem="ppJ-Hb-pUi" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TqW-Oh-SEb"/>
+                            <constraint firstItem="U8P-8M-LC0" firstAttribute="leading" secondItem="Cvy-Fc-NZg" secondAttribute="leading" constant="47" id="VFH-so-YdB"/>
+                            <constraint firstItem="ppJ-Hb-pUi" firstAttribute="leading" secondItem="z0C-vT-5Iv" secondAttribute="leading" type="default" id="eRe-eC-9ax"/>
+                            <constraint firstItem="tfO-yc-mey" firstAttribute="top" secondItem="zEw-ZL-INv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="g8C-B0-aGE"/>
+                            <constraint firstItem="muc-uQ-gH4" firstAttribute="top" secondItem="U8P-8M-LC0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="guN-fe-mi9"/>
+                            <constraint firstItem="ppJ-Hb-pUi" firstAttribute="top" secondItem="z0C-vT-5Iv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kKO-AR-q25"/>
+                            <constraint firstItem="sBj-tB-zeK" firstAttribute="trailing" secondItem="tfO-yc-mey" secondAttribute="trailing" type="default" id="mko-Lc-vGm"/>
+                            <constraint firstItem="zEw-ZL-INv" firstAttribute="top" secondItem="Cvy-Fc-NZg" secondAttribute="top" constant="207" id="p0m-ES-Gq2"/>
+                            <constraint firstItem="tfO-yc-mey" firstAttribute="centerX" secondItem="Cvy-Fc-NZg" secondAttribute="centerX" type="default" id="qaH-Sh-MkM"/>
+                            <constraint firstAttribute="bottom" secondItem="muc-uQ-gH4" secondAttribute="bottom" constant="91" id="zqY-vg-8RQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JJb-pC-6mQ"/>
+                    <connections>
+                        <outlet property="siteAddress" destination="tfO-yc-mey" id="V0f-h5-uoP"/>
+                        <outlet property="siteMail" destination="ppJ-Hb-pUi" id="Ga5-fD-oMO"/>
+                        <outlet property="siteName" destination="sBj-tB-zeK" id="zXi-lh-e4W"/>
+                        <outlet property="sitePhone" destination="muc-uQ-gH4" id="xgk-5b-lbx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZK-dU-o0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -518,6 +594,12 @@
         </class>
         <class className="SiteDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="siteAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sitePhone" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="SiteTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTableViewCell.h"/>
