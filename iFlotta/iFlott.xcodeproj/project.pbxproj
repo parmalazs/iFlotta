@@ -35,6 +35,8 @@
 		19BBA209173DB86500631B16 /* SiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA208173DB86500631B16 /* SiteViewController.m */; };
 		19BBA20C173DBC2D00631B16 /* DriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA20B173DBC2D00631B16 /* DriverViewController.m */; };
 		19BBA20F173DBCE700631B16 /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA20E173DBCE700631B16 /* PartnerViewController.m */; };
+		19BFF1AA173FB30B00968F2C /* SiteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BFF1A9173FB30B00968F2C /* SiteTableViewCell.m */; };
+		19BFF1AD173FCC1A00968F2C /* SiteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */; };
 		19C51E57173C6D920000B353 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E56173C6D920000B353 /* JsonUtil.m */; };
 		19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */; };
 		19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E5C173C89030000B353 /* MainPageTableViewController.m */; };
@@ -98,6 +100,10 @@
 		19BBA20B173DBC2D00631B16 /* DriverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverViewController.m; sourceTree = "<group>"; };
 		19BBA20D173DBCE700631B16 /* PartnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerViewController.h; sourceTree = "<group>"; };
 		19BBA20E173DBCE700631B16 /* PartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerViewController.m; sourceTree = "<group>"; };
+		19BFF1A8173FB30B00968F2C /* SiteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteTableViewCell.h; sourceTree = "<group>"; };
+		19BFF1A9173FB30B00968F2C /* SiteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteTableViewCell.m; sourceTree = "<group>"; };
+		19BFF1AB173FCC1900968F2C /* SiteDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteDetailsViewController.h; sourceTree = "<group>"; };
+		19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteDetailsViewController.m; sourceTree = "<group>"; };
 		19C51E55173C6D920000B353 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		19C51E56173C6D920000B353 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 		19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageNavigationViewController.h; sourceTree = "<group>"; };
@@ -173,11 +179,11 @@
 		1982C548173BC78D00665C7F /* iFlotta */ = {
 			isa = PBXGroup;
 			children = (
+				19C64A18173D7AFB005B7F2A /* Resources */,
 				19D2141E173E668A00600DD1 /* PagerViewController.h */,
 				19D2141F173E668A00600DD1 /* PagerViewController.m */,
 				19D21420173E668A00600DD1 /* CustomPagerViewController.h */,
 				19D21421173E668A00600DD1 /* CustomPagerViewController.m */,
-				19C64A18173D7AFB005B7F2A /* Resources */,
 				1982C565173BC7D000665C7F /* MainStoryboard.storyboard */,
 				1982C551173BC78D00665C7F /* AppDelegate.h */,
 				1982C552173BC78D00665C7F /* AppDelegate.m */,
@@ -185,8 +191,6 @@
 				1982C56A173BCA0700665C7F /* Utils */,
 				1982C549173BC78D00665C7F /* Supporting Files */,
 				1982C5C2173BEF5700665C7F /* Model */,
-				19D21427173E941D00600DD1 /* SearchViewController.h */,
-				19D21428173E941E00600DD1 /* SearchViewController.m */,
 			);
 			path = iFlotta;
 			sourceTree = "<group>";
@@ -249,6 +253,10 @@
 		19C51E5E173C90F30000B353 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				19D21427173E941D00600DD1 /* SearchViewController.h */,
+				19D21428173E941E00600DD1 /* SearchViewController.m */,
+				19BFF1A8173FB30B00968F2C /* SiteTableViewCell.h */,
+				19BFF1A9173FB30B00968F2C /* SiteTableViewCell.m */,
 				19D21422173E67CF00600DD1 /* AdminPageControl.h */,
 				19D21423173E67CF00600DD1 /* AdminPageControl.m */,
 				19C649FD173D3DF4005B7F2A /* MainTableViewCell.h */,
@@ -273,6 +281,8 @@
 				19BBA20B173DBC2D00631B16 /* DriverViewController.m */,
 				19BBA20D173DBCE700631B16 /* PartnerViewController.h */,
 				19BBA20E173DBCE700631B16 /* PartnerViewController.m */,
+				19BFF1AB173FCC1900968F2C /* SiteDetailsViewController.h */,
+				19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -384,6 +394,8 @@
 				19BBA20C173DBC2D00631B16 /* DriverViewController.m in Sources */,
 				19BBA20F173DBCE700631B16 /* PartnerViewController.m in Sources */,
 				19D21429173E941E00600DD1 /* SearchViewController.m in Sources */,
+				19BFF1AA173FB30B00968F2C /* SiteTableViewCell.m in Sources */,
+				19BFF1AD173FCC1A00968F2C /* SiteDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

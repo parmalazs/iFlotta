@@ -164,14 +164,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HeP-3t-tDC">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="siteTableViewCell" id="HeP-3t-tDC" customClass="SiteTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPa-xS-LN7">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="255" id="b4g-iQ-De4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="EPa-xS-LN7" firstAttribute="leading" secondItem="HeP-3t-tDC" secondAttribute="leading" constant="20" type="default" id="kcf-6g-Wjp"/>
+                                    <constraint firstItem="EPa-xS-LN7" firstAttribute="top" secondItem="HeP-3t-tDC" secondAttribute="top" constant="11" id="nxt-VB-Vcd"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="siteLabel" destination="EPa-xS-LN7" id="MWD-yp-N7j"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -180,10 +197,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Telephelyek" id="0vZ-NK-VdP"/>
+                    <connections>
+                        <segue destination="MQm-xr-zSg" kind="push" id="5RL-iY-bov"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsI-N2-wwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="1107"/>
+        </scene>
+        <!--Site Details View Controller-->
+        <scene sceneID="Njg-kK-JCD">
+            <objects>
+                <viewController storyboardIdentifier="siteDetailsViewController" id="MQm-xr-zSg" customClass="SiteDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cvy-Fc-NZg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JJb-pC-6mQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZK-dU-o0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="1107"/>
         </scene>
         <!--Cars View Controller - Autók-->
         <scene sceneID="jTj-5A-Ncw">
@@ -480,6 +515,15 @@
         </class>
         <class className="SearchViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+        </class>
+        <class className="SiteDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteDetailsViewController.h"/>
+        </class>
+        <class className="SiteTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="siteLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="SiteViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>

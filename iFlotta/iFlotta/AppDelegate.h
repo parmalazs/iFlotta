@@ -21,5 +21,5 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 + (AppDelegate *)sharedAppDelegate;
-
+- (void)initDatabase;
 @end

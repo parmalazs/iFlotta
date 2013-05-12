@@ -11,4 +11,7 @@
 @interface DataBaseUtil : NSObject
 + (void) deleteAllObjects: (NSString *) entityDescription  :(NSManagedObjectContext*) context;
 + (void)saveContext:(NSManagedObjectContext *)managedObjectContext;
++ (NSArray*)fetchRequest:(NSString*) entityName;
++ (void)fillSoforTable;
++ (void)fillTelephelyTable;
 @end

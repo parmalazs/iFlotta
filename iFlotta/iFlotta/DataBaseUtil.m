@@ -7,6 +7,12 @@
 //
 
 #import "DataBaseUtil.h"
+#import "AppDelegate.h"
+#import "JsonUtil.h"
+#import "Sofor.h"
+#import "Telephely.h"
+
+
 
 @implementation DataBaseUtil
 
@@ -36,4 +42,76 @@
     }
 }
 
++ (NSArray*)fetchRequest:(NSString*) entityName
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:entityName inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
+
++ (void)fillSoforTable
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // Az eddigi Sofor adatok törlése
+    [DataBaseUtil deleteAllObjects:@"Sofor" :context ];
+    
+    // Json feldolgozása
+    NSDictionary* jsonDictionary =[JsonUtil dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/querySoforTable.php"];
+    NSArray* rows = [jsonDictionary objectForKey:@"rows"];
+    
+    for (NSDictionary *result in rows) {
+        
+        Sofor* aktsofor = [NSEntityDescription
+                           insertNewObjectForEntityForName:@"Sofor"
+                           inManagedObjectContext:context];
+        
+        NSString* soforNev = [result valueForKey:@"soforNev"];
+        [aktsofor setValue:soforNev forKey:@"soforNev"];
+        
+        NSString* soforLogin = [result valueForKey:@"soforLogin"];
+        [aktsofor setValue:soforLogin forKey:@"soforLogin"];
+        
+        NSString* soforPass = [result valueForKey:@"soforPass"];
+        [aktsofor setValue:soforPass forKey:@"soforPass"];
+    }
+    
+    [self saveContext:context];
+}
++ (void)fillTelephelyTable
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // Az eddigi Sofor adatok törlése
+    [DataBaseUtil deleteAllObjects:@"Telephely" :context ];
+    
+    // Json feldolgozása
+    NSDictionary* jsonDictionary =[JsonUtil dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/queryTelephelyTable.php"];
+    NSArray* rows = [jsonDictionary objectForKey:@"rows"];
+    
+    for (NSDictionary *result in rows) {
+        
+        Telephely* aktTelephely = [NSEntityDescription
+                           insertNewObjectForEntityForName:@"Telephely"
+                           inManagedObjectContext:context];
+        
+        NSString* telephelyNev = [result valueForKey:@"telephelyNev"];
+        [aktTelephely setValue:telephelyNev forKey:@"telephelyNev"];
+        
+        NSString* telephelyCim = [result valueForKey:@"telephelyCim"];
+        [aktTelephely setValue:telephelyCim forKey:@"telephelyCim"];
+        
+        NSString* telephelyTelefonszam = [result valueForKey:@"telephelyTelefonszam"];
+        [aktTelephely setValue:telephelyTelefonszam forKey:@"telephelyTelefonszam"];
+    }
+    
+    [self saveContext:context];
+}
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DataBaseUtil.h"
+
 
 @implementation AppDelegate
 
@@ -32,9 +34,15 @@
     [sofor setValue:soforLogin forKey:@"soforNev"];
     */
     
-
+    [self initDatabase];
     
     return YES;
+}
+
+- (void)initDatabase
+{
+    [DataBaseUtil fillSoforTable];
+    [DataBaseUtil fillTelephelyTable];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

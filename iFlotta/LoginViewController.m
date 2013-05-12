@@ -34,33 +34,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
-    
-    // Az eddigi Sofor adatok törlése
-    [DataBaseUtil deleteAllObjects:@"Sofor" :context ];
-    
-    // Json feldolgozása
-    NSDictionary* jsonDictionary =[JsonUtil dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/querySoforTable.php"];
-    NSArray* rows = [jsonDictionary objectForKey:@"rows"]; 
-    
-    for (NSDictionary *result in rows) {
-        //NSLog(@"Neve: %@", [result valueForKey:@"soforNev"]);
-        Sofor* aktsofor = [NSEntityDescription
-                        insertNewObjectForEntityForName:@"Sofor"
-                        inManagedObjectContext:context];
-        
-        NSString* soforNev = [result valueForKey:@"soforNev"];
-        [aktsofor setValue:soforNev forKey:@"soforNev"];
-        
-        NSString* soforLogin = [result valueForKey:@"soforLogin"];
-        [aktsofor setValue:soforLogin forKey:@"soforLogin"];
-        
-        NSString* soforPass = [result valueForKey:@"soforPass"];
-        [aktsofor setValue:soforPass forKey:@"soforPass"];
-    }
-    
-    [DataBaseUtil saveContext:context];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,15 +45,8 @@
 // Login
 - (IBAction)userLoginButton:(id)sender {
     
-    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *fetchedObjects = [DataBaseUtil fetchRequest:@"Sofor"];
     
-    // query-re is egy általános fv-t irni a DataBaseUtil-ba
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Sofor" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSError* error = nil;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *proba in fetchedObjects) {
         NSString* tmpLogin = [proba valueForKey:@"soforLogin"];
         NSString* tmpPassword = [proba valueForKey:@"soforPass"];
@@ -94,10 +60,7 @@
             
         }];
         }
-        else
-        {
-            // hibaüzenet feldobása
-        }
+
     }
 }
 

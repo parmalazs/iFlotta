@@ -10,4 +10,5 @@
 
 @interface SiteViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *siteLabels;
 @end
