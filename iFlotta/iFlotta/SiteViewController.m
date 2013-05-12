@@ -10,7 +10,8 @@
 #import "DataBaseUtil.h"
 #import "SiteTableViewCell.h"
 #import "SiteDetailsViewController.h"
-
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
 
 @interface SiteViewController ()
 
@@ -33,6 +34,14 @@
 
     self.siteLabels = [DataBaseUtil fetchRequest:@"Telephely"];
 
+    
+    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    }
+    
+    
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

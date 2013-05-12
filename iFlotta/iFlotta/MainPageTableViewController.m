@@ -187,7 +187,7 @@
             break;
         case 3:
         {
-            SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"siteViewController"];
+            SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"initViewController"];
             [self.navigationController pushViewController:siteViewController animated:YES];
         }
             break;
