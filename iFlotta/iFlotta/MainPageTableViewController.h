@@ -13,6 +13,5 @@
 @property (nonatomic, strong) NSArray *ImageElements;
 @property (nonatomic, strong) NSArray *labelElements;
 @property (nonatomic, strong) UIImage *ImageNavigate;
-- (IBAction)infoButton:(id)sender;
 
 @end

@@ -8,12 +8,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PagerViewController : UIViewController <UIScrollViewDelegate>
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
-//@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-
-//@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-
-//- (IBAction)changePage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+- (IBAction)changePage:(id)sender;
 
 - (void)previousPage;
 - (void)nextPage;

@@ -146,6 +146,26 @@
     }
 }
 
+
+- (IBAction)changePage:(id)sender {
+    int page = ((UIPageControl *)sender).currentPage;
+	
+	// update the scroll view to the appropriate page
+    CGRect frame = self.scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    
+	UITableViewController *oldViewController = [self.childViewControllers objectAtIndex:_page];
+	UITableViewController *newViewController = [self.childViewControllers objectAtIndex:self.pageControl.currentPage];
+	[oldViewController viewWillDisappear:YES];
+	[newViewController viewWillAppear:YES];
+	
+	[self.scrollView scrollRectToVisible:frame animated:YES];
+	
+	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
+    _pageControlUsed = YES;
+}
+
 - (void)previousPage {
 	if (_page - 1 > 0) {
 	
@@ -188,24 +208,6 @@
 	}
 }
 
-- (IBAction)changePage:(id)sender {
-    int page = ((UIPageControl *)sender).currentPage;
-	
-	// update the scroll view to the appropriate page
-    CGRect frame = self.scrollView.frame;
-    frame.origin.x = frame.size.width * page;
-    frame.origin.y = 0;
-    
-	UITableViewController *oldViewController = [self.childViewControllers objectAtIndex:_page];
-	UITableViewController *newViewController = [self.childViewControllers objectAtIndex:self.pageControl.currentPage];
-	[oldViewController viewWillDisappear:YES];
-	[newViewController viewWillAppear:YES];
-	
-	[self.scrollView scrollRectToVisible:frame animated:YES];
-	
-	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
-    _pageControlUsed = YES;
-}
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
 	UITableViewController *oldViewController = [self.childViewControllers objectAtIndex:_page];
@@ -253,4 +255,9 @@
     _pageControlUsed = NO;
 }
 
+- (void)viewDidUnload {
+    [self setPageControl:nil];
+    [self setPageControl:nil];
+    [super viewDidUnload];
+}
 @end

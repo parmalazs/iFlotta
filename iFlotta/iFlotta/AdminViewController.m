@@ -1,18 +1,18 @@
 //
-//  AdminPageViewController.m
+//  AdminViewController.m
 //  iFlott
 //
-//  Created by Csüti on 5/10/13.
+//  Created by Csüti on 5/14/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "AdminPageViewController.h"
+#import "AdminViewController.h"
 
-@interface AdminPageViewController ()
+@interface AdminViewController ()
 
 @end
 
-@implementation AdminPageViewController
+@implementation AdminViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View1"]];
+	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View2"]];
+	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View3"]];
 }
 
 - (void)didReceiveMemoryWarning

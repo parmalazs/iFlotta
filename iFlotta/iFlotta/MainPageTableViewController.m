@@ -11,12 +11,9 @@
 #import "CarsViewController.h"
 #import "ContactTabBarController.h"
 #import "JobsViewController.h"
-#import "AdminPageViewController.h"
 #import "SiteViewController.h"
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
-#import "PagerViewController.h"
-#import "CustomPagerViewController.h"
 
 
 
@@ -51,7 +48,7 @@
                           @"Kontaktok",
                           @"Telephelyek",
                           @"Térkép",
-                          @"Adminfunkciók", nil];
+                          nil];
     
     self.ImageElements = [[NSArray alloc]
                           initWithObjects:@"autok.png",
@@ -59,7 +56,7 @@
                           @"kontaktok.png",
                           @"kontaktok.png",
                           @"kontaktok.png",
-                          @"autok.png", nil];
+                          nil];
     
     
     
@@ -196,22 +193,9 @@
             // Térkép
         }
             break;
-        case 5:
-        {
-            AdminPageViewController *adminPageViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adminPageViewController"];
-            [self.navigationController pushViewController:adminPageViewController animated:YES];
-        }
-            break;
-            
             
     }
     
-    
-}
-
-- (IBAction)infoButton:(id)sender {
-    CustomPagerViewController *customPagerViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"customPagerViewController"];
-    [self.navigationController pushViewController:customPagerViewController animated:YES];
     
 }
 @end
