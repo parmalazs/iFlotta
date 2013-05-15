@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "JsonUtil.h"
 #import "Sofor.h"
+#import "Auto.h"
 #import "Telephely.h"
 
 
@@ -67,6 +68,7 @@
     NSDictionary* jsonDictionary =[JsonUtil dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/querySoforTable.php"];
     NSArray* rows = [jsonDictionary objectForKey:@"rows"];
     
+    // Adatbázis feltöltése
     for (NSDictionary *result in rows) {
         
         Sofor* aktsofor = [NSEntityDescription
@@ -85,6 +87,7 @@
     
     [self saveContext:context];
 }
+
 + (void)fillTelephelyTable
 {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
@@ -96,6 +99,7 @@
     NSDictionary* jsonDictionary =[JsonUtil dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/queryTelephelyTable.php"];
     NSArray* rows = [jsonDictionary objectForKey:@"rows"];
     
+    // Adatbázis feltöltése
     for (NSDictionary *result in rows) {
         
         Telephely* aktTelephely = [NSEntityDescription
@@ -113,6 +117,40 @@
         
         NSString* telephelyEmail = [result valueForKey:@"telephelyEmail"];
         [aktTelephely setValue:telephelyEmail forKey:@"telephelyEmail"];
+        
+    }
+    
+    [self saveContext:context];
+}
+
++ (void)fillAutoTable
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // Az eddigi Sofor adatok törlése
+    [DataBaseUtil deleteAllObjects:@"Auto" :context ];
+    
+    // Json feldolgozása
+    NSDictionary* jsonDictionary =[JsonUtil dictionaryWithContentsOfJSONURLString:@"http://www.flotta.host-ed.me/queryAutoTable.php"];
+    NSArray* rows = [jsonDictionary objectForKey:@"rows"];
+    
+    // Adatbázis feltöltése
+    for (NSDictionary *result in rows) {
+        
+        NSLog(@"adat: %@",result);
+        
+        Auto* aktAuto = [NSEntityDescription
+                                   insertNewObjectForEntityForName:@"Auto"
+                                   inManagedObjectContext:context];
+        
+        //NSNumber* autoFoglalt = [result valueForKey:@"autoFoglalt"];
+        //[aktAuto setValue:autoFoglalt forKey:@"autoFoglalt"];
+        
+        NSString* autoNev = [result valueForKey:@"autoNev"];
+        [aktAuto setValue:autoNev forKey:@"autoNev"];
+        
+        NSString* autoRendszam = [result valueForKey:@"autoRendszam"];
+        [aktAuto setValue:autoRendszam forKey:@"autoRendszam"];
         
     }
     

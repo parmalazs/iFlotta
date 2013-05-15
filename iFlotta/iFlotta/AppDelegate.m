@@ -33,6 +33,7 @@
 {
     [DataBaseUtil fillSoforTable];
     [DataBaseUtil fillTelephelyTable];
+    [DataBaseUtil fillAutoTable];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

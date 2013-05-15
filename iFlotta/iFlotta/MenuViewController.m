@@ -39,10 +39,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.menu = [NSArray arrayWithObjects:@"Main", @"Second", nil];
+    //self.menu = [NSArray arrayWithObjects:@"Main", @"Second", nil];
+    self.menu = [NSArray arrayWithObjects:@"Rendezés sofőr szerint növekvőbe",@"Export sofőrök csv-be", @"Export partnerek csv-be", nil];
     
-    
-    [self.slidingViewController setAnchorRightRevealAmount:200.0f];
+    [self.slidingViewController setAnchorRightRevealAmount:275.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
 }
@@ -58,13 +58,15 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.menu count];
+    //return [self.menu count];
+    return 2;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,7 +77,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.menu objectAtIndex:indexPath.row]];
+    //cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.menu objectAtIndex:indexPath.row]];
+    //cell.textLabel.text =
     
     return cell;
 }
@@ -123,7 +126,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    /*
     NSString *identifier = [NSString stringWithFormat:@"%@", [self.menu objectAtIndex:indexPath.row]];
     
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
@@ -134,7 +137,7 @@
         self.slidingViewController.topViewController.view.frame = frame;
         [self.slidingViewController resetTopView];
     }];
-    
+    */
     
 }
 

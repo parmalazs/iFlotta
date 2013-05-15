@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CarsViewController : UITableViewController
-
+@property (nonatomic, strong) NSArray *carsLabel;
 @end

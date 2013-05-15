@@ -51,11 +51,11 @@
                           nil];
     
     self.ImageElements = [[NSArray alloc]
-                          initWithObjects:@"autok.png",
-                          @"autok.png",
-                          @"kontaktok.png",
-                          @"kontaktok.png",
-                          @"kontaktok.png",
+                          initWithObjects:@"placeholder.png",
+                          @"placeholder.png",
+                          @"placeholder.png",
+                          @"placeholder.png",
+                          @"placeholder.png",
                           nil];
     
     
@@ -104,7 +104,7 @@
     
     cell.imageElement.image = imageElement;
     
-    cell.imageNavigate.image = [UIImage imageNamed: @"navigacio.png"];
+    //cell.imageNavigate.image = [UIImage imageNamed: @"navigacio.png"];
     
     return cell;
 }

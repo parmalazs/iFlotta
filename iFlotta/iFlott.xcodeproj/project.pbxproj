@@ -45,6 +45,9 @@
 		19BFF1CC174028FE00968F2C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BFF1CB174028FE00968F2C /* MenuViewController.m */; };
 		19BFF1CF1740293C00968F2C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BFF1CE1740293C00968F2C /* MainViewController.m */; };
 		19BFF1D21740296600968F2C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BFF1D11740296600968F2C /* SecondViewController.m */; };
+		19C1B3DE1743AE630053949C /* CarsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C1B3DD1743AE630053949C /* CarsTableViewCell.m */; };
+		19C1B3E01743B67A0053949C /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 19C1B3DF1743B67A0053949C /* image.jpeg */; };
+		19C1B3E21743B8BC0053949C /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C1B3E11743B8BC0053949C /* placeholder.png */; };
 		19C51E57173C6D920000B353 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E56173C6D920000B353 /* JsonUtil.m */; };
 		19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */; };
 		19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E5C173C89030000B353 /* MainPageTableViewController.m */; };
@@ -127,6 +130,10 @@
 		19BFF1CE1740293C00968F2C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		19BFF1D01740296600968F2C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		19BFF1D11740296600968F2C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		19C1B3DC1743AE630053949C /* CarsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarsTableViewCell.h; sourceTree = "<group>"; };
+		19C1B3DD1743AE630053949C /* CarsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewCell.m; sourceTree = "<group>"; };
+		19C1B3DF1743B67A0053949C /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
+		19C1B3E11743B8BC0053949C /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		19C51E55173C6D920000B353 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		19C51E56173C6D920000B353 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 		19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageNavigationViewController.h; sourceTree = "<group>"; };
@@ -326,6 +333,8 @@
 				19BBA20E173DBCE700631B16 /* PartnerViewController.m */,
 				19BFF1AB173FCC1900968F2C /* SiteDetailsViewController.h */,
 				19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */,
+				19C1B3DC1743AE630053949C /* CarsTableViewCell.h */,
+				19C1B3DD1743AE630053949C /* CarsTableViewCell.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -333,6 +342,8 @@
 		19C64A18173D7AFB005B7F2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19C1B3E11743B8BC0053949C /* placeholder.png */,
+				19C1B3DF1743B67A0053949C /* image.jpeg */,
 				19C64A04173D45AD005B7F2A /* navigacio.png */,
 				19C64A02173D4543005B7F2A /* kontaktok.png */,
 				19C64A00173D44F1005B7F2A /* autok.png */,
@@ -399,6 +410,8 @@
 				19C64A01173D44F1005B7F2A /* autok.png in Resources */,
 				19C64A03173D4543005B7F2A /* kontaktok.png in Resources */,
 				19C64A05173D45AD005B7F2A /* navigacio.png in Resources */,
+				19C1B3E01743B67A0053949C /* image.jpeg in Resources */,
+				19C1B3E21743B8BC0053949C /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +459,7 @@
 				19BFF1D21740296600968F2C /* SecondViewController.m in Sources */,
 				19BF04F11741BB0B0025A725 /* PagerViewController.m in Sources */,
 				19BF04F41741BB680025A725 /* AdminViewController.m in Sources */,
+				19C1B3DE1743AE630053949C /* CarsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

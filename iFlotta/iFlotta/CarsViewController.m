@@ -7,6 +7,8 @@
 //
 
 #import "CarsViewController.h"
+#import "DataBaseUtil.h"
+#import "CarsTableViewCell.h"
 
 @interface CarsViewController ()
 
@@ -32,6 +34,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.carsLabel = [DataBaseUtil fetchRequest:@"Auto"];
+    NSLog(@"Adat:%@",self.carsLabel);
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,21 +50,28 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return self.carsLabel.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+{    
+    static NSString *CellIdentifier = @"carsTableViewCell";
     
-    // Configure the cell...
+    CarsTableViewCell *cell = [tableView
+                               dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[CarsTableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.carsLabel.text = [[self.carsLabel objectAtIndex: [indexPath row]] valueForKey:@"autoNev"];
     
     return cell;
 }

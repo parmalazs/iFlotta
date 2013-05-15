@@ -14,4 +14,5 @@
 + (NSArray*)fetchRequest:(NSString*) entityName;
 + (void)fillSoforTable;
 + (void)fillTelephelyTable;
++ (void)fillAutoTable;
 @end
