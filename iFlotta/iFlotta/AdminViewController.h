@@ -7,7 +7,8 @@
 //
 
 #import "PagerViewController.h"
+#import "CarAddViewController.h"
 
-@interface AdminViewController : PagerViewController
-
+@interface AdminViewController : PagerViewController <CarAddViewControllerDelegate>
+@property (nonatomic, strong) NSMutableArray *cars;
 @end

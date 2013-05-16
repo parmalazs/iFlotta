@@ -7,6 +7,8 @@
 //
 
 #import "AdminViewController.h"
+#import "CarAddViewController.h"
+
 
 @interface AdminViewController ()
 
@@ -38,6 +40,32 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)carAddViewControllerDidCancel:(CarAddViewController *)controller
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)carAddViewController:(CarAddViewController *)controller didAddCar:(NSString *)car
+{
+	//[self.cars addObject:car];
+    NSLog(@"Auto: %@",car);
+    // NSLog
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"AddCar"])
+	{
+		UINavigationController *navigationController = segue.destinationViewController;
+		CarAddViewController *carAddViewController = [[navigationController viewControllers] objectAtIndex:0];
+		carAddViewController.delegate = self;
+        // itt el kell menteni az aktuális page-et ami a pagecontrolban van!
+	}
 }
 
 @end

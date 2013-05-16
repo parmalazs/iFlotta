@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" title="Adminisztrátor" id="ghk-45-edW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ufS-Wx-poh">
                             <connections>
-                                <segue destination="9U7-6x-jla" kind="modal" id="gxr-dI-a06"/>
+                                <segue destination="9U7-6x-jla" kind="modal" identifier="AddCar" modalTransitionStyle="flipHorizontal" id="gxr-dI-a06"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -133,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ac-FR-Mly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="-1388"/>
+            <point key="canvasLocation" x="-150" y="-1442"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Dca-7O-eRi">
@@ -504,12 +504,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0g-Sg-vco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-736" y="-1238"/>
+            <point key="canvasLocation" x="-988" y="-1442"/>
         </scene>
-        <!--Table View Controller - Új valami...-->
+        <!--Car Add View Controller - Új valami...-->
         <scene sceneID="0nh-6j-1Z3">
             <objects>
-                <tableViewController id="oxx-NZ-9eg" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="carAddViewController" id="oxx-NZ-9eg" customClass="CarAddViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fzp-Bf-t7G">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -527,8 +527,16 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Új valami..." id="4a4-2X-xFA">
-                        <barButtonItem key="leftBarButtonItem" title="Mégse" id="Wvo-dG-Idl"/>
-                        <barButtonItem key="rightBarButtonItem" title="Oké" id="Ncx-aN-97D"/>
+                        <barButtonItem key="leftBarButtonItem" title="Mégse" id="Wvo-dG-Idl">
+                            <connections>
+                                <action selector="cancel:" destination="oxx-NZ-9eg" id="xbf-Td-Din"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Oké" id="Ncx-aN-97D">
+                            <connections>
+                                <action selector="done:" destination="oxx-NZ-9eg" id="hkI-KK-XG6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkh-3D-y17" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -577,7 +585,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmZ-0i-8r0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="-1320"/>
+            <point key="canvasLocation" x="-534" y="-1432"/>
         </scene>
         <!--Driver View Controller - Sofőrök-->
         <scene sceneID="owV-YZ-5Py">
@@ -792,6 +800,13 @@
     <classes>
         <class className="AdminViewController" superclassName="PagerViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminViewController.h"/>
+        </class>
+        <class className="CarAddViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarAddViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+            </relationships>
         </class>
         <class className="CarsTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsTableViewCell.h"/>
