@@ -275,6 +275,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		19BA14EB1745B05600A79A00 /* AdminViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				19BF04F21741BB680025A725 /* AdminViewController.h */,
+				19BF04F31741BB680025A725 /* AdminViewController.m */,
+				19BA14E81745681C00A79A00 /* CarAddViewController.h */,
+				19BA14E91745681C00A79A00 /* CarAddViewController.m */,
+			);
+			name = AdminViewControllers;
+			sourceTree = "<group>";
+		};
 		19BFF1B81740263600968F2C /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,8 +315,7 @@
 		19C51E5E173C90F30000B353 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				19BF04F21741BB680025A725 /* AdminViewController.h */,
-				19BF04F31741BB680025A725 /* AdminViewController.m */,
+				19BA14EB1745B05600A79A00 /* AdminViewControllers */,
 				19BF04EF1741BB0B0025A725 /* PagerViewController.h */,
 				19BF04F01741BB0B0025A725 /* PagerViewController.m */,
 				19D21427173E941D00600DD1 /* SearchViewController.h */,
@@ -338,8 +348,6 @@
 				19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */,
 				19C1B3DC1743AE630053949C /* CarsTableViewCell.h */,
 				19C1B3DD1743AE630053949C /* CarsTableViewCell.m */,
-				19BA14E81745681C00A79A00 /* CarAddViewController.h */,
-				19BA14E91745681C00A79A00 /* CarAddViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";

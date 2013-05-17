@@ -30,8 +30,7 @@
     }
 }
 
-+ (void)saveContext:(NSManagedObjectContext *)managedObjectContext
-{
++ (void)saveContext:(NSManagedObjectContext *)managedObjectContext {
     NSError *error = nil;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
@@ -43,8 +42,7 @@
     }
 }
 
-+ (NSArray*)fetchRequest:(NSString*) entityName
-{
++ (NSArray*)fetchRequest:(NSString*) entityName {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
     // query-re is egy általános fv-t irni a DataBaseUtil-ba

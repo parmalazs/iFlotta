@@ -12,12 +12,17 @@
 #import "SiteDetailsViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import "Telephely.h"
+
 
 @interface SiteViewController ()
 
 @end
 
+
 @implementation SiteViewController
+@synthesize siteSearchBar;
+@synthesize filteredSiteArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,14 +37,21 @@
 {
     [super viewDidLoad];
 
-    self.siteLabels = [DataBaseUtil fetchRequest:@"Telephely"];
-
+    [siteSearchBar setShowsScopeBar:NO];
+    [siteSearchBar sizeToFit];
     
+    /*
+    CGRect newBounds = [[self tableView] bounds];
+    newBounds.origin.y = newBounds.origin.y + siteSearchBar.bounds.size.height;
+    [[self tableView] setBounds:newBounds];
+    */
+    
+    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely"];
+    
+    // beúszó menü inicializálása
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
-    
-    
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -47,12 +59,27 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    filteredSiteArray = [NSMutableArray arrayWithCapacity:[self.siteArray count]];
+    [[self tableView] reloadData];
+    
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -66,22 +93,46 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.siteLabels count];
+    //return [self.siteArray count];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        return [filteredSiteArray count];
+    }
+	else
+	{
+        return [self.siteArray count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     static NSString *CellIdentifier = @"siteTableViewCell";
     
-    SiteTableViewCell *cell = [tableView
+    UITableViewCell *cell = [tableView
                                dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[SiteTableViewCell alloc]
+        cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.siteLabel.text = [[self.siteLabels objectAtIndex: [indexPath row]] valueForKey:@"telephelyNev"];
+    Telephely *site= nil;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        site = [filteredSiteArray objectAtIndex:[indexPath row]];
+        
+        [[cell textLabel] setText:[site telephelyNev]];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+	else
+	{
+        site = [self.siteArray objectAtIndex:[indexPath row]];
+        [[(SiteTableViewCell*)cell siteLabel] setText:[site telephelyNev]];
+    }
+
     
     return cell;
 }
@@ -131,9 +182,63 @@
 {  
     SiteDetailsViewController *siteDetailsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"siteDetailsViewController"];
 
-    siteDetailsViewController.siteData = [self.siteLabels objectAtIndex: [indexPath row]];
+    siteDetailsViewController.siteData = [self.siteArray objectAtIndex: [indexPath row]];
     [self.navigationController pushViewController:siteDetailsViewController animated:YES];
     
 }
+
+#pragma mark Content Filtering
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	// Update the filtered array based on the search text and scope.
+	
+    // Remove all objects from the filtered search array
+	[self.filteredSiteArray removeAllObjects];
+    
+	// Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"1=1",searchText];
+    NSArray *tempArray = [self.siteArray filteredArrayUsingPredicate:predicate];
+    
+    if([scope isEqualToString:@"Név"])
+    {
+        // Further filter the array with the scope
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyNev contains[c] %@",scope];
+        tempArray = [self.siteArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    else if([scope isEqualToString:@"Cim"]) 
+    {
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyCim contains[c] %@",scope];
+        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    
+    filteredSiteArray = [NSMutableArray arrayWithArray:tempArray];
+    NSLog(@"Array: %d", filteredSiteArray.count);
+}
+
+
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
 
 @end

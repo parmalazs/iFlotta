@@ -256,13 +256,26 @@
         <scene sceneID="fcC-dv-oe0">
             <objects>
                 <tableViewController storyboardIdentifier="siteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e3y-w3-fsN" customClass="SiteViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6vv-oI-0Dg">
+                    <tableView key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6vv-oI-0Dg">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="Ot4-HH-5C7">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Cim</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="e3y-w3-fsN" id="U3l-oH-pbi"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="siteTableViewCell" id="HeP-3t-tDC" customClass="SiteTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -289,10 +302,21 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Telephelyek" id="0vZ-NK-VdP"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="GIf-Bj-4ZG" id="M31-ht-4HB"/>
+                        <outlet property="siteSearchBar" destination="Ot4-HH-5C7" id="SZ1-7O-yNv"/>
                         <segue destination="MQm-xr-zSg" kind="push" id="5RL-iY-bov"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsI-N2-wwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="GIf-Bj-4ZG">
+                    <connections>
+                        <outlet property="delegate" destination="e3y-w3-fsN" id="wb6-In-G0J"/>
+                        <outlet property="searchBar" destination="Ot4-HH-5C7" id="Ld6-Bu-sRj"/>
+                        <outlet property="searchContentsController" destination="e3y-w3-fsN" id="N4b-gQ-RHv"/>
+                        <outlet property="searchResultsDataSource" destination="e3y-w3-fsN" id="WdF-9r-aja"/>
+                        <outlet property="searchResultsDelegate" destination="e3y-w3-fsN" id="PIj-wL-64E"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="902" y="1107"/>
         </scene>
@@ -897,6 +921,9 @@
         </class>
         <class className="SiteViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="siteSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
