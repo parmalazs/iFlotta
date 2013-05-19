@@ -180,11 +180,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {  
-    SiteDetailsViewController *siteDetailsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"siteDetailsViewController"];
-
-    siteDetailsViewController.siteData = [self.siteArray objectAtIndex: [indexPath row]];
-    [self.navigationController pushViewController:siteDetailsViewController animated:YES];
+    [self performSegueWithIdentifier:@"siteDetails" sender:tableView];
+    //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [[segue identifier] isEqualToString:@"siteDetails"] ) {
+        SiteDetailsViewController *siteDetailsViewController = [segue destinationViewController];
+        
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            siteDetailsViewController.siteData = [filteredSiteArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            siteDetailsViewController.siteData = [self.siteArray objectAtIndex: [indexPath row]];
+        }
+        
+    }
 }
 
 #pragma mark Content Filtering
@@ -197,23 +212,23 @@
 	[self.filteredSiteArray removeAllObjects];
     
 	// Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"1=1",searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@) or (SELF.telephelyCim contains[c] %@)",searchText,searchText];
     NSArray *tempArray = [self.siteArray filteredArrayUsingPredicate:predicate];
     
     if([scope isEqualToString:@"Név"])
     {
         // Further filter the array with the scope
-        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyNev contains[c] %@",scope];
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@)",searchText];
         tempArray = [self.siteArray filteredArrayUsingPredicate:scopePredicate];
     }
     else if([scope isEqualToString:@"Cim"]) 
     {
-        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyCim contains[c] %@",scope];
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyCim contains[c] %@",searchText];
         tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
     }
     
     filteredSiteArray = [NSMutableArray arrayWithArray:tempArray];
-    NSLog(@"Array: %d", filteredSiteArray.count);
+    //NSLog(@"Array: %d", filteredSiteArray.count);
 }
 
 

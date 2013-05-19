@@ -304,7 +304,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="GIf-Bj-4ZG" id="M31-ht-4HB"/>
                         <outlet property="siteSearchBar" destination="Ot4-HH-5C7" id="SZ1-7O-yNv"/>
-                        <segue destination="MQm-xr-zSg" kind="push" id="5RL-iY-bov"/>
+                        <segue destination="MQm-xr-zSg" kind="push" identifier="siteDetails" id="5RL-iY-bov"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsI-N2-wwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -821,111 +821,6 @@
             <point key="canvasLocation" x="351" y="1117"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AdminViewController" superclassName="PagerViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminViewController.h"/>
-        </class>
-        <class className="CarAddViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarAddViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-            </relationships>
-        </class>
-        <class className="CarsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CarsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsViewController.h"/>
-        </class>
-        <class className="ContactTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButton:"/>
-            </relationships>
-        </class>
-        <class className="DriverViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverViewController.h"/>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="InitViewController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
-        </class>
-        <class className="JobsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JobsViewController.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="userLoginButton:"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userPassword" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MainPageNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageNavigationViewController.h"/>
-        </class>
-        <class className="MainPageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageTableViewController.h"/>
-        </class>
-        <class className="MainTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageElement" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="imageNavigate" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelElement" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-        </class>
-        <class className="MenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="PagerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PagerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PartnerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerViewController.h"/>
-        </class>
-        <class className="SearchViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-        </class>
-        <class className="SiteDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="siteMail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="siteName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sitePhone" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SiteTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SiteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
