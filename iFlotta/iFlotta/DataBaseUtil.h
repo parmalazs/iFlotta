@@ -15,4 +15,5 @@
 + (void)fillSoforTable;
 + (void)fillTelephelyTable;
 + (void)fillAutoTable;
++ (BOOL) IsEmpty:(id) thing;
 @end

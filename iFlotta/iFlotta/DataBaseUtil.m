@@ -134,24 +134,39 @@
     
     // Adatbázis feltöltése
     for (NSDictionary *result in rows) {
-        
-        NSLog(@"adat: %@",result);
-        
         Auto* aktAuto = [NSEntityDescription
                                    insertNewObjectForEntityForName:@"Auto"
                                    inManagedObjectContext:context];
-        
-        //NSNumber* autoFoglalt = [result valueForKey:@"autoFoglalt"];
-        //[aktAuto setValue:autoFoglalt forKey:@"autoFoglalt"];
-        
-        NSString* autoNev = [result valueForKey:@"autoNev"];
-        [aktAuto setValue:autoNev forKey:@"autoNev"];
-        
-        NSString* autoRendszam = [result valueForKey:@"autoRendszam"];
-        [aktAuto setValue:autoRendszam forKey:@"autoRendszam"];
-        
+
+        [aktAuto setValue:[NSNumber numberWithInt:[[result valueForKey:@"autoFoglalt"] intValue] ] forKey:@"autoFoglalt"];
+        [aktAuto setValue:[result valueForKey:@"autoNev"] forKey:@"autoNev"];
+        [aktAuto setValue:[result valueForKey:@"autoRendszam"] forKey:@"autoRendszam"];
+        [aktAuto setValue:[self IsEmpty:[result valueForKey:@"autoLastSoforID"]] ? nil : [NSNumber numberWithInt:[[result valueForKey:@"autoLastSoforID"] intValue] ] forKey:@"autoLastSoforID"];
+        [aktAuto setValue:[NSNumber numberWithInt:[[result valueForKey:@"autoID"] intValue] ] forKey:@"autoID"];
+        [aktAuto setValue:[NSNumber numberWithInt:[[result valueForKey:@"autoKilometerOra"] intValue] ] forKey:@"autoKilometerOra"];
+        [aktAuto setValue:[result valueForKey:@"autoLastSzervizDate"] forKey:@"autoLastSzervizDate"];
+        [aktAuto setValue:[self IsEmpty:[result valueForKey:@"autoLastTelephelyID"]] ? nil : [NSNumber numberWithInt:[[result valueForKey:@"autoLastTelephelyID"] intValue] ] forKey:@"autoLastTelephelyID"];
+        [aktAuto setValue:[result valueForKey:@"autoLastUpDate"] forKey:@"autoLastUpDate"];
+        [aktAuto setValue:[result valueForKey:@"autoMuszakiVizsgaDate"] forKey:@"autoMuszakiVizsgaDate"];
+        [aktAuto setValue:[self IsEmpty:[result valueForKey:@"autoProfilKepID"]] ? nil : [NSNumber numberWithInt:[[result valueForKey:@"autoProfilKepID"] intValue] ] forKey:@"autoProfilKepID"];
+        [aktAuto setValue:[result valueForKey:@"autoTipus"] forKey:@"autoTipus"];
+        [aktAuto setValue:[NSNumber numberWithInt:[[result valueForKey:@"autoUzemAnyag"] intValue] ] forKey:@"autoUzemAnyag"];
+        [aktAuto setValue:[NSNumber numberWithFloat:[[result valueForKey:@"autoXkoordinata"] floatValue] ] forKey:@"autoXkoordinata"];
+        [aktAuto setValue:[NSNumber numberWithFloat:[[result valueForKey:@"autoYkoordinata"] floatValue] ] forKey:@"autoYkoordinata"];
     }
     
+    // 
+    
     [self saveContext:context];
+}
+
++ (BOOL) IsEmpty:(id) thing {
+    return thing == nil
+    || [thing isKindOfClass:[NSNull class]]
+    || ([thing respondsToSelector:@selector(length)]
+        && ![thing respondsToSelector:@selector(count)]
+        && [(NSData *)thing length] == 0)
+    || ([thing respondsToSelector:@selector(count)]
+        && [thing count] == 0);
 }
 @end

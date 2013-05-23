@@ -36,7 +36,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.carsLabel = [DataBaseUtil fetchRequest:@"Auto"];
-    NSLog(@"Adat:%@",self.carsLabel);
+    //NSLog(@"Adat:%@",[self.carsLabel valueForKey:@"autoXkoordinata"]);
 }
 
 - (void)didReceiveMemoryWarning
