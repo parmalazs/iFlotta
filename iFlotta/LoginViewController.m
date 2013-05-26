@@ -45,12 +45,11 @@
 // Login
 - (IBAction)userLoginButton:(id)sender {
     
-    NSArray *fetchedObjects = [DataBaseUtil fetchRequest:@"Sofor"];
+    NSArray *fetchedObjects = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
     
     for (NSManagedObject *proba in fetchedObjects) {
         NSString* tmpLogin = [proba valueForKey:@"soforLogin"];
         NSString* tmpPassword = [proba valueForKey:@"soforPass"];
-        
         if ([tmpLogin isEqualToString:self.userName.text] && [tmpPassword isEqualToString:self.userPassword.text] )
         {
             // ide majd a navigációt kell beilleszteni a következő page-re

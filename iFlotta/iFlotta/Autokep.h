@@ -1,8 +1,8 @@
 //
 //  Autokep.h
-//  iFlotta
+//  iFlott
 //
-//  Created by Csüti on 5/9/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSNumber * autoKepID;
 @property (nonatomic, retain) NSNumber * autoKepIsUploaded;
 @property (nonatomic, retain) NSString * autoKepPath;
+@property (nonatomic, retain) NSNumber * autoKepIsActive;
 @property (nonatomic, retain) Auto *autoRelationship;
 
 @end

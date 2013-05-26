@@ -1,8 +1,8 @@
 //
 //  Partnerkepek.h
-//  iFlotta
+//  iFlott
 //
-//  Created by Csüti on 5/9/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSNumber * partnerKepID;
 @property (nonatomic, retain) NSNumber * partnerKepIsUploaded;
 @property (nonatomic, retain) NSString * partnerKepPath;
+@property (nonatomic, retain) NSNumber * partnerKepIsActive;
 @property (nonatomic, retain) Partner *partner;
 
 @end

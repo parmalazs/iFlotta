@@ -7,13 +7,18 @@
 //
 
 #import "DriverViewController.h"
+#import "DriverTableViewCell.h"
+#import "DriverDetailsViewController.h"
+#import "DataBaseUtil.h"
+#import "Sofor.h"
 
 @interface DriverViewController ()
 
 @end
 
 @implementation DriverViewController
-
+@synthesize driverSearchBar;
+@synthesize filteredDriverArray;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -27,11 +32,22 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [super viewDidLoad];
+    
+    [driverSearchBar setShowsScopeBar:NO];
+    [driverSearchBar sizeToFit];
+    
+    
+    CGRect newBounds = [[self tableView] bounds];
+    newBounds.origin.y = newBounds.origin.y + driverSearchBar.bounds.size.height;
+    [[self tableView] setBounds:newBounds];
+    
+    
+    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
+    
+    
+    filteredDriverArray = [NSMutableArray arrayWithCapacity:[self.driverArray count]];
+    [[self tableView] reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,28 +56,59 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        return [filteredDriverArray count];
+    }
+	else
+	{
+        return [self.driverArray count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"driverTableViewCell";
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    
+    Sofor *driver= nil;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        driver = [filteredDriverArray objectAtIndex:[indexPath row]];
+        
+        [[cell textLabel] setText:[driver soforNev]];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+	else
+	{
+        driver = [self.driverArray objectAtIndex:[indexPath row]];
+        [[(DriverTableViewCell*)cell driverLabel] setText:[driver soforNev]];
+    }
     
     return cell;
 }
@@ -104,18 +151,85 @@
     return YES;
 }
 */
-
 #pragma mark - Table view delegate
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self performSegueWithIdentifier:@"driverDetails" sender:tableView];
+    //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
+    
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [[segue identifier] isEqualToString:@"driverDetails"] ) {
+        DriverDetailsViewController *driverDetailsViewController = [segue destinationViewController];
+        
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            driverDetailsViewController.driverData = [filteredDriverArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            driverDetailsViewController.driverData = [self.driverArray objectAtIndex: [indexPath row]];
+        }
+        
+    }
+}
+
+
+#pragma mark Content Filtering
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	// Update the filtered array based on the search text and scope.
+	
+    // Remove all objects from the filtered search array
+	[self.filteredDriverArray removeAllObjects];
+    
+	// Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.soforNev contains[c] %@) or (SELF.soforCim contains[c] %@)",searchText,searchText];
+    NSArray *tempArray = [self.driverArray filteredArrayUsingPredicate:predicate];
+    
+    if([scope isEqualToString:@"Név"])
+    {
+        // Further filter the array with the scope
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"(SELF.soforNev contains[c] %@)",searchText];
+        tempArray = [self.driverArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    else if([scope isEqualToString:@"Cim"])
+    {
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.soforCim contains[c] %@",searchText];
+        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    
+    filteredDriverArray = [NSMutableArray arrayWithArray:tempArray];
+}
+
+
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
 
 @end

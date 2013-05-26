@@ -11,4 +11,5 @@
 @interface JsonUtil : NSObject
     +(NSDictionary*)dictionaryWithContentsOfJSONURLString:(NSString*)urlAddress;
     +(NSData*)toJSON;
+    +(void)getJson;
 @end

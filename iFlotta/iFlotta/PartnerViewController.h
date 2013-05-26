@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PartnerViewController : UITableViewController
-
+@interface PartnerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@property IBOutlet UISearchBar *partnerSearchBar;
+@property (nonatomic, strong) NSArray *partnerArray;
+@property (strong,nonatomic) NSMutableArray *filteredPartnerArray;
 @end

@@ -1,20 +1,18 @@
 //
-//  CarsViewController.m
+//  KamionViewController.m
 //  iFlott
 //
-//  Created by Csüti on 5/10/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "CarsViewController.h"
-#import "DataBaseUtil.h"
-#import "CarsTableViewCell.h"
+#import "KamionViewController.h"
 
-@interface CarsViewController ()
+@interface KamionViewController ()
 
 @end
 
-@implementation CarsViewController
+@implementation KamionViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,8 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.carsLabel = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Személygépjármű"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,29 +44,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.carsLabel.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-    static NSString *CellIdentifier = @"carsTableViewCell";
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    CarsTableViewCell *cell = [tableView
-                               dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[CarsTableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-    }
-    
-    cell.carsLabel.text = [[self.carsLabel objectAtIndex: [indexPath row]] valueForKey:@"autoNev"];
+    // Configure the cell...
     
     return cell;
 }

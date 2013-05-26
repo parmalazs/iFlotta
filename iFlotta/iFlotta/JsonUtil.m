@@ -8,6 +8,7 @@
 
 #import "JsonUtil.h"
 
+
 @implementation JsonUtil
 +(NSDictionary*)dictionaryWithContentsOfJSONURLString:(NSString*)urlAddress
 {
@@ -28,5 +29,60 @@
                                                 options:kNilOptions error:&error];
     if (error != nil) return nil;
     return result;
+}
+
++(void)getJson {
+    
+    NSMutableDictionary* object = [[NSMutableDictionary alloc] init];
+    
+    
+    [object setObject:@"iOS" forKey:@"soforPass"];
+    [object setObject:@"iOS" forKey:@"soforNev"];
+    [object setObject:@"323" forKey:@"soforID"];
+    [object setObject:@"iOS" forKey:@"soforCim"];
+    [object setObject:@"iOS" forKey:@"soforLogin"];
+    [object setObject:@"iOS" forKey:@"soforRegTime"];
+    [object setObject:@"iOS" forKey:@"soforBirthDate"];
+    [object setObject:@"iOS" forKey:@"soforEmail"];
+    [object setObject:@"iOS" forKey:@"soforTelefonszam"];
+    [object setObject:@"1" forKey:@"soforIsAdmin"];
+    [object setObject:@"2" forKey:@"soforProfilKepID"];
+    [object setObject:@"1" forKey:@"soforIsActive"];
+    
+    NSMutableDictionary* json = [[NSMutableDictionary alloc] init];
+    
+
+    [json setObject:object forKey:@"objects"];
+    [json setObject:@"insert" forKey:@"action"];
+    [json setObject:@"sofor" forKey:@"tableName"];
+
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+
+    //NSString *js = [[NSString alloc] initWithString:(@"%@",jsonString)];
+    
+    //NSLog(@" %@",js);
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
+                                    initWithURL:[NSURL
+                                                 URLWithString:@"http://www.flotta.host-ed.me/index33.php"]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"text/json" forHTTPHeaderField:@"Content-type"];
+      
+    [request setValue:[NSString stringWithFormat:@"%d",
+                       [jsonString length]]
+     
+    forHTTPHeaderField:@"Content-length"];
+    
+    [request setHTTPBody:[jsonString
+                          dataUsingEncoding:NSUTF8StringEncoding]];
+    
+     [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    //return jsonString;
 }
 @end

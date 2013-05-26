@@ -20,17 +20,6 @@
 		1982C564173BC7AF00665C7F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C563173BC7AF00665C7F /* LoginViewController.m */; };
 		1982C566173BC7D000665C7F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1982C565173BC7D000665C7F /* MainStoryboard.storyboard */; };
 		1982C597173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1982C595173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld */; };
-		1982C5A3173BE96800665C7F /* Munkatipus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5A2173BE96800665C7F /* Munkatipus.m */; };
-		1982C5A6173BE96A00665C7F /* Munkaeszkoz.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5A5173BE96A00665C7F /* Munkaeszkoz.m */; };
-		1982C5A9173BE96B00665C7F /* Munkakep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5A8173BE96B00665C7F /* Munkakep.m */; };
-		1982C5AC173BE96B00665C7F /* Telephely.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5AB173BE96B00665C7F /* Telephely.m */; };
-		1982C5AF173BE96C00665C7F /* Profilkep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5AE173BE96C00665C7F /* Profilkep.m */; };
-		1982C5B2173BE96D00665C7F /* Munka.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5B1173BE96C00665C7F /* Munka.m */; };
-		1982C5B5173BE96D00665C7F /* Partnerkepek.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5B4173BE96D00665C7F /* Partnerkepek.m */; };
-		1982C5B8173BE96E00665C7F /* Sofor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5B7173BE96E00665C7F /* Sofor.m */; };
-		1982C5BB173BE96E00665C7F /* Auto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5BA173BE96E00665C7F /* Auto.m */; };
-		1982C5BE173BE96F00665C7F /* Autokep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5BD173BE96F00665C7F /* Autokep.m */; };
-		1982C5C1173BE97000665C7F /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C0173BE96F00665C7F /* Partner.m */; };
 		1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C4173C1B2800665C7F /* DataBaseUtil.m */; };
 		19BA14EA1745681C00A79A00 /* CarAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA14E91745681C00A79A00 /* CarAddViewController.m */; };
 		19BBA209173DB86500631B16 /* SiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA208173DB86500631B16 /* SiteViewController.m */; };
@@ -59,7 +48,26 @@
 		19C64A0B173D5A9C005B7F2A /* CarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A0A173D5A9C005B7F2A /* CarsViewController.m */; };
 		19C64A11173D5FCF005B7F2A /* JobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A10173D5FCE005B7F2A /* JobsViewController.m */; };
 		19C64A14173D7646005B7F2A /* ContactTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A13173D7646005B7F2A /* ContactTabBarController.m */; };
-		19D21429173E941E00600DD1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D21428173E941E00600DD1 /* SearchViewController.m */; };
+		19D0278417521EF000E3AEAD /* Autokep.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278317521EF000E3AEAD /* Autokep.m */; };
+		19D0278717521EF100E3AEAD /* Auto.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278617521EF100E3AEAD /* Auto.m */; };
+		19D0278A17521EF100E3AEAD /* Munkakep.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278917521EF100E3AEAD /* Munkakep.m */; };
+		19D0278D17521EF100E3AEAD /* Partner.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278C17521EF100E3AEAD /* Partner.m */; };
+		19D0279017521EF100E3AEAD /* Profilkep.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278F17521EF100E3AEAD /* Profilkep.m */; };
+		19D0279317521EF100E3AEAD /* Sofor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0279217521EF100E3AEAD /* Sofor.m */; };
+		19D0279617521EF100E3AEAD /* Partnerkepek.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0279517521EF100E3AEAD /* Partnerkepek.m */; };
+		19D0279917521EF100E3AEAD /* Telephely.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0279817521EF100E3AEAD /* Telephely.m */; };
+		19D0279C17521EF100E3AEAD /* Munkaeszkoz.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0279B17521EF100E3AEAD /* Munkaeszkoz.m */; };
+		19D0279F17521EF100E3AEAD /* Munka.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0279E17521EF100E3AEAD /* Munka.m */; };
+		19D027A217521EF100E3AEAD /* Munkatipus.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027A117521EF100E3AEAD /* Munkatipus.m */; };
+		19D027A51752946300E3AEAD /* PartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027A41752945F00E3AEAD /* PartnerTableViewCell.m */; };
+		19D027A817529B0A00E3AEAD /* DriverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027A717529B0900E3AEAD /* DriverTableViewCell.m */; };
+		19D027AE17529E7600E3AEAD /* DriverDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027AD17529E6D00E3AEAD /* DriverDetailsViewController.m */; };
+		19D027B11752A35500E3AEAD /* PartnerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027B01752A35300E3AEAD /* PartnerDetailsViewController.m */; };
+		19D027B41752A6D200E3AEAD /* JarmuTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027B31752A6D000E3AEAD /* JarmuTabBarController.m */; };
+		19D027B71752A7C000E3AEAD /* BuszViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027B61752A7BE00E3AEAD /* BuszViewController.m */; };
+		19D027BA1752A7E600E3AEAD /* KamionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027B91752A7E400E3AEAD /* KamionViewController.m */; };
+		19D027C01752A86900E3AEAD /* KisteherautoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027BF1752A86700E3AEAD /* KisteherautoViewController.m */; };
+		19D027C31752A88B00E3AEAD /* TeherautoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027C21752A88900E3AEAD /* TeherautoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,28 +89,6 @@
 		1982C563173BC7AF00665C7F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		1982C565173BC7D000665C7F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1982C596173BD3A100665C7F /* iFlottaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iFlottaDataModel.xcdatamodel; sourceTree = "<group>"; };
-		1982C5A1173BE96800665C7F /* Munkatipus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munkatipus.h; sourceTree = "<group>"; };
-		1982C5A2173BE96800665C7F /* Munkatipus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munkatipus.m; sourceTree = "<group>"; };
-		1982C5A4173BE96A00665C7F /* Munkaeszkoz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munkaeszkoz.h; sourceTree = "<group>"; };
-		1982C5A5173BE96A00665C7F /* Munkaeszkoz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munkaeszkoz.m; sourceTree = "<group>"; };
-		1982C5A7173BE96A00665C7F /* Munkakep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munkakep.h; sourceTree = "<group>"; };
-		1982C5A8173BE96B00665C7F /* Munkakep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munkakep.m; sourceTree = "<group>"; };
-		1982C5AA173BE96B00665C7F /* Telephely.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Telephely.h; sourceTree = "<group>"; };
-		1982C5AB173BE96B00665C7F /* Telephely.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Telephely.m; sourceTree = "<group>"; };
-		1982C5AD173BE96B00665C7F /* Profilkep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profilkep.h; sourceTree = "<group>"; };
-		1982C5AE173BE96C00665C7F /* Profilkep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profilkep.m; sourceTree = "<group>"; };
-		1982C5B0173BE96C00665C7F /* Munka.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munka.h; sourceTree = "<group>"; };
-		1982C5B1173BE96C00665C7F /* Munka.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munka.m; sourceTree = "<group>"; };
-		1982C5B3173BE96D00665C7F /* Partnerkepek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partnerkepek.h; sourceTree = "<group>"; };
-		1982C5B4173BE96D00665C7F /* Partnerkepek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partnerkepek.m; sourceTree = "<group>"; };
-		1982C5B6173BE96D00665C7F /* Sofor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sofor.h; sourceTree = "<group>"; };
-		1982C5B7173BE96E00665C7F /* Sofor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sofor.m; sourceTree = "<group>"; };
-		1982C5B9173BE96E00665C7F /* Auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auto.h; sourceTree = "<group>"; };
-		1982C5BA173BE96E00665C7F /* Auto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auto.m; sourceTree = "<group>"; };
-		1982C5BC173BE96E00665C7F /* Autokep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Autokep.h; sourceTree = "<group>"; };
-		1982C5BD173BE96F00665C7F /* Autokep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Autokep.m; sourceTree = "<group>"; };
-		1982C5BF173BE96F00665C7F /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
-		1982C5C0173BE96F00665C7F /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
 		1982C5C3173C1B2700665C7F /* DataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseUtil.h; sourceTree = "<group>"; };
 		1982C5C4173C1B2800665C7F /* DataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseUtil.m; sourceTree = "<group>"; };
 		19BA14E81745681C00A79A00 /* CarAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAddViewController.h; sourceTree = "<group>"; };
@@ -154,10 +140,48 @@
 		19C64A10173D5FCE005B7F2A /* JobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsViewController.m; sourceTree = "<group>"; };
 		19C64A12173D7646005B7F2A /* ContactTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTabBarController.h; sourceTree = "<group>"; };
 		19C64A13173D7646005B7F2A /* ContactTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTabBarController.m; sourceTree = "<group>"; };
+		19D0278217521EF000E3AEAD /* Autokep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Autokep.h; sourceTree = "<group>"; };
+		19D0278317521EF000E3AEAD /* Autokep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Autokep.m; sourceTree = "<group>"; };
+		19D0278517521EF100E3AEAD /* Auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auto.h; sourceTree = "<group>"; };
+		19D0278617521EF100E3AEAD /* Auto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auto.m; sourceTree = "<group>"; };
+		19D0278817521EF100E3AEAD /* Munkakep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munkakep.h; sourceTree = "<group>"; };
+		19D0278917521EF100E3AEAD /* Munkakep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munkakep.m; sourceTree = "<group>"; };
+		19D0278B17521EF100E3AEAD /* Partner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partner.h; sourceTree = "<group>"; };
+		19D0278C17521EF100E3AEAD /* Partner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partner.m; sourceTree = "<group>"; };
+		19D0278E17521EF100E3AEAD /* Profilkep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profilkep.h; sourceTree = "<group>"; };
+		19D0278F17521EF100E3AEAD /* Profilkep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profilkep.m; sourceTree = "<group>"; };
+		19D0279117521EF100E3AEAD /* Sofor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sofor.h; sourceTree = "<group>"; };
+		19D0279217521EF100E3AEAD /* Sofor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sofor.m; sourceTree = "<group>"; };
+		19D0279417521EF100E3AEAD /* Partnerkepek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partnerkepek.h; sourceTree = "<group>"; };
+		19D0279517521EF100E3AEAD /* Partnerkepek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partnerkepek.m; sourceTree = "<group>"; };
+		19D0279717521EF100E3AEAD /* Telephely.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Telephely.h; sourceTree = "<group>"; };
+		19D0279817521EF100E3AEAD /* Telephely.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Telephely.m; sourceTree = "<group>"; };
+		19D0279A17521EF100E3AEAD /* Munkaeszkoz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munkaeszkoz.h; sourceTree = "<group>"; };
+		19D0279B17521EF100E3AEAD /* Munkaeszkoz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munkaeszkoz.m; sourceTree = "<group>"; };
+		19D0279D17521EF100E3AEAD /* Munka.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munka.h; sourceTree = "<group>"; };
+		19D0279E17521EF100E3AEAD /* Munka.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munka.m; sourceTree = "<group>"; };
+		19D027A017521EF100E3AEAD /* Munkatipus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Munkatipus.h; sourceTree = "<group>"; };
+		19D027A117521EF100E3AEAD /* Munkatipus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Munkatipus.m; sourceTree = "<group>"; };
+		19D027A31752945D00E3AEAD /* PartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerTableViewCell.h; sourceTree = "<group>"; };
+		19D027A41752945F00E3AEAD /* PartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerTableViewCell.m; sourceTree = "<group>"; };
+		19D027A617529B0800E3AEAD /* DriverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverTableViewCell.h; sourceTree = "<group>"; };
+		19D027A717529B0900E3AEAD /* DriverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverTableViewCell.m; sourceTree = "<group>"; };
+		19D027AC17529E6800E3AEAD /* DriverDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverDetailsViewController.h; sourceTree = "<group>"; };
+		19D027AD17529E6D00E3AEAD /* DriverDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverDetailsViewController.m; sourceTree = "<group>"; };
+		19D027AF1752A35200E3AEAD /* PartnerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerDetailsViewController.h; sourceTree = "<group>"; };
+		19D027B01752A35300E3AEAD /* PartnerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerDetailsViewController.m; sourceTree = "<group>"; };
+		19D027B21752A6CF00E3AEAD /* JarmuTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JarmuTabBarController.h; sourceTree = "<group>"; };
+		19D027B31752A6D000E3AEAD /* JarmuTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JarmuTabBarController.m; sourceTree = "<group>"; };
+		19D027B51752A7BD00E3AEAD /* BuszViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuszViewController.h; sourceTree = "<group>"; };
+		19D027B61752A7BE00E3AEAD /* BuszViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuszViewController.m; sourceTree = "<group>"; };
+		19D027B81752A7E300E3AEAD /* KamionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KamionViewController.h; sourceTree = "<group>"; };
+		19D027B91752A7E400E3AEAD /* KamionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KamionViewController.m; sourceTree = "<group>"; };
+		19D027BE1752A86600E3AEAD /* KisteherautoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KisteherautoViewController.h; sourceTree = "<group>"; };
+		19D027BF1752A86700E3AEAD /* KisteherautoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KisteherautoViewController.m; sourceTree = "<group>"; };
+		19D027C11752A88800E3AEAD /* TeherautoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeherautoViewController.h; sourceTree = "<group>"; };
+		19D027C21752A88900E3AEAD /* TeherautoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeherautoViewController.m; sourceTree = "<group>"; };
 		19D21422173E67CF00600DD1 /* AdminPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdminPageControl.h; sourceTree = "<group>"; };
 		19D21423173E67CF00600DD1 /* AdminPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdminPageControl.m; sourceTree = "<group>"; };
-		19D21427173E941D00600DD1 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		19D21428173E941E00600DD1 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,28 +273,28 @@
 		1982C5C2173BEF5700665C7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1982C5BF173BE96F00665C7F /* Partner.h */,
-				1982C5C0173BE96F00665C7F /* Partner.m */,
-				1982C5BC173BE96E00665C7F /* Autokep.h */,
-				1982C5BD173BE96F00665C7F /* Autokep.m */,
-				1982C5B9173BE96E00665C7F /* Auto.h */,
-				1982C5BA173BE96E00665C7F /* Auto.m */,
-				1982C5B6173BE96D00665C7F /* Sofor.h */,
-				1982C5B7173BE96E00665C7F /* Sofor.m */,
-				1982C5B3173BE96D00665C7F /* Partnerkepek.h */,
-				1982C5B4173BE96D00665C7F /* Partnerkepek.m */,
-				1982C5B0173BE96C00665C7F /* Munka.h */,
-				1982C5B1173BE96C00665C7F /* Munka.m */,
-				1982C5AD173BE96B00665C7F /* Profilkep.h */,
-				1982C5AE173BE96C00665C7F /* Profilkep.m */,
-				1982C5AA173BE96B00665C7F /* Telephely.h */,
-				1982C5AB173BE96B00665C7F /* Telephely.m */,
-				1982C5A7173BE96A00665C7F /* Munkakep.h */,
-				1982C5A8173BE96B00665C7F /* Munkakep.m */,
-				1982C5A4173BE96A00665C7F /* Munkaeszkoz.h */,
-				1982C5A5173BE96A00665C7F /* Munkaeszkoz.m */,
-				1982C5A1173BE96800665C7F /* Munkatipus.h */,
-				1982C5A2173BE96800665C7F /* Munkatipus.m */,
+				19D027A017521EF100E3AEAD /* Munkatipus.h */,
+				19D027A117521EF100E3AEAD /* Munkatipus.m */,
+				19D0279D17521EF100E3AEAD /* Munka.h */,
+				19D0279E17521EF100E3AEAD /* Munka.m */,
+				19D0279A17521EF100E3AEAD /* Munkaeszkoz.h */,
+				19D0279B17521EF100E3AEAD /* Munkaeszkoz.m */,
+				19D0279717521EF100E3AEAD /* Telephely.h */,
+				19D0279817521EF100E3AEAD /* Telephely.m */,
+				19D0279417521EF100E3AEAD /* Partnerkepek.h */,
+				19D0279517521EF100E3AEAD /* Partnerkepek.m */,
+				19D0279117521EF100E3AEAD /* Sofor.h */,
+				19D0279217521EF100E3AEAD /* Sofor.m */,
+				19D0278E17521EF100E3AEAD /* Profilkep.h */,
+				19D0278F17521EF100E3AEAD /* Profilkep.m */,
+				19D0278B17521EF100E3AEAD /* Partner.h */,
+				19D0278C17521EF100E3AEAD /* Partner.m */,
+				19D0278817521EF100E3AEAD /* Munkakep.h */,
+				19D0278917521EF100E3AEAD /* Munkakep.m */,
+				19D0278517521EF100E3AEAD /* Auto.h */,
+				19D0278617521EF100E3AEAD /* Auto.m */,
+				19D0278217521EF000E3AEAD /* Autokep.h */,
+				19D0278317521EF000E3AEAD /* Autokep.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -278,6 +302,10 @@
 		19BA14EB1745B05600A79A00 /* AdminViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				19BF04EF1741BB0B0025A725 /* PagerViewController.h */,
+				19BF04F01741BB0B0025A725 /* PagerViewController.m */,
+				19D21423173E67CF00600DD1 /* AdminPageControl.m */,
+				19D21422173E67CF00600DD1 /* AdminPageControl.h */,
 				19BF04F21741BB680025A725 /* AdminViewController.h */,
 				19BF04F31741BB680025A725 /* AdminViewController.m */,
 				19BA14E81745681C00A79A00 /* CarAddViewController.h */,
@@ -316,38 +344,11 @@
 			isa = PBXGroup;
 			children = (
 				19BA14EB1745B05600A79A00 /* AdminViewControllers */,
-				19BF04EF1741BB0B0025A725 /* PagerViewController.h */,
-				19BF04F01741BB0B0025A725 /* PagerViewController.m */,
-				19D21427173E941D00600DD1 /* SearchViewController.h */,
-				19D21428173E941E00600DD1 /* SearchViewController.m */,
-				19BFF1A8173FB30B00968F2C /* SiteTableViewCell.h */,
-				19BFF1A9173FB30B00968F2C /* SiteTableViewCell.m */,
-				19D21422173E67CF00600DD1 /* AdminPageControl.h */,
-				19D21423173E67CF00600DD1 /* AdminPageControl.m */,
-				19C649FD173D3DF4005B7F2A /* MainTableViewCell.h */,
-				19C649FE173D3DF4005B7F2A /* MainTableViewCell.m */,
-				19C64A09173D5A9C005B7F2A /* CarsViewController.h */,
-				19C64A0A173D5A9C005B7F2A /* CarsViewController.m */,
-				19C64A0F173D5FCE005B7F2A /* JobsViewController.h */,
-				19C64A10173D5FCE005B7F2A /* JobsViewController.m */,
-				19C64A12173D7646005B7F2A /* ContactTabBarController.h */,
-				19C64A13173D7646005B7F2A /* ContactTabBarController.m */,
-				19C51E5B173C89030000B353 /* MainPageTableViewController.h */,
-				19C51E5C173C89030000B353 /* MainPageTableViewController.m */,
-				1982C562173BC7AF00665C7F /* LoginViewController.h */,
-				1982C563173BC7AF00665C7F /* LoginViewController.m */,
-				19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */,
-				19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */,
-				19BBA207173DB86500631B16 /* SiteViewController.h */,
-				19BBA208173DB86500631B16 /* SiteViewController.m */,
-				19BBA20A173DBC2D00631B16 /* DriverViewController.h */,
-				19BBA20B173DBC2D00631B16 /* DriverViewController.m */,
-				19BBA20D173DBCE700631B16 /* PartnerViewController.h */,
-				19BBA20E173DBCE700631B16 /* PartnerViewController.m */,
-				19BFF1AB173FCC1900968F2C /* SiteDetailsViewController.h */,
-				19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */,
-				19C1B3DC1743AE630053949C /* CarsTableViewCell.h */,
-				19C1B3DD1743AE630053949C /* CarsTableViewCell.m */,
+				19D027C61752AB3E00E3AEAD /* Telephely */,
+				19D027C81752ABA700E3AEAD /* Main */,
+				19D027C71752AB7400E3AEAD /* Munka */,
+				19D027C51752AAFD00E3AEAD /* Kontakt */,
+				19D027C41752AA8F00E3AEAD /* Jarmu */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -362,6 +363,85 @@
 				19C64A00173D44F1005B7F2A /* autok.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		19D027C41752AA8F00E3AEAD /* Jarmu */ = {
+			isa = PBXGroup;
+			children = (
+				19C64A09173D5A9C005B7F2A /* CarsViewController.h */,
+				19C64A0A173D5A9C005B7F2A /* CarsViewController.m */,
+				19C1B3DC1743AE630053949C /* CarsTableViewCell.h */,
+				19C1B3DD1743AE630053949C /* CarsTableViewCell.m */,
+				19D027B21752A6CF00E3AEAD /* JarmuTabBarController.h */,
+				19D027B31752A6D000E3AEAD /* JarmuTabBarController.m */,
+				19D027B51752A7BD00E3AEAD /* BuszViewController.h */,
+				19D027B61752A7BE00E3AEAD /* BuszViewController.m */,
+				19D027B81752A7E300E3AEAD /* KamionViewController.h */,
+				19D027B91752A7E400E3AEAD /* KamionViewController.m */,
+				19D027BE1752A86600E3AEAD /* KisteherautoViewController.h */,
+				19D027BF1752A86700E3AEAD /* KisteherautoViewController.m */,
+				19D027C11752A88800E3AEAD /* TeherautoViewController.h */,
+				19D027C21752A88900E3AEAD /* TeherautoViewController.m */,
+			);
+			name = Jarmu;
+			sourceTree = "<group>";
+		};
+		19D027C51752AAFD00E3AEAD /* Kontakt */ = {
+			isa = PBXGroup;
+			children = (
+				19C64A12173D7646005B7F2A /* ContactTabBarController.h */,
+				19C64A13173D7646005B7F2A /* ContactTabBarController.m */,
+				19BBA20A173DBC2D00631B16 /* DriverViewController.h */,
+				19BBA20B173DBC2D00631B16 /* DriverViewController.m */,
+				19BBA20D173DBCE700631B16 /* PartnerViewController.h */,
+				19BBA20E173DBCE700631B16 /* PartnerViewController.m */,
+				19D027A31752945D00E3AEAD /* PartnerTableViewCell.h */,
+				19D027A41752945F00E3AEAD /* PartnerTableViewCell.m */,
+				19D027A617529B0800E3AEAD /* DriverTableViewCell.h */,
+				19D027A717529B0900E3AEAD /* DriverTableViewCell.m */,
+				19D027AC17529E6800E3AEAD /* DriverDetailsViewController.h */,
+				19D027AD17529E6D00E3AEAD /* DriverDetailsViewController.m */,
+				19D027AF1752A35200E3AEAD /* PartnerDetailsViewController.h */,
+				19D027B01752A35300E3AEAD /* PartnerDetailsViewController.m */,
+			);
+			name = Kontakt;
+			sourceTree = "<group>";
+		};
+		19D027C61752AB3E00E3AEAD /* Telephely */ = {
+			isa = PBXGroup;
+			children = (
+				19BFF1A8173FB30B00968F2C /* SiteTableViewCell.h */,
+				19BFF1A9173FB30B00968F2C /* SiteTableViewCell.m */,
+				19BBA207173DB86500631B16 /* SiteViewController.h */,
+				19BBA208173DB86500631B16 /* SiteViewController.m */,
+				19BFF1AB173FCC1900968F2C /* SiteDetailsViewController.h */,
+				19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */,
+			);
+			name = Telephely;
+			sourceTree = "<group>";
+		};
+		19D027C71752AB7400E3AEAD /* Munka */ = {
+			isa = PBXGroup;
+			children = (
+				19C64A0F173D5FCE005B7F2A /* JobsViewController.h */,
+				19C64A10173D5FCE005B7F2A /* JobsViewController.m */,
+			);
+			name = Munka;
+			sourceTree = "<group>";
+		};
+		19D027C81752ABA700E3AEAD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				19C649FD173D3DF4005B7F2A /* MainTableViewCell.h */,
+				19C649FE173D3DF4005B7F2A /* MainTableViewCell.m */,
+				19C51E5B173C89030000B353 /* MainPageTableViewController.h */,
+				19C51E5C173C89030000B353 /* MainPageTableViewController.m */,
+				1982C562173BC7AF00665C7F /* LoginViewController.h */,
+				1982C563173BC7AF00665C7F /* LoginViewController.m */,
+				19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */,
+				19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,17 +519,6 @@
 				1982C553173BC78D00665C7F /* AppDelegate.m in Sources */,
 				1982C564173BC7AF00665C7F /* LoginViewController.m in Sources */,
 				1982C597173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld in Sources */,
-				1982C5A3173BE96800665C7F /* Munkatipus.m in Sources */,
-				1982C5A6173BE96A00665C7F /* Munkaeszkoz.m in Sources */,
-				1982C5A9173BE96B00665C7F /* Munkakep.m in Sources */,
-				1982C5AC173BE96B00665C7F /* Telephely.m in Sources */,
-				1982C5AF173BE96C00665C7F /* Profilkep.m in Sources */,
-				1982C5B2173BE96D00665C7F /* Munka.m in Sources */,
-				1982C5B5173BE96D00665C7F /* Partnerkepek.m in Sources */,
-				1982C5B8173BE96E00665C7F /* Sofor.m in Sources */,
-				1982C5BB173BE96E00665C7F /* Auto.m in Sources */,
-				1982C5BE173BE96F00665C7F /* Autokep.m in Sources */,
-				1982C5C1173BE97000665C7F /* Partner.m in Sources */,
 				1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */,
 				19C51E57173C6D920000B353 /* JsonUtil.m in Sources */,
 				19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */,
@@ -461,7 +530,6 @@
 				19BBA209173DB86500631B16 /* SiteViewController.m in Sources */,
 				19BBA20C173DBC2D00631B16 /* DriverViewController.m in Sources */,
 				19BBA20F173DBCE700631B16 /* PartnerViewController.m in Sources */,
-				19D21429173E941E00600DD1 /* SearchViewController.m in Sources */,
 				19BFF1AA173FB30B00968F2C /* SiteTableViewCell.m in Sources */,
 				19BFF1AD173FCC1A00968F2C /* SiteDetailsViewController.m in Sources */,
 				19BFF1C51740285D00968F2C /* ECSlidingViewController.m in Sources */,
@@ -474,6 +542,26 @@
 				19BF04F41741BB680025A725 /* AdminViewController.m in Sources */,
 				19C1B3DE1743AE630053949C /* CarsTableViewCell.m in Sources */,
 				19BA14EA1745681C00A79A00 /* CarAddViewController.m in Sources */,
+				19D0278417521EF000E3AEAD /* Autokep.m in Sources */,
+				19D0278717521EF100E3AEAD /* Auto.m in Sources */,
+				19D0278A17521EF100E3AEAD /* Munkakep.m in Sources */,
+				19D0278D17521EF100E3AEAD /* Partner.m in Sources */,
+				19D0279017521EF100E3AEAD /* Profilkep.m in Sources */,
+				19D0279317521EF100E3AEAD /* Sofor.m in Sources */,
+				19D0279617521EF100E3AEAD /* Partnerkepek.m in Sources */,
+				19D0279917521EF100E3AEAD /* Telephely.m in Sources */,
+				19D0279C17521EF100E3AEAD /* Munkaeszkoz.m in Sources */,
+				19D0279F17521EF100E3AEAD /* Munka.m in Sources */,
+				19D027A217521EF100E3AEAD /* Munkatipus.m in Sources */,
+				19D027A51752946300E3AEAD /* PartnerTableViewCell.m in Sources */,
+				19D027A817529B0A00E3AEAD /* DriverTableViewCell.m in Sources */,
+				19D027AE17529E7600E3AEAD /* DriverDetailsViewController.m in Sources */,
+				19D027B11752A35500E3AEAD /* PartnerDetailsViewController.m in Sources */,
+				19D027B41752A6D200E3AEAD /* JarmuTabBarController.m in Sources */,
+				19D027B71752A7C000E3AEAD /* BuszViewController.m in Sources */,
+				19D027BA1752A7E600E3AEAD /* KamionViewController.m in Sources */,
+				19D027C01752A86900E3AEAD /* KisteherautoViewController.m in Sources */,
+				19D027C31752A88B00E3AEAD /* TeherautoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

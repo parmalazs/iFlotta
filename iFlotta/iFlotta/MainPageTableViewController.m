@@ -172,7 +172,7 @@
             break;
         case 0:
         {
-            CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"carsViewController"];
+            CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jarmuTabBarController"];
             [self.navigationController pushViewController:carsViewController animated:YES];
         }
             break;

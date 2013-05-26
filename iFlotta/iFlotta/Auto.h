@@ -1,8 +1,8 @@
 //
 //  Auto.h
-//  iFlotta
+//  iFlott
 //
-//  Created by Csüti on 5/9/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
@@ -28,6 +28,7 @@
 @property (nonatomic, retain) NSNumber * autoUzemAnyag;
 @property (nonatomic, retain) NSNumber * autoXkoordinata;
 @property (nonatomic, retain) NSNumber * autoYkoordinata;
+@property (nonatomic, retain) NSNumber * autoIsActive;
 @property (nonatomic, retain) NSSet *autokep;
 @property (nonatomic, retain) Sofor *sofor;
 @property (nonatomic, retain) Telephely *telephely;

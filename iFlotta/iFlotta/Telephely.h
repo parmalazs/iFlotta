@@ -1,8 +1,8 @@
 //
 //  Telephely.h
-//  iFlotta
+//  iFlott
 //
-//  Created by Csüti on 5/9/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
@@ -15,11 +15,12 @@
 
 @property (nonatomic, retain) NSString * telephelyCim;
 @property (nonatomic, retain) NSString * telephelyEmail;
-@property (nonatomic, retain) NSString * telephelyID;
+@property (nonatomic, retain) NSNumber * telephelyID;
 @property (nonatomic, retain) NSString * telephelyNev;
 @property (nonatomic, retain) NSString * telephelyTelefonszam;
 @property (nonatomic, retain) NSNumber * telephelyXkoordinata;
 @property (nonatomic, retain) NSNumber * telephelyYkoordinata;
+@property (nonatomic, retain) NSNumber * telephelyIsActive;
 @property (nonatomic, retain) NSSet *autoRelationship;
 @property (nonatomic, retain) NSSet *munka;
 @end

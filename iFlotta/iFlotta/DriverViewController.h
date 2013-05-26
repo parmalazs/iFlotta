@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DriverViewController : UITableViewController
+@interface DriverViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *driverSearchBar;
+@property (nonatomic, strong) NSArray *driverArray;
+@property (strong,nonatomic) NSMutableArray *filteredDriverArray;
 
 @end

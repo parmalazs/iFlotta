@@ -1,20 +1,18 @@
 //
-//  ContactTabBarController.m
+//  JarmuTabBarController.m
 //  iFlott
 //
-//  Created by Csüti on 5/10/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "ContactTabBarController.h"
-#import "DriverViewController.h"
-#import "PartnerViewController.h"
+#import "JarmuTabBarController.h"
 
-@interface ContactTabBarController ()
+@interface JarmuTabBarController ()
 
 @end
 
-@implementation ContactTabBarController
+@implementation JarmuTabBarController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,4 +34,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 @end

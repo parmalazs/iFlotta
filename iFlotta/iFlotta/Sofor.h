@@ -1,8 +1,8 @@
 //
 //  Sofor.h
-//  iFlotta
+//  iFlott
 //
-//  Created by Csüti on 5/9/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSNumber * soforProfilKepId;
 @property (nonatomic, retain) NSString * soforRegTime;
 @property (nonatomic, retain) NSString * soforTelefonszam;
+@property (nonatomic, retain) NSNumber * soforIsActive;
 @property (nonatomic, retain) Auto *autoRelationship;
 @property (nonatomic, retain) Munka *munka;
 @property (nonatomic, retain) NSSet *profilkep;

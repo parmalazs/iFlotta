@@ -1,18 +1,18 @@
 //
-//  SearchViewController.m
+//  BuszViewController.m
 //  iFlott
 //
-//  Created by Csüti on 5/11/13.
+//  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "BuszViewController.h"
 
-@interface SearchViewController ()
+@interface BuszViewController ()
 
 @end
 
-@implementation SearchViewController
+@implementation BuszViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -104,7 +104,6 @@
     return YES;
 }
 */
-
 
 #pragma mark - Table view delegate
 

@@ -40,35 +40,26 @@
     [siteSearchBar setShowsScopeBar:NO];
     [siteSearchBar sizeToFit];
     
-    /*
+    
     CGRect newBounds = [[self tableView] bounds];
     newBounds.origin.y = newBounds.origin.y + siteSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
-    */
     
-    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely"];
     
+    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive"];
+
     // beúszó menü inicializálása
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     }
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Ezzel van a probléma!!!!!!!!!!
+    //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
     filteredSiteArray = [NSMutableArray arrayWithCapacity:[self.siteArray count]];
     [[self tableView] reloadData];
     
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -132,7 +123,6 @@
         site = [self.siteArray objectAtIndex:[indexPath row]];
         [[(SiteTableViewCell*)cell siteLabel] setText:[site telephelyNev]];
     }
-
     
     return cell;
 }

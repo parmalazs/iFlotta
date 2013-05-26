@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DataBaseUtil.h"
+#import "JsonUtil.h"
 
 
 @implementation AppDelegate
@@ -25,6 +26,7 @@
 
     
     [self initDatabase];
+    [JsonUtil getJson];
     
     return YES;
 }
@@ -34,6 +36,7 @@
     [DataBaseUtil fillSoforTable];
     [DataBaseUtil fillTelephelyTable];
     [DataBaseUtil fillAutoTable];
+    [DataBaseUtil fillPartnerTable];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
