@@ -373,7 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				61938FED1753814300A56581 /* SplashViewRes */,
-				19C1B3E11743B8BC0053949C /* placeholder.png */,
 				19C1B3DF1743B67A0053949C /* image.jpeg */,
 				19C64A04173D45AD005B7F2A /* navigacio.png */,
 				19C64A02173D4543005B7F2A /* kontaktok.png */,
@@ -464,6 +463,7 @@
 		61938FED1753814300A56581 /* SplashViewRes */ = {
 			isa = PBXGroup;
 			children = (
+				19C1B3E11743B8BC0053949C /* placeholder.png */,
 				61938FEE1753816800A56581 /* telephely-ikon.png */,
 				61938FEF1753816800A56581 /* partnerek_ikon.png */,
 				61938FF01753816800A56581 /* munka-ikon2.png */,

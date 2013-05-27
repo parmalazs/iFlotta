@@ -47,7 +47,7 @@
     [object setObject:@"iOS" forKey:@"soforTelefonszam"];
     [object setObject:@"1" forKey:@"soforIsAdmin"];
     [object setObject:@"2" forKey:@"soforProfilKepID"];
-    [object setObject:@"1" forKey:@"soforIsActive"];
+    //[object setObject:@"1" forKey:@"soforIsActive"];
     
     NSMutableDictionary* json = [[NSMutableDictionary alloc] init];
     
@@ -62,26 +62,42 @@
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
 
-    //NSString *js = [[NSString alloc] initWithString:(@"%@",jsonString)];
+    NSString *js = [[NSString alloc] initWithString:(@"%@",jsonString)];
     
-    //NSLog(@" %@",js);
+    NSLog(@" %@",js);
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL
-                                                 URLWithString:@"http://www.flotta.host-ed.me/index33.php"]];
-    
+                                                 URLWithString:@"http://www.flotta.host-ed.me/index.php"]];
+    /*
     [request setHTTPMethod:@"POST"];
     [request setValue:@"text/json" forHTTPHeaderField:@"Content-type"];
       
     [request setValue:[NSString stringWithFormat:@"%d",
-                       [jsonString length]]
+                       [js length]]
      
     forHTTPHeaderField:@"Content-length"];
     
-    [request setHTTPBody:[jsonString
+    [request setHTTPBody:[js
                           dataUsingEncoding:NSUTF8StringEncoding]];
     
-     [[NSURLConnection alloc] initWithRequest:request delegate:self];
+     [[NSURLConnection alloc] initWithRequest:request delegate:self];*/
+    
+    
+    
+    NSData *requestData = [NSData dataWithBytes:[js UTF8String] length:[js length]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody: requestData];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    if (connection) {
+        NSLog(@"Válasz");
+    }
+    
     
     //return jsonString;
 }
