@@ -26,11 +26,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    /// ezeken jelennek meg az adatok
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    self.soforNev.text = [self.driverData valueForKey:@"soforNev"];
+    
     self.soforCim.text = [self.driverData valueForKey:@"soforCim"];
+    self.soforCim.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+    self.soforNev.text = [self.driverData valueForKey:@"soforNev"];
+    self.soforNev.backgroundColor = UIColorFromRGB(0x260B01);
+    self.soforNev.textColor = UIColorFromRGB(0xD9B384);
+
     self.soforTelefonszam.text = [self.driverData valueForKey:@"soforTelefonszam"];
+    self.soforTelefonszam.backgroundColor = UIColorFromRGB(0xD9B384);
+    
     self.soforEmail.text = [self.driverData valueForKey:@"soforEmail"];
+    self.soforEmail.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+    /// ezek a labelek
+    self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.telLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.telLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
+    self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
 }
 
 - (void)didReceiveMemoryWarning
