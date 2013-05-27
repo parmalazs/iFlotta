@@ -10,6 +10,7 @@
 #import "DataBaseUtil.h"
 #import "Munka.h"
 #import "FreeJobsTableViewCell.h"
+#import "FreeJobDetailsViewController.h"
 
 
 @interface FreeJobsViewController ()
@@ -156,5 +157,28 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"freeJobDetails" sender:tableView];
+    //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [[segue identifier] isEqualToString:@"freeJobDetails"] ) {
+        FreeJobDetailsViewController *freeJobDetailsViewController = [segue destinationViewController];
+        
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            freeJobDetailsViewController.freeJobData = [filteredFreeJobsArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            freeJobDetailsViewController.freeJobData = [self.freeJobsArray objectAtIndex: [indexPath row]];
+        }
+        
+    }
+}
 
 @end

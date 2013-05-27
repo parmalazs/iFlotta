@@ -70,6 +70,8 @@
 		603EAD2D1753A73900104181 /* OwnJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603EAD2C1753A73900104181 /* OwnJobsViewController.m */; };
 		603EAD301753ACEB00104181 /* FreeJobsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 603EAD2F1753ACEB00104181 /* FreeJobsTableViewCell.m */; };
 		603EAD331753AD0400104181 /* OwnJobsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 603EAD321753AD0400104181 /* OwnJobsTableViewCell.m */; };
+		60D27F3E1753EF82003C9D92 /* FreeJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */; };
+		60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */; };
 		61938FEA175380E200A56581 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61938FE8175380E200A56581 /* LoginViewController.m */; };
 		61938FEC1753811600A56581 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEB1753811600A56581 /* MainStoryboard.storyboard */; };
 		61938FF41753816800A56581 /* telephely-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEE1753816800A56581 /* telephely-ikon.png */; };
@@ -199,6 +201,10 @@
 		603EAD2F1753ACEB00104181 /* FreeJobsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeJobsTableViewCell.m; sourceTree = "<group>"; };
 		603EAD311753AD0400104181 /* OwnJobsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnJobsTableViewCell.h; sourceTree = "<group>"; };
 		603EAD321753AD0400104181 /* OwnJobsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnJobsTableViewCell.m; sourceTree = "<group>"; };
+		60D27F3C1753EF82003C9D92 /* FreeJobDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeJobDetailsViewController.h; sourceTree = "<group>"; };
+		60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeJobDetailsViewController.m; sourceTree = "<group>"; };
+		60D27F3F1753F033003C9D92 /* OwnJobDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnJobDetailsViewController.h; sourceTree = "<group>"; };
+		60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnJobDetailsViewController.m; sourceTree = "<group>"; };
 		61938FE8175380E200A56581 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		61938FE9175380E200A56581 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		61938FEB1753811600A56581 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -461,6 +467,10 @@
 				603EAD2F1753ACEB00104181 /* FreeJobsTableViewCell.m */,
 				603EAD311753AD0400104181 /* OwnJobsTableViewCell.h */,
 				603EAD321753AD0400104181 /* OwnJobsTableViewCell.m */,
+				60D27F3C1753EF82003C9D92 /* FreeJobDetailsViewController.h */,
+				60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */,
+				60D27F3F1753F033003C9D92 /* OwnJobDetailsViewController.h */,
+				60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */,
 			);
 			name = Munka;
 			sourceTree = "<group>";
@@ -626,6 +636,8 @@
 				603EAD2D1753A73900104181 /* OwnJobsViewController.m in Sources */,
 				603EAD301753ACEB00104181 /* FreeJobsTableViewCell.m in Sources */,
 				603EAD331753AD0400104181 /* OwnJobsTableViewCell.m in Sources */,
+				60D27F3E1753EF82003C9D92 /* FreeJobDetailsViewController.m in Sources */,
+				60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

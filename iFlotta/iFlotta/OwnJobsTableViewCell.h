@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OwnJobsTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *ownJobLabel;
 
 @end

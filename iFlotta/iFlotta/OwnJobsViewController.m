@@ -7,12 +7,18 @@
 //
 
 #import "OwnJobsViewController.h"
+#import "DataBaseUtil.h"
+#import "Munka.h"
+#import "OwnJobsTableViewCell.h"
+#import "OwnJobDetailsViewController.h"
 
 @interface OwnJobsViewController ()
 
 @end
 
 @implementation OwnJobsViewController
+@synthesize ownJobsSearchBar;
+@synthesize filteredOwnJobsArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,11 +32,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [super viewDidLoad];
+    
+    [ownJobsSearchBar sizeToFit];
+    
+    CGRect newBounds = [[self tableView] bounds];
+    newBounds.origin.y = newBounds.origin.y + ownJobsSearchBar.bounds.size.height;
+    [[self tableView] setBounds:newBounds];
+    
+    self.ownJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
+    
+    
+    filteredOwnJobsArray = [NSMutableArray arrayWithCapacity:[self.ownJobsArray count]];
+    [[self tableView] reloadData];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,22 +70,49 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        return [filteredOwnJobsArray count];
+    }
+	else
+	{
+        return [self.ownJobsArray count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ownJobsTableViewCell";
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    
+    Munka *job= nil;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        job = [filteredOwnJobsArray objectAtIndex:[indexPath row]];
+        
+        [[cell textLabel] setText:[job munkaDate]];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+	else
+	{
+        job = [self.ownJobsArray objectAtIndex:[indexPath row]];
+        [[(OwnJobsTableViewCell*)cell ownJobLabel] setText:[job munkaDate]];
+    }
     
     return cell;
 }
@@ -108,13 +160,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self performSegueWithIdentifier:@"ownJobDetails" sender:tableView];
+    //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
+    
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [[segue identifier] isEqualToString:@"ownJobDetails"] ) {
+        OwnJobDetailsViewController *ownJobDetailsViewController = [segue destinationViewController];
+        
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            ownJobDetailsViewController.ownJobData = [filteredOwnJobsArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            ownJobDetailsViewController.ownJobData = [self.ownJobsArray objectAtIndex: [indexPath row]];
+        }
+        
+    }
+}
 @end
