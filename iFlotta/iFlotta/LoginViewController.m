@@ -55,6 +55,7 @@
     
    // loginButton.hidden = true;
     loginButton.alpha = 0.0;
+    //loginButton.backgroundColor
     userName.alpha = 0.0;
     userNameLabel.alpha = 0.0;
     userPassword.alpha = 0.0;

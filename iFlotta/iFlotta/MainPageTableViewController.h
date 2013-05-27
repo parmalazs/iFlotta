@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSArray *ImageElements;
 @property (nonatomic, strong) NSArray *labelElements;
 @property (nonatomic, strong) UIImage *ImageNavigate;
+@property (strong, nonatomic) IBOutlet UINavigationItem *NavBar;
 
 @end

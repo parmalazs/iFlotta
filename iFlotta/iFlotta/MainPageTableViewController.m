@@ -59,7 +59,7 @@
                           @"terkep-ikon.png",
                           nil];
     
-    
+    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(0x46594B)];
     
 }
 
@@ -99,6 +99,7 @@
     // Configure the cell...
     cell.labelElement.text = [self.labelElements
                               objectAtIndex: [indexPath row]];
+    cell.labelElement.backgroundColor = UIColorFromRGB(0xD9B384);
     
     UIImage *imageElement = [UIImage imageNamed:
                              [self.ImageElements objectAtIndex: [indexPath row]]];
