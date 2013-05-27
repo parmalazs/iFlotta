@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Sofor.h"
+
 
 @interface DataBaseUtil : NSObject
 + (void) deleteAllObjects: (NSString *) entityDescription  :(NSManagedObjectContext*) context;
@@ -26,5 +28,7 @@
 + (void)fillProfilkepTable;
 + (void)fillMunkakepTable;
 + (void)fillAutoTable;
++ (void) setUser:(NSString*)aktsofor;
++ (NSString*)aktUser;
 + (BOOL) IsEmpty:(id) thing;
 @end

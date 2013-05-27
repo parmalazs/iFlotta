@@ -14,6 +14,8 @@
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
 #import "JobsTabBarController.h"
+#import "DataBaseUtil.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
@@ -42,6 +44,17 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    //[self adminButton]
+
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+    
+    
     
     self.labelElements = [[NSArray alloc]
                           initWithObjects:@"Autók",

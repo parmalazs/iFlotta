@@ -82,14 +82,16 @@
     
     NSArray *fetchedObjects = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
     
-    for (NSManagedObject *proba in fetchedObjects) {
-        NSString* tmpLogin = [proba valueForKey:@"soforLogin"];
-        NSString* tmpPassword = [proba valueForKey:@"soforPass"];
+    for (NSManagedObject *aktsofor in fetchedObjects) {
+        NSString* tmpLogin = [aktsofor valueForKey:@"soforLogin"];
+        NSString* tmpPassword = [aktsofor valueForKey:@"soforPass"];
         if ([tmpLogin isEqualToString:self.userName.text] && [tmpPassword isEqualToString:self.userPassword.text] )
         {
-            // ide majd a navigációt kell beilleszteni a következő page-re
             MainPageNavigationViewController *mainPage = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"MainPageStoryboardID"];
-        
+            [DataBaseUtil setUser:[aktsofor valueForKey:@"soforIsAdmin"]];
+            
+            //NSLog(@"Admin-e: %@",[DataBaseUtil aktUser]);
+            
         [self presentViewController:mainPage animated:YES completion:^{
             
         }];
