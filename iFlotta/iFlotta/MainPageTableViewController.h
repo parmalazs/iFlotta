@@ -14,5 +14,5 @@
 @property (nonatomic, strong) NSArray *labelElements;
 @property (nonatomic, strong) UIImage *ImageNavigate;
 @property (strong, nonatomic) IBOutlet UINavigationItem *NavBar;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *adminButton;
 @end

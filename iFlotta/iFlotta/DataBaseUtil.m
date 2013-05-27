@@ -20,6 +20,12 @@
 
 
 @implementation DataBaseUtil
+static NSString *aktUser;
+
++ (NSString*)aktUser
+{
+    return aktUser;
+}
 
 + (void) deleteAllObjects: (NSString *) entityDescription  :(NSManagedObjectContext*) context {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -46,6 +52,10 @@
     }
 }
 
++(void) setUser:(NSString*)aktsofor {
+    aktUser = aktsofor;
+}
+
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
@@ -62,6 +72,7 @@
     NSError* error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     return fetchedObjects;
+    
 }
 
 + (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSNumber*) soforID {

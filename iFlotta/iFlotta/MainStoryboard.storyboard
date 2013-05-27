@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12B2080" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -320,12 +320,12 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="IDM-gZ-EHh"/>
                         <barButtonItem key="rightBarButtonItem" title="Admin" style="plain" id="bhD-kr-WIG">
                             <connections>
-                                <action selector="infoButton:" destination="iO8-hD-0Gc" id="vNP-QE-ZPY"/>
                                 <segue destination="mZD-kr-5B5" kind="push" id="mRO-JO-G32"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adminButton" destination="bhD-kr-WIG" id="Uoj-q6-Auh"/>
                         <segue destination="EyN-6l-lw3" kind="push" id="irW-gd-loQ"/>
                         <segue destination="e3y-w3-fsN" kind="push" id="zAH-Hz-NBi"/>
                         <segue destination="JV6-FW-DPy" kind="push" id="hYY-Wq-Hgs"/>
