@@ -8,7 +8,7 @@
 
 #import "AdminViewController.h"
 #import "CarAddViewController.h"
-
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface AdminViewController ()
 
@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColorFromRGB(0xA6977C);
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View1"]];
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View2"]];
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View3"]];
