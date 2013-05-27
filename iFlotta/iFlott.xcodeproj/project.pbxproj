@@ -17,8 +17,6 @@
 		1982C555173BC78D00665C7F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1982C554173BC78D00665C7F /* Default.png */; };
 		1982C557173BC78D00665C7F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1982C556173BC78D00665C7F /* Default@2x.png */; };
 		1982C559173BC78D00665C7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1982C558173BC78D00665C7F /* Default-568h@2x.png */; };
-		1982C564173BC7AF00665C7F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C563173BC7AF00665C7F /* LoginViewController.m */; };
-		1982C566173BC7D000665C7F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1982C565173BC7D000665C7F /* MainStoryboard.storyboard */; };
 		1982C597173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1982C595173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld */; };
 		1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C4173C1B2800665C7F /* DataBaseUtil.m */; };
 		19BA14EA1745681C00A79A00 /* CarAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA14E91745681C00A79A00 /* CarAddViewController.m */; };
@@ -68,6 +66,14 @@
 		19D027BA1752A7E600E3AEAD /* KamionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027B91752A7E400E3AEAD /* KamionViewController.m */; };
 		19D027C01752A86900E3AEAD /* KisteherautoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027BF1752A86700E3AEAD /* KisteherautoViewController.m */; };
 		19D027C31752A88B00E3AEAD /* TeherautoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D027C21752A88900E3AEAD /* TeherautoViewController.m */; };
+		61938FEA175380E200A56581 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61938FE8175380E200A56581 /* LoginViewController.m */; };
+		61938FEC1753811600A56581 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEB1753811600A56581 /* MainStoryboard.storyboard */; };
+		61938FF41753816800A56581 /* telephely-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEE1753816800A56581 /* telephely-ikon.png */; };
+		61938FF51753816800A56581 /* partnerek_ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEF1753816800A56581 /* partnerek_ikon.png */; };
+		61938FF61753816800A56581 /* munka-ikon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF01753816800A56581 /* munka-ikon2.png */; };
+		61938FF71753816800A56581 /* Flotta-logo_303x209.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF11753816800A56581 /* Flotta-logo_303x209.png */; };
+		61938FF81753816800A56581 /* F-saroklogo_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF21753816800A56581 /* F-saroklogo_72x72.png */; };
+		61938FF91753816800A56581 /* auto-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF31753816800A56581 /* auto-ikon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,9 +91,6 @@
 		1982C554173BC78D00665C7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1982C556173BC78D00665C7F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1982C558173BC78D00665C7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1982C562173BC7AF00665C7F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		1982C563173BC7AF00665C7F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
-		1982C565173BC7D000665C7F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1982C596173BD3A100665C7F /* iFlottaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iFlottaDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1982C5C3173C1B2700665C7F /* DataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseUtil.h; sourceTree = "<group>"; };
 		1982C5C4173C1B2800665C7F /* DataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseUtil.m; sourceTree = "<group>"; };
@@ -182,6 +185,15 @@
 		19D027C21752A88900E3AEAD /* TeherautoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeherautoViewController.m; sourceTree = "<group>"; };
 		19D21422173E67CF00600DD1 /* AdminPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdminPageControl.h; sourceTree = "<group>"; };
 		19D21423173E67CF00600DD1 /* AdminPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdminPageControl.m; sourceTree = "<group>"; };
+		61938FE8175380E200A56581 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		61938FE9175380E200A56581 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		61938FEB1753811600A56581 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		61938FEE1753816800A56581 /* telephely-ikon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telephely-ikon.png"; sourceTree = "<group>"; };
+		61938FEF1753816800A56581 /* partnerek_ikon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partnerek_ikon.png; sourceTree = "<group>"; };
+		61938FF01753816800A56581 /* munka-ikon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "munka-ikon2.png"; sourceTree = "<group>"; };
+		61938FF11753816800A56581 /* Flotta-logo_303x209.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flotta-logo_303x209.png"; sourceTree = "<group>"; };
+		61938FF21753816800A56581 /* F-saroklogo_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "F-saroklogo_72x72.png"; sourceTree = "<group>"; };
+		61938FF31753816800A56581 /* auto-ikon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auto-ikon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +242,7 @@
 		1982C548173BC78D00665C7F /* iFlotta */ = {
 			isa = PBXGroup;
 			children = (
-				1982C565173BC7D000665C7F /* MainStoryboard.storyboard */,
+				61938FEB1753811600A56581 /* MainStoryboard.storyboard */,
 				1982C551173BC78D00665C7F /* AppDelegate.h */,
 				1982C552173BC78D00665C7F /* AppDelegate.m */,
 				19BFF1C01740285C00968F2C /* ECSlidingViewController */,
@@ -356,6 +368,7 @@
 		19C64A18173D7AFB005B7F2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61938FED1753814300A56581 /* SplashViewRes */,
 				19C1B3E11743B8BC0053949C /* placeholder.png */,
 				19C1B3DF1743B67A0053949C /* image.jpeg */,
 				19C64A04173D45AD005B7F2A /* navigacio.png */,
@@ -436,12 +449,25 @@
 				19C649FE173D3DF4005B7F2A /* MainTableViewCell.m */,
 				19C51E5B173C89030000B353 /* MainPageTableViewController.h */,
 				19C51E5C173C89030000B353 /* MainPageTableViewController.m */,
-				1982C562173BC7AF00665C7F /* LoginViewController.h */,
-				1982C563173BC7AF00665C7F /* LoginViewController.m */,
+				61938FE8175380E200A56581 /* LoginViewController.m */,
+				61938FE9175380E200A56581 /* LoginViewController.h */,
 				19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */,
 				19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		61938FED1753814300A56581 /* SplashViewRes */ = {
+			isa = PBXGroup;
+			children = (
+				61938FEE1753816800A56581 /* telephely-ikon.png */,
+				61938FEF1753816800A56581 /* partnerek_ikon.png */,
+				61938FF01753816800A56581 /* munka-ikon2.png */,
+				61938FF11753816800A56581 /* Flotta-logo_303x209.png */,
+				61938FF21753816800A56581 /* F-saroklogo_72x72.png */,
+				61938FF31753816800A56581 /* auto-ikon.png */,
+			);
+			name = SplashViewRes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,12 +525,18 @@
 				1982C555173BC78D00665C7F /* Default.png in Resources */,
 				1982C557173BC78D00665C7F /* Default@2x.png in Resources */,
 				1982C559173BC78D00665C7F /* Default-568h@2x.png in Resources */,
-				1982C566173BC7D000665C7F /* MainStoryboard.storyboard in Resources */,
 				19C64A01173D44F1005B7F2A /* autok.png in Resources */,
 				19C64A03173D4543005B7F2A /* kontaktok.png in Resources */,
 				19C64A05173D45AD005B7F2A /* navigacio.png in Resources */,
 				19C1B3E01743B67A0053949C /* image.jpeg in Resources */,
 				19C1B3E21743B8BC0053949C /* placeholder.png in Resources */,
+				61938FEC1753811600A56581 /* MainStoryboard.storyboard in Resources */,
+				61938FF41753816800A56581 /* telephely-ikon.png in Resources */,
+				61938FF51753816800A56581 /* partnerek_ikon.png in Resources */,
+				61938FF61753816800A56581 /* munka-ikon2.png in Resources */,
+				61938FF71753816800A56581 /* Flotta-logo_303x209.png in Resources */,
+				61938FF81753816800A56581 /* F-saroklogo_72x72.png in Resources */,
+				61938FF91753816800A56581 /* auto-ikon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +549,6 @@
 			files = (
 				1982C54F173BC78D00665C7F /* main.m in Sources */,
 				1982C553173BC78D00665C7F /* AppDelegate.m in Sources */,
-				1982C564173BC7AF00665C7F /* LoginViewController.m in Sources */,
 				1982C597173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld in Sources */,
 				1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */,
 				19C51E57173C6D920000B353 /* JsonUtil.m in Sources */,
@@ -562,6 +593,7 @@
 				19D027BA1752A7E600E3AEAD /* KamionViewController.m in Sources */,
 				19D027C01752A86900E3AEAD /* KisteherautoViewController.m in Sources */,
 				19D027C31752A88B00E3AEAD /* TeherautoViewController.m in Sources */,
+				61938FEA175380E200A56581 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
