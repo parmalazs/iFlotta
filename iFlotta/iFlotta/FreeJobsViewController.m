@@ -39,7 +39,6 @@
     newBounds.origin.y = newBounds.origin.y + freeJobsSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
-    
     self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
     
     
