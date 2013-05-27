@@ -31,6 +31,25 @@
     self.partnerCim.text = [self.partnerData valueForKey:@"partnerCim"];
     self.partnerTelefonszam.text = [self.partnerData valueForKey:@"partnerTelefonszam"];
     self.PartnerEmail.text = [self.partnerData valueForKey:@"partnerEmailcim"];
+    
+    self.partnerCim.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+    
+    self.partnerNev.backgroundColor = UIColorFromRGB(0x260B01);
+    self.partnerNev.textColor = UIColorFromRGB(0xD9B384);
+    
+    
+    self.partnerTelefonszam.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+    
+    self.PartnerEmail.backgroundColor = UIColorFromRGB(0xD9B384);
+    /// ezek a labelek
+    self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.telLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.telLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
+    self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
 }
 
 - (void)didReceiveMemoryWarning

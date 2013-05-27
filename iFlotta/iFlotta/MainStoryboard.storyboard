@@ -1138,6 +1138,7 @@
                         <outlet property="nevLabel" destination="JSu-dc-OU9" id="rpB-w3-cTd"/>
                         <outlet property="soforCim" destination="b3S-cT-Gpe" id="cLs-DS-WVR"/>
                         <outlet property="soforEmail" destination="uZp-Qf-Odw" id="sUG-Dl-mz9"/>
+                        <outlet property="soforKep" destination="WED-K3-ofr" id="Od5-gF-xMr"/>
                         <outlet property="soforNev" destination="lhi-hc-zRh" id="CG7-V4-QpC"/>
                         <outlet property="soforTelefonszam" destination="6oe-pJ-gLV" id="HQ7-b2-y6h"/>
                         <outlet property="telLabel" destination="4ST-v5-ENW" id="cBo-c7-pb4"/>
@@ -1155,83 +1156,95 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PartnerNév" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdX-Lo-fOM">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SofőrNév" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Cw-KEJ">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="T97-Oo-4z7"/>
+                                    <constraint firstAttribute="height" constant="26" id="2fW-mr-R7C"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cim" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sF1-dD-BqW">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cim:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-YL-3jD">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="X83-3L-fBm"/>
+                                    <constraint firstAttribute="width" constant="57" id="072-wn-Pfb"/>
+                                    <constraint firstAttribute="height" constant="80" id="osc-n8-arB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="cim" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqQ-hm-vCU">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tel:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRv-gM-64e">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Telefonszám" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sj-uH-TzW">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5a-BA-uma">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="E-mail:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDR-1W-lLg">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="105" id="Wlc-F6-nhN"/>
+                                    <constraint firstAttribute="height" constant="35" id="Lhg-hz-6rB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSK-HK-PQW">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="e-mail" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWa-Nl-39w">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="cim" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KRc-oE-ztY">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="JGr-ni-nhv">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="L29-uR-wcJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="bb4-Zb-1gH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubd-vu-5rC">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="Wc3-ZZ-Tcg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="e-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeG-UJ-gyy">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HSK-HK-PQW" firstAttribute="leading" secondItem="ubd-vu-5rC" secondAttribute="leading" type="default" id="2kb-1n-EPD"/>
-                            <constraint firstItem="XeG-UJ-gyy" firstAttribute="leading" secondItem="ubd-vu-5rC" secondAttribute="leading" type="default" id="34T-XN-4uo"/>
-                            <constraint firstItem="kdX-Lo-fOM" firstAttribute="leading" secondItem="sF1-dD-BqW" secondAttribute="leading" type="default" id="IzI-vX-KSX"/>
-                            <constraint firstItem="kdX-Lo-fOM" firstAttribute="top" secondItem="mfK-U8-FWP" secondAttribute="top" constant="15" id="M1y-wg-hRu"/>
-                            <constraint firstAttribute="bottom" secondItem="HSK-HK-PQW" secondAttribute="bottom" constant="80" id="MQW-3g-rye"/>
-                            <constraint firstAttribute="bottom" secondItem="WqQ-hm-vCU" secondAttribute="bottom" constant="140" id="SFP-gE-iPM"/>
-                            <constraint firstItem="WqQ-hm-vCU" firstAttribute="trailing" secondItem="kdX-Lo-fOM" secondAttribute="trailing" type="default" id="VoZ-Zd-dUB"/>
-                            <constraint firstItem="kdX-Lo-fOM" firstAttribute="centerX" secondItem="mfK-U8-FWP" secondAttribute="centerX" type="default" id="XIC-Px-y63"/>
-                            <constraint firstAttribute="bottom" secondItem="XeG-UJ-gyy" secondAttribute="bottom" constant="18" id="af2-po-KRW"/>
-                            <constraint firstItem="sF1-dD-BqW" firstAttribute="top" secondItem="mfK-U8-FWP" secondAttribute="top" constant="181" id="fj0-fP-WmF"/>
-                            <constraint firstAttribute="bottom" secondItem="4Sj-uH-TzW" secondAttribute="bottom" constant="105" id="jLY-IH-mi1"/>
-                            <constraint firstItem="4Sj-uH-TzW" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="47" id="krk-ib-BtV"/>
-                            <constraint firstItem="HSK-HK-PQW" firstAttribute="trailing" secondItem="XeG-UJ-gyy" secondAttribute="trailing" type="default" id="nET-Hd-tcq"/>
-                            <constraint firstItem="HSK-HK-PQW" firstAttribute="leading" secondItem="4Sj-uH-TzW" secondAttribute="leading" type="default" id="nm7-mw-UtJ"/>
-                            <constraint firstAttribute="bottom" secondItem="ubd-vu-5rC" secondAttribute="bottom" constant="43" id="oXx-ok-9e3"/>
-                            <constraint firstItem="WqQ-hm-vCU" firstAttribute="leading" secondItem="sF1-dD-BqW" secondAttribute="leading" type="default" id="vrs-Rs-89m"/>
+                            <constraint firstItem="xWa-Nl-39w" firstAttribute="top" secondItem="e5a-BA-uma" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0pf-t7-6Oz"/>
+                            <constraint firstItem="omT-Cw-KEJ" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5a5-Pl-rCm"/>
+                            <constraint firstItem="EDR-1W-lLg" firstAttribute="top" secondItem="yRv-gM-64e" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Ehl-ZO-a4O"/>
+                            <constraint firstItem="omT-Cw-KEJ" firstAttribute="top" secondItem="mfK-U8-FWP" secondAttribute="top" constant="20" symbolic="YES" type="default" id="J75-jP-HXG"/>
+                            <constraint firstItem="yRv-gM-64e" firstAttribute="centerY" secondItem="e5a-BA-uma" secondAttribute="centerY" type="user" id="Jaw-P5-aHR"/>
+                            <constraint firstAttribute="trailing" secondItem="JGr-ni-nhv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KC1-QN-IZ0"/>
+                            <constraint firstAttribute="trailing" secondItem="e5a-BA-uma" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M11-nO-MKV"/>
+                            <constraint firstItem="yRv-gM-64e" firstAttribute="top" secondItem="OCc-YL-3jD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="R5g-PL-sPE"/>
+                            <constraint firstItem="KRc-oE-ztY" firstAttribute="top" secondItem="OCc-YL-3jD" secondAttribute="top" type="default" id="ROE-9F-bvg"/>
+                            <constraint firstAttribute="bottom" secondItem="xWa-Nl-39w" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="UA8-pA-du0"/>
+                            <constraint firstAttribute="trailing" secondItem="KRc-oE-ztY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="WX3-ti-v6u"/>
+                            <constraint firstItem="JGr-ni-nhv" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XYk-DP-Oim"/>
+                            <constraint firstItem="OCc-YL-3jD" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YBe-fG-pAt"/>
+                            <constraint firstItem="KRc-oE-ztY" firstAttribute="leading" secondItem="OCc-YL-3jD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Zwc-QX-rRr"/>
+                            <constraint firstAttribute="trailing" secondItem="omT-Cw-KEJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="d8M-x8-ovh"/>
+                            <constraint firstItem="e5a-BA-uma" firstAttribute="leading" secondItem="yRv-gM-64e" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="efp-aN-JzC"/>
+                            <constraint firstItem="OCc-YL-3jD" firstAttribute="baseline" secondItem="KRc-oE-ztY" secondAttribute="baseline" type="default" id="gmz-Xi-R0v"/>
+                            <constraint firstAttribute="bottom" secondItem="EDR-1W-lLg" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="h1r-5w-duU"/>
+                            <constraint firstItem="KRc-oE-ztY" firstAttribute="leading" secondItem="e5a-BA-uma" secondAttribute="leading" type="default" id="izi-i0-E3k"/>
+                            <constraint firstItem="xWa-Nl-39w" firstAttribute="leading" secondItem="e5a-BA-uma" secondAttribute="leading" type="default" id="owE-7B-OMD"/>
+                            <constraint firstItem="JGr-ni-nhv" firstAttribute="top" secondItem="omT-Cw-KEJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="quJ-yt-Epl"/>
+                            <constraint firstItem="yRv-gM-64e" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rsn-ga-yow"/>
+                            <constraint firstAttribute="trailing" secondItem="xWa-Nl-39w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uJO-Je-5p2"/>
+                            <constraint firstItem="EDR-1W-lLg" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vOa-cx-qoz"/>
+                            <constraint firstItem="xWa-Nl-39w" firstAttribute="leading" secondItem="EDR-1W-lLg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xgt-S9-fpF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="luP-x5-mX4"/>
                     <connections>
-                        <outlet property="PartnerEmail" destination="XeG-UJ-gyy" id="aEF-Ut-895"/>
-                        <outlet property="partnerCim" destination="WqQ-hm-vCU" id="RbI-Cn-mzw"/>
-                        <outlet property="partnerNev" destination="kdX-Lo-fOM" id="0QC-2C-bVX"/>
-                        <outlet property="partnerTelefonszam" destination="HSK-HK-PQW" id="qYl-3A-fHu"/>
+                        <outlet property="PartnerEmail" destination="xWa-Nl-39w" id="ouv-ET-xj9"/>
+                        <outlet property="emailLabel" destination="EDR-1W-lLg" id="82D-sN-nhz"/>
+                        <outlet property="nevLabel" destination="OCc-YL-3jD" id="bYa-B0-ZO8"/>
+                        <outlet property="partnerCim" destination="KRc-oE-ztY" id="VZb-Iv-Ihq"/>
+                        <outlet property="partnerNev" destination="omT-Cw-KEJ" id="lK3-yi-2bo"/>
+                        <outlet property="partnerTelefonszam" destination="e5a-BA-uma" id="IsL-Ve-bu8"/>
+                        <outlet property="telLabel" destination="yRv-gM-64e" id="jX3-kp-lkq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itE-mV-gTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1334,6 +1347,7 @@
                 <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="soforCim" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="soforEmail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="soforKep" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="soforNev" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="soforTelefonszam" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
@@ -1420,9 +1434,12 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerDetailsViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="PartnerEmail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="partnerCim" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="partnerNev" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="partnerTelefonszam" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="PartnerTableViewCell" superclassName="UITableViewCell">

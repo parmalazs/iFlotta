@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *soforCim;
 @property (weak, nonatomic) IBOutlet UILabel *soforTelefonszam;
 @property (weak, nonatomic) IBOutlet UILabel *soforEmail;
+@property (strong, nonatomic) IBOutlet UIImageView *soforKep;
 
 @property (strong, nonatomic) IBOutlet UILabel *nevLabel;
 @property (strong, nonatomic) IBOutlet UILabel *telLabel;
