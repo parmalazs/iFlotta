@@ -284,7 +284,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLT-Fw-XvW">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="NLT-Fw-XvW">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="74" id="KXF-jU-sAZ"/>
                                                 <constraint firstAttribute="width" constant="90" id="jAA-n5-CUC"/>

@@ -74,6 +74,8 @@
 		61938FF71753816800A56581 /* Flotta-logo_303x209.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF11753816800A56581 /* Flotta-logo_303x209.png */; };
 		61938FF81753816800A56581 /* F-saroklogo_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF21753816800A56581 /* F-saroklogo_72x72.png */; };
 		61938FF91753816800A56581 /* auto-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF31753816800A56581 /* auto-ikon.png */; };
+		61938FFB1753846400A56581 /* terkep-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FFA1753846400A56581 /* terkep-ikon.png */; };
+		61938FFD175384A300A56581 /* gomb_1a_146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FFC175384A300A56581 /* gomb_1a_146x120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +196,8 @@
 		61938FF11753816800A56581 /* Flotta-logo_303x209.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flotta-logo_303x209.png"; sourceTree = "<group>"; };
 		61938FF21753816800A56581 /* F-saroklogo_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "F-saroklogo_72x72.png"; sourceTree = "<group>"; };
 		61938FF31753816800A56581 /* auto-ikon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auto-ikon.png"; sourceTree = "<group>"; };
+		61938FFA1753846400A56581 /* terkep-ikon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terkep-ikon.png"; sourceTree = "<group>"; };
+		61938FFC175384A300A56581 /* gomb_1a_146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gomb_1a_146x120.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +470,8 @@
 				61938FF11753816800A56581 /* Flotta-logo_303x209.png */,
 				61938FF21753816800A56581 /* F-saroklogo_72x72.png */,
 				61938FF31753816800A56581 /* auto-ikon.png */,
+				61938FFA1753846400A56581 /* terkep-ikon.png */,
+				61938FFC175384A300A56581 /* gomb_1a_146x120.png */,
 			);
 			name = SplashViewRes;
 			sourceTree = "<group>";
@@ -537,6 +543,8 @@
 				61938FF71753816800A56581 /* Flotta-logo_303x209.png in Resources */,
 				61938FF81753816800A56581 /* F-saroklogo_72x72.png in Resources */,
 				61938FF91753816800A56581 /* auto-ikon.png in Resources */,
+				61938FFB1753846400A56581 /* terkep-ikon.png in Resources */,
+				61938FFD175384A300A56581 /* gomb_1a_146x120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

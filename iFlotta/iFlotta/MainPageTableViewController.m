@@ -14,7 +14,7 @@
 #import "SiteViewController.h"
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
-
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
 @interface MainPageTableViewController ()
@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,11 +52,11 @@
                           nil];
     
     self.ImageElements = [[NSArray alloc]
-                          initWithObjects:@"placeholder.png",
-                          @"placeholder.png",
-                          @"placeholder.png",
-                          @"placeholder.png",
-                          @"placeholder.png",
+                          initWithObjects:@"auto-ikon.png",
+                          @"munka-ikon2.png",
+                          @"partnerek_ikon.png",
+                          @"telephely-ikon.png",
+                          @"terkep-ikon.png",
                           nil];
     
     
@@ -103,7 +104,8 @@
                              [self.ImageElements objectAtIndex: [indexPath row]]];
     
     cell.imageElement.image = imageElement;
-    
+    //cell.imageElement.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gomb_1a_146x120.png"]];
+    cell.imageElement.backgroundColor = UIColorFromRGB(0x46594B);
     //cell.imageNavigate.image = [UIImage imageNamed: @"navigacio.png"];
     
     return cell;
