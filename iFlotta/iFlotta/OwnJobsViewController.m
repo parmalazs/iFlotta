@@ -1,18 +1,18 @@
 //
-//  JobsViewController.m
+//  OwnJobsViewController.m
 //  iFlott
 //
-//  Created by Csüti on 5/10/13.
+//  Created by  hallgato5 on 2013.05.27..
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "JobsViewController.h"
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-@interface JobsViewController ()
+#import "OwnJobsViewController.h"
+
+@interface OwnJobsViewController ()
 
 @end
 
-@implementation JobsViewController
+@implementation OwnJobsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

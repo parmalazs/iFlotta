@@ -10,10 +10,10 @@
 #import "MainTableViewCell.h"
 #import "CarsViewController.h"
 #import "ContactTabBarController.h"
-#import "JobsViewController.h"
 #import "SiteViewController.h"
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
+#import "JobsTabBarController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
@@ -181,8 +181,8 @@
             break;
         case 1:
         {
-            JobsViewController *jobsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsViewController"];
-            [self.navigationController pushViewController:jobsViewController animated:YES];
+            JobsTabBarController *jobsTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsTabBarController"];
+            [self.navigationController pushViewController:jobsTabBarController animated:YES];
         }
             break;
         case 3:

@@ -37,6 +37,10 @@
     [DataBaseUtil fillTelephelyTable];
     [DataBaseUtil fillAutoTable];
     [DataBaseUtil fillPartnerTable];
+    [DataBaseUtil fillMunkaTable];
+    [DataBaseUtil fillMunkatipusTable];
+    [DataBaseUtil fillAutokepTable];
+    [DataBaseUtil fillProfilkepTable];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
