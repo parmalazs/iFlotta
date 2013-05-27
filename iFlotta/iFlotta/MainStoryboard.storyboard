@@ -334,10 +334,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="rva-k4-eB3" kind="push" id="zfx-mA-46a"/>
                         <segue destination="EyN-6l-lw3" kind="push" id="irW-gd-loQ"/>
                         <segue destination="e3y-w3-fsN" kind="push" id="zAH-Hz-NBi"/>
                         <segue destination="JV6-FW-DPy" kind="push" id="hYY-Wq-Hgs"/>
+                        <segue destination="19U-k4-kUa" kind="push" id="VzP-r8-JoS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ek-Lj-1I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -647,35 +647,124 @@
             </objects>
             <point key="canvasLocation" x="1953" y="1841"/>
         </scene>
-        <!--Jobs View Controller - Munkák-->
-        <scene sceneID="oqb-SK-x1Y">
+        <!--Own Jobs View Controller - Saját munák-->
+        <scene sceneID="izl-iA-Dtk">
             <objects>
-                <tableViewController storyboardIdentifier="jobsViewController" id="rva-k4-eB3" customClass="JobsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ix1-5K-vTj">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                <viewController storyboardIdentifier="ownJobsViewController" id="WTz-yP-E7m" customClass="OwnJobsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9E3-6e-98E">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Pm3-MK-kml">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mBo-YD-ZYk">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ownJobsTableViewCell" id="mIw-q8-YXM" customClass="OwnJobsTableViewCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0m-z4-hH6">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="233" id="Eb8-hG-oWN"/>
+                                                <constraint firstAttribute="height" constant="32" id="jVX-3c-NMs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="i0m-z4-hH6" firstAttribute="centerY" secondItem="mIw-q8-YXM" secondAttribute="centerY" type="default" id="6fr-su-Kor"/>
+                                    <constraint firstItem="i0m-z4-hH6" firstAttribute="leading" secondItem="mIw-q8-YXM" secondAttribute="leading" constant="20" type="default" id="ENR-mu-Kbd"/>
+                                </constraints>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="rva-k4-eB3" id="T0g-2L-NP0"/>
-                            <outlet property="delegate" destination="rva-k4-eB3" id="ZLa-cs-QhT"/>
-                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Munkák" id="2fr-NS-GXy"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M1p-zz-fDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <tabBarItem key="tabBarItem" title="Saját munák" id="z3c-oo-NsT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqd-As-4DA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="-352"/>
+            <point key="canvasLocation" x="764" y="-241"/>
+        </scene>
+        <!--Free Jobs View Controller - Szabad munkák-->
+        <scene sceneID="yLo-JZ-7BY">
+            <objects>
+                <viewController storyboardIdentifier="freeJobsViewController" id="zGc-lY-9NE" customClass="FreeJobsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Pqs-qn-VB2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Roy-gZ-81q">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="freeJobsTableViewCell" id="Kcl-uA-ZZA" customClass="FreeJobsTableViewCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aP-Q9-uJd">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="239" id="WAT-s3-VKo"/>
+                                                <constraint firstAttribute="height" constant="41" id="mk0-N9-gIZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="9aP-Q9-uJd" firstAttribute="leading" secondItem="Kcl-uA-ZZA" secondAttribute="leading" constant="20" type="default" id="6JF-89-QJO"/>
+                                    <constraint firstItem="9aP-Q9-uJd" firstAttribute="centerY" secondItem="Kcl-uA-ZZA" secondAttribute="centerY" type="default" id="Nvt-aR-fjY"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="jobLabel" destination="9aP-Q9-uJd" id="FWi-m2-0Fn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Szabad munkák" id="U6m-Rf-obK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJc-7M-DjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="-821"/>
+        </scene>
+        <!--Jobs Tab Bar Controller-->
+        <scene sceneID="3Ug-kD-qCN">
+            <objects>
+                <tabBarController storyboardIdentifier="jobsTabBarController" definesPresentationContext="YES" id="19U-k4-kUa" customClass="JobsTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pd2-Yo-8mk"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="hzj-qF-kqq">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zGc-lY-9NE" kind="relationship" relationship="viewControllers" id="hXK-gT-weU"/>
+                        <segue destination="WTz-yP-E7m" kind="relationship" relationship="viewControllers" id="8ao-x9-VzI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNj-Cg-Qre" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="323" y="-348"/>
         </scene>
         <!--Main Page Navigation View Controller-->
         <scene sceneID="hex-aO-kn5">
@@ -1294,164 +1383,6 @@
         <image name="F-saroklogo_72x72.png" width="72" height="72"/>
         <image name="Flotta-logo_303x209.png" width="303" height="209"/>
     </resources>
-    <classes>
-        <class className="AdminViewController" superclassName="PagerViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminViewController.h"/>
-        </class>
-        <class className="BuszViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszViewController.h"/>
-        </class>
-        <class className="CarAddViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarAddViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-            </relationships>
-        </class>
-        <class className="CarsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CarsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsViewController.h"/>
-        </class>
-        <class className="ContactTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButton:"/>
-            </relationships>
-        </class>
-        <class className="DriverDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="soforCim" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="soforEmail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="soforNev" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="soforTelefonszam" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DriverTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="driverLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DriverViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="driverSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="InitViewController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
-        </class>
-        <class className="JarmuTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JarmuTabBarController.h"/>
-        </class>
-        <class className="JobsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JobsViewController.h"/>
-        </class>
-        <class className="KamionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionViewController.h"/>
-        </class>
-        <class className="KisteherautoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoViewController.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="userLoginButton:"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="logo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic4" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userPasswordLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MainPageNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageNavigationViewController.h"/>
-        </class>
-        <class className="MainPageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageTableViewController.h"/>
-        </class>
-        <class className="MainTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageElement" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="imageNavigate" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelElement" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PagerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PagerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PartnerDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="PartnerEmail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="partnerCim" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="partnerNev" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="partnerTelefonszam" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PartnerTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="partnerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PartnerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="partnerSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="SiteDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="siteMail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="siteName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sitePhone" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SiteTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SiteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="TeherautoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

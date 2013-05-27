@@ -1,18 +1,24 @@
 //
-//  JobsViewController.m
+//  FreeJobsViewController.m
 //  iFlott
 //
-//  Created by Csüti on 5/10/13.
+//  Created by  hallgato5 on 2013.05.27..
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "JobsViewController.h"
+#import "FreeJobsViewController.h"
+#import "DataBaseUtil.h"
+#import "Munka.h"
+#import "FreeJobsTableViewCell.h"
 
-@interface JobsViewController ()
+
+@interface FreeJobsViewController ()
 
 @end
 
-@implementation JobsViewController
+@implementation FreeJobsViewController
+@synthesize freeJobsSearchBar;
+@synthesize filteredFreeJobsArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,12 +32,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [freeJobsSearchBar sizeToFit];
+    
+    CGRect newBounds = [[self tableView] bounds];
+    newBounds.origin.y = newBounds.origin.y + freeJobsSearchBar.bounds.size.height;
+    [[self tableView] setBounds:newBounds];
+    
+    
+    self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
+    
+    
+    filteredFreeJobsArray = [NSMutableArray arrayWithCapacity:[self.freeJobsArray count]];
+    [[self tableView] reloadData];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,22 +70,50 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        return [filteredFreeJobsArray count];
+    }
+	else
+	{
+        return [self.freeJobsArray count];
+    }
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"freeJobsTableViewCell";
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:CellIdentifier];
+    }
+    
+    Munka *job= nil;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        job = [filteredFreeJobsArray objectAtIndex:[indexPath row]];
+        
+        [[cell textLabel] setText:[job munkaDate]];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+	else
+	{
+        job = [self.freeJobsArray objectAtIndex:[indexPath row]];
+        [[(FreeJobsTableViewCell*)cell jobLabel] setText:[job munkaDate]];
+    }
     
     return cell;
 }
@@ -105,17 +157,5 @@
 }
 */
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 @end
