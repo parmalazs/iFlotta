@@ -53,11 +53,12 @@
 {
     [super viewDidLoad];
     
-    loginButton.hidden = true;
-    userName.hidden = true;
-    userNameLabel.hidden =true;
-    userPassword.hidden = true;
-    userPasswordLabel.hidden = true;
+   // loginButton.hidden = true;
+    loginButton.alpha = 0.0;
+    userName.alpha = 0.0;
+    userNameLabel.alpha = 0.0;
+    userPassword.alpha = 0.0;
+    userPasswordLabel.alpha = 0.0;
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     idx = 0;
     _imgPicsArray = [NSArray arrayWithObjects:@"auto-ikon.png", @"telephely-ikon.png", @"partnerek_ikon.png", @"munka-ikon2.png", nil];
@@ -97,15 +98,101 @@
 }
 
 -(void)changeToLogin{
-    pic1.hidden = true;
-    pic2.hidden = true;
-    pic3.hidden = true;
-    pic4.hidden = true;
-    loginButton.hidden = false;
-    userName.hidden = false;
-    userNameLabel.hidden =false;
-    userPassword.hidden = false;
-    userPasswordLabel.hidden = false;
+    
+    // ikonok eltunnek
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         pic1.alpha = 0.0;
+                     } 
+                     completion:^(BOOL finished){
+                         
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         pic2.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         pic3.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         pic4.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+//    pic1.hidden = true;
+//    pic2.hidden = true;
+//    pic3.hidden = true;
+//    pic4.hidden = true;
+    
+    // login view megjelenik:
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         loginButton.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         userName.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         userNameLabel.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         userPassword.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    [UIView animateWithDuration:0.5
+                          delay:1.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         userPasswordLabel.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    
+//    loginButton.hidden = false;
+//    userName.hidden = false;
+//    userNameLabel.hidden =false;
+//    userPassword.hidden = false;
+//    userPasswordLabel.hidden = false;
 
 }
 
