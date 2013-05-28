@@ -16,4 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *sitePhone;
 @property (weak, nonatomic) IBOutlet UILabel *siteMail;
 
+
+@property (strong, nonatomic) IBOutlet UILabel *nevLabel;
+@property (strong, nonatomic) IBOutlet UILabel *telLabel;
+@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @end

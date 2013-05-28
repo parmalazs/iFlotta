@@ -32,7 +32,24 @@
     self.sitePhone.text = [self.siteData valueForKey:@"telephelyTelefonszam"];
     self.siteMail.text = [self.siteData valueForKey:@"telephelyEmail"];
     
+    self.siteAddress.backgroundColor = UIColorFromRGB(0xD9B384);
     
+    
+    self.siteName.backgroundColor = UIColorFromRGB(0x260B01);
+    self.siteName.textColor = UIColorFromRGB(0xD9B384);
+    
+    
+    self.sitePhone.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+    
+    self.siteMail.backgroundColor = UIColorFromRGB(0xD9B384);
+    /// ezek a labelek
+    self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.telLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.telLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
+    self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
 	// Do any additional setup after loading the view.
 }
 
