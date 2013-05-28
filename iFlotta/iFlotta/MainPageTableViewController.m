@@ -64,7 +64,7 @@
                           nil];
     
     self.ImageElements = [[NSArray alloc]
-                          initWithObjects:@"admin146x120.png",
+                          initWithObjects:@"car146x120.png",
                           @"jobs146x120.png",
                           @"partnerek146x120.png",
                           @"telephelyek146x120.png",
