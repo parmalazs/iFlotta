@@ -380,7 +380,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="rrg-Ag-XBl"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="RO5-io-H5s"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="RO5-io-H5s"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -943,7 +943,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-wm-ko6"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-wm-ko6"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1305,7 +1305,7 @@
                                     <constraint firstAttribute="height" constant="128" id="ogR-5E-dmN"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="kMl-zN-bce"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="kMl-zN-bce"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1412,7 +1412,7 @@
                                     <constraint firstAttribute="height" constant="128" id="bb4-Zb-1gH"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wmq-vF-9OX"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wmq-vF-9OX"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
