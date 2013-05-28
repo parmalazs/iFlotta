@@ -111,8 +111,9 @@
     // Configure the cell...
     cell.labelElement.text = [self.labelElements
                               objectAtIndex: [indexPath row]];
-    cell.labelElement.textColor = UIColorFromRGB(0xFFFFFF);
+    cell.labelElement.textColor = UIColorFromRGB(0xD9B384);
     cell.labelElement.backgroundColor = UIColorFromRGB(0x260B01);
+    
     
     UIImage *imageElement = [UIImage imageNamed:
                              [self.ImageElements objectAtIndex: [indexPath row]]];
