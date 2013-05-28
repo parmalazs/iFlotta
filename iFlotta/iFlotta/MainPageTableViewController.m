@@ -115,7 +115,7 @@
                               objectAtIndex: [indexPath row]];
     cell.labelElement.textColor = UIColorFromRGB(0xD9B384);
     cell.labelElement.backgroundColor = UIColorFromRGB(0x260B01);
-    cell.contentView.backgroundColor= UIColorFromRGB(<#rgbValue#>);
+    cell.contentView.backgroundColor= UIColorFromRGB(0x260B01);
     
     
     UIImage *imageElement = [UIImage imageNamed:
