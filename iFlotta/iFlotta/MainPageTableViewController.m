@@ -65,11 +65,11 @@
                           nil];
     
     self.ImageElements = [[NSArray alloc]
-                          initWithObjects:@"auto-ikon.png",
-                          @"munka-ikon2.png",
-                          @"partnerek_ikon.png",
-                          @"telephely-ikon.png",
-                          @"terkep-ikon.png",
+                          initWithObjects:@"admin146x120.png",
+                          @"jobs146x120.png",
+                          @"partnerek146x120.png",
+                          @"telephelyek146x120.png",
+                          @"terkep146x120.png",
                           nil];
     
     [self.navigationController.navigationBar setTintColor:UIColorFromRGB(0x46594B)];
@@ -112,14 +112,15 @@
     // Configure the cell...
     cell.labelElement.text = [self.labelElements
                               objectAtIndex: [indexPath row]];
-    cell.labelElement.backgroundColor = UIColorFromRGB(0xD9B384);
+    cell.labelElement.textColor = UIColorFromRGB(0xFFFFFF);
+    cell.labelElement.backgroundColor = UIColorFromRGB(0x260B01);
     
     UIImage *imageElement = [UIImage imageNamed:
                              [self.ImageElements objectAtIndex: [indexPath row]]];
     
     cell.imageElement.image = imageElement;
     //cell.imageElement.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gomb_1a_146x120.png"]];
-    cell.imageElement.backgroundColor = UIColorFromRGB(0x46594B);
+    //cell.imageElement.backgroundColor = UIColorFromRGB(0x260B01);
     //cell.imageNavigate.image = [UIImage imageNamed: @"navigacio.png"];
     
     return cell;

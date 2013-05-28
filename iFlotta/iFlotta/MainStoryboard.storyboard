@@ -288,12 +288,13 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="NLT-Fw-XvW">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="74" id="8pJ-3d-bmN"/>
-                                                <constraint firstAttribute="width" constant="74" id="Ef0-7o-6Ay"/>
+                                                <constraint firstAttribute="width" constant="74" type="user" id="Ef0-7o-6Ay"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCn-7y-zjh">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="196" id="xkC-gn-ZeB"/>
+                                                <constraint firstAttribute="height" constant="45" id="8jG-I3-jGP"/>
+                                                <constraint firstAttribute="width" constant="178" id="fHm-jH-QCw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -302,11 +303,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="NLT-Fw-XvW" firstAttribute="bottom" secondItem="gCn-7y-zjh" secondAttribute="bottom" type="default" id="NvM-Xd-JuU"/>
-                                    <constraint firstItem="NLT-Fw-XvW" firstAttribute="centerY" secondItem="UCE-ku-BvS" secondAttribute="centerY" type="default" id="b8p-aP-2AA"/>
-                                    <constraint firstItem="NLT-Fw-XvW" firstAttribute="top" secondItem="gCn-7y-zjh" secondAttribute="top" type="default" id="hH0-8h-lLX"/>
-                                    <constraint firstAttribute="trailing" secondItem="gCn-7y-zjh" secondAttribute="trailing" constant="20" type="default" id="jBW-OE-7Jg"/>
-                                    <constraint firstItem="NLT-Fw-XvW" firstAttribute="leading" secondItem="UCE-ku-BvS" secondAttribute="leading" constant="20" type="default" id="xov-vH-uOy"/>
+                                    <constraint firstItem="gCn-7y-zjh" firstAttribute="top" secondItem="UCE-ku-BvS" secondAttribute="top" constant="20" type="default" id="NH3-OU-GLw"/>
+                                    <constraint firstItem="NLT-Fw-XvW" firstAttribute="centerY" secondItem="UCE-ku-BvS" secondAttribute="centerY" type="default" id="mJ9-hK-a4w"/>
+                                    <constraint firstItem="NLT-Fw-XvW" firstAttribute="leading" secondItem="UCE-ku-BvS" secondAttribute="leading" constant="20" type="user" id="xov-vH-uOy"/>
+                                    <constraint firstItem="gCn-7y-zjh" firstAttribute="leading" secondItem="NLT-Fw-XvW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="z0z-fx-UE9"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageElement" destination="NLT-Fw-XvW" id="PFG-kV-kmv"/>
