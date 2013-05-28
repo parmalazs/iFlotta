@@ -38,7 +38,7 @@
     
     [object setObject:@"iOS" forKey:@"soforPass"];
     [object setObject:@"iOS" forKey:@"soforNev"];
-    [object setObject:@"323" forKey:@"soforID"];
+    [object setObject:@"3555" forKey:@"soforId"];
     [object setObject:@"iOS" forKey:@"soforCim"];
     [object setObject:@"iOS" forKey:@"soforLogin"];
     [object setObject:@"iOS" forKey:@"soforRegTime"];
@@ -47,7 +47,7 @@
     [object setObject:@"iOS" forKey:@"soforTelefonszam"];
     [object setObject:@"1" forKey:@"soforIsAdmin"];
     [object setObject:@"2" forKey:@"soforProfilKepID"];
-    //[object setObject:@"1" forKey:@"soforIsActive"];
+    [object setObject:@"1" forKey:@"soforIsActive"];
     
     NSMutableDictionary* json = [[NSMutableDictionary alloc] init];
     
@@ -55,10 +55,13 @@
     [json setObject:object forKey:@"objects"];
     [json setObject:@"insert" forKey:@"action"];
     [json setObject:@"sofor" forKey:@"tableName"];
-
+    
+    NSMutableDictionary* jsonv = [[NSMutableDictionary alloc] init];
+    [jsonv setObject:json forKey:@"json"];
+    
     
     NSError* error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&error];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonv options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
 
@@ -68,22 +71,7 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL
-                                                 URLWithString:@"http://www.flotta.host-ed.me/index.php"]];
-    /*
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"text/json" forHTTPHeaderField:@"Content-type"];
-      
-    [request setValue:[NSString stringWithFormat:@"%d",
-                       [js length]]
-     
-    forHTTPHeaderField:@"Content-length"];
-    
-    [request setHTTPBody:[js
-                          dataUsingEncoding:NSUTF8StringEncoding]];
-    
-     [[NSURLConnection alloc] initWithRequest:request delegate:self];*/
-    
-    
+                                                 URLWithString:@"http://www.flotta.host-ed.me/index33.php"]];
     
     NSData *requestData = [NSData dataWithBytes:[js UTF8String] length:[js length]];
     
@@ -97,8 +85,6 @@
     if (connection) {
         NSLog(@"Válasz");
     }
-    
-    
-    //return jsonString;
+
 }
 @end
