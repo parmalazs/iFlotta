@@ -101,6 +101,12 @@
                 reuseIdentifier:CellIdentifier];
     }
     
+    if ([indexPath row] % 2) {
+        cell.contentView.backgroundColor = UIColorFromRGB(0xA6977C);
+    }else{
+        cell.contentView.backgroundColor = UIColorFromRGB(0xD9B384);
+    }
+    
     Munka *job= nil;
     
     if (tableView == self.searchDisplayController.searchResultsTableView)
