@@ -344,7 +344,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="Ot4-HH-5C7">
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" showsScopeBar="YES" id="Ot4-HH-5C7">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -657,14 +657,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Pm3-MK-kml">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="TP9-7x-Hdv">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ownJobsTableViewCell" id="mIw-q8-YXM" customClass="OwnJobsTableViewCell">
@@ -698,6 +694,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Saját munák" id="z3c-oo-NsT"/>
                     <connections>
+                        <outlet property="ownJobsSearchBar" destination="TP9-7x-Hdv" id="DMd-gZ-zmQ"/>
                         <segue destination="OVw-mr-vLz" kind="push" identifier="ownJobDetails" id="pGF-8r-quG"/>
                     </connections>
                 </viewController>
@@ -713,10 +710,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Roy-gZ-81q">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="7tV-XF-flB">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="freeJobsTableViewCell" id="Kcl-uA-ZZA" customClass="FreeJobsTableViewCell">
@@ -750,6 +751,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Szabad munkák" id="U6m-Rf-obK"/>
                     <connections>
+                        <outlet property="freeJobsSearchBar" destination="7tV-XF-flB" id="fCX-pl-6HW"/>
                         <segue destination="15X-u6-sq6" kind="push" identifier="freeJobDetails" id="hEs-qA-9Qp"/>
                     </connections>
                 </viewController>

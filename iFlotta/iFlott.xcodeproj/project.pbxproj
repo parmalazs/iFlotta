@@ -82,6 +82,14 @@
 		61938FF91753816800A56581 /* auto-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FF31753816800A56581 /* auto-ikon.png */; };
 		61938FFB1753846400A56581 /* terkep-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FFA1753846400A56581 /* terkep-ikon.png */; };
 		61938FFD175384A300A56581 /* gomb_1a_146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FFC175384A300A56581 /* gomb_1a_146x120.png */; };
+		61A24ECC1754C40F00423A9F /* admin146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC41754C40F00423A9F /* admin146x120.png */; };
+		61A24ECD1754C40F00423A9F /* car146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC51754C40F00423A9F /* car146x120.png */; };
+		61A24ECE1754C40F00423A9F /* foto146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC61754C40F00423A9F /* foto146x120.png */; };
+		61A24ECF1754C40F00423A9F /* gomb146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC71754C40F00423A9F /* gomb146x120.png */; };
+		61A24ED01754C40F00423A9F /* jobs146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC81754C40F00423A9F /* jobs146x120.png */; };
+		61A24ED11754C40F00423A9F /* partnerek146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC91754C40F00423A9F /* partnerek146x120.png */; };
+		61A24ED21754C40F00423A9F /* telephelyek146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECA1754C40F00423A9F /* telephelyek146x120.png */; };
+		61A24ED31754C40F00423A9F /* terkep146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECB1754C40F00423A9F /* terkep146x120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -216,6 +224,14 @@
 		61938FF31753816800A56581 /* auto-ikon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auto-ikon.png"; sourceTree = "<group>"; };
 		61938FFA1753846400A56581 /* terkep-ikon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terkep-ikon.png"; sourceTree = "<group>"; };
 		61938FFC175384A300A56581 /* gomb_1a_146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gomb_1a_146x120.png; sourceTree = "<group>"; };
+		61A24EC41754C40F00423A9F /* admin146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = admin146x120.png; sourceTree = "<group>"; };
+		61A24EC51754C40F00423A9F /* car146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car146x120.png; sourceTree = "<group>"; };
+		61A24EC61754C40F00423A9F /* foto146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foto146x120.png; sourceTree = "<group>"; };
+		61A24EC71754C40F00423A9F /* gomb146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gomb146x120.png; sourceTree = "<group>"; };
+		61A24EC81754C40F00423A9F /* jobs146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jobs146x120.png; sourceTree = "<group>"; };
+		61A24EC91754C40F00423A9F /* partnerek146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partnerek146x120.png; sourceTree = "<group>"; };
+		61A24ECA1754C40F00423A9F /* telephelyek146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telephelyek146x120.png; sourceTree = "<group>"; };
+		61A24ECB1754C40F00423A9F /* terkep146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terkep146x120.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +297,7 @@
 		1982C549173BC78D00665C7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				61A24EC31754C3FC00423A9F /* ikonok */,
 				1982C595173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld */,
 				1982C54A173BC78D00665C7F /* iFlott-Info.plist */,
 				1982C54B173BC78D00665C7F /* InfoPlist.strings */,
@@ -506,6 +523,21 @@
 			name = SplashViewRes;
 			sourceTree = "<group>";
 		};
+		61A24EC31754C3FC00423A9F /* ikonok */ = {
+			isa = PBXGroup;
+			children = (
+				61A24EC41754C40F00423A9F /* admin146x120.png */,
+				61A24EC51754C40F00423A9F /* car146x120.png */,
+				61A24EC61754C40F00423A9F /* foto146x120.png */,
+				61A24EC71754C40F00423A9F /* gomb146x120.png */,
+				61A24EC81754C40F00423A9F /* jobs146x120.png */,
+				61A24EC91754C40F00423A9F /* partnerek146x120.png */,
+				61A24ECA1754C40F00423A9F /* telephelyek146x120.png */,
+				61A24ECB1754C40F00423A9F /* terkep146x120.png */,
+			);
+			name = ikonok;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -575,6 +607,14 @@
 				61938FF91753816800A56581 /* auto-ikon.png in Resources */,
 				61938FFB1753846400A56581 /* terkep-ikon.png in Resources */,
 				61938FFD175384A300A56581 /* gomb_1a_146x120.png in Resources */,
+				61A24ECC1754C40F00423A9F /* admin146x120.png in Resources */,
+				61A24ECD1754C40F00423A9F /* car146x120.png in Resources */,
+				61A24ECE1754C40F00423A9F /* foto146x120.png in Resources */,
+				61A24ECF1754C40F00423A9F /* gomb146x120.png in Resources */,
+				61A24ED01754C40F00423A9F /* jobs146x120.png in Resources */,
+				61A24ED11754C40F00423A9F /* partnerek146x120.png in Resources */,
+				61A24ED21754C40F00423A9F /* telephelyek146x120.png in Resources */,
+				61A24ED31754C40F00423A9F /* terkep146x120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

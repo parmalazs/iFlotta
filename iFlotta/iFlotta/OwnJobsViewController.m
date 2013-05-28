@@ -11,7 +11,7 @@
 #import "Munka.h"
 #import "OwnJobsTableViewCell.h"
 #import "OwnJobDetailsViewController.h"
-
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface OwnJobsViewController ()
 
 @end
@@ -32,9 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [super viewDidLoad];
-    
+    self.view.backgroundColor = UIColorFromRGB(0xA6977C);
+    [ownJobsSearchBar setShowsScopeBar:NO];
     [ownJobsSearchBar sizeToFit];
+    [ownJobsSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     CGRect newBounds = [[self tableView] bounds];
     newBounds.origin.y = newBounds.origin.y + ownJobsSearchBar.bounds.size.height;
@@ -68,14 +69,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
     if (tableView == self.searchDisplayController.searchResultsTableView)
 	{

@@ -11,7 +11,7 @@
 #import "Munka.h"
 #import "FreeJobsTableViewCell.h"
 #import "FreeJobDetailsViewController.h"
-
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface FreeJobsViewController ()
 
@@ -33,11 +33,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = UIColorFromRGB(0xA6977C);
+    [freeJobsSearchBar setShowsScopeBar:NO];
     [freeJobsSearchBar sizeToFit];
+    [freeJobsSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    
     
     CGRect newBounds = [[self tableView] bounds];
-    newBounds.origin.y = newBounds.origin.y + freeJobsSearchBar.bounds.size.height;
+    newBounds.origin.y = newBounds.origin.y ;//+ //freeJobsSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
     self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
@@ -68,14 +71,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
