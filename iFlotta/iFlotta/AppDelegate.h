@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Sofor.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -532,6 +532,48 @@ static NSString *aktUser;
 }
 
 
++(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    Sofor* newSofor = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Sofor"
+                               inManagedObjectContext:context];
+    
+    [newSofor setValue:soforNev forKey:@"soforNev"];
+    [newSofor setValue:soforLogin forKey:@"soforLogin"];
+    [newSofor setValue:soforPass forKey:@"soforPass"];
+    [newSofor setValue:[NSNumber numberWithBool:[soforIsActive boolValue]] forKey:@"soforIsActive"];
+    [newSofor setValue:[NSNumber numberWithBool:[soforIsAdmin boolValue] ] forKey:@"soforIsAdmin"];
+    [newSofor setValue:[NSNumber numberWithInt:[soforID intValue]] forKey:@"soforID"];
+    [newSofor setValue:[NSNumber numberWithInt:[soforProfilKepId intValue]] forKey:@"soforProfilKepId"];
+    [newSofor setValue:soforBirthDate forKey:@"soforBirthDate"];
+    [newSofor setValue:soforCim forKey:@"soforCim"];
+    [newSofor setValue:soforEmail forKey:@"soforEmail"];
+    [newSofor setValue:soforRegTime forKey:@"soforRegTime"];
+    [newSofor setValue:soforTelefonszam forKey:@"soforTelefonszam"];
+    
+    [self saveContext:context];
+}
+
++ (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID {
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:entityName inManagedObjectContext:context];
+    
+    NSPredicate *Predicate = [NSPredicate predicateWithFormat:@"%K == %@", IDName, ID];
+    
+    [fetchRequest setPredicate:Predicate];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
+
 + (BOOL) IsEmpty:(id) thing {
     return thing == nil
     || [thing isKindOfClass:[NSNull class]]

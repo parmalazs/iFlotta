@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Auto.h"
+
 
 @class CarAddViewController;
 @class Auto;
@@ -15,7 +17,6 @@
 
 - (void)carAddViewControllerDidCancel:(CarAddViewController *)controller;
 - (void)carAddViewController:(CarAddViewController *)controller didAddCar:(NSString *)car;
-
 @end
 
 @interface CarAddViewController : UITableViewController
