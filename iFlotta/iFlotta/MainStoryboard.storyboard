@@ -380,6 +380,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="rrg-Ag-XBl"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="RO5-io-H5s"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -387,6 +388,7 @@
                             <constraint firstAttribute="bottom" secondItem="TTm-uk-2to" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="4Je-rE-Id4"/>
                             <constraint firstItem="FJW-cQ-6Cj" firstAttribute="top" secondItem="yZu-tn-Rc5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6W8-Cy-AR7"/>
                             <constraint firstItem="fPs-W0-xu0" firstAttribute="leading" secondItem="yZu-tn-Rc5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="7Hh-VE-7If"/>
+                            <constraint firstAttribute="bottom" secondItem="RO5-io-H5s" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="7Pe-aM-cpS"/>
                             <constraint firstItem="XTF-2w-Dkp" firstAttribute="leading" secondItem="FJW-cQ-6Cj" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="DKW-Yu-C1g"/>
                             <constraint firstAttribute="trailing" secondItem="TTm-uk-2to" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FbY-jv-eLy"/>
                             <constraint firstItem="XTF-2w-Dkp" firstAttribute="top" secondItem="fPs-W0-xu0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="GTb-jY-XqV"/>
@@ -400,6 +402,7 @@
                             <constraint firstItem="XTF-2w-Dkp" firstAttribute="leading" secondItem="TTm-uk-2to" secondAttribute="leading" type="default" id="gNU-RF-PT5"/>
                             <constraint firstItem="rrg-Ag-XBl" firstAttribute="leading" secondItem="Cvy-Fc-NZg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gZu-Q5-lEx"/>
                             <constraint firstAttribute="trailing" secondItem="fPs-W0-xu0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gwC-v7-GFg"/>
+                            <constraint firstAttribute="trailing" secondItem="RO5-io-H5s" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hJA-vN-YBc"/>
                             <constraint firstItem="czC-Ko-aCs" firstAttribute="top" secondItem="FJW-cQ-6Cj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hWB-Qb-u06"/>
                             <constraint firstAttribute="trailing" secondItem="XTF-2w-Dkp" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hpz-Jp-zxa"/>
                             <constraint firstItem="fPs-W0-xu0" firstAttribute="top" secondItem="rrg-Ag-XBl" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kot-3q-qx1"/>
@@ -425,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZK-dU-o0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="2997"/>
+            <point key="canvasLocation" x="1921" y="2997"/>
         </scene>
         <!--Cars View Controller - Autók-->
         <scene sceneID="jTj-5A-Ncw">
@@ -514,7 +517,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="i5b-1f-3YC">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="i5b-1f-3YC" customClass="CarsTableViewCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -568,7 +571,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2WQ-1E-2Dh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2WQ-1E-2Dh" customClass="CarsTableViewCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -615,7 +618,7 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AutoNév" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhe-Uu-2au">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="RzR-lo-OV7"/>
+                                    <constraint firstAttribute="height" constant="26" id="iMp-FO-BTw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -660,17 +663,19 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-Th-BrX">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="182" id="u8m-NU-Id9"/>
+                                    <constraint firstAttribute="height" constant="145" id="pgs-eB-ih1"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="UPO-Si-IlJ"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UPO-Si-IlJ" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="0FW-qN-tgw"/>
                             <constraint firstItem="05d-gV-qna" firstAttribute="leading" secondItem="5va-eY-TWD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="2mA-qg-sAU"/>
+                            <constraint firstItem="CZz-Hf-ZtL" firstAttribute="bottom" secondItem="2La-cZ-qIL" secondAttribute="bottom" type="default" id="3mG-hH-aOa"/>
                             <constraint firstAttribute="trailing" secondItem="ddn-Ea-72z" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3zT-ya-7FI"/>
                             <constraint firstItem="Gcb-Th-BrX" firstAttribute="leading" secondItem="2La-cZ-qIL" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6eX-cY-56B"/>
                             <constraint firstItem="wrV-Zo-vHe" firstAttribute="leading" secondItem="2La-cZ-qIL" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DTO-gh-Hh7"/>
-                            <constraint firstItem="ddn-Ea-72z" firstAttribute="top" secondItem="Gcb-Th-BrX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="GJa-PU-7qu"/>
                             <constraint firstItem="Nx3-ji-MkX" firstAttribute="top" secondItem="5va-eY-TWD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="GZi-Nc-5Jk"/>
                             <constraint firstItem="wrV-Zo-vHe" firstAttribute="baseline" secondItem="ddn-Ea-72z" secondAttribute="baseline" type="default" id="Pia-ik-w7N"/>
                             <constraint firstItem="05d-gV-qna" firstAttribute="baseline" secondItem="5va-eY-TWD" secondAttribute="baseline" type="default" id="Q9d-dp-elg"/>
@@ -681,21 +686,26 @@
                             <constraint firstAttribute="trailing" secondItem="CZz-Hf-ZtL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a6c-Uy-lEG"/>
                             <constraint firstAttribute="trailing" secondItem="dhe-Uu-2au" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dlc-4A-ars"/>
                             <constraint firstItem="dhe-Uu-2au" firstAttribute="top" secondItem="2La-cZ-qIL" secondAttribute="top" constant="20" symbolic="YES" type="default" id="e83-SD-2ga"/>
-                            <constraint firstItem="Nx3-ji-MkX" firstAttribute="baseline" secondItem="CZz-Hf-ZtL" secondAttribute="baseline" type="default" id="ecO-7r-cFQ"/>
                             <constraint firstItem="05d-gV-qna" firstAttribute="leading" secondItem="ddn-Ea-72z" secondAttribute="leading" type="default" id="i97-44-b9j"/>
+                            <constraint firstAttribute="trailing" secondItem="UPO-Si-IlJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mKD-yT-jAB"/>
                             <constraint firstItem="Gcb-Th-BrX" firstAttribute="top" secondItem="dhe-Uu-2au" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n9S-bN-H2O"/>
-                            <constraint firstItem="wrV-Zo-vHe" firstAttribute="top" secondItem="Gcb-Th-BrX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oKL-F9-2tC"/>
                             <constraint firstItem="05d-gV-qna" firstAttribute="leading" secondItem="CZz-Hf-ZtL" secondAttribute="leading" type="default" id="qCY-zh-kUL"/>
                             <constraint firstItem="Nx3-ji-MkX" firstAttribute="leading" secondItem="2La-cZ-qIL" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qbJ-Qk-TAs"/>
+                            <constraint firstItem="wrV-Zo-vHe" firstAttribute="top" secondItem="ddn-Ea-72z" secondAttribute="top" type="default" id="s4r-a2-r4w"/>
                             <constraint firstAttribute="trailing" secondItem="Gcb-Th-BrX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tJe-O5-yBd"/>
                             <constraint firstItem="5va-eY-TWD" firstAttribute="leading" secondItem="2La-cZ-qIL" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yGg-lU-zRK"/>
                             <constraint firstItem="CZz-Hf-ZtL" firstAttribute="top" secondItem="05d-gV-qna" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ybA-1X-NMc"/>
+                            <constraint firstItem="Nx3-ji-MkX" firstAttribute="bottom" secondItem="2La-cZ-qIL" secondAttribute="bottom" type="default" id="z7W-6U-vjE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SVJ-ja-kyT"/>
                     <connections>
+                        <outlet property="benzin" destination="Nx3-ji-MkX" id="a8V-tr-v0G"/>
                         <outlet property="fuel" destination="CZz-Hf-ZtL" id="h1k-ZH-2up"/>
+                        <outlet property="km" destination="5va-eY-TWD" id="m89-ww-alg"/>
+                        <outlet property="name" destination="dhe-Uu-2au" id="40m-Ob-j1i"/>
                         <outlet property="speedometer" destination="05d-gV-qna" id="b1B-Fa-NjM"/>
+                        <outlet property="tipus" destination="wrV-Zo-vHe" id="QcM-En-4mo"/>
                         <outlet property="vehicleType" destination="ddn-Ea-72z" id="zSV-On-vt2"/>
                     </connections>
                 </viewController>
@@ -720,7 +730,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="x8d-d6-dkz">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="x8d-d6-dkz" customClass="CarsTableViewCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -933,6 +943,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-wm-ko6"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -940,6 +951,7 @@
                             <constraint firstItem="JaQ-QW-2Gv" firstAttribute="leading" secondItem="WSx-UF-FIr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2WH-Na-Zk4"/>
                             <constraint firstItem="Lih-1I-Qfs" firstAttribute="top" secondItem="WSx-UF-FIr" secondAttribute="top" constant="20" symbolic="YES" type="default" id="2pp-SD-y3b"/>
                             <constraint firstItem="fIO-V9-0UM" firstAttribute="baseline" secondItem="DO1-Bi-kt6" secondAttribute="baseline" type="default" id="3BQ-8u-fU5"/>
+                            <constraint firstAttribute="trailing" secondItem="qHN-wm-ko6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3rm-us-Lam"/>
                             <constraint firstAttribute="trailing" secondItem="vcC-EY-2Bq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6b1-Fc-oVn"/>
                             <constraint firstItem="oWv-J5-CFR" firstAttribute="top" secondItem="DO1-Bi-kt6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AjF-qu-WpE"/>
                             <constraint firstAttribute="trailing" secondItem="idu-3j-8zD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="E5y-Dr-fgl"/>
@@ -967,6 +979,7 @@
                             <constraint firstAttribute="trailing" secondItem="acc-UO-myn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rLu-Ln-InY"/>
                             <constraint firstItem="oWv-J5-CFR" firstAttribute="baseline" secondItem="vcC-EY-2Bq" secondAttribute="baseline" type="default" id="tMd-ck-pyH"/>
                             <constraint firstItem="idu-3j-8zD" firstAttribute="leading" secondItem="FJe-nw-unS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wnO-lW-qtY"/>
+                            <constraint firstAttribute="bottom" secondItem="qHN-wm-ko6" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="yZ9-JY-Jjb"/>
                             <constraint firstItem="acc-UO-myn" firstAttribute="leading" secondItem="vcC-EY-2Bq" secondAttribute="leading" type="default" id="z5T-Iz-tGt"/>
                         </constraints>
                     </view>
@@ -1292,6 +1305,7 @@
                                     <constraint firstAttribute="height" constant="128" id="ogR-5E-dmN"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="kMl-zN-bce"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1304,6 +1318,7 @@
                             <constraint firstItem="b3S-cT-Gpe" firstAttribute="leading" secondItem="6oe-pJ-gLV" secondAttribute="leading" type="default" id="8oV-lf-ONE"/>
                             <constraint firstItem="uZp-Qf-Odw" firstAttribute="top" secondItem="6oe-pJ-gLV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BP9-GC-xsi"/>
                             <constraint firstItem="ho3-mW-Vpo" firstAttribute="top" secondItem="4ST-v5-ENW" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Ceh-bu-2cv"/>
+                            <constraint firstAttribute="trailing" secondItem="kMl-zN-bce" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="DEz-kB-qe7"/>
                             <constraint firstItem="JSu-dc-OU9" firstAttribute="top" secondItem="b3S-cT-Gpe" secondAttribute="top" type="default" id="FPU-N1-GnZ"/>
                             <constraint firstItem="b3S-cT-Gpe" firstAttribute="leading" secondItem="JSu-dc-OU9" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="H03-rQ-nFx"/>
                             <constraint firstItem="WED-K3-ofr" firstAttribute="leading" secondItem="e1U-XQ-vp7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="N7n-yj-Vih"/>
@@ -1314,6 +1329,7 @@
                             <constraint firstItem="ho3-mW-Vpo" firstAttribute="leading" secondItem="e1U-XQ-vp7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zei-Af-Wwb"/>
                             <constraint firstAttribute="trailing" secondItem="b3S-cT-Gpe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zlc-4s-RdE"/>
                             <constraint firstItem="uZp-Qf-Odw" firstAttribute="leading" secondItem="6oe-pJ-gLV" secondAttribute="leading" type="default" id="aqQ-RO-eyh"/>
+                            <constraint firstAttribute="bottom" secondItem="kMl-zN-bce" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="dc6-O4-WoN"/>
                             <constraint firstItem="lhi-hc-zRh" firstAttribute="leading" secondItem="e1U-XQ-vp7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="h3K-jQ-m1D"/>
                             <constraint firstAttribute="trailing" secondItem="lhi-hc-zRh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hcH-eR-mUm"/>
                             <constraint firstItem="WED-K3-ofr" firstAttribute="top" secondItem="lhi-hc-zRh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="izJ-rS-OlI"/>
@@ -1396,6 +1412,7 @@
                                     <constraint firstAttribute="height" constant="128" id="bb4-Zb-1gH"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wmq-vF-9OX"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1408,6 +1425,7 @@
                             <constraint firstAttribute="trailing" secondItem="e5a-BA-uma" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M11-nO-MKV"/>
                             <constraint firstItem="yRv-gM-64e" firstAttribute="top" secondItem="OCc-YL-3jD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="R5g-PL-sPE"/>
                             <constraint firstItem="KRc-oE-ztY" firstAttribute="top" secondItem="OCc-YL-3jD" secondAttribute="top" type="default" id="ROE-9F-bvg"/>
+                            <constraint firstAttribute="trailing" secondItem="Wmq-vF-9OX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RVT-Oj-NwE"/>
                             <constraint firstAttribute="bottom" secondItem="xWa-Nl-39w" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="UA8-pA-du0"/>
                             <constraint firstAttribute="trailing" secondItem="KRc-oE-ztY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="WX3-ti-v6u"/>
                             <constraint firstItem="JGr-ni-nhv" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XYk-DP-Oim"/>
@@ -1421,6 +1439,7 @@
                             <constraint firstItem="xWa-Nl-39w" firstAttribute="leading" secondItem="e5a-BA-uma" secondAttribute="leading" type="default" id="owE-7B-OMD"/>
                             <constraint firstItem="JGr-ni-nhv" firstAttribute="top" secondItem="omT-Cw-KEJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="quJ-yt-Epl"/>
                             <constraint firstItem="yRv-gM-64e" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rsn-ga-yow"/>
+                            <constraint firstAttribute="bottom" secondItem="Wmq-vF-9OX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="sdK-Ak-hnY"/>
                             <constraint firstAttribute="trailing" secondItem="xWa-Nl-39w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uJO-Je-5p2"/>
                             <constraint firstItem="EDR-1W-lLg" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vOa-cx-qoz"/>
                             <constraint firstItem="xWa-Nl-39w" firstAttribute="leading" secondItem="EDR-1W-lLg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xgt-S9-fpF"/>
@@ -1481,7 +1500,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CTj-wH-vvw">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CTj-wH-vvw" customClass="CarsTableViewCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1735,8 +1754,12 @@
         <class className="VehiclesDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VehiclesDetailsViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="benzin" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fuel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="km" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="speedometer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tipus" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="vehicleType" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -1747,7 +1770,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="AgI-bM-gSi"/>
+        <segue reference="z7O-ae-DV0"/>
         <segue reference="Ja8-X1-z4r"/>
     </inferredMetricsTieBreakers>
 </document>
