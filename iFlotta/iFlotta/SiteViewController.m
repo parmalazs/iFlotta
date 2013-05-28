@@ -214,7 +214,7 @@
 	[self.filteredSiteArray removeAllObjects];
     
 	// Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@) or (SELF.telephelyCim contains[c] %@)",searchText,searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@) or (SELF.telephelyCim contains[c] %@ or (SELF.telephelyEmail contains[c] %@ or (SELF.telephelyTelefonszam contains[c] %@)",searchText,searchText,searchText,searchText];
     NSArray *tempArray = [self.siteArray filteredArrayUsingPredicate:predicate];
     
     if([scope isEqualToString:@"Név"])
@@ -228,7 +228,16 @@
         NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyCim contains[c] %@",searchText];
         tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
     }
-    
+    else if([scope isEqualToString:@"Email"])
+    {
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyEmail contains[c] %@",searchText];
+        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    else if([scope isEqualToString:@"Tel"])
+    {
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyTelefonszam contains[c] %@",searchText];
+        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
+    }
     filteredSiteArray = [NSMutableArray arrayWithArray:tempArray];
     //NSLog(@"Array: %d", filteredSiteArray.count);
 }
