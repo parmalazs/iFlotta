@@ -278,11 +278,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainTableViewCell" rowHeight="86" id="UCE-ku-BvS" customClass="MainTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainTableViewCell" rowHeight="86" id="UCE-ku-BvS" customClass="MainTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="85"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="NLT-Fw-XvW">
@@ -520,9 +520,17 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="dr4-cg-ya1">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="ErY-Ue-ijr" id="hRe-FF-8dU"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="carsTableViewCell" id="VN7-ZJ-Mrr" customClass="CarsTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -555,8 +563,21 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Autó" id="EoW-eX-lgi"/>
                     <navigationItem key="navigationItem" title="Autók" id="rpf-09-6SN"/>
+                    <connections>
+                        <outlet property="carsSearchBar" destination="dr4-cg-ya1" id="z2C-mc-PmV"/>
+                        <outlet property="searchDisplayController" destination="KWZ-QK-cHz" id="lQ6-p3-uNy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWp-cT-QmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="KWZ-QK-cHz">
+                    <connections>
+                        <outlet property="delegate" destination="ErY-Ue-ijr" id="dhF-fW-bPt"/>
+                        <outlet property="searchBar" destination="dr4-cg-ya1" id="82q-Zf-INB"/>
+                        <outlet property="searchContentsController" destination="ErY-Ue-ijr" id="ode-It-EfL"/>
+                        <outlet property="searchResultsDataSource" destination="ErY-Ue-ijr" id="yTu-0F-bKY"/>
+                        <outlet property="searchResultsDelegate" destination="ErY-Ue-ijr" id="5ds-Mf-qcD"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1102" y="1921"/>
         </scene>
@@ -598,9 +619,17 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="OuP-ch-vmS">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="yQk-cA-cG6" id="wZc-xl-yYS"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2WQ-1E-2Dh">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -615,8 +644,21 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Kisteherautó" id="8rA-sF-pQs"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="KfQ-mJ-UbY" id="LIp-m9-B9J"/>
+                        <outlet property="vanSearchBar" destination="OuP-ch-vmS" id="AR0-Bd-DKg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wj5-Z8-cRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="KfQ-mJ-UbY">
+                    <connections>
+                        <outlet property="delegate" destination="yQk-cA-cG6" id="ckt-fa-rWP"/>
+                        <outlet property="searchBar" destination="OuP-ch-vmS" id="ptc-fz-vyG"/>
+                        <outlet property="searchContentsController" destination="yQk-cA-cG6" id="VvZ-Uj-dBs"/>
+                        <outlet property="searchResultsDataSource" destination="yQk-cA-cG6" id="mcW-l8-nrS"/>
+                        <outlet property="searchResultsDelegate" destination="yQk-cA-cG6" id="coJ-LQ-WuD"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1509" y="1909"/>
         </scene>
@@ -1473,6 +1515,9 @@
         </class>
         <class className="CarsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="carsSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
         </class>
         <class className="ContactTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
@@ -1540,6 +1585,9 @@
         </class>
         <class className="KisteherautoViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="vanSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
