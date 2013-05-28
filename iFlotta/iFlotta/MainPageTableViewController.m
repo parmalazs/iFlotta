@@ -46,8 +46,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    //[self adminButton]
-
+    // Admin ellenőrzés
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
@@ -57,7 +56,7 @@
     
     
     self.labelElements = [[NSArray alloc]
-                          initWithObjects:@"Autók",
+                          initWithObjects:@"Járművek",
                           @"Munkák",
                           @"Kontaktok",
                           @"Telephelyek",
@@ -168,16 +167,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    NSString*mystring;
-    mystring = [self.tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    NSLog(@"%@",mystring);
     
     switch (indexPath.row) {
         case 2:
