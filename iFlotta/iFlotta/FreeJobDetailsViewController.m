@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
 	self.view.backgroundColor = UIColorFromRGB(0xA6977C);
+    //self.searchDisplayController.searchBar.backgroundColor = UIColorFromRGB(0x46594B);
 }
 
 - (void)didReceiveMemoryWarning

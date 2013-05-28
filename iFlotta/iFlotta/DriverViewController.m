@@ -36,6 +36,7 @@
     
     [driverSearchBar setShowsScopeBar:NO];
     [driverSearchBar sizeToFit];
+    [driverSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     
     CGRect newBounds = [[self tableView] bounds];
@@ -64,15 +65,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
         return [filteredDriverArray count];

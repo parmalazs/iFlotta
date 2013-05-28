@@ -36,6 +36,7 @@
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     [partnerSearchBar setShowsScopeBar:NO];
     [partnerSearchBar sizeToFit];
+    [partnerSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     
     CGRect newBounds = [[self tableView] bounds];

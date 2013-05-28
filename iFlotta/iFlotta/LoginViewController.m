@@ -105,7 +105,7 @@
     // ikonok eltunnek
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          pic1.alpha = 0.0;
                      } 
@@ -114,7 +114,7 @@
                      }];
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          pic2.alpha = 0.0;
                      }
@@ -123,7 +123,7 @@
                      }];
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          pic3.alpha = 0.0;
                      }
@@ -132,7 +132,7 @@
                      }];
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          pic4.alpha = 0.0;
                      }
@@ -147,7 +147,7 @@
     // login view megjelenik:
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          loginButton.alpha = 1.0;
                      }
@@ -156,7 +156,7 @@
                      }];
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          userName.alpha = 1.0;
                      }
@@ -165,7 +165,7 @@
                      }];
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          userNameLabel.alpha = 1.0;
                      }
@@ -174,7 +174,7 @@
                      }];
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          userPassword.alpha = 1.0;
                      }
@@ -183,7 +183,7 @@
                      }];
     [UIView animateWithDuration:0.5
                           delay:1.0
-                        options: UIViewAnimationCurveEaseOut
+                        options: (UIViewAnimationOptions)UIViewAnimationCurveEaseOut
                      animations:^{
                          userPasswordLabel.alpha = 1.0;
                      }

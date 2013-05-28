@@ -34,10 +34,13 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
+    [freeJobsSearchBar setShowsScopeBar:NO];
     [freeJobsSearchBar sizeToFit];
+    [freeJobsSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    
     
     CGRect newBounds = [[self tableView] bounds];
-    newBounds.origin.y = newBounds.origin.y + freeJobsSearchBar.bounds.size.height;
+    newBounds.origin.y = newBounds.origin.y ;//+ //freeJobsSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
     self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
@@ -68,14 +71,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     if (tableView == self.searchDisplayController.searchResultsTableView)
 	{

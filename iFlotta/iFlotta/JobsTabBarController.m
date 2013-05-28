@@ -32,6 +32,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
+    [self.searchDisplayController.searchBar setTintColor:UIColorFromRGB(0x260B01)];
+    [self.searchDisplayController.searchBar setShowsScopeBar:NO];
+}
+
+-(void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated{
+    
 }
 
 - (void)didReceiveMemoryWarning

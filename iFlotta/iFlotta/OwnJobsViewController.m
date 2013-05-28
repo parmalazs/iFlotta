@@ -33,8 +33,9 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    
+    [ownJobsSearchBar setShowsScopeBar:NO];
     [ownJobsSearchBar sizeToFit];
+    [ownJobsSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     CGRect newBounds = [[self tableView] bounds];
     newBounds.origin.y = newBounds.origin.y + ownJobsSearchBar.bounds.size.height;
@@ -68,14 +69,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
     if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
