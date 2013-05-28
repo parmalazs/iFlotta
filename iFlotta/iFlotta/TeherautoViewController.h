@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TeherautoViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UISearchBar *truckSearchBar;
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface KamionViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UISearchBar *camionSearchBar;
 
 @end

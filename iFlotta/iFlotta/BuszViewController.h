@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BuszViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UISearchBar *busSearchBar;
 
 @end
