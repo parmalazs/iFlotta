@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "DataBaseUtil.h"
 #import "JsonUtil.h"
-
+#import "Sofor.h"
 
 @implementation AppDelegate
 
@@ -26,7 +26,13 @@
 
     
     [self initDatabase];
-    [JsonUtil getJson];
+    
+    // Ezzel a három hivással lehet beszúrni lokális adatbázisbe, utána lekérdezzük azt, majd a kapott objektumot elküldjük
+    //[DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:555] :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :[[NSNumber alloc] initWithBool:YES] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithBool:YES]];
+    
+    //NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :@"444"];
+    
+    //[JsonUtil JsonBuilderSender:obj :@"Sofor"];
     
     return YES;
 }

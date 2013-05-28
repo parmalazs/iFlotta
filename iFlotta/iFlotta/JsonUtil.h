@@ -10,6 +10,7 @@
 
 @interface JsonUtil : NSObject
     +(NSDictionary*)dictionaryWithContentsOfJSONURLString:(NSString*)urlAddress;
-    +(NSData*)toJSON;
     +(void)getJson;
+    +(void)JsonBuilderSender:(NSArray*) senderObject : (NSString*) objectTipus;
+    +(void)JsonSender:(NSMutableDictionary*) jsonStringSend;
 @end
