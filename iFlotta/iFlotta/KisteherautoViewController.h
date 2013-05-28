@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface KisteherautoViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UISearchBar *vanSearchBar;
 
 @end

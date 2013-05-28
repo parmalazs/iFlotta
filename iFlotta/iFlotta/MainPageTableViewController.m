@@ -64,7 +64,7 @@
                           nil];
     
     self.ImageElements = [[NSArray alloc]
-                          initWithObjects:@"admin146x120.png",
+                          initWithObjects:@"car146x120.png",
                           @"jobs146x120.png",
                           @"partnerek146x120.png",
                           @"telephelyek146x120.png",
@@ -106,6 +106,12 @@
         cell = [[MainTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
+    }
+    
+    if ([indexPath row] % 2) {
+        cell.contentView.backgroundColor = UIColorFromRGB(0xA6977C);
+    }else{
+        cell.contentView.backgroundColor = UIColorFromRGB(0xD9B384);
     }
     
     // Configure the cell...
