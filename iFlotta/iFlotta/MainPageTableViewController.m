@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColorFromRGB(0xA6977C);
+    //self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -108,17 +108,14 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    if ([indexPath row] % 2) {
-        cell.contentView.backgroundColor = UIColorFromRGB(0xA6977C);
-    }else{
-        cell.contentView.backgroundColor = UIColorFromRGB(0xD9B384);
-    }
+    
     
     // Configure the cell...
     cell.labelElement.text = [self.labelElements
                               objectAtIndex: [indexPath row]];
     cell.labelElement.textColor = UIColorFromRGB(0xD9B384);
     cell.labelElement.backgroundColor = UIColorFromRGB(0x260B01);
+    cell.contentView.backgroundColor= UIColorFromRGB(<#rgbValue#>);
     
     
     UIImage *imageElement = [UIImage imageNamed:
