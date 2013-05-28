@@ -30,6 +30,8 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonStringSend options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
+    [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL
                                                  URLWithString:@"http://www.flotta.host-ed.me/index33.php"]];
@@ -38,15 +40,19 @@
     
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody: requestData];
     
-    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-    if (connection) {
-        NSLog(@"Válasz");
-    }
     
+    //NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    
+    NSURLResponse *theResponse =[[NSURLResponse alloc]init];
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&theResponse error:&error];
+    //[request setHTTPBody:data];
+    NSLog(@"Válasz1: %@", data);
+    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Válasz2: %@", string);
 }
 
 +(void)JsonBuilderSender:(NSArray*) senderObject : (NSString*) objectTipus {
