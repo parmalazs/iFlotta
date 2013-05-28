@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CarsViewController : UITableViewController
-@property (strong, nonatomic) IBOutlet UISearchBar *carsSearchBar;
-@property (nonatomic, strong) NSArray *carsLabel;
+@interface CarsViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSArray *cellLabelName;
+@property (strong, nonatomic) NSMutableArray *filteredArray;
 @end

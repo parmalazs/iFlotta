@@ -37,14 +37,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.view.backgroundColor = UIColorFromRGB(0xA6977C);
+    self.view.backgroundColor = UIColorFromRGB(0x260B01);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+   
     
     // Admin ellenőrzés
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
@@ -115,7 +115,7 @@
                               objectAtIndex: [indexPath row]];
     cell.labelElement.textColor = UIColorFromRGB(0xD9B384);
     cell.labelElement.backgroundColor = UIColorFromRGB(0x260B01);
-    cell.contentView.backgroundColor= UIColorFromRGB(0x260B01);
+    cell.contentView.backgroundColor= UIColorFromRGB(0xA6977C);
     
     
     UIImage *imageElement = [UIImage imageNamed:
