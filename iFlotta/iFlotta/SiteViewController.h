@@ -13,5 +13,4 @@
 @property IBOutlet UISearchBar *siteSearchBar;
 @property (nonatomic, strong) NSArray *siteArray;
 @property (strong,nonatomic) NSMutableArray *filteredSiteArray;
-
 @end

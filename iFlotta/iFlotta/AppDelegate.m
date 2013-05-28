@@ -34,6 +34,8 @@
     
     //[JsonUtil JsonBuilderSender:obj :@"Sofor"];
     
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -13,6 +13,10 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "Telephely.h"
+#import "TSPopoverController.h"
+#import "TSActionSheet.h"
+
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface SiteViewController ()
@@ -46,16 +50,15 @@
     newBounds.origin.y = newBounds.origin.y + siteSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
+    UIBarButtonItem * topRightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showActionSheet:forEvent:)];
+    //self.navigationItem.rightBarButtonItem = topRightButton;
+    
+    
+    
+    self.TAB = topRightButton;
     
     self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive"];
 
-    // beúszó menü inicializálása
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    }
-    
-    // Ezzel van a probléma!!!!!!!!!!
-    //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     filteredSiteArray = [NSMutableArray arrayWithCapacity:[self.siteArray count]];
     [[self tableView] reloadData];
@@ -214,7 +217,7 @@
 	[self.filteredSiteArray removeAllObjects];
     
 	// Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@) or (SELF.telephelyCim contains[c] %@ or (SELF.telephelyEmail contains[c] %@ or (SELF.telephelyTelefonszam contains[c] %@)",searchText,searchText,searchText,searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@) or (SELF.telephelyCim contains[c] %@ or SELF.telephelyEmail contains[c] %@ or SELF.telephelyTelefonszam contains[c] %@)",searchText,searchText,searchText,searchText];
     NSArray *tempArray = [self.siteArray filteredArrayUsingPredicate:predicate];
     
     if([scope isEqualToString:@"Név"])
@@ -266,5 +269,25 @@
     return YES;
 }
 
+-(void) showActionSheet:(id)sender forEvent:(UIEvent*)event
+{
+    TSActionSheet *actionSheet = [[TSActionSheet alloc] initWithTitle:@"action sheet"];
+    [actionSheet destructiveButtonWithTitle:@"hoge" block:nil];
+    [actionSheet addButtonWithTitle:@"hoge1" block:^{
+        NSLog(@"pushed hoge1 button");
+    }];
+    [actionSheet addButtonWithTitle:@"moge2" block:^{
+        NSLog(@"pushed hoge2 button");
+    }];
+    [actionSheet cancelButtonWithTitle:@"Cancel" block:nil];
+    actionSheet.cornerRadius = 5;
+    
+    
+    [actionSheet showWithTouch:event];
+}
 
+- (IBAction)rendezesek:(id)sender {
+    UIEvent *event;
+    NSSet *touches = [event touchesForView:sender];
+}
 @end

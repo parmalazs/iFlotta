@@ -45,6 +45,11 @@
 		19C64A05173D45AD005B7F2A /* navigacio.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C64A04173D45AD005B7F2A /* navigacio.png */; };
 		19C64A0B173D5A9C005B7F2A /* CarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A0A173D5A9C005B7F2A /* CarsViewController.m */; };
 		19C64A14173D7646005B7F2A /* ContactTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C64A13173D7646005B7F2A /* ContactTabBarController.m */; };
+		19CAEF621755543D004C2214 /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAEF5717555144004C2214 /* UIBarButtonItem+WEPopover.m */; };
+		19CAEF6317555440004C2214 /* TSPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAEF5917555145004C2214 /* TSPopoverController.m */; };
+		19CAEF6417555442004C2214 /* TSPopoverTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAEF5B17555147004C2214 /* TSPopoverTouchView.m */; };
+		19CAEF651755544D004C2214 /* TSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAEF601755514A004C2214 /* TSActionSheet.m */; };
+		19CAEF6617555455004C2214 /* TSPopoverPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CAEF5E17555149004C2214 /* TSPopoverPopoverView.m */; };
 		19D0278417521EF000E3AEAD /* Autokep.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278317521EF000E3AEAD /* Autokep.m */; };
 		19D0278717521EF100E3AEAD /* Auto.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278617521EF100E3AEAD /* Auto.m */; };
 		19D0278A17521EF100E3AEAD /* Munkakep.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0278917521EF100E3AEAD /* Munkakep.m */; };
@@ -157,6 +162,17 @@
 		19C64A0A173D5A9C005B7F2A /* CarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarsViewController.m; sourceTree = "<group>"; };
 		19C64A12173D7646005B7F2A /* ContactTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTabBarController.h; sourceTree = "<group>"; };
 		19C64A13173D7646005B7F2A /* ContactTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTabBarController.m; sourceTree = "<group>"; };
+		19CAEF5617555143004C2214 /* UIBarButtonItem+WEPopover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WEPopover.h"; sourceTree = "<group>"; };
+		19CAEF5717555144004C2214 /* UIBarButtonItem+WEPopover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WEPopover.m"; sourceTree = "<group>"; };
+		19CAEF5817555145004C2214 /* TSPopoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPopoverController.h; sourceTree = "<group>"; };
+		19CAEF5917555145004C2214 /* TSPopoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPopoverController.m; sourceTree = "<group>"; };
+		19CAEF5A17555146004C2214 /* TSPopoverTouchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPopoverTouchView.h; sourceTree = "<group>"; };
+		19CAEF5B17555147004C2214 /* TSPopoverTouchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPopoverTouchView.m; sourceTree = "<group>"; };
+		19CAEF5C17555147004C2214 /* TSPopoverTouchesDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPopoverTouchesDelegate.h; sourceTree = "<group>"; };
+		19CAEF5D17555148004C2214 /* TSPopoverPopoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPopoverPopoverView.h; sourceTree = "<group>"; };
+		19CAEF5E17555149004C2214 /* TSPopoverPopoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPopoverPopoverView.m; sourceTree = "<group>"; };
+		19CAEF5F17555149004C2214 /* TSActionSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSActionSheet.h; sourceTree = "<group>"; };
+		19CAEF601755514A004C2214 /* TSActionSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSActionSheet.m; sourceTree = "<group>"; };
 		19D0278217521EF000E3AEAD /* Autokep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Autokep.h; sourceTree = "<group>"; };
 		19D0278317521EF000E3AEAD /* Autokep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Autokep.m; sourceTree = "<group>"; };
 		19D0278517521EF100E3AEAD /* Auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auto.h; sourceTree = "<group>"; };
@@ -280,6 +296,7 @@
 		1982C548173BC78D00665C7F /* iFlotta */ = {
 			isa = PBXGroup;
 			children = (
+				19CAEF6117555156004C2214 /* Popup */,
 				61938FEB1753811600A56581 /* MainStoryboard.storyboard */,
 				1982C551173BC78D00665C7F /* AppDelegate.h */,
 				1982C552173BC78D00665C7F /* AppDelegate.m */,
@@ -414,6 +431,24 @@
 				19C64A00173D44F1005B7F2A /* autok.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		19CAEF6117555156004C2214 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				19CAEF5617555143004C2214 /* UIBarButtonItem+WEPopover.h */,
+				19CAEF5717555144004C2214 /* UIBarButtonItem+WEPopover.m */,
+				19CAEF5817555145004C2214 /* TSPopoverController.h */,
+				19CAEF5917555145004C2214 /* TSPopoverController.m */,
+				19CAEF5A17555146004C2214 /* TSPopoverTouchView.h */,
+				19CAEF5B17555147004C2214 /* TSPopoverTouchView.m */,
+				19CAEF5C17555147004C2214 /* TSPopoverTouchesDelegate.h */,
+				19CAEF5D17555148004C2214 /* TSPopoverPopoverView.h */,
+				19CAEF5E17555149004C2214 /* TSPopoverPopoverView.m */,
+				19CAEF5F17555149004C2214 /* TSActionSheet.h */,
+				19CAEF601755514A004C2214 /* TSActionSheet.m */,
+			);
+			name = Popup;
 			sourceTree = "<group>";
 		};
 		19D027C41752AA8F00E3AEAD /* Jarmu */ = {
@@ -678,6 +713,11 @@
 				603EAD331753AD0400104181 /* OwnJobsTableViewCell.m in Sources */,
 				60D27F3E1753EF82003C9D92 /* FreeJobDetailsViewController.m in Sources */,
 				60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */,
+				19CAEF621755543D004C2214 /* UIBarButtonItem+WEPopover.m in Sources */,
+				19CAEF6317555440004C2214 /* TSPopoverController.m in Sources */,
+				19CAEF6417555442004C2214 /* TSPopoverTouchView.m in Sources */,
+				19CAEF651755544D004C2214 /* TSActionSheet.m in Sources */,
+				19CAEF6617555455004C2214 /* TSPopoverPopoverView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
