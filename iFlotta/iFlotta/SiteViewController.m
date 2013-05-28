@@ -49,10 +49,10 @@
     
     self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive"];
 
-    // beúszó menü inicializálása
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    }
+//    // beúszó menü inicializálása
+//    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+//        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+//    }
     
     // Ezzel van a probléma!!!!!!!!!!
     //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
