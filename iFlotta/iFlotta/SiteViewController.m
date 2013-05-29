@@ -40,6 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     [siteSearchBar setShowsScopeBar:NO];
     [siteSearchBar sizeToFit];
@@ -49,13 +50,6 @@
     CGRect newBounds = [[self tableView] bounds];
     newBounds.origin.y = newBounds.origin.y + siteSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
-    
-    UIBarButtonItem * topRightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showActionSheet:forEvent:)];
-    //self.navigationItem.rightBarButtonItem = topRightButton;
-    
-    
-    
-    self.TAB = topRightButton;
     
     self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive"];
 
@@ -267,27 +261,5 @@
     
     // Return YES to cause the search result table view to be reloaded.
     return YES;
-}
-
--(void) showActionSheet:(id)sender forEvent:(UIEvent*)event
-{
-    TSActionSheet *actionSheet = [[TSActionSheet alloc] initWithTitle:@"action sheet"];
-    [actionSheet destructiveButtonWithTitle:@"hoge" block:nil];
-    [actionSheet addButtonWithTitle:@"hoge1" block:^{
-        NSLog(@"pushed hoge1 button");
-    }];
-    [actionSheet addButtonWithTitle:@"moge2" block:^{
-        NSLog(@"pushed hoge2 button");
-    }];
-    [actionSheet cancelButtonWithTitle:@"Cancel" block:nil];
-    actionSheet.cornerRadius = 5;
-    
-    
-    [actionSheet showWithTouch:event];
-}
-
-- (IBAction)rendezesek:(id)sender {
-    UIEvent *event;
-    NSSet *touches = [event touchesForView:sender];
 }
 @end
