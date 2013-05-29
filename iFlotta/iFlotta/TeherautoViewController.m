@@ -165,7 +165,6 @@
         tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
     }
     self.filteredArray = [NSMutableArray arrayWithArray:tempArray];
-    //NSLog(@"Array: %d", filteredSiteArray.count);
 }
 
 
