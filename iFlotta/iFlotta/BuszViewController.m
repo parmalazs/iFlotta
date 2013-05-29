@@ -9,6 +9,7 @@
 #import "BuszViewController.h"
 #import "DataBaseUtil.h"
 #import "CarsTableViewCell.h"
+#import "BuszTableViewCell.h"
 #import "VehiclesDetailsViewController.h"
 #import "Auto.h"
 
@@ -82,7 +83,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /// ezt ne fejeltsd el atirni ha masolod!
-    static NSString *CellIdentifier = @"carsTableViewCell";
+    static NSString *CellIdentifier = @"buszTableViewCell";
     
     
     /// az autok menunel MINDENHOL ez a cella fog szerepelni, igy ez masolhato.
@@ -113,7 +114,8 @@
 	else
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
-        [[(CarsTableViewCell*)cell buszLabel] setText:[car autoNev]];
+        NSLog(@"LOG: %@",[car autoNev]);
+        [[(BuszTableViewCell*)cell buszLabel] setText:[car autoNev]];
     }
     
     return cell;

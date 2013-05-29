@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KisteherautoViewController : UITableViewController
+@interface KisteherautoViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *vanSearchBar;
-
+@property (nonatomic, strong) NSArray *cellLabelName;
+@property (strong, nonatomic) NSMutableArray *filteredArray;
 @end
