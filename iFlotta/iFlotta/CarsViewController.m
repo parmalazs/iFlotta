@@ -9,6 +9,7 @@
 #import "CarsViewController.h"
 #import "DataBaseUtil.h"
 #import "CarsTableViewCell.h"
+#import "VehiclesDetailsViewController.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -159,19 +160,19 @@
 /// ennek kellene egy osztalyt felvenni.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    if ( [[segue identifier] isEqualToString:@"siteDetails"] ) {
-//        CarDetailsViewController *siteDetailsViewController = [segue destinationViewController];
-//        
-//        if(sender == self.searchDisplayController.searchResultsTableView) {
-//            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-//            siteDetailsViewController.siteData = [self.filteredArray objectAtIndex: [indexPath row]];
-//        }
-//        else {
-//            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//            siteDetailsViewController.siteData = [self.cellLabelName objectAtIndex: [indexPath row]];
-//        }
+    if ( [[segue identifier] isEqualToString:@"siteDetails"] ) {
+        VehiclesDetailsViewController *siteDetailsViewController = [segue destinationViewController];
+        
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            siteDetailsViewController.vehicleType = [self.filteredArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            siteDetailsViewController.vehicleType = [self.cellLabelName objectAtIndex: [indexPath row]];
+        }
     
- //   }
+    }
 }
 
 #pragma mark Content Filtering
