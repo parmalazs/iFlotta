@@ -19,7 +19,9 @@
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
-@interface MainPageTableViewController ()
+@interface MainPageTableViewController (){
+    BOOL _isAdmin;
+}
 
 @end
 
@@ -50,7 +52,9 @@
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
-        
+        _isAdmin = NO;
+    }else{
+        _isAdmin = YES;
     }
     
     
@@ -172,34 +176,58 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    _isAdmin = NO;
     
     switch (indexPath.row) {
         case 2:
         {
-            ContactTabBarController *contactTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactTabBarController"];
-            [self.navigationController pushViewController:contactTabBarController animated:YES];
+            if(_isAdmin){
+                ContactTabBarController *contactTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactAdminTabBarController"];
+                [self.navigationController pushViewController:contactTabBarController animated:YES];
+            }else{
+                
+                ContactTabBarController *contactTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactTabBarController"];
+                [self.navigationController pushViewController:contactTabBarController animated:YES];
+            }
         }
             break;
         case 0:
         {
-            CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jarmuTabBarController"];
-            [self.navigationController pushViewController:carsViewController animated:YES];
+            if(_isAdmin){
+                CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jarmuAdminTabBarController"];
+                [self.navigationController pushViewController:carsViewController animated:YES];
+            }else{
+            
+                CarsViewController *carsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jarmuTabBarController"];
+                [self.navigationController pushViewController:carsViewController animated:YES];
+            }
         }
             break;
         case 1:
         {
-            JobsTabBarController *jobsTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsTabBarController"];
-            [self.navigationController pushViewController:jobsTabBarController animated:YES];
+            if(_isAdmin){
+                JobsTabBarController *jobsTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsAdminTabBarController"];
+                [self.navigationController pushViewController:jobsTabBarController animated:YES];
+            }else{
+                JobsTabBarController *jobsTabBarController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobsTabBarController"];
+                [self.navigationController pushViewController:jobsTabBarController animated:YES];
+            }
         }
             break;
         case 3:
         {
-            SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"initViewController"];
-            [self.navigationController pushViewController:siteViewController animated:YES];
+            if(_isAdmin){
+                SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"initViewController"];
+                [self.navigationController pushViewController:siteViewController animated:YES];
+            }else{
+                SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"initViewController"];
+                [self.navigationController pushViewController:siteViewController animated:YES];
+            }
         }
             break;
         case 4:
         {
+            /// hu bazd meg meg ez is :< agyfaszt kapok az iOS-tol.
             // Térkép
         }
             break;
