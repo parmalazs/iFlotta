@@ -20,4 +20,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *tipus;
 @property (strong, nonatomic) IBOutlet UILabel *km;
 
+@property (strong, nonatomic) IBOutlet UIImageView *profilImage;
 @end

@@ -27,7 +27,27 @@
 {
     [super viewDidLoad];
 	self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    //self.searchDisplayController.searchBar.backgroundColor = UIColorFromRGB(0x46594B);
+    
+//    self.jobAttribute1.text = [self.driverData valueForKey:@"soforCim"];
+    self.jobAttribute1.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+//    self.jobAttribute2.text = [self.driverData valueForKey:@"soforNev"];
+    self.jobAttribute2.backgroundColor = UIColorFromRGB(0x260B01);
+    self.jobAttribute2.textColor = UIColorFromRGB(0xD9B384);
+    
+//    self.jobAttribute3.text = [self.driverData valueForKey:@"soforTelefonszam"];
+    self.jobAttribute3.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+//    self.jobAttribute4.text = [self.driverData valueForKey:@"soforEmail"];
+    self.jobAttribute4.backgroundColor = UIColorFromRGB(0xD9B384);
+    
+    /// ezek a labelek
+    self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.telLabel.backgroundColor   = UIColorFromRGB(0x46594B);
+    self.telLabel.textColor         = UIColorFromRGB(0xFFFFFF);
+    self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
+    self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
 }
 
 - (void)didReceiveMemoryWarning

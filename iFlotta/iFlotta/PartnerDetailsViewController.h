@@ -18,5 +18,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *nevLabel;
 @property (strong, nonatomic) IBOutlet UILabel *telLabel;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *profilImage;
 
 @end
