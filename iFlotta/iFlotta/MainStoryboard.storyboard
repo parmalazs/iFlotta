@@ -567,23 +567,45 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Vbf-Js-BSN">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="Vbf-Js-BSN">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Rendszám</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="XkC-ph-wdi" id="wvv-Yd-4a1"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="i5b-1f-3YC" customClass="CarsTableViewCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kamionTableViewCell" id="i5b-1f-3YC" customClass="KamionTableViewCell">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm6-LT-aay">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="271" id="bMc-GS-5FE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="dm6-LT-aay" firstAttribute="top" secondItem="i5b-1f-3YC" secondAttribute="top" constant="11" id="RsA-PC-yuJ"/>
+                                    <constraint firstItem="dm6-LT-aay" firstAttribute="leading" secondItem="i5b-1f-3YC" secondAttribute="leading" constant="20" type="default" id="kJ9-BX-wMO"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="kamionLabel" destination="dm6-LT-aay" id="Ca3-eP-6oW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -619,23 +641,45 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="OuP-ch-vmS">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="OuP-ch-vmS">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Rendszám</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="yQk-cA-cG6" id="wZc-xl-yYS"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2WQ-1E-2Dh" customClass="CarsTableViewCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kisteherautoTableViewCell" id="2WQ-1E-2Dh" customClass="KisteherautoTableViewCell">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riC-sN-scI">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="260" id="gxv-zN-tYd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="riC-sN-scI" firstAttribute="leading" secondItem="2WQ-1E-2Dh" secondAttribute="leading" constant="20" type="default" id="NZo-hp-6I2"/>
+                                    <constraint firstItem="riC-sN-scI" firstAttribute="top" secondItem="2WQ-1E-2Dh" secondAttribute="top" constant="11" id="aK7-UI-pa0"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="kisteherautoLabel" destination="riC-sN-scI" id="mcG-JQ-jjZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -778,23 +822,45 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="P3D-DO-6Ba">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="P3D-DO-6Ba">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Cim</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="3dI-4a-ALy" id="GWW-il-Vbp"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="x8d-d6-dkz" customClass="CarsTableViewCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teherautoTableViewCell" id="x8d-d6-dkz" customClass="TeherautoTableViewCell">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-1t-cIg">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="268" id="xjw-3c-V2R"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="wH4-1t-cIg" firstAttribute="top" secondItem="x8d-d6-dkz" secondAttribute="top" constant="11" id="6ix-FM-zqr"/>
+                                    <constraint firstItem="wH4-1t-cIg" firstAttribute="leading" secondItem="x8d-d6-dkz" secondAttribute="leading" constant="20" type="default" id="qQj-yc-YIn"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="teherautoLabel" destination="wH4-1t-cIg" id="HtW-Jc-l5u"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1740,17 +1806,22 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="VHm-rs-9WD">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="VHm-rs-9WD">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Rendszám</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="pgj-vd-9KN" id="pnt-x3-PAa"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CTj-wH-vvw" customClass="CarsTableViewCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buszTableViewCell" id="CTj-wH-vvw" customClass="BuszTableViewCell">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -1772,7 +1843,7 @@
                                     <constraint firstItem="W8F-Sl-oxA" firstAttribute="leading" secondItem="CTj-wH-vvw" secondAttribute="leading" constant="20" type="default" id="wtK-Xc-DI7"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="buszLabel" destination="W8F-Sl-oxA" id="Q25-Ou-fy6"/>
+                                    <outlet property="buszLabel" destination="W8F-Sl-oxA" id="hgf-A0-ycM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
