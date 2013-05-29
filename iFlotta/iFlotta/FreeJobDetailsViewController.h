@@ -11,4 +11,13 @@
 @interface FreeJobDetailsViewController : UIViewController
 @property (nonatomic, strong) NSManagedObject *freeJobData;
 
+@property (strong, nonatomic) IBOutlet UILabel *jobAttribute1;
+@property (strong, nonatomic) IBOutlet UILabel *jobAttribute2;
+@property (strong, nonatomic) IBOutlet UILabel *jobAttribute3;
+@property (strong, nonatomic) IBOutlet UILabel *jobAttribute4;
+@property (strong, nonatomic) IBOutlet UILabel *jobAttribute5;
+
+@property (strong, nonatomic) IBOutlet UILabel *nevLabel;
+@property (strong, nonatomic) IBOutlet UILabel *telLabel;
+@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @end

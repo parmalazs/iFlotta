@@ -27,22 +27,18 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    self.siteName.text = [self.siteData valueForKey:@"telephelyNev"];
-    self.siteAddress.text = [self.siteData valueForKey:@"telephelyCim"];
-    self.sitePhone.text = [self.siteData valueForKey:@"telephelyTelefonszam"];
-    self.siteMail.text = [self.siteData valueForKey:@"telephelyEmail"];
     
-    self.siteAddress.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.siteName.text          = [self.siteData valueForKey:@"telephelyNev"];
+    self.siteAddress.text       = [self.siteData valueForKey:@"telephelyCim"];
+    self.sitePhone.text         = [self.siteData valueForKey:@"telephelyTelefonszam"];
+    self.siteMail.text          = [self.siteData valueForKey:@"telephelyEmail"];
     
+    self.siteAddress.backgroundColor    = UIColorFromRGB(0xD9B384);
+    self.siteName.backgroundColor       = UIColorFromRGB(0x260B01);
+    self.siteName.textColor             = UIColorFromRGB(0xD9B384);
+    self.sitePhone.backgroundColor      = UIColorFromRGB(0xD9B384);
+    self.siteMail.backgroundColor       = UIColorFromRGB(0xD9B384);
     
-    self.siteName.backgroundColor = UIColorFromRGB(0x260B01);
-    self.siteName.textColor = UIColorFromRGB(0xD9B384);
-    
-    
-    self.sitePhone.backgroundColor = UIColorFromRGB(0xD9B384);
-    
-    
-    self.siteMail.backgroundColor = UIColorFromRGB(0xD9B384);
     /// ezek a labelek
     self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
     self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);

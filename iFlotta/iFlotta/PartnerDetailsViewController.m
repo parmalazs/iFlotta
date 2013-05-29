@@ -26,23 +26,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    self.partnerNev.text = [self.partnerData valueForKey:@"partnerNev"];
-    self.partnerCim.text = [self.partnerData valueForKey:@"partnerCim"];
-    self.partnerTelefonszam.text = [self.partnerData valueForKey:@"partnerTelefonszam"];
-    self.PartnerEmail.text = [self.partnerData valueForKey:@"partnerEmailcim"];
+    self.view.backgroundColor=UIColorFromRGB(0xA6977C);
     
-    self.partnerCim.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.partnerNev.text            = [self.partnerData valueForKey:@"partnerNev"];
+    self.partnerCim.text            = [self.partnerData valueForKey:@"partnerCim"];
+    self.partnerTelefonszam.text    = [self.partnerData valueForKey:@"partnerTelefonszam"];
+    self.PartnerEmail.text          = [self.partnerData valueForKey:@"partnerEmailcim"];
     
-    
-    self.partnerNev.backgroundColor = UIColorFromRGB(0x260B01);
-    self.partnerNev.textColor = UIColorFromRGB(0xD9B384);
-    
-    
+    self.partnerCim.backgroundColor         = UIColorFromRGB(0xD9B384);
+    self.partnerNev.backgroundColor         = UIColorFromRGB(0x260B01);
+    self.partnerNev.textColor               = UIColorFromRGB(0xD9B384);
     self.partnerTelefonszam.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.PartnerEmail.backgroundColor       = UIColorFromRGB(0xD9B384);
     
-    
-    self.PartnerEmail.backgroundColor = UIColorFromRGB(0xD9B384);
     /// ezek a labelek
     self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
     self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);

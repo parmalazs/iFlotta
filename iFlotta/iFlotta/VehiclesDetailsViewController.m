@@ -27,12 +27,15 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
+    //self.profilImage.image=[self.adatDetails valueForKey:@"autoKep"];
     self.name.text = [self.adatDetails valueForKey:@"autoNev"];
-    self.vehicleType.text = [self.adatDetails valueForKey:@"autoTipus"];
+    //self.vehicleType.text = [self.adatDetails valueForKey:@"autoTipus"];
     //self.speedometer.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
     //self.fuel.text = [self.adatDetails valueForKey:@"autoUzemAnyag"];
+    
+    
     //self.benzin.text = [self.siteData valueForKey:@"telephelyEmail"];
-    self.tipus.text = [self.adatDetails valueForKey:@"autoRendszam"];
+    //self.tipus.text = [self.adatDetails valueForKey:@"autoRendszam"];
     //self.km.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
     
 }
