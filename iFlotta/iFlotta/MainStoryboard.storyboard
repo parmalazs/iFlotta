@@ -1902,6 +1902,12 @@
         <class className="AdminSitesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminSitesViewController.h"/>
         </class>
+        <class className="BuszTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buszLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="BuszViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszViewController.h"/>
             <relationships>
@@ -1993,10 +1999,22 @@
                 <relationship kind="action" name="searchButton:"/>
             </relationships>
         </class>
+        <class className="KamionTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="kamionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="KamionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="camionSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="KisteherautoTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="kisteherautoLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="KisteherautoViewController" superclassName="UITableViewController">
@@ -2105,6 +2123,12 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="siteSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="TeherautoTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="teherautoLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TeherautoViewController" superclassName="UITableViewController">
