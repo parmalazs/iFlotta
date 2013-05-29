@@ -50,7 +50,7 @@
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
-        self.navigationItem.rightBarButtonItem = nil;
+        
     }
     
     
