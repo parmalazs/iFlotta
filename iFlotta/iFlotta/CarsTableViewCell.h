@@ -10,5 +10,6 @@
 
 @interface CarsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *carsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *buszLabel;
 
 @end

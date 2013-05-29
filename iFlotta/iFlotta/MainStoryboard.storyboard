@@ -634,7 +634,7 @@
                     <connections>
                         <outlet property="searchBar" destination="dr4-cg-ya1" id="Xfc-bg-QqO"/>
                         <outlet property="searchDisplayController" destination="KWZ-QK-cHz" id="lQ6-p3-uNy"/>
-                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesDetails" id="chP-po-wBt"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesAutoDetails" id="chP-po-wBt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWp-cT-QmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,6 +686,7 @@
                     <connections>
                         <outlet property="camionSearchBar" destination="Vbf-Js-BSN" id="9Uz-rr-3Vv"/>
                         <outlet property="searchDisplayController" destination="ZqI-RK-TCq" id="Iec-OY-aEk"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKamionDetails" id="gMb-Ef-PSd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ZX-qQ-fbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -737,6 +738,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="KfQ-mJ-UbY" id="LIp-m9-B9J"/>
                         <outlet property="vanSearchBar" destination="OuP-ch-vmS" id="AR0-Bd-DKg"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKisteherautoDetails" id="KJQ-Tv-uZm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wj5-Z8-cRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -893,6 +895,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="tKo-7X-lBv" id="8F0-cv-D2j"/>
                         <outlet property="truckSearchBar" destination="P3D-DO-6Ba" id="JNS-54-TNx"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesTeherautoDetails" id="CdY-VB-olh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcg-Lg-P7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1743,8 +1746,25 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8F-Sl-oxA">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="252" id="dbL-l7-vje"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="W8F-Sl-oxA" firstAttribute="top" secondItem="CTj-wH-vvw" secondAttribute="top" constant="11" id="eg1-BN-qls"/>
+                                    <constraint firstItem="W8F-Sl-oxA" firstAttribute="leading" secondItem="CTj-wH-vvw" secondAttribute="leading" constant="20" type="default" id="wtK-Xc-DI7"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="buszLabel" destination="W8F-Sl-oxA" id="Q25-Ou-fy6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1756,6 +1776,7 @@
                     <connections>
                         <outlet property="busSearchBar" destination="VHm-rs-9WD" id="hoV-1g-aZe"/>
                         <outlet property="searchDisplayController" destination="aCW-cl-kZm" id="vlO-cR-SKp"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesBuszDetails" id="dTb-eY-srL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhC-5V-UGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1778,241 +1799,13 @@
         <image name="gomb_1a_146x120.png" width="146" height="120"/>
         <image name="placeholder.png" width="960" height="960"/>
     </resources>
-    <classes>
-        <class className="AdminViewController" superclassName="PagerViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminViewController.h"/>
-        </class>
-        <class className="BuszViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="busSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="CarAddViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarAddViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-            </relationships>
-        </class>
-        <class className="CarsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CarsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="ContactTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButton:"/>
-            </relationships>
-        </class>
-        <class className="DriverDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="soforCim" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="soforEmail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="soforKep" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="soforNev" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="soforTelefonszam" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DriverTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="driverLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DriverViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="driverSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="FreeJobDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobDetailsViewController.h"/>
-        </class>
-        <class className="FreeJobsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="jobLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="FreeJobsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="freeJobsSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="InitViewController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
-        </class>
-        <class className="JarmuTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JarmuTabBarController.h"/>
-        </class>
-        <class className="JobsTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JobsTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButton:"/>
-            </relationships>
-        </class>
-        <class className="KamionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="camionSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="KisteherautoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="vanSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="userLoginButton:"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="logo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pic4" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userPasswordLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MainPageNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageNavigationViewController.h"/>
-        </class>
-        <class className="MainPageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="NavBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="adminButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="MainTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageElement" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="imageNavigate" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelElement" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OwnJobsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OwnJobsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ownJobLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="OwnJobsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OwnJobsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ownJobsSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="PagerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PagerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PartnerDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="PartnerEmail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="partnerCim" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="partnerNev" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="partnerTelefonszam" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PartnerTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="partnerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PartnerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="partnerSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="SiteDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="siteAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="siteMail" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="siteName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sitePhone" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SiteTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SiteViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="siteSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="TeherautoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="truckSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="VehiclesDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VehiclesDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="benzin" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fuel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="km" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speedometer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tipus" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="vehicleType" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="dTb-eY-srL"/>
         <segue reference="Ja8-X1-z4r"/>
     </inferredMetricsTieBreakers>
 </document>

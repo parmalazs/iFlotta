@@ -21,7 +21,6 @@
 @end
 
 @implementation CarsViewController
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -124,17 +123,17 @@
 
 #pragma mark - Table view delegate
 
-/*
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"vehiclesDetails" sender:tableView];
+    [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
     //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
 }
 
 /// ennek kellene egy osztalyt felvenni.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ( [[segue identifier] isEqualToString:@"vehiclesDetails"] ) {
+    if ( [[segue identifier] isEqualToString:@"vehiclesAutoDetails"] ) {
         VehiclesDetailsViewController *vehiclesDetailsViewController = [segue destinationViewController];
         
         if(sender == self.searchDisplayController.searchResultsTableView) {
@@ -148,7 +147,7 @@
     
     }
 }
-*/
+
 #pragma mark Content Filtering
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope

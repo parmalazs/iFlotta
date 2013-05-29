@@ -13,7 +13,6 @@
 @end
 
 @implementation VehiclesDetailsViewController
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,14 +27,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
-    self.name.text = [self.siteData valueForKey:@"autoNev"];
-    
-    self.vehicleType.text = [self.siteData valueForKey:@"autoTipus"];
-    self.speedometer.text = [self.siteData valueForKey:@"autoKilometerOra"];
-    self.fuel.text = [self.siteData valueForKey:@"autoUzemAnyag"];
+    self.name.text = [self.adatDetails valueForKey:@"autoNev"];
+    self.vehicleType.text = [self.adatDetails valueForKey:@"autoTipus"];
+    //self.speedometer.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
+    //self.fuel.text = [self.adatDetails valueForKey:@"autoUzemAnyag"];
     //self.benzin.text = [self.siteData valueForKey:@"telephelyEmail"];
-    self.tipus.text = [self.siteData valueForKey:@"autoRendszam"];
-    self.km.text = [self.siteData valueForKey:@"autoKilometerOra"];
+    self.tipus.text = [self.adatDetails valueForKey:@"autoRendszam"];
+    //self.km.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
     
 }
 
