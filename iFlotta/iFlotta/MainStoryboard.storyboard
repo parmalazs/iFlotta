@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -506,11 +506,11 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="carsTableViewCell" id="VN7-ZJ-Mrr" customClass="CarsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="carsTableViewCell" id="VN7-ZJ-Mrr" customClass="CarsTableViewCell">
                                 <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3c-Yk-F6k">
@@ -557,17 +557,89 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1182" y="5333"/>
+            <point key="canvasLocation" x="1170" y="4089"/>
+        </scene>
+        <!--Busz View Controller - Busz-->
+        <scene sceneID="poH-LW-Wl4">
+            <objects>
+                <tableViewController storyboardIdentifier="buszViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Yg-Wd-fAh" customClass="BuszViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kLV-De-clt">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="WaW-yb-Loc">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Rendszám</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="6Yg-Wd-fAh" id="YT3-hZ-Vfk"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buszCell" id="Auw-Xw-klb" customClass="BuszCell">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjs-8N-hax">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kjs-8N-hax" secondAttribute="trailing" constant="20" type="default" id="TE4-yp-dXb"/>
+                                    <constraint firstItem="kjs-8N-hax" firstAttribute="leading" secondItem="Auw-Xw-klb" secondAttribute="leading" constant="20" type="default" id="dth-fJ-vtc"/>
+                                    <constraint firstItem="kjs-8N-hax" firstAttribute="top" secondItem="Auw-Xw-klb" secondAttribute="top" constant="11" id="nQl-Rk-6Zq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="buszLabel" destination="kjs-8N-hax" id="xLm-t9-e7N"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6Yg-Wd-fAh" id="BT1-4h-8Vy"/>
+                            <outlet property="delegate" destination="6Yg-Wd-fAh" id="F8O-0d-waw"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Busz" id="goJ-xa-ywQ"/>
+                    <connections>
+                        <outlet property="buszSearchBar" destination="WaW-yb-Loc" id="Gq9-Jg-MUG"/>
+                        <outlet property="searchDisplayController" destination="MsQ-hW-TXH" id="2fO-ib-n3p"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesBuszDetails" id="1Ns-oy-JaP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAT-1j-CyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="MsQ-hW-TXH">
+                    <connections>
+                        <outlet property="delegate" destination="6Yg-Wd-fAh" id="SAQ-SS-ZLi"/>
+                        <outlet property="searchBar" destination="WaW-yb-Loc" id="LLN-Vf-JL2"/>
+                        <outlet property="searchContentsController" destination="6Yg-Wd-fAh" id="fRU-jX-pjs"/>
+                        <outlet property="searchResultsDataSource" destination="6Yg-Wd-fAh" id="HGe-G1-6nS"/>
+                        <outlet property="searchResultsDelegate" destination="6Yg-Wd-fAh" id="FxE-SN-TO4"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1192" y="4765"/>
         </scene>
         <!--Kamion View Controller - Kamion-->
-        <scene sceneID="R3z-61-Zfk">
+        <scene sceneID="0jx-Bu-akW">
             <objects>
-                <tableViewController storyboardIdentifier="kamionViewController" id="XkC-ph-wdi" customClass="KamionViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XlJ-xF-0NJ">
+                <tableViewController storyboardIdentifier="kamionViewController" id="fDZ-vU-hdI" customClass="KamionViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hSj-A6-MGe">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="Vbf-Js-BSN">
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="ujV-wz-POt">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -577,20 +649,92 @@
                                 <string>Rendszám</string>
                             </scopeButtonTitles>
                             <connections>
-                                <outlet property="delegate" destination="XkC-ph-wdi" id="wvv-Yd-4a1"/>
+                                <outlet property="delegate" destination="fDZ-vU-hdI" id="tSy-IF-hOo"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kamionTableViewCell" id="i5b-1f-3YC" customClass="KamionTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kamionCell" id="cdg-ok-D1h" customClass="KamionCell">
                                 <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm6-LT-aay">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nm-cl-xcn">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="5nm-cl-xcn" firstAttribute="top" secondItem="cdg-ok-D1h" secondAttribute="top" constant="11" id="Qhx-au-kBb"/>
+                                    <constraint firstAttribute="trailing" secondItem="5nm-cl-xcn" secondAttribute="trailing" constant="20" type="default" id="Yor-8F-1aJ"/>
+                                    <constraint firstItem="5nm-cl-xcn" firstAttribute="leading" secondItem="cdg-ok-D1h" secondAttribute="leading" constant="20" type="default" id="aaH-cW-65Y"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="kamionLabel" destination="5nm-cl-xcn" id="Urv-ka-Fbq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fDZ-vU-hdI" id="43Q-lz-3ZP"/>
+                            <outlet property="delegate" destination="fDZ-vU-hdI" id="txA-RR-Zjr"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Kamion" id="m9u-cq-hBb"/>
+                    <connections>
+                        <outlet property="kamionSearchBar" destination="ujV-wz-POt" id="Qai-Dh-X9z"/>
+                        <outlet property="searchDisplayController" destination="oYg-Fc-Q7K" id="9nA-wg-lOc"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKamionDetails" id="hTW-QS-s81"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMU-iv-jKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="oYg-Fc-Q7K">
+                    <connections>
+                        <outlet property="delegate" destination="fDZ-vU-hdI" id="Ndl-dg-O3k"/>
+                        <outlet property="searchBar" destination="ujV-wz-POt" id="k4n-A9-boO"/>
+                        <outlet property="searchContentsController" destination="fDZ-vU-hdI" id="tJf-fX-Rv6"/>
+                        <outlet property="searchResultsDataSource" destination="fDZ-vU-hdI" id="7Ay-RS-0rT"/>
+                        <outlet property="searchResultsDelegate" destination="fDZ-vU-hdI" id="FL2-ts-khR"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1188" y="5437"/>
+        </scene>
+        <!--Teherauto View Controller - Teherautó-->
+        <scene sceneID="o1i-fi-Mn0">
+            <objects>
+                <tableViewController storyboardIdentifier="teherautoViewController" id="DX2-ic-Nuh" customClass="TeherautoViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="v1M-YK-1XD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="pMQ-de-dA8">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Rendszám</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="DX2-ic-Nuh" id="Apk-vy-HZu"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teherautoCell" id="zSu-X7-G0k" customClass="TeherautoCell">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCP-y6-Kub">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="271" id="bMc-GS-5FE"/>
+                                                <constraint firstAttribute="width" constant="273" id="Edn-AG-Hpy"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -600,48 +744,48 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="dm6-LT-aay" firstAttribute="top" secondItem="i5b-1f-3YC" secondAttribute="top" constant="11" id="RsA-PC-yuJ"/>
-                                    <constraint firstItem="dm6-LT-aay" firstAttribute="leading" secondItem="i5b-1f-3YC" secondAttribute="leading" constant="20" type="default" id="kJ9-BX-wMO"/>
+                                    <constraint firstItem="wCP-y6-Kub" firstAttribute="top" secondItem="zSu-X7-G0k" secondAttribute="top" constant="11" id="vHt-PI-h3o"/>
+                                    <constraint firstItem="wCP-y6-Kub" firstAttribute="leading" secondItem="zSu-X7-G0k" secondAttribute="leading" constant="20" type="default" id="w4S-mY-bJf"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="kamionLabel" destination="dm6-LT-aay" id="Ca3-eP-6oW"/>
+                                    <outlet property="teherautoLabel" destination="wCP-y6-Kub" id="F1P-1r-uYT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="XkC-ph-wdi" id="yL2-qH-63E"/>
-                            <outlet property="delegate" destination="XkC-ph-wdi" id="vZZ-FQ-REJ"/>
+                            <outlet property="dataSource" destination="DX2-ic-Nuh" id="mSG-gt-VEN"/>
+                            <outlet property="delegate" destination="DX2-ic-Nuh" id="BiH-np-BZD"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Kamion" id="dHb-Kh-uQK"/>
+                    <tabBarItem key="tabBarItem" title="Teherautó" id="IPe-iT-zfl"/>
                     <connections>
-                        <outlet property="camionSearchBar" destination="Vbf-Js-BSN" id="9Uz-rr-3Vv"/>
-                        <outlet property="searchDisplayController" destination="ZqI-RK-TCq" id="Iec-OY-aEk"/>
-                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKamionDetails" id="gMb-Ef-PSd"/>
+                        <outlet property="searchDisplayController" destination="n5A-1c-Nns" id="TtC-WF-nbt"/>
+                        <outlet property="teherautoSearchBar" destination="pMQ-de-dA8" id="Nsm-6w-uIQ"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesTeherautoDetails" id="Yj0-Cf-Nzf"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ZX-qQ-fbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ZqI-RK-TCq">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00T-G9-L3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="n5A-1c-Nns">
                     <connections>
-                        <outlet property="delegate" destination="XkC-ph-wdi" id="uSQ-FK-FX1"/>
-                        <outlet property="searchBar" destination="Vbf-Js-BSN" id="QXf-Es-8IN"/>
-                        <outlet property="searchContentsController" destination="XkC-ph-wdi" id="yFu-zl-HRn"/>
-                        <outlet property="searchResultsDataSource" destination="XkC-ph-wdi" id="CTl-7Q-8Qj"/>
-                        <outlet property="searchResultsDelegate" destination="XkC-ph-wdi" id="9HG-lE-GAF"/>
+                        <outlet property="delegate" destination="DX2-ic-Nuh" id="0OU-et-lf9"/>
+                        <outlet property="searchBar" destination="pMQ-de-dA8" id="mFE-yr-DBf"/>
+                        <outlet property="searchContentsController" destination="DX2-ic-Nuh" id="3cj-IN-Uv0"/>
+                        <outlet property="searchResultsDataSource" destination="DX2-ic-Nuh" id="pn4-Op-AHJ"/>
+                        <outlet property="searchResultsDelegate" destination="DX2-ic-Nuh" id="kjO-Eb-MmD"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1182" y="3625"/>
+            <point key="canvasLocation" x="1192" y="6037"/>
         </scene>
         <!--Kisteherauto View Controller - Kisteherautó-->
-        <scene sceneID="aS8-WR-01e">
+        <scene sceneID="XW3-KV-uzP">
             <objects>
-                <tableViewController storyboardIdentifier="kisteherautoViewController" id="yQk-cA-cG6" customClass="KisteherautoViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jft-tA-Mod">
+                <tableViewController storyboardIdentifier="kisteherautoViewController" id="JJT-eo-ODQ" customClass="KisteherautoViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="egG-xr-Ph7">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="OuP-ch-vmS">
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="Zu5-eY-UuL">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -651,20 +795,20 @@
                                 <string>Rendszám</string>
                             </scopeButtonTitles>
                             <connections>
-                                <outlet property="delegate" destination="yQk-cA-cG6" id="wZc-xl-yYS"/>
+                                <outlet property="delegate" destination="JJT-eo-ODQ" id="Iyo-PT-P8y"/>
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kisteherautoTableViewCell" id="2WQ-1E-2Dh" customClass="KisteherautoTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kisteherautoCell" id="J4Q-lv-B5W" customClass="KisteherautoCell">
                                 <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riC-sN-scI">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dB-wx-nYf">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="260" id="gxv-zN-tYd"/>
+                                                <constraint firstAttribute="width" constant="272" id="LD8-Do-eUL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -674,38 +818,38 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="riC-sN-scI" firstAttribute="leading" secondItem="2WQ-1E-2Dh" secondAttribute="leading" constant="20" type="default" id="NZo-hp-6I2"/>
-                                    <constraint firstItem="riC-sN-scI" firstAttribute="top" secondItem="2WQ-1E-2Dh" secondAttribute="top" constant="11" id="aK7-UI-pa0"/>
+                                    <constraint firstItem="6dB-wx-nYf" firstAttribute="top" secondItem="J4Q-lv-B5W" secondAttribute="top" constant="11" id="H7z-c8-2CI"/>
+                                    <constraint firstItem="6dB-wx-nYf" firstAttribute="leading" secondItem="J4Q-lv-B5W" secondAttribute="leading" constant="20" type="default" id="PPc-mr-Stk"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="kisteherautoLabel" destination="riC-sN-scI" id="mcG-JQ-jjZ"/>
+                                    <outlet property="kisteherautoLabel" destination="6dB-wx-nYf" id="zaB-af-R7g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="yQk-cA-cG6" id="lqg-Dh-Nk9"/>
-                            <outlet property="delegate" destination="yQk-cA-cG6" id="0WN-jy-9Kl"/>
+                            <outlet property="dataSource" destination="JJT-eo-ODQ" id="tOH-oW-2Ug"/>
+                            <outlet property="delegate" destination="JJT-eo-ODQ" id="Snu-h1-2aR"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Kisteherautó" id="8rA-sF-pQs"/>
+                    <tabBarItem key="tabBarItem" title="Kisteherautó" id="jat-KM-4Vz"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="KfQ-mJ-UbY" id="LIp-m9-B9J"/>
-                        <outlet property="vanSearchBar" destination="OuP-ch-vmS" id="AR0-Bd-DKg"/>
-                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKisteherautoDetails" id="KJQ-Tv-uZm"/>
+                        <outlet property="kisteherautoSearchBar" destination="Zu5-eY-UuL" id="hal-nt-nxH"/>
+                        <outlet property="searchDisplayController" destination="nTn-xV-WuH" id="pdU-uv-lEL"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKisteherautoDetails" id="4k1-KE-Gjt"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wj5-Z8-cRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="KfQ-mJ-UbY">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCq-wy-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="nTn-xV-WuH">
                     <connections>
-                        <outlet property="delegate" destination="yQk-cA-cG6" id="ckt-fa-rWP"/>
-                        <outlet property="searchBar" destination="OuP-ch-vmS" id="ptc-fz-vyG"/>
-                        <outlet property="searchContentsController" destination="yQk-cA-cG6" id="VvZ-Uj-dBs"/>
-                        <outlet property="searchResultsDataSource" destination="yQk-cA-cG6" id="mcW-l8-nrS"/>
-                        <outlet property="searchResultsDelegate" destination="yQk-cA-cG6" id="coJ-LQ-WuD"/>
+                        <outlet property="delegate" destination="JJT-eo-ODQ" id="Nqy-Qp-Wpf"/>
+                        <outlet property="searchBar" destination="Zu5-eY-UuL" id="Zx4-fE-0gn"/>
+                        <outlet property="searchContentsController" destination="JJT-eo-ODQ" id="BdY-31-pae"/>
+                        <outlet property="searchResultsDataSource" destination="JJT-eo-ODQ" id="Fml-i0-KgC"/>
+                        <outlet property="searchResultsDelegate" destination="JJT-eo-ODQ" id="Ykb-kP-C2j"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1182" y="4761"/>
+            <point key="canvasLocation" x="1192" y="6645"/>
         </scene>
         <!--Vehicles Details View Controller-->
         <scene sceneID="eTu-8y-JlZ">
@@ -814,80 +958,6 @@
             </objects>
             <point key="canvasLocation" x="1921" y="4761"/>
         </scene>
-        <!--Teherauto View Controller - Teherautó-->
-        <scene sceneID="zFA-Ub-mYJ">
-            <objects>
-                <tableViewController storyboardIdentifier="teherautoViewController" id="3dI-4a-ALy" customClass="TeherautoViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9n1-HK-7NH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="P3D-DO-6Ba">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Minden</string>
-                                <string>Név</string>
-                                <string>Cim</string>
-                            </scopeButtonTitles>
-                            <connections>
-                                <outlet property="delegate" destination="3dI-4a-ALy" id="GWW-il-Vbp"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teherautoTableViewCell" id="x8d-d6-dkz" customClass="TeherautoTableViewCell">
-                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-1t-cIg">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="268" id="xjw-3c-V2R"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="wH4-1t-cIg" firstAttribute="top" secondItem="x8d-d6-dkz" secondAttribute="top" constant="11" id="6ix-FM-zqr"/>
-                                    <constraint firstItem="wH4-1t-cIg" firstAttribute="leading" secondItem="x8d-d6-dkz" secondAttribute="leading" constant="20" type="default" id="qQj-yc-YIn"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="teherautoLabel" destination="wH4-1t-cIg" id="HtW-Jc-l5u"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="3dI-4a-ALy" id="msV-wu-6Nc"/>
-                            <outlet property="delegate" destination="3dI-4a-ALy" id="F79-PO-1BQ"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Teherautó" id="rKL-SB-huX"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="tKo-7X-lBv" id="8F0-cv-D2j"/>
-                        <outlet property="truckSearchBar" destination="P3D-DO-6Ba" id="JNS-54-TNx"/>
-                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesTeherautoDetails" id="CdY-VB-olh"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mcg-Lg-P7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="tKo-7X-lBv">
-                    <connections>
-                        <outlet property="delegate" destination="3dI-4a-ALy" id="Lf9-cG-9Mw"/>
-                        <outlet property="searchBar" destination="P3D-DO-6Ba" id="MCw-00-zyl"/>
-                        <outlet property="searchContentsController" destination="3dI-4a-ALy" id="D5z-mZ-pqm"/>
-                        <outlet property="searchResultsDataSource" destination="3dI-4a-ALy" id="Wgx-HQ-9ej"/>
-                        <outlet property="searchResultsDelegate" destination="3dI-4a-ALy" id="iwU-0t-fFl"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="1182" y="4189"/>
-        </scene>
         <!--Own Jobs View Controller - Saját munák-->
         <scene sceneID="izl-iA-Dtk">
             <objects>
@@ -949,9 +1019,22 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="3GM-JJ-fSu">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Minden</string>
+                                <string>Név</string>
+                                <string>Cim</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="pUI-7m-gio" id="zl7-bM-jNz"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="OFM-op-QSt" detailTextLabel="0Hz-Uk-abj" style="IBUITableViewCellStyleSubtitle" id="CGx-WC-AFi">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -984,8 +1067,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contactSearchBar" destination="3GM-JJ-fSu" id="YgP-ye-SZr"/>
+                        <outlet property="searchDisplayController" destination="wEP-eG-DL7" id="K5r-BG-Wlw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWj-Hg-a5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="wEP-eG-DL7">
+                    <connections>
+                        <outlet property="delegate" destination="pUI-7m-gio" id="24O-u8-Mhp"/>
+                        <outlet property="searchBar" destination="3GM-JJ-fSu" id="xCz-Kd-Qa3"/>
+                        <outlet property="searchContentsController" destination="pUI-7m-gio" id="E3a-zV-1VW"/>
+                        <outlet property="searchResultsDataSource" destination="pUI-7m-gio" id="DMl-4F-IPO"/>
+                        <outlet property="searchResultsDelegate" destination="pUI-7m-gio" id="jCl-T6-uAQ"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="590" y="-2272"/>
         </scene>
@@ -1788,89 +1884,15 @@
                     </tabBar>
                     <connections>
                         <segue destination="ErY-Ue-ijr" kind="relationship" relationship="viewControllers" id="WnG-jy-ezG"/>
-                        <segue destination="3dI-4a-ALy" kind="relationship" relationship="viewControllers" id="eAf-rb-QfF"/>
-                        <segue destination="yQk-cA-cG6" kind="relationship" relationship="viewControllers" id="vvJ-kL-thY"/>
-                        <segue destination="XkC-ph-wdi" kind="relationship" relationship="viewControllers" id="WJm-nK-ZK8"/>
-                        <segue destination="pgj-vd-9KN" kind="relationship" relationship="viewControllers" id="QYa-9m-lPU"/>
+                        <segue destination="6Yg-Wd-fAh" kind="relationship" relationship="viewControllers" id="G50-kC-gnh"/>
+                        <segue destination="fDZ-vU-hdI" kind="relationship" relationship="viewControllers" id="HSm-0r-YlH"/>
+                        <segue destination="DX2-ic-Nuh" kind="relationship" relationship="viewControllers" id="P4h-Nc-NKd"/>
+                        <segue destination="JJT-eo-ODQ" kind="relationship" relationship="viewControllers" id="4n0-4a-3qw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTK-JH-yXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="341" y="4761"/>
-        </scene>
-        <!--Busz View Controller - Busz-->
-        <scene sceneID="79t-Aj-avG">
-            <objects>
-                <tableViewController storyboardIdentifier="buszViewController" id="pgj-vd-9KN" customClass="BuszViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yT4-Qb-wgd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="VHm-rs-9WD">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Minden</string>
-                                <string>Név</string>
-                                <string>Rendszám</string>
-                            </scopeButtonTitles>
-                            <connections>
-                                <outlet property="delegate" destination="pgj-vd-9KN" id="pnt-x3-PAa"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buszTableViewCell" id="CTj-wH-vvw" customClass="BuszTableViewCell">
-                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8F-Sl-oxA">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="252" id="dbL-l7-vje"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="W8F-Sl-oxA" firstAttribute="top" secondItem="CTj-wH-vvw" secondAttribute="top" constant="11" id="eg1-BN-qls"/>
-                                    <constraint firstItem="W8F-Sl-oxA" firstAttribute="leading" secondItem="CTj-wH-vvw" secondAttribute="leading" constant="20" type="default" id="wtK-Xc-DI7"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="buszLabel" destination="W8F-Sl-oxA" id="hgf-A0-ycM"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pgj-vd-9KN" id="XMD-uY-Nfh"/>
-                            <outlet property="delegate" destination="pgj-vd-9KN" id="3pM-22-bFe"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Busz" id="z1b-jr-onF"/>
-                    <connections>
-                        <outlet property="busSearchBar" destination="VHm-rs-9WD" id="hoV-1g-aZe"/>
-                        <outlet property="searchDisplayController" destination="aCW-cl-kZm" id="vlO-cR-SKp"/>
-                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesBuszDetails" id="dTb-eY-srL"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JhC-5V-UGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="aCW-cl-kZm">
-                    <connections>
-                        <outlet property="delegate" destination="pgj-vd-9KN" id="EUr-mg-Zy9"/>
-                        <outlet property="searchBar" destination="VHm-rs-9WD" id="pRV-PP-NTx"/>
-                        <outlet property="searchContentsController" destination="pgj-vd-9KN" id="IP6-1n-saz"/>
-                        <outlet property="searchResultsDataSource" destination="pgj-vd-9KN" id="O2h-LF-oB2"/>
-                        <outlet property="searchResultsDelegate" destination="pgj-vd-9KN" id="fgv-Bh-cO2"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="1182" y="5921"/>
         </scene>
     </scenes>
     <resources>
@@ -1894,6 +1916,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminContactsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addButtonTapped:"/>
+                <relationship kind="outlet" name="contactSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
         <class className="AdminJobsViewController" superclassName="UITableViewController">
@@ -1902,8 +1925,8 @@
         <class className="AdminSitesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminSitesViewController.h"/>
         </class>
-        <class className="BuszTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszTableViewCell.h"/>
+        <class className="BuszCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="buszLabel" candidateClass="UILabel"/>
             </relationships>
@@ -1911,7 +1934,7 @@
         <class className="BuszViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="busSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="buszSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
         <class className="CarsTableViewCell" superclassName="UITableViewCell">
@@ -1999,8 +2022,8 @@
                 <relationship kind="action" name="searchButton:"/>
             </relationships>
         </class>
-        <class className="KamionTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionTableViewCell.h"/>
+        <class className="KamionCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="kamionLabel" candidateClass="UILabel"/>
             </relationships>
@@ -2008,11 +2031,11 @@
         <class className="KamionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="camionSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="kamionSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
-        <class className="KisteherautoTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoTableViewCell.h"/>
+        <class className="KisteherautoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="kisteherautoLabel" candidateClass="UILabel"/>
             </relationships>
@@ -2020,7 +2043,7 @@
         <class className="KisteherautoViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="vanSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="kisteherautoSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
@@ -2125,8 +2148,8 @@
                 <relationship kind="outlet" name="siteSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
-        <class className="TeherautoTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoTableViewCell.h"/>
+        <class className="TeherautoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="teherautoLabel" candidateClass="UILabel"/>
             </relationships>
@@ -2134,7 +2157,7 @@
         <class className="TeherautoViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="truckSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="teherautoSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
         <class className="VehiclesDetailsViewController" superclassName="UIViewController">
@@ -2157,7 +2180,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gMb-Ef-PSd"/>
         <segue reference="hEs-qA-9Qp"/>
+        <segue reference="4k1-KE-Gjt"/>
     </inferredMetricsTieBreakers>
 </document>

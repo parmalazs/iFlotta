@@ -8,7 +8,7 @@
 
 #import "TeherautoViewController.h"
 #import "DataBaseUtil.h"
-#import "TeherautoTableViewCell.h"
+#import "TeherautoCell.h"
 #import "VehiclesDetailsViewController.h"
 #import "Auto.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -31,12 +31,12 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    [self.truckSearchBar setShowsScopeBar:NO];
-    [self.truckSearchBar sizeToFit];
-    [self.truckSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    [self.teherautoSearchBar setShowsScopeBar:NO];
+    [self.teherautoSearchBar sizeToFit];
+    [self.teherautoSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     CGRect newBounds = [[self tableView] bounds];
-    newBounds.origin.y = newBounds.origin.y + self.truckSearchBar.bounds.size.height;
+    newBounds.origin.y = newBounds.origin.y + self.teherautoSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Teherautó"];
@@ -75,7 +75,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /// ezt ne fejeltsd el atirni ha masolod!
-    static NSString *CellIdentifier = @"teherautoTableViewCell";
+    static NSString *CellIdentifier = @"teherautoCell";
     
     
     /// az autok menunel MINDENHOL ez a cella fog szerepelni, igy ez masolhato.
@@ -107,7 +107,7 @@
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
         NSLog(@"LOG: %@",[car autoNev]);
-        [[(TeherautoTableViewCell*)cell teherautoLabel] setText:[car autoNev]];
+        [[(TeherautoCell*)cell teherautoLabel] setText:[car autoNev]];
     }
     
     return cell;

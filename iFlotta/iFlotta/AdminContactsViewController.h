@@ -12,6 +12,7 @@
 #import "Partnerkepek.h"
 
 @interface AdminContactsViewController : UITableViewController<UIAlertViewDelegate>
+@property (strong, nonatomic) IBOutlet UISearchBar *contactSearchBar;
 
 - (IBAction)addButtonTapped:(id)sender;
 

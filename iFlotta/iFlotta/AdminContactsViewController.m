@@ -7,10 +7,12 @@
 //
 
 #import "AdminContactsViewController.h"
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface AdminContactsViewController (){
-    NSMutableArray* _partners;
+    NSArray* _partners;
     NSArray* _partnerpics;
+    NSMutableArray * _filteredArray;
 }
 
 @end
@@ -30,6 +32,20 @@
 {
     [super viewDidLoad];
     [self fetchDatas];
+    
+    
+    [self.contactSearchBar setShowsScopeBar:NO];
+    [self.contactSearchBar sizeToFit];
+    [self.contactSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    
+    CGRect newBounds = [[self tableView] bounds];
+    newBounds.origin.y = newBounds.origin.y + self.contactSearchBar.bounds.size.height;
+    [[self tableView] setBounds:newBounds];
+    
+    _filteredArray = [NSMutableArray arrayWithCapacity:[_partners count]];
+    [[self tableView] reloadData];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +63,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_partners count];
+
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [_filteredArray count];
+    }else{
+        return [_partners count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -55,13 +76,20 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    if ([indexPath row] % 2) {
+        cell.contentView.backgroundColor = UIColorFromRGB(0xA6977C);
+    }else{
+        cell.contentView.backgroundColor = UIColorFromRGB(0xD9B384);
+    }
+    
+    
     Partner* partner = [_partners objectAtIndex:indexPath.row];
     UILabel *label= (UILabel*)[self.view viewWithTag: 2];
     label.text = partner.partnerNev;
     label = (UILabel*)[self.view viewWithTag:1];
     label.text = partner.partnerWeboldal;
     
-    return cell;
+    return cell;			
 }
 
 /*
@@ -155,5 +183,56 @@
                 partner.partnerNev = [content substringToIndex:30];
         //[_partners addObject:partner];
     }
+}
+
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	// Update the filtered array based on the search text and scope.
+	
+    // Remove all objects from the filtered search array
+	[_filteredArray removeAllObjects];
+    
+	// Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.partnerNev contains[c] %@) or (SELF.partnerCim contains[c] %@)",searchText,searchText];
+    NSArray *tempArray = [_partners filteredArrayUsingPredicate:predicate];
+    
+    if([scope isEqualToString:@"Név"])
+    {
+        // Further filter the array with the scope
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"(SELF.partnerNev contains[c] %@)",searchText];
+        tempArray = [_partners filteredArrayUsingPredicate:scopePredicate];
+    }
+    else if([scope isEqualToString:@"Cim"])
+    {
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.partnerCim contains[c] %@",searchText];
+        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    
+    _filteredArray = [NSMutableArray arrayWithArray:tempArray];
+}
+
+
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
 }
 @end

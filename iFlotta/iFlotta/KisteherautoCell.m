@@ -1,14 +1,14 @@
 //
-//  BuszTableViewCell.m
+//  KisteherautoCell.m
 //  iFlott
 //
 //  Created by Csüti on 5/29/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "BuszTableViewCell.h"
+#import "KisteherautoCell.h"
 
-@implementation BuszTableViewCell
+@implementation KisteherautoCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

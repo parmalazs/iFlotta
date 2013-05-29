@@ -9,7 +9,7 @@
 #import "BuszViewController.h"
 #import "DataBaseUtil.h"
 #import "CarsTableViewCell.h"
-#import "BuszTableViewCell.h"
+#import "BuszCell.h"
 #import "VehiclesDetailsViewController.h"
 #import "Auto.h"
 
@@ -36,12 +36,12 @@
     
     //// ez a resz cmd+c - cmd+v kompatibilis, generikus nevek vannak, csak a fetch request paramtereket _kell_ atirni!!!!!!!!
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    [self.busSearchBar setShowsScopeBar:NO];
-    [self.busSearchBar sizeToFit];
-    [self.busSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    [self.buszSearchBar setShowsScopeBar:NO];
+    [self.buszSearchBar sizeToFit];
+    [self.buszSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     CGRect newBounds = [[self tableView] bounds];
-    newBounds.origin.y = newBounds.origin.y + self.busSearchBar.bounds.size.height;
+    newBounds.origin.y = newBounds.origin.y + self.buszSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
     // itt ird at
@@ -83,7 +83,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /// ezt ne fejeltsd el atirni ha masolod!
-    static NSString *CellIdentifier = @"buszTableViewCell";
+    static NSString *CellIdentifier = @"buszCell";
     
     
     /// az autok menunel MINDENHOL ez a cella fog szerepelni, igy ez masolhato.
@@ -114,8 +114,7 @@
 	else
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
-        NSLog(@"LOG: %@",[car autoNev]);
-        [[(BuszTableViewCell*)cell buszLabel] setText:[car autoNev]];
+        [[(BuszCell*)cell buszLabel] setText:[car autoNev]];
     }
     
     return cell;

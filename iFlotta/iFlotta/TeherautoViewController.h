@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TeherautoViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
-@property (strong, nonatomic) IBOutlet UISearchBar *truckSearchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *teherautoSearchBar;
 @property (nonatomic, strong) NSArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 @end

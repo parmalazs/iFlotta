@@ -1,5 +1,5 @@
 //
-//  BuszTableViewCell.h
+//  TeherautoCell.h
 //  iFlott
 //
 //  Created by Csüti on 5/29/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BuszTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *buszLabel;
+@interface TeherautoCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *teherautoLabel;
 
 @end

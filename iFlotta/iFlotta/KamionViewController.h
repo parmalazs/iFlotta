@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface KamionViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
-@property (strong, nonatomic) IBOutlet UISearchBar *camionSearchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *kamionSearchBar;
 @property (nonatomic, strong) NSArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 @end

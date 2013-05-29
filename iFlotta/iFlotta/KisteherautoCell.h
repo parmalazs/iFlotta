@@ -1,5 +1,5 @@
 //
-//  KamionTableViewCell.h
+//  KisteherautoCell.h
 //  iFlott
 //
 //  Created by Csüti on 5/29/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KamionTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *kamionLabel;
+@interface KisteherautoCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *kisteherautoLabel;
 
 @end

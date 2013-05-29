@@ -1,14 +1,14 @@
 //
-//  KamionTableViewCell.m
+//  TeherautoCell.m
 //  iFlott
 //
 //  Created by Csüti on 5/29/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
 
-#import "KamionTableViewCell.h"
+#import "TeherautoCell.h"
 
-@implementation KamionTableViewCell
+@implementation TeherautoCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

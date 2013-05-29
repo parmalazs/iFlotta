@@ -19,10 +19,10 @@
 		1982C559173BC78D00665C7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1982C558173BC78D00665C7F /* Default-568h@2x.png */; };
 		1982C597173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1982C595173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld */; };
 		1982C5C5173C1B2800665C7F /* DataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1982C5C4173C1B2800665C7F /* DataBaseUtil.m */; };
-		199AEBB917562A0C004C7613 /* BuszTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 199AEBB817562A0C004C7613 /* BuszTableViewCell.m */; };
-		199AEBBC17562BB2004C7613 /* KamionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 199AEBBB17562BB1004C7613 /* KamionTableViewCell.m */; };
-		199AEBBF17562D55004C7613 /* KisteherautoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 199AEBBE17562D54004C7613 /* KisteherautoTableViewCell.m */; };
-		199AEBC217562D72004C7613 /* TeherautoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 199AEBC117562D71004C7613 /* TeherautoTableViewCell.m */; };
+		19A1E53B1756804F009F1419 /* BuszCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A1E53A1756804E009F1419 /* BuszCell.m */; };
+		19A1E53E1756887C009F1419 /* KamionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A1E53D1756887B009F1419 /* KamionCell.m */; };
+		19A1E54117568C60009F1419 /* TeherautoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A1E54017568C5F009F1419 /* TeherautoCell.m */; };
+		19A1E54417568C76009F1419 /* KisteherautoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A1E54317568C75009F1419 /* KisteherautoCell.m */; };
 		19BA14EA1745681C00A79A00 /* CarAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA14E91745681C00A79A00 /* CarAddViewController.m */; };
 		19BBA209173DB86500631B16 /* SiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA208173DB86500631B16 /* SiteViewController.m */; };
 		19BBA20C173DBC2D00631B16 /* DriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BBA20B173DBC2D00631B16 /* DriverViewController.m */; };
@@ -125,14 +125,14 @@
 		1982C596173BD3A100665C7F /* iFlottaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iFlottaDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1982C5C3173C1B2700665C7F /* DataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseUtil.h; sourceTree = "<group>"; };
 		1982C5C4173C1B2800665C7F /* DataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseUtil.m; sourceTree = "<group>"; };
-		199AEBB717562A0B004C7613 /* BuszTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuszTableViewCell.h; sourceTree = "<group>"; };
-		199AEBB817562A0C004C7613 /* BuszTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuszTableViewCell.m; sourceTree = "<group>"; };
-		199AEBBA17562BB1004C7613 /* KamionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KamionTableViewCell.h; sourceTree = "<group>"; };
-		199AEBBB17562BB1004C7613 /* KamionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KamionTableViewCell.m; sourceTree = "<group>"; };
-		199AEBBD17562D54004C7613 /* KisteherautoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KisteherautoTableViewCell.h; sourceTree = "<group>"; };
-		199AEBBE17562D54004C7613 /* KisteherautoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KisteherautoTableViewCell.m; sourceTree = "<group>"; };
-		199AEBC017562D71004C7613 /* TeherautoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeherautoTableViewCell.h; sourceTree = "<group>"; };
-		199AEBC117562D71004C7613 /* TeherautoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeherautoTableViewCell.m; sourceTree = "<group>"; };
+		19A1E5391756804E009F1419 /* BuszCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuszCell.h; sourceTree = "<group>"; };
+		19A1E53A1756804E009F1419 /* BuszCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuszCell.m; sourceTree = "<group>"; };
+		19A1E53C1756887B009F1419 /* KamionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KamionCell.h; sourceTree = "<group>"; };
+		19A1E53D1756887B009F1419 /* KamionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KamionCell.m; sourceTree = "<group>"; };
+		19A1E53F17568C5E009F1419 /* TeherautoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeherautoCell.h; sourceTree = "<group>"; };
+		19A1E54017568C5F009F1419 /* TeherautoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeherautoCell.m; sourceTree = "<group>"; };
+		19A1E54217568C74009F1419 /* KisteherautoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KisteherautoCell.h; sourceTree = "<group>"; };
+		19A1E54317568C75009F1419 /* KisteherautoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KisteherautoCell.m; sourceTree = "<group>"; };
 		19BA14E81745681C00A79A00 /* CarAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAddViewController.h; sourceTree = "<group>"; };
 		19BA14E91745681C00A79A00 /* CarAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAddViewController.m; sourceTree = "<group>"; };
 		19BBA207173DB86500631B16 /* SiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteViewController.h; sourceTree = "<group>"; };
@@ -501,14 +501,14 @@
 				19D027C21752A88900E3AEAD /* TeherautoViewController.m */,
 				6191DB24175561E000E4B09B /* VehiclesDetailsViewController.h */,
 				6191DB25175561E000E4B09B /* VehiclesDetailsViewController.m */,
-				199AEBB717562A0B004C7613 /* BuszTableViewCell.h */,
-				199AEBB817562A0C004C7613 /* BuszTableViewCell.m */,
-				199AEBBA17562BB1004C7613 /* KamionTableViewCell.h */,
-				199AEBBB17562BB1004C7613 /* KamionTableViewCell.m */,
-				199AEBBD17562D54004C7613 /* KisteherautoTableViewCell.h */,
-				199AEBBE17562D54004C7613 /* KisteherautoTableViewCell.m */,
-				199AEBC017562D71004C7613 /* TeherautoTableViewCell.h */,
-				199AEBC117562D71004C7613 /* TeherautoTableViewCell.m */,
+				19A1E5391756804E009F1419 /* BuszCell.h */,
+				19A1E53A1756804E009F1419 /* BuszCell.m */,
+				19A1E53C1756887B009F1419 /* KamionCell.h */,
+				19A1E53D1756887B009F1419 /* KamionCell.m */,
+				19A1E53F17568C5E009F1419 /* TeherautoCell.h */,
+				19A1E54017568C5F009F1419 /* TeherautoCell.m */,
+				19A1E54217568C74009F1419 /* KisteherautoCell.h */,
+				19A1E54317568C75009F1419 /* KisteherautoCell.m */,
 			);
 			name = Jarmu;
 			sourceTree = "<group>";
@@ -782,6 +782,10 @@
 				61AB0B3717560FF90073F7A9 /* AdminSitesViewController.m in Sources */,
 				61AB0B3A1756104A0073F7A9 /* AdminJobsViewController.m in Sources */,
 				61AB0B3D175610740073F7A9 /* AdminCarsViewController.m in Sources */,
+				19A1E53B1756804F009F1419 /* BuszCell.m in Sources */,
+				19A1E53E1756887C009F1419 /* KamionCell.m in Sources */,
+				19A1E54117568C60009F1419 /* TeherautoCell.m in Sources */,
+				19A1E54417568C76009F1419 /* KisteherautoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

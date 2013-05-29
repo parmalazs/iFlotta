@@ -8,7 +8,7 @@
 
 #import "KisteherautoViewController.h"
 #import "DataBaseUtil.h"
-#import "KisteherautoTableViewCell.h"
+#import "KisteherautoCell.h"
 #import "VehiclesDetailsViewController.h"
 #import "Auto.h"
 
@@ -32,12 +32,12 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    [self.vanSearchBar setShowsScopeBar:NO];
-    [self.vanSearchBar sizeToFit];
-    [self.vanSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    [self.kisteherautoSearchBar setShowsScopeBar:NO];
+    [self.kisteherautoSearchBar sizeToFit];
+    [self.kisteherautoSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     CGRect newBounds = [[self tableView] bounds];
-    newBounds.origin.y = newBounds.origin.y + self.vanSearchBar.bounds.size.height;
+    newBounds.origin.y = newBounds.origin.y + self.kisteherautoSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó"];
@@ -76,7 +76,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /// ezt ne fejeltsd el atirni ha masolod!
-    static NSString *CellIdentifier = @"kisteherautoTableViewCell";
+    static NSString *CellIdentifier = @"kisteherautoCell";
     
     
     /// az autok menunel MINDENHOL ez a cella fog szerepelni, igy ez masolhato.
@@ -108,7 +108,7 @@
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
         NSLog(@"LOG: %@",[car autoNev]);
-        [[(KisteherautoTableViewCell*)cell kisteherautoLabel] setText:[car autoNev]];
+        [[(KisteherautoCell*)cell kisteherautoLabel] setText:[car autoNev]];
     }
     
     return cell;

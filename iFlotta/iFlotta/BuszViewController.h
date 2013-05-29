@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BuszViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
-@property (strong, nonatomic) IBOutlet UISearchBar *busSearchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *buszSearchBar;
 @property (nonatomic, strong) NSArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 @end

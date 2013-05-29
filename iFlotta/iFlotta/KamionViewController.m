@@ -8,7 +8,7 @@
 
 #import "KamionViewController.h"
 #import "DataBaseUtil.h"
-#import "KamionTableViewCell.h"
+#import "KamionCell.h"
 #import "VehiclesDetailsViewController.h"
 #import "Auto.h"
 
@@ -32,12 +32,12 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    [self.camionSearchBar setShowsScopeBar:NO];
-    [self.camionSearchBar sizeToFit];
-    [self.camionSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    [self.kamionSearchBar setShowsScopeBar:NO];
+    [self.kamionSearchBar sizeToFit];
+    [self.kamionSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
     CGRect newBounds = [[self tableView] bounds];
-    newBounds.origin.y = newBounds.origin.y + self.camionSearchBar.bounds.size.height;
+    newBounds.origin.y = newBounds.origin.y + self.kamionSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kamion"];
@@ -76,7 +76,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /// ezt ne fejeltsd el atirni ha masolod!
-    static NSString *CellIdentifier = @"kamionTableViewCell";
+    static NSString *CellIdentifier = @"kamionCell";
     
     
     /// az autok menunel MINDENHOL ez a cella fog szerepelni, igy ez masolhato.
@@ -108,7 +108,7 @@
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
         NSLog(@"LOG: %@",[car autoNev]);
-        [[(KamionTableViewCell*)cell kamionLabel] setText:[car autoNev]];
+        [[(KamionCell*)cell kamionLabel] setText:[car autoNev]];
     }
     
     return cell;
