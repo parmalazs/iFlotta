@@ -1700,6 +1700,9 @@
                 <relationship kind="outlet" name="driverSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
+        </class>
         <class className="FreeJobDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobDetailsViewController.h"/>
         </class>
@@ -1714,6 +1717,9 @@
             <relationships>
                 <relationship kind="outlet" name="freeJobsSearchBar" candidateClass="UISearchBar"/>
             </relationships>
+        </class>
+        <class className="InitViewController" superclassName="ECSlidingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
         </class>
         <class className="JarmuTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JarmuTabBarController.h"/>
@@ -1769,6 +1775,9 @@
                 <relationship kind="outlet" name="imageNavigate" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="labelElement" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="MenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
