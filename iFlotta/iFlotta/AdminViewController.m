@@ -34,7 +34,6 @@
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View3"]];
     [self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View4"]];
     [self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"View5"]];
-    
 }
 
 - (void)didReceiveMemoryWarning

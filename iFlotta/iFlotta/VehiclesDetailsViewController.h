@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface VehiclesDetailsViewController : UIViewController
+@property (nonatomic, strong) NSManagedObject *adatDetails;
+
 @property (strong, nonatomic) IBOutlet UILabel *name;
 @property (strong, nonatomic) IBOutlet UILabel *vehicleType;
 @property (strong, nonatomic) IBOutlet UILabel *speedometer;
@@ -17,6 +19,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *benzin;
 @property (strong, nonatomic) IBOutlet UILabel *tipus;
 @property (strong, nonatomic) IBOutlet UILabel *km;
-@property (strong, nonatomic) id senderView;
 
 @end

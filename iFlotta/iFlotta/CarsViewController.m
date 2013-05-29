@@ -10,6 +10,8 @@
 #import "DataBaseUtil.h"
 #import "CarsTableViewCell.h"
 #import "VehiclesDetailsViewController.h"
+#import "Auto.h"
+
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -58,6 +60,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 
 #pragma mark - Table view data source
 
@@ -83,10 +89,11 @@
     
     
     /// az autok menunel MINDENHOL ez a cella fog szerepelni, igy ez masolhato.
-    CarsTableViewCell *cell = [tableView
-                               dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
-        cell = [[CarsTableViewCell alloc]
+        cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
@@ -97,84 +104,51 @@
         cell.contentView.backgroundColor = UIColorFromRGB(0xD9B384);
     }
     
+    Auto *car= nil;
     
-    // ezt se felejtsd atirni
-    cell.carsLabel.text = [[self.cellLabelName objectAtIndex: [indexPath row]] valueForKey:@"autoNev"];
-    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        car = [self.filteredArray objectAtIndex:[indexPath row]];
+        
+        [[cell textLabel] setText:[car autoNev]];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+	else
+	{
+        car = [self.cellLabelName objectAtIndex:[indexPath row]];
+        [[(CarsTableViewCell*)cell carsLabel] setText:[car autoNev]];
+    }
+   
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self performSegueWithIdentifier:@"vehiclesDetails" sender:tableView];
+    //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
 }
-
 
 /// ennek kellene egy osztalyt felvenni.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ( [[segue identifier] isEqualToString:@"siteDetails"] ) {
-        VehiclesDetailsViewController *siteDetailsViewController = [segue destinationViewController];
+    if ( [[segue identifier] isEqualToString:@"vehiclesDetails"] ) {
+        VehiclesDetailsViewController *vehiclesDetailsViewController = [segue destinationViewController];
         
         if(sender == self.searchDisplayController.searchResultsTableView) {
             NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            siteDetailsViewController.vehicleType = [self.filteredArray objectAtIndex: [indexPath row]];
+            vehiclesDetailsViewController.adatDetails = [self.filteredArray objectAtIndex: [indexPath row]];
         }
         else {
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            siteDetailsViewController.vehicleType = [self.cellLabelName objectAtIndex: [indexPath row]];
+            vehiclesDetailsViewController.adatDetails = [self.cellLabelName objectAtIndex: [indexPath row]];
         }
     
     }
 }
-
+*/
 #pragma mark Content Filtering
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
@@ -185,28 +159,18 @@
 	[self.filteredArray removeAllObjects];
     
 	// Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@) or (SELF.telephelyCim contains[c] %@ or (SELF.telephelyEmail contains[c] %@ or (SELF.telephelyTelefonszam contains[c] %@)",searchText,searchText,searchText,searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.autoNev contains[c] %@) or (SELF.autoRendszam contains[c] %@)",searchText,searchText];
     NSArray *tempArray = [self.cellLabelName filteredArrayUsingPredicate:predicate];
     
     if([scope isEqualToString:@"Név"])
     {
         // Further filter the array with the scope
-        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"(SELF.telephelyNev contains[c] %@)",searchText];
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"(SELF.autoNev contains[c] %@)",searchText];
         tempArray = [self.cellLabelName filteredArrayUsingPredicate:scopePredicate];
     }
-    else if([scope isEqualToString:@"Cim"])
+    else if([scope isEqualToString:@"Rendszám"])
     {
-        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyCim contains[c] %@",searchText];
-        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
-    }
-    else if([scope isEqualToString:@"Email"])
-    {
-        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyEmail contains[c] %@",searchText];
-        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
-    }
-    else if([scope isEqualToString:@"Tel"])
-    {
-        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.telephelyTelefonszam contains[c] %@",searchText];
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.autoRendszam contains[c] %@",searchText];
         tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
     }
     self.filteredArray = [NSMutableArray arrayWithArray:tempArray];

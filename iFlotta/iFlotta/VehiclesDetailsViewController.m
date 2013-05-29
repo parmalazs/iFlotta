@@ -27,8 +27,16 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
- 
-    // itt egy switch-case lesz a senderview alapjan es ugy valtoznak a labelek.
+    
+    self.name.text = [self.siteData valueForKey:@"autoNev"];
+    
+    self.vehicleType.text = [self.siteData valueForKey:@"autoTipus"];
+    self.speedometer.text = [self.siteData valueForKey:@"autoKilometerOra"];
+    self.fuel.text = [self.siteData valueForKey:@"autoUzemAnyag"];
+    //self.benzin.text = [self.siteData valueForKey:@"telephelyEmail"];
+    self.tipus.text = [self.siteData valueForKey:@"autoRendszam"];
+    self.km.text = [self.siteData valueForKey:@"autoKilometerOra"];
+    
 }
 
 - (void)didReceiveMemoryWarning
