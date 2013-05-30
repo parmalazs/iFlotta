@@ -58,6 +58,23 @@ static NSString *aktUser;
 
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                               entityForName:entityName inManagedObjectContext:context];
+
+    NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"%K == %@ && autoTipus == %@", IsActiveName, IsActive, tipusName];
+    [fetchRequest setPredicate:IsActivePredicate];
+    [fetchRequest setEntity:entity];
+
+NSError* error = nil;
+NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+return fetchedObjects;
+
+}
++ (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName :(NSString*) sortName :(NSNumber*) sortType{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
     // query-re is egy általános fv-t irni a DataBaseUtil-ba
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -66,7 +83,10 @@ static NSString *aktUser;
     
     NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"%K == %@ && autoTipus == %@", IsActiveName, IsActive, tipusName];
     
+    NSSortDescriptor *sortDescriptors = [[NSSortDescriptor alloc] initWithKey:sortName ascending:[sortType boolValue]];
+    
     [fetchRequest setPredicate:IsActivePredicate];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptors]];
     [fetchRequest setEntity:entity];
     
     NSError* error = nil;

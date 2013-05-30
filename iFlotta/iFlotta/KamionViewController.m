@@ -192,5 +192,15 @@
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
+-(void)rendezNev
+{
+    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kamion" :@"autoNev" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
 
+-(void)rendezRendszam
+{
+    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kamion" :@"autoRendszam" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
 @end

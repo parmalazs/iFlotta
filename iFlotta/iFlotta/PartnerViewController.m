@@ -246,13 +246,15 @@
     return YES;
 }
 
--(void)rendez
+-(void)rendezNev
 {
-    NSLog(@"LÓFASZ");
-    NSLog(@"%@",[[self partnerArray] valueForKey:@"partnerNev"]);
     self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerNev" :[NSNumber numberWithInt:1]];
-    NSLog(@"LÓFASZ");
-    NSLog(@"%@",[[self partnerArray] valueForKey:@"partnerNev"]);
+    [[self tableView] reloadData];
+}
+
+-(void)rendezCim
+{
+    self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerCim" :[NSNumber numberWithInt:1]];
     [[self tableView] reloadData];
 }
 

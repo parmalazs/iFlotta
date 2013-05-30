@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBDropdown.h"
 
-@interface JarmuTabBarController : UITabBarController
-
+@interface JarmuTabBarController : UITabBarController <DropdownDelegate>
+{
+    MBDropdown *dropdownSorted;
+}
 @end

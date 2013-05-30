@@ -235,6 +235,15 @@
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
-
+-(void)rendezNev
+{
+    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive" :@"soforNev" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
+-(void)rendezCim
+{
+    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive" :@"soforCim" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
 
 @end

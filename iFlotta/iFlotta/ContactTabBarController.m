@@ -55,24 +55,31 @@
 }
 - (void)didSelectItem:(NSDictionary *)item{
     NSLog(@"%@",item);
+    NSArray * vc = [self viewControllers];
+    PartnerViewController *pvc = [vc objectAtIndex:1];
+    DriverViewController *dvc = [vc objectAtIndex:0];
     if (_isAdmin)
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
-            {
                 NSLog(@"0");
-                //PartnerViewController *pvc = [[PartnerViewController alloc] init ];
-                //pvc.rendez;
-            }
                 break;
             case 1:
                 NSLog(@"1");
                 break;
             case 2:
-                NSLog(@"1");
+            {
+                NSLog(@"2");
+                pvc.rendezNev;
+                dvc.rendezNev;
+            }
                 break;
             default:
+            {
                 NSLog(@"3");
+                pvc.rendezCim;
+                dvc.rendezCim;
+            }
                 break;
         }
     }
@@ -80,10 +87,18 @@
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
+            {
                 NSLog(@"0");
+                pvc.rendezNev;
+                dvc.rendezNev;
+            }
                 break;
             default:
+            {
                 NSLog(@"1");
+                pvc.rendezCim;
+                dvc.rendezCim;
+            }
                 break;
         }
     }

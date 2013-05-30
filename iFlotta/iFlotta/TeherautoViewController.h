@@ -12,4 +12,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *teherautoSearchBar;
 @property (nonatomic, strong) NSArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
+
+-(void)rendezNev;
+-(void)rendezRendszam;
 @end

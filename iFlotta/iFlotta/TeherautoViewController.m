@@ -191,4 +191,16 @@
     return YES;
 }
 
+-(void)rendezNev
+{
+    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Teherautó" :@"autoNev" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
+
+-(void)rendezRendszam
+{
+    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Teherautó" :@"autoRendszam" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
+
 @end

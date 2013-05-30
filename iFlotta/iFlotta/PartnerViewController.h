@@ -13,5 +13,7 @@
 @property IBOutlet UISearchBar *partnerSearchBar;
 @property (nonatomic, strong) NSArray *partnerArray;
 @property (strong,nonatomic) NSMutableArray *filteredPartnerArray;
--(void)rendez;
+
+-(void)rendezNev;
+-(void)rendezCim;
 @end

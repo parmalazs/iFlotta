@@ -13,4 +13,7 @@
 @property (nonatomic, strong) NSArray *driverArray;
 @property (strong,nonatomic) NSMutableArray *filteredDriverArray;
 
+
+-(void)rendezNev;
+-(void)rendezCim;
 @end

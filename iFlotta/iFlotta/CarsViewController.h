@@ -13,4 +13,8 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) NSArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
+
+-(void)rendezNev;
+
+-(void)rendezRendszam;
 @end

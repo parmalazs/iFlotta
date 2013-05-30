@@ -12,6 +12,4 @@
 {
     MBDropdown *dropdownSorted;
 }
-- (IBAction)searchButton:(id)sender;
-
 @end
