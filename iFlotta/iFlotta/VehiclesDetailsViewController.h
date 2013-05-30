@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *benzin;
 @property (strong, nonatomic) IBOutlet UILabel *tipus;
 @property (strong, nonatomic) IBOutlet UILabel *km;
+- (IBAction)foglalasButtonPushed:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIImageView *profilImage;
 @end

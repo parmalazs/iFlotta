@@ -30,5 +30,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *carXLabel;
 @property (strong, nonatomic) IBOutlet UILabel *carYLabel;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
+- (IBAction)foglalasBtnPushed:(id)sender;
 @end

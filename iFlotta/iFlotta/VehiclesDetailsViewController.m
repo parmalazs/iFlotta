@@ -54,4 +54,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)foglalasButtonPushed:(id)sender {
+}
 @end
