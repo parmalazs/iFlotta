@@ -96,6 +96,7 @@
 		61A24ED21754C40F00423A9F /* telephelyek146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECA1754C40F00423A9F /* telephelyek146x120.png */; };
 		61A24ED31754C40F00423A9F /* terkep146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECB1754C40F00423A9F /* terkep146x120.png */; };
 		61A60CDA1757C85B000045AD /* CarAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A60CD91757C85B000045AD /* CarAdminViewController.m */; };
+		61A60CDD1757DD00000045AD /* ContactsAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A60CDC1757DCFF000045AD /* ContactsAdminViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -248,6 +249,8 @@
 		61A24ECB1754C40F00423A9F /* terkep146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terkep146x120.png; sourceTree = "<group>"; };
 		61A60CD81757C85B000045AD /* CarAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAdminViewController.h; sourceTree = "<group>"; };
 		61A60CD91757C85B000045AD /* CarAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAdminViewController.m; sourceTree = "<group>"; };
+		61A60CDB1757DCFF000045AD /* ContactsAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsAdminViewController.h; sourceTree = "<group>"; };
+		61A60CDC1757DCFF000045AD /* ContactsAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsAdminViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +383,8 @@
 				19BF04F31741BB680025A725 /* AdminViewController.m */,
 				19BA14E81745681C00A79A00 /* CarAddViewController.h */,
 				19BA14E91745681C00A79A00 /* CarAddViewController.m */,
+				61A60CDB1757DCFF000045AD /* ContactsAdminViewController.h */,
+				61A60CDC1757DCFF000045AD /* ContactsAdminViewController.m */,
 			);
 			name = AdminViewControllers;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				19BDAF171756D3230034EBFF /* AddressAnnotation.m in Sources */,
 				6106189B1757712B0033D93A /* AdminSiteViewController.m in Sources */,
 				61A60CDA1757C85B000045AD /* CarAdminViewController.m in Sources */,
+				61A60CDD1757DD00000045AD /* ContactsAdminViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
