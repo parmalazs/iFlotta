@@ -44,7 +44,7 @@
     [[self tableView] setBounds:newBounds];
     
     self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
-    
+    [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :[NSNumber numberWithInt:0]];
     
     filteredFreeJobsArray = [NSMutableArray arrayWithCapacity:[self.freeJobsArray count]];
     [[self tableView] reloadData];
@@ -186,6 +186,18 @@
         }
         
     }
+}
+
+-(void)rendezNev
+{
+    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :[NSNumber numberWithInt:0] :@"munkaNev" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
+
+-(void)rendezDatum
+{
+    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :[NSNumber numberWithInt:0] :@"munkaDate" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
 }
 
 @end

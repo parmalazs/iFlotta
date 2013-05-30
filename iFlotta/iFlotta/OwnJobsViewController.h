@@ -11,6 +11,5 @@
 @interface OwnJobsViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *ownJobsSearchBar;
 @property (nonatomic, strong) NSArray *ownJobsArray;
-@property (strong,nonatomic) NSMutableArray *filteredOwnJobsArray;
 
 @end

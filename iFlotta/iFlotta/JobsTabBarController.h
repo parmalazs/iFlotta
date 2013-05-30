@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBDropdown.h"
 
-@interface JobsTabBarController : UITabBarController
-- (IBAction)searchButton:(id)sender;
-
+@interface JobsTabBarController : UITabBarController <DropdownDelegate>
+{
+    MBDropdown *dropdownSorted;
+}
 @end

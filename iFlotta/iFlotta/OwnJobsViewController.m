@@ -18,7 +18,6 @@
 
 @implementation OwnJobsViewController
 @synthesize ownJobsSearchBar;
-@synthesize filteredOwnJobsArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,7 +43,7 @@
     self.ownJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
     
     
-    filteredOwnJobsArray = [NSMutableArray arrayWithCapacity:[self.ownJobsArray count]];
+    //filteredOwnJobsArray = [NSMutableArray arrayWithCapacity:[self.ownJobsArray count]];
     [[self tableView] reloadData];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -76,26 +75,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
-    // Return the number of rows in the section.
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        return [filteredOwnJobsArray count];
-    }
-	else
-	{
         return [self.ownJobsArray count];
-    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ownJobsTableViewCell";
     
-    UITableViewCell *cell = [tableView
+    OwnJobsTableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]
+        cell = [[OwnJobsTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
@@ -107,20 +97,8 @@
     }
     
     Munka *job= nil;
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        job = [filteredOwnJobsArray objectAtIndex:[indexPath row]];
-        
-        [[cell textLabel] setText:[job munkaDate]];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    }
-	else
-	{
-        job = [self.ownJobsArray objectAtIndex:[indexPath row]];
-        [[(OwnJobsTableViewCell*)cell ownJobLabel] setText:[job munkaDate]];
-    }
-    
+    job = [self.ownJobsArray objectAtIndex:[indexPath row]];
+    [[cell ownJobLabel] setText:[job munkaDate]];
     return cell;
 }
 
@@ -176,16 +154,8 @@
 {
     if ( [[segue identifier] isEqualToString:@"ownJobDetails"] ) {
         OwnJobDetailsViewController *ownJobDetailsViewController = [segue destinationViewController];
-        
-        if(sender == self.searchDisplayController.searchResultsTableView) {
-            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            ownJobDetailsViewController.ownJobData = [filteredOwnJobsArray objectAtIndex: [indexPath row]];
-        }
-        else {
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            ownJobDetailsViewController.ownJobData = [self.ownJobsArray objectAtIndex: [indexPath row]];
-        }
- 
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ownJobDetailsViewController.ownJobData = [self.ownJobsArray objectAtIndex: [indexPath row]];
     }
 }
 

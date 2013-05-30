@@ -68,11 +68,12 @@ static NSString *aktUser;
     [fetchRequest setPredicate:IsActivePredicate];
     [fetchRequest setEntity:entity];
 
-NSError* error = nil;
-NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-return fetchedObjects;
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
 
 }
+
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName :(NSString*) sortName :(NSNumber*) sortType{
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
@@ -112,9 +113,27 @@ return fetchedObjects;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     return fetchedObjects;
 }
-//sortDescriptors = [NSArray arrayWithObjects:[[[NSSortDescriptor alloc] initWithKey:@"category.name" ascending:YES]
 
-                                             
++ (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSNumber*) soforID :(NSString*) sortName :(NSNumber*) sortType {
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:entityName inManagedObjectContext:context];
+    
+    NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"%K == %@ && soforID == %@", IsActiveName, IsActive, soforID];
+
+    NSSortDescriptor *sortDescriptors = [[NSSortDescriptor alloc] initWithKey:sortName ascending:[sortType boolValue]];
+    
+    [fetchRequest setPredicate:IsActivePredicate];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptors]];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
 
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) sortName :(NSNumber*) sortType {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
@@ -136,6 +155,7 @@ return fetchedObjects;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     return fetchedObjects;
 }
+
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
