@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBDropdown.h"
 
-@interface SiteViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface SiteViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate,DropdownDelegate>
+{
+    MBDropdown *dropdownSorted;
+}
 
 @property IBOutlet UISearchBar *siteSearchBar;
 @property (nonatomic, strong) NSArray *siteArray;

@@ -25,8 +25,6 @@
     //[self.window makeKeyAndVisible];
 
     
-    [self initDatabase];
-    
     // Ezzel a három hivással lehet beszúrni lokális adatbázisbe, utána lekérdezzük azt, majd a kapott objektumot elküldjük
     //[DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:678] :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :[[NSNumber alloc] initWithBool:YES] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithBool:YES]];
     
@@ -39,17 +37,7 @@
     return YES;
 }
 
-- (void)initDatabase
-{
-    [DataBaseUtil fillSoforTable];
-    [DataBaseUtil fillTelephelyTable];
-    [DataBaseUtil fillAutoTable];
-    [DataBaseUtil fillPartnerTable];
-    [DataBaseUtil fillMunkaTable];
-    [DataBaseUtil fillMunkatipusTable];
-    [DataBaseUtil fillAutokepTable];
-    [DataBaseUtil fillProfilkepTable];
-}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

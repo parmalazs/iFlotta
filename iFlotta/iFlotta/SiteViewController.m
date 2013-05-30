@@ -10,11 +10,7 @@
 #import "DataBaseUtil.h"
 #import "SiteTableViewCell.h"
 #import "SiteDetailsViewController.h"
-#import "ECSlidingViewController.h"
-#import "MenuViewController.h"
 #import "Telephely.h"
-#import "TSPopoverController.h"
-#import "TSActionSheet.h"
 
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -40,6 +36,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+    
+    
+    dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint",@"image" : @"40-inbox.png"},@{@"name" : @"Cim szerint",@"image":@"166-newspaper.png"},@{@"name":@"Távolság szerint",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
+    
+    self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
+    
     
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     [siteSearchBar setShowsScopeBar:NO];
@@ -261,5 +264,10 @@
     
     // Return YES to cause the search result table view to be reloaded.
     return YES;
+}
+
+- (void)didSelectItem:(NSDictionary *)item{
+    NSLog(@"%@",item);
+    [dropdownSorted dismiss];
 }
 @end

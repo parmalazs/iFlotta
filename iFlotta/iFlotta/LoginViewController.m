@@ -19,9 +19,6 @@
     NSArray* _imgPicsArray;
     int idx;
 }
-
-
-
 @end
 
 @implementation LoginViewController
@@ -43,9 +40,6 @@
     if (self) {
         
     }
-    
-    
-    
     return self;
 }
 /*
@@ -59,6 +53,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initDatabase];
+    
     
    // loginButton.hidden = true;
     loginButton.alpha = 0.0;
@@ -96,8 +92,6 @@
         {
             MainPageNavigationViewController *mainPage = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"MainPageStoryboardID"];
             [DataBaseUtil setUser:[aktsofor valueForKey:@"soforIsAdmin"]];
-            
-            //NSLog(@"Admin-e: %@",[DataBaseUtil aktUser]);
             
         [self presentViewController:mainPage animated:YES completion:^{
             
@@ -236,6 +230,18 @@
             break;
     }
     idx++;
+}
+
+- (void)initDatabase
+{
+    [DataBaseUtil fillSoforTable];
+    [DataBaseUtil fillTelephelyTable];
+    [DataBaseUtil fillAutoTable];
+    [DataBaseUtil fillPartnerTable];
+    [DataBaseUtil fillMunkaTable];
+    [DataBaseUtil fillMunkatipusTable];
+    [DataBaseUtil fillAutokepTable];
+    [DataBaseUtil fillProfilkepTable];
 }
 
 @end

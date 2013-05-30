@@ -14,6 +14,8 @@
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
 #import "JobsTabBarController.h"
+#import "MapViewController.h"
+
 #import "DataBaseUtil.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -217,18 +219,18 @@
         case 3:
         {
             if(_isAdmin){
-                SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"initViewController"];
+                SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"siteViewController"];
                 [self.navigationController pushViewController:siteViewController animated:YES];
             }else{
-                SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"initViewController"];
+                SiteViewController *siteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"siteViewController"];
                 [self.navigationController pushViewController:siteViewController animated:YES];
             }
         }
             break;
         case 4:
         {
-            /// hu bazd meg meg ez is :< agyfaszt kapok az iOS-tol.
-            // Térkép
+            MapViewController *mapViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"mapViewController"];
+            [self.navigationController pushViewController:mapViewController animated:YES];
         }
             break;
             
