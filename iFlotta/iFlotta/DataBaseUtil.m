@@ -20,11 +20,16 @@
 
 
 @implementation DataBaseUtil
-static NSString *aktUser;
+static NSString *isAdmin;
+static NSString *aktUserID;
 
-+ (NSString*)aktUser
++ (NSString*)aktUserAdmin
 {
-    return aktUser;
+    return isAdmin;
+}
++ (NSString*)aktUserID
+{
+    return aktUserID;
 }
 
 + (void) deleteAllObjects: (NSString *) entityDescription  :(NSManagedObjectContext*) context {
@@ -52,8 +57,9 @@ static NSString *aktUser;
     }
 }
 
-+(void) setUser:(NSString*)aktsofor {
-    aktUser = aktsofor;
++(void) setUser:(NSString*)admin :(NSString*)userid {
+    isAdmin = admin;
+    aktUserID = userid;
 }
 
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName {
@@ -595,14 +601,24 @@ static NSString *aktUser;
 }
 
 
-+(void)autoFoglal:(NSString*) autoID
++(void)autoFoglal:(NSString*) autoID :(NSNumber*) foglal
 {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     NSArray *lefoglalAuto = [self fetchRequestEntity:@"Auto" :@"autoID" :autoID];
     Auto * aktauto = [lefoglalAuto objectAtIndex:0];
-    aktauto.autoFoglalt = [NSNumber numberWithInt:1];
+    aktauto.autoFoglalt = [NSNumber numberWithInt:[foglal intValue]];
     [self saveContext:context];
 }
+
++(void)munkaFelvesz:(NSString*) munkaID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Munka" :@"munkaID" :munkaID];
+    Munka * aktmunka = [munkafelvesz objectAtIndex:0];
+    aktmunka.soforID = [NSNumber numberWithInt:1];
+    [self saveContext:context];
+}
+
 
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive
 {

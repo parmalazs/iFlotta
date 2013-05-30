@@ -31,8 +31,9 @@
 + (void)fillProfilkepTable;
 + (void)fillMunkakepTable;
 + (void)fillAutoTable;
-+ (void) setUser:(NSString*)aktsofor;
-+ (NSString*)aktUser;
++(void) setUser:(NSString*)admin :(NSString*)userid;
++ (NSString*)aktUserAdmin;
++ (NSString*)aktUserID;
 + (BOOL) IsEmpty:(id) thing;
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID;
 
