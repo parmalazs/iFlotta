@@ -76,6 +76,7 @@
 		603EAD331753AD0400104181 /* OwnJobsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 603EAD321753AD0400104181 /* OwnJobsTableViewCell.m */; };
 		60D27F3E1753EF82003C9D92 /* FreeJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */; };
 		60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */; };
+		6106189B1757712B0033D93A /* AdminSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106189A1757712B0033D93A /* AdminSiteViewController.m */; };
 		61938FEA175380E200A56581 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61938FE8175380E200A56581 /* LoginViewController.m */; };
 		61938FEC1753811600A56581 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEB1753811600A56581 /* MainStoryboard.storyboard */; };
 		61938FF41753816800A56581 /* telephely-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEE1753816800A56581 /* telephely-ikon.png */; };
@@ -94,11 +95,6 @@
 		61A24ED11754C40F00423A9F /* partnerek146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC91754C40F00423A9F /* partnerek146x120.png */; };
 		61A24ED21754C40F00423A9F /* telephelyek146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECA1754C40F00423A9F /* telephelyek146x120.png */; };
 		61A24ED31754C40F00423A9F /* terkep146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECB1754C40F00423A9F /* terkep146x120.png */; };
-		61AB0B311756095A0073F7A9 /* AdminChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AB0B301756095A0073F7A9 /* AdminChooserViewController.m */; };
-		61AB0B3417560FCE0073F7A9 /* AdminContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AB0B3317560FCE0073F7A9 /* AdminContactsViewController.m */; };
-		61AB0B3717560FF90073F7A9 /* AdminSitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AB0B3617560FF90073F7A9 /* AdminSitesViewController.m */; };
-		61AB0B3A1756104A0073F7A9 /* AdminJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AB0B391756104A0073F7A9 /* AdminJobsViewController.m */; };
-		61AB0B3D175610740073F7A9 /* AdminCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AB0B3C175610740073F7A9 /* AdminCarsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +222,8 @@
 		60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeJobDetailsViewController.m; sourceTree = "<group>"; };
 		60D27F3F1753F033003C9D92 /* OwnJobDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnJobDetailsViewController.h; sourceTree = "<group>"; };
 		60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnJobDetailsViewController.m; sourceTree = "<group>"; };
+		610618991757712B0033D93A /* AdminSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminSiteViewController.h; sourceTree = "<group>"; };
+		6106189A1757712B0033D93A /* AdminSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminSiteViewController.m; sourceTree = "<group>"; };
 		6191DB24175561E000E4B09B /* VehiclesDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesDetailsViewController.h; sourceTree = "<group>"; };
 		6191DB25175561E000E4B09B /* VehiclesDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesDetailsViewController.m; sourceTree = "<group>"; };
 		61938FE8175380E200A56581 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -247,16 +245,6 @@
 		61A24EC91754C40F00423A9F /* partnerek146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partnerek146x120.png; sourceTree = "<group>"; };
 		61A24ECA1754C40F00423A9F /* telephelyek146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telephelyek146x120.png; sourceTree = "<group>"; };
 		61A24ECB1754C40F00423A9F /* terkep146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terkep146x120.png; sourceTree = "<group>"; };
-		61AB0B2F1756095A0073F7A9 /* AdminChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminChooserViewController.h; sourceTree = "<group>"; };
-		61AB0B301756095A0073F7A9 /* AdminChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminChooserViewController.m; sourceTree = "<group>"; };
-		61AB0B3217560FCE0073F7A9 /* AdminContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminContactsViewController.h; sourceTree = "<group>"; };
-		61AB0B3317560FCE0073F7A9 /* AdminContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminContactsViewController.m; sourceTree = "<group>"; };
-		61AB0B3517560FF90073F7A9 /* AdminSitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminSitesViewController.h; sourceTree = "<group>"; };
-		61AB0B3617560FF90073F7A9 /* AdminSitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminSitesViewController.m; sourceTree = "<group>"; };
-		61AB0B381756104A0073F7A9 /* AdminJobsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminJobsViewController.h; sourceTree = "<group>"; };
-		61AB0B391756104A0073F7A9 /* AdminJobsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminJobsViewController.m; sourceTree = "<group>"; };
-		61AB0B3B175610740073F7A9 /* AdminCarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminCarsViewController.h; sourceTree = "<group>"; };
-		61AB0B3C175610740073F7A9 /* AdminCarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminCarsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,7 +396,6 @@
 			isa = PBXGroup;
 			children = (
 				19BDAF181756D32B0034EBFF /* Map */,
-				61AB0B2E1756092E0073F7A9 /* AdminByGeza */,
 				19BA14EB1745B05600A79A00 /* AdminViewControllers */,
 				19D027C61752AB3E00E3AEAD /* Telephely */,
 				19D027C81752ABA700E3AEAD /* Main */,
@@ -501,6 +488,8 @@
 				19BBA208173DB86500631B16 /* SiteViewController.m */,
 				19BFF1AB173FCC1900968F2C /* SiteDetailsViewController.h */,
 				19BFF1AC173FCC1A00968F2C /* SiteDetailsViewController.m */,
+				610618991757712B0033D93A /* AdminSiteViewController.h */,
+				6106189A1757712B0033D93A /* AdminSiteViewController.m */,
 			);
 			name = Telephely;
 			sourceTree = "<group>";
@@ -570,23 +559,6 @@
 				61A24ECB1754C40F00423A9F /* terkep146x120.png */,
 			);
 			name = ikonok;
-			sourceTree = "<group>";
-		};
-		61AB0B2E1756092E0073F7A9 /* AdminByGeza */ = {
-			isa = PBXGroup;
-			children = (
-				61AB0B2F1756095A0073F7A9 /* AdminChooserViewController.h */,
-				61AB0B301756095A0073F7A9 /* AdminChooserViewController.m */,
-				61AB0B3217560FCE0073F7A9 /* AdminContactsViewController.h */,
-				61AB0B3317560FCE0073F7A9 /* AdminContactsViewController.m */,
-				61AB0B3517560FF90073F7A9 /* AdminSitesViewController.h */,
-				61AB0B3617560FF90073F7A9 /* AdminSitesViewController.m */,
-				61AB0B381756104A0073F7A9 /* AdminJobsViewController.h */,
-				61AB0B391756104A0073F7A9 /* AdminJobsViewController.m */,
-				61AB0B3B175610740073F7A9 /* AdminCarsViewController.h */,
-				61AB0B3C175610740073F7A9 /* AdminCarsViewController.m */,
-			);
-			name = AdminByGeza;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,11 +696,6 @@
 				60D27F3E1753EF82003C9D92 /* FreeJobDetailsViewController.m in Sources */,
 				60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */,
 				19C2B0831755A17500DCE556 /* VehiclesDetailsViewController.m in Sources */,
-				61AB0B311756095A0073F7A9 /* AdminChooserViewController.m in Sources */,
-				61AB0B3417560FCE0073F7A9 /* AdminContactsViewController.m in Sources */,
-				61AB0B3717560FF90073F7A9 /* AdminSitesViewController.m in Sources */,
-				61AB0B3A1756104A0073F7A9 /* AdminJobsViewController.m in Sources */,
-				61AB0B3D175610740073F7A9 /* AdminCarsViewController.m in Sources */,
 				19A1E53B1756804F009F1419 /* BuszCell.m in Sources */,
 				19A1E53E1756887C009F1419 /* KamionCell.m in Sources */,
 				19A1E54117568C60009F1419 /* TeherautoCell.m in Sources */,
@@ -736,6 +703,7 @@
 				19BDAF151756D3230034EBFF /* MBDropdown.m in Sources */,
 				19BDAF161756D3230034EBFF /* MapViewController.m in Sources */,
 				19BDAF171756D3230034EBFF /* AddressAnnotation.m in Sources */,
+				6106189B1757712B0033D93A /* AdminSiteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

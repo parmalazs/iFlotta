@@ -15,7 +15,9 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-@interface SiteViewController ()
+@interface SiteViewController (){
+    BOOL _isAdmin;
+}
 
 @end
 
@@ -37,7 +39,14 @@
 {
     [super viewDidLoad];
   
-    
+    // Admin ellenőrzés
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        _isAdmin = NO;
+    }else{
+        _isAdmin = YES;
+    }
     
     dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint",@"image" : @"40-inbox.png"},@{@"name" : @"Cim szerint",@"image":@"166-newspaper.png"},@{@"name":@"Távolság szerint",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
     
@@ -181,9 +190,14 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{  
-    [self performSegueWithIdentifier:@"siteDetails" sender:tableView];
+{
+    
+    if (_isAdmin) {
+        [self performSegueWithIdentifier:@"siteAdminDetails" sender:tableView];
+    }else{
+        [self performSegueWithIdentifier:@"siteDetails" sender:tableView];
     //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
+    }
     
 }
 
@@ -200,7 +214,6 @@
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             siteDetailsViewController.siteData = [self.siteArray objectAtIndex: [indexPath row]];
         }
-        
     }
 }
 
