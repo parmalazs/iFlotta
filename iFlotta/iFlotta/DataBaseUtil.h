@@ -13,6 +13,7 @@
 @interface DataBaseUtil : NSObject
 + (void) deleteAllObjects: (NSString *) entityDescription  :(NSManagedObjectContext*) context;
 + (void)saveContext:(NSManagedObjectContext *)managedObjectContext;
++ (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) sortName :(NSNumber*) sortType;
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName;
 + (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSNumber*) soforID;
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName ;

@@ -92,7 +92,30 @@ static NSString *aktUser;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     return fetchedObjects;
 }
+//sortDescriptors = [NSArray arrayWithObjects:[[[NSSortDescriptor alloc] initWithKey:@"category.name" ascending:YES]
 
+                                             
+
++ (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) sortName :(NSNumber*) sortType {
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:entityName inManagedObjectContext:context];
+    
+    NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"%K == %@", IsActiveName, IsActive];   
+    
+    NSSortDescriptor *sortDescriptors = [[NSSortDescriptor alloc] initWithKey:sortName ascending:[sortType boolValue]];
+    
+    [fetchRequest setPredicate:IsActivePredicate];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptors]];                                             
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     

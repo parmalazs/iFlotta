@@ -17,7 +17,9 @@
 @end
 
 @implementation PartnerViewController
-
+{
+    NSNumber *_sort;
+}
 @synthesize partnerSearchBar;
 @synthesize filteredPartnerArray;
 
@@ -33,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     [partnerSearchBar setShowsScopeBar:NO];
     [partnerSearchBar sizeToFit];
@@ -43,13 +46,10 @@
     newBounds.origin.y = newBounds.origin.y + partnerSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
-    
     self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"];
     
     NSLog(@"Adatok: %@",self.partnerArray);
 
-    //[self.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
     filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
     [[self tableView] reloadData];
     
@@ -246,6 +246,14 @@
     return YES;
 }
 
+-(void)rendez
+{
+    NSLog(@"LÓFASZ");
+    NSLog(@"%@",[[self partnerArray] valueForKey:@"partnerNev"]);
+    self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerNev" :[NSNumber numberWithInt:1]];
+    NSLog(@"LÓFASZ");
+    NSLog(@"%@",[[self partnerArray] valueForKey:@"partnerNev"]);
+    [[self tableView] reloadData];
+}
 
 @end
-

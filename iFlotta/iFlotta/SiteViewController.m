@@ -15,9 +15,7 @@
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-@interface SiteViewController (){
-    BOOL _isAdmin;
-}
+@interface SiteViewController ()
 
 @end
 
@@ -54,11 +52,6 @@
         _isAdmin = YES;
         dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új telephely",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image" : @"40-inbox.png"},@{@"name" : @"Cim szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Távolság szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
     }
-    
-    dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint",@"image" : @"40-inbox.png"},@{@"name" : @"Cim szerint",@"image":@"166-newspaper.png"},@{@"name":@"Távolság szerint",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
-    
-    
-
     
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
     
@@ -298,10 +291,16 @@
                 NSLog(@"0");
                 break;
             case 1:
-                NSLog(@"1");
+                {
+                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyNev" :[NSNumber numberWithInt:1]];
+                    [[self tableView] reloadData];
+                }
                 break;
-            case 2:
-                NSLog(@"2");
+                case 2:
+                {
+                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyCim" :[NSNumber numberWithInt:1]];
+                    [[self tableView] reloadData];
+                }
                 break;
             default:
                 NSLog(@"3");
@@ -312,10 +311,16 @@
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
-                NSLog(@"0");
+                {
+                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyNev" :[NSNumber numberWithInt:1]];
+                    [[self tableView] reloadData];
+                }
                 break;
             case 1:
-                NSLog(@"1");
+                {
+                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyCim" :[NSNumber numberWithInt:1]];
+                    [[self tableView] reloadData];
+                }
                 break;
             default:
                 NSLog(@"2");

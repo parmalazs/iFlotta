@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBDropdown.h"
 
 @interface PartnerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property IBOutlet UISearchBar *partnerSearchBar;
 @property (nonatomic, strong) NSArray *partnerArray;
 @property (strong,nonatomic) NSMutableArray *filteredPartnerArray;
+-(void)rendez;
 @end

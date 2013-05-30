@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ContactTabBarController : UITabBarController
+#import "MBDropdown.h"
+@interface ContactTabBarController : UITabBarController  <DropdownDelegate>
+{
+    MBDropdown *dropdownSorted;
+}
 - (IBAction)searchButton:(id)sender;
 
 @end
