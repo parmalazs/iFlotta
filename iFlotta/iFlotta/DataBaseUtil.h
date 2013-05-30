@@ -36,7 +36,7 @@
 + (NSString*)aktUserID;
 + (BOOL) IsEmpty:(id) thing;
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID;
-
++ (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName;
 
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive;
 @end

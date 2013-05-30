@@ -7,6 +7,8 @@
 //
 
 #import "SoforAdminDetailViewController.h"
+#import "DataBaseUtil.h"
+#import "JsonUtil.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface SoforAdminDetailViewController ()
@@ -70,4 +72,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)saveButton:(id)sender {
+    /*@property (strong, nonatomic) IBOutlet UITextField *driverNameTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverAdressTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverEmailTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverTelTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverWebTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverXTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverYTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverLoginTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverPasswordTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverIsAdminTextField;
+    @property (strong, nonatomic) IBOutlet UITextField *driverBirthdateTextField;
+   
+    +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive
+    { */
+    
+    //+ (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName {
+    
+    NSNumber *maxid = [DataBaseUtil fetchRequestMaxID:@"Sofor" :@"soforID"];
+    
+    int value = [maxid intValue];
+    maxid = [NSNumber numberWithInt:value + 1];
+    
+    //NSLog(@"%@",maxid);
+    
+    [DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:[maxid intValue]] :_driverNameTextField.text  :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :[[NSNumber alloc] initWithBool:YES] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithBool:YES]];
+    
+    NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
+    
+    [JsonUtil JsonBuilderSender:obj :@"Sofor"];
+}
 @end

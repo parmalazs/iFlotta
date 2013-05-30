@@ -644,6 +644,31 @@ static NSString *aktUserID;
     [self saveContext:context];
 }
 
++ (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName {
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:entityName inManagedObjectContext:context];
+    
+    //NSPredicate *Predicate = [NSPredicate predicateWithFormat:@"%K == %@", IDName, ID];
+    
+    NSSortDescriptor *sortDescriptors = [[NSSortDescriptor alloc] initWithKey:sortName  ascending:NO];
+    
+    
+    //[fetchRequest setPredicate:Predicate];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptors]];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    return [[fetchedObjects objectAtIndex:0] valueForKey:sortName];
+}
+
+
+
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
