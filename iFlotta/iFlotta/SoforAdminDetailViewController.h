@@ -33,5 +33,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *driverPasswordTextField;
 @property (strong, nonatomic) IBOutlet UITextField *driverIsAdminTextField;
 @property (strong, nonatomic) IBOutlet UITextField *driverBirthdateTextField;
+- (IBAction)saveButton:(id)sender;
 
 @end
