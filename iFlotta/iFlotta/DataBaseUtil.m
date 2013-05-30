@@ -334,12 +334,14 @@ static NSString *aktUser;
          if (![self IsEmpty:([result valueForKey:@"munkaEstimatedTime"])]) {
              [aktMunka setValue:[result valueForKey:@"munkaEstimatedTime"] forKey:@"munkaEstimatedTime"];             
          }
+         
          if (![self IsEmpty:([result valueForKey:@"soforID"])]) {
              [aktMunka setValue:[NSNumber numberWithInt:[[result valueForKey:@"soforID"] intValue] ] forKey:@"soforID"];
          }
          else {
-             [aktMunka setValue:0 forKey:@"soforID"];
+             [aktMunka setValue:[NSNumber numberWithInt:0] forKey:@"soforID"];
          }
+         
          if (![self IsEmpty:([result valueForKey:@"munkatipusID"])]) {
              [aktMunka setValue:[NSNumber numberWithInt:[[result valueForKey:@"munkatipusID"] intValue] ] forKey:@"munkatipusID"];
          }
