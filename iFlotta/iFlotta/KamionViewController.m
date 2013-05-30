@@ -133,13 +133,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
+    
      if (_isAdmin) {
-     [self performSegueWithIdentifier:@"siteAdminDetails" sender:tableView];
+     [self performSegueWithIdentifier:@"kamionAdminViewSegue" sender:tableView];
      }else{
-     [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
-     }*/
-    [self performSegueWithIdentifier:@"vehiclesKamionDetails" sender:tableView];
+     [self performSegueWithIdentifier:@"vehiclesKamionDetails" sender:tableView];
+     }
+   // [self performSegueWithIdentifier:@"vehiclesKamionDetails" sender:tableView];
     //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
 }
 

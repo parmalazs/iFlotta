@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -705,6 +705,7 @@
                         <outlet property="searchBar" destination="dr4-cg-ya1" id="Xfc-bg-QqO"/>
                         <outlet property="searchDisplayController" destination="KWZ-QK-cHz" id="lQ6-p3-uNy"/>
                         <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesAutoDetails" id="chP-po-wBt"/>
+                        <segue destination="hqd-f5-Af1" kind="push" identifier="autoAdminViewSegue" id="5ME-0f-bdf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWp-cT-QmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -779,7 +780,8 @@
                     <connections>
                         <outlet property="buszSearchBar" destination="WaW-yb-Loc" id="Gq9-Jg-MUG"/>
                         <outlet property="searchDisplayController" destination="MsQ-hW-TXH" id="2fO-ib-n3p"/>
-                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesBuszDetails" id="1Ns-oy-JaP"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKamionDetails" id="1Ns-oy-JaP"/>
+                        <segue destination="hqd-f5-Af1" kind="push" identifier="buszAdminViewSegue" id="91I-hE-1Wq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAT-1j-CyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -852,6 +854,7 @@
                         <outlet property="kamionSearchBar" destination="ujV-wz-POt" id="Qai-Dh-X9z"/>
                         <outlet property="searchDisplayController" destination="oYg-Fc-Q7K" id="9nA-wg-lOc"/>
                         <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKamionDetails" id="hTW-QS-s81"/>
+                        <segue destination="hqd-f5-Af1" kind="push" identifier="kamionAdminViewSegue" id="mPR-A0-Viu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMU-iv-jKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -926,6 +929,7 @@
                         <outlet property="searchDisplayController" destination="n5A-1c-Nns" id="TtC-WF-nbt"/>
                         <outlet property="teherautoSearchBar" destination="pMQ-de-dA8" id="Nsm-6w-uIQ"/>
                         <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesTeherautoDetails" id="Yj0-Cf-Nzf"/>
+                        <segue destination="hqd-f5-Af1" kind="push" identifier="teherautoAdminViewSegue" id="brN-T3-0As"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00T-G9-L3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1000,6 +1004,7 @@
                         <outlet property="kisteherautoSearchBar" destination="Zu5-eY-UuL" id="hal-nt-nxH"/>
                         <outlet property="searchDisplayController" destination="nTn-xV-WuH" id="pdU-uv-lEL"/>
                         <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKisteherautoDetails" id="4k1-KE-Gjt"/>
+                        <segue destination="hqd-f5-Af1" kind="push" identifier="kisteherautoAdminViewSegue" id="kww-q9-2CX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCq-wy-MeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1120,7 +1125,187 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovR-dV-rQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="6805"/>
+            <point key="canvasLocation" x="2065" y="6805"/>
+        </scene>
+        <!--Car Admin View Controller-->
+        <scene sceneID="h0G-oP-CRb">
+            <objects>
+                <viewController storyboardIdentifier="carAdminViewController" id="hqd-f5-Af1" customClass="CarAdminViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fRE-cP-2Bn">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AutoNév" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27g-ZD-cl0">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tipus:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="47" translatesAutoresizingMaskIntoConstraints="NO" id="HPS-qs-QEV">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Km:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-Tk-nNK">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Benzin:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1e-U6-bMc">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rendszam:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzE-B6-Igl">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkq-hE-jZh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4jU-X1-o5C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FCm-y1-6D3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="le4-Wv-YjA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPL-a5-2tU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qzz-ey-IeH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWo-6C-UTY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qfl-T0-2gI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnI-Iz-kDt">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0n-Hv-Cib">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="H8Y-W2-ZRO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8XX-50-gBI">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="x:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vii-B7-Llc">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="y:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejb-L8-ThE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Muszaki:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3Y-Wa-ram">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7T-fc-w1X">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8y-af-2lR">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Szervizelve:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUU-z0-KVo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OPL-a5-2tU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0af-6W-gCF"/>
+                            <constraint firstItem="sWo-6C-UTY" firstAttribute="top" secondItem="OPL-a5-2tU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="16y-Qd-7Z3"/>
+                            <constraint firstItem="OPL-a5-2tU" firstAttribute="top" secondItem="FCm-y1-6D3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1Rf-vi-8N1"/>
+                            <constraint firstItem="q0n-Hv-Cib" firstAttribute="baseline" secondItem="Vii-B7-Llc" secondAttribute="baseline" type="default" id="4i8-vY-vqN"/>
+                            <constraint firstItem="C8y-af-2lR" firstAttribute="leading" secondItem="f7T-fc-w1X" secondAttribute="leading" type="default" id="5Pv-kE-S3Z"/>
+                            <constraint firstAttribute="trailing" secondItem="FCm-y1-6D3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9X4-oW-tFF"/>
+                            <constraint firstAttribute="trailing" secondItem="lkq-hE-jZh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9rE-2R-239"/>
+                            <constraint firstItem="Vii-B7-Llc" firstAttribute="leading" secondItem="Ejb-L8-ThE" secondAttribute="leading" type="default" id="BE7-qx-Bf6"/>
+                            <constraint firstItem="hnI-Iz-kDt" firstAttribute="top" secondItem="sWo-6C-UTY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Bgq-cb-kjl"/>
+                            <constraint firstItem="FCm-y1-6D3" firstAttribute="leading" secondItem="lkq-hE-jZh" secondAttribute="leading" type="default" id="ELN-Wf-M9z"/>
+                            <constraint firstItem="8XX-50-gBI" firstAttribute="centerX" secondItem="fRE-cP-2Bn" secondAttribute="centerX" type="default" id="EnV-65-Sqy"/>
+                            <constraint firstItem="Z3Y-Wa-ram" firstAttribute="top" secondItem="f7T-fc-w1X" secondAttribute="top" type="default" id="Fwm-eH-mHG"/>
+                            <constraint firstItem="sWo-6C-UTY" firstAttribute="leading" secondItem="OPL-a5-2tU" secondAttribute="leading" type="default" id="Igb-3g-eXn"/>
+                            <constraint firstAttribute="trailing" secondItem="C8y-af-2lR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IyO-nb-PRJ"/>
+                            <constraint firstItem="cMo-Tk-nNK" firstAttribute="top" secondItem="fRE-cP-2Bn" secondAttribute="top" constant="96" id="KKh-oR-ahg"/>
+                            <constraint firstItem="Vii-B7-Llc" firstAttribute="trailing" secondItem="dUU-z0-KVo" secondAttribute="trailing" type="default" id="O1T-kT-PYV"/>
+                            <constraint firstAttribute="trailing" secondItem="sWo-6C-UTY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oq2-Jh-KKX"/>
+                            <constraint firstItem="HPS-qs-QEV" firstAttribute="trailing" secondItem="27g-ZD-cl0" secondAttribute="trailing" type="default" id="PBh-zv-K2b"/>
+                            <constraint firstItem="C8y-af-2lR" firstAttribute="top" secondItem="f7T-fc-w1X" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QJL-Hh-BUY"/>
+                            <constraint firstAttribute="trailing" secondItem="hnI-Iz-kDt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SRQ-T9-AEN"/>
+                            <constraint firstItem="8XX-50-gBI" firstAttribute="top" secondItem="q0n-Hv-Cib" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="T70-na-quq"/>
+                            <constraint firstItem="Z3Y-Wa-ram" firstAttribute="trailing" secondItem="PzE-B6-Igl" secondAttribute="trailing" type="default" id="Uph-pU-kX8"/>
+                            <constraint firstItem="8XX-50-gBI" firstAttribute="trailing" secondItem="q0n-Hv-Cib" secondAttribute="trailing" type="default" id="VDZ-Wy-9A4"/>
+                            <constraint firstItem="cMo-Tk-nNK" firstAttribute="trailing" secondItem="HPS-qs-QEV" secondAttribute="trailing" type="default" id="WYb-yD-2jI"/>
+                            <constraint firstItem="dUU-z0-KVo" firstAttribute="trailing" secondItem="Z3Y-Wa-ram" secondAttribute="trailing" type="default" id="X7I-qy-5NZ"/>
+                            <constraint firstItem="Ejb-L8-ThE" firstAttribute="baseline" secondItem="8XX-50-gBI" secondAttribute="baseline" type="default" id="aPr-zM-UbB"/>
+                            <constraint firstItem="j1e-U6-bMc" firstAttribute="top" secondItem="fRE-cP-2Bn" secondAttribute="top" constant="134" id="b5B-pR-lOl"/>
+                            <constraint firstItem="HPS-qs-QEV" firstAttribute="top" secondItem="fRE-cP-2Bn" secondAttribute="top" constant="58" id="c3b-Po-jhl"/>
+                            <constraint firstItem="FCm-y1-6D3" firstAttribute="top" secondItem="lkq-hE-jZh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="g1l-GO-1Qe"/>
+                            <constraint firstItem="PzE-B6-Igl" firstAttribute="leading" secondItem="fRE-cP-2Bn" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gqt-zU-SYq"/>
+                            <constraint firstItem="hnI-Iz-kDt" firstAttribute="leading" secondItem="sWo-6C-UTY" secondAttribute="leading" type="default" id="hcR-BH-qgM"/>
+                            <constraint firstItem="hnI-Iz-kDt" firstAttribute="leading" secondItem="f7T-fc-w1X" secondAttribute="leading" type="default" id="kR2-kb-QvF"/>
+                            <constraint firstItem="8XX-50-gBI" firstAttribute="leading" secondItem="q0n-Hv-Cib" secondAttribute="leading" type="default" id="keg-Pu-X7a"/>
+                            <constraint firstItem="PzE-B6-Igl" firstAttribute="trailing" secondItem="j1e-U6-bMc" secondAttribute="trailing" type="default" id="kyS-IJ-yoz"/>
+                            <constraint firstItem="cMo-Tk-nNK" firstAttribute="trailing" secondItem="j1e-U6-bMc" secondAttribute="trailing" type="default" id="oPz-yi-dgb"/>
+                            <constraint firstItem="j1e-U6-bMc" firstAttribute="baseline" secondItem="sWo-6C-UTY" secondAttribute="baseline" type="default" id="puC-Dp-Y9p"/>
+                            <constraint firstItem="f7T-fc-w1X" firstAttribute="top" secondItem="hnI-Iz-kDt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qVZ-2r-Kzs"/>
+                            <constraint firstItem="dUU-z0-KVo" firstAttribute="baseline" secondItem="C8y-af-2lR" secondAttribute="baseline" type="default" id="rJ7-58-Edc"/>
+                            <constraint firstItem="27g-ZD-cl0" firstAttribute="top" secondItem="fRE-cP-2Bn" secondAttribute="top" constant="20" symbolic="YES" type="default" id="rWb-Is-c9c"/>
+                            <constraint firstAttribute="trailing" secondItem="f7T-fc-w1X" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vTp-K1-2bI"/>
+                            <constraint firstItem="q0n-Hv-Cib" firstAttribute="leading" secondItem="C8y-af-2lR" secondAttribute="leading" type="default" id="vwQ-6A-ho0"/>
+                            <constraint firstItem="OPL-a5-2tU" firstAttribute="leading" secondItem="FCm-y1-6D3" secondAttribute="leading" type="default" id="w7u-zG-3Ou"/>
+                            <constraint firstItem="PzE-B6-Igl" firstAttribute="top" secondItem="fRE-cP-2Bn" secondAttribute="top" constant="172" id="yEw-Kn-iql"/>
+                            <constraint firstItem="lkq-hE-jZh" firstAttribute="top" secondItem="fRE-cP-2Bn" secondAttribute="top" constant="16" id="zbN-Gs-ArA"/>
+                            <constraint firstItem="q0n-Hv-Cib" firstAttribute="top" secondItem="C8y-af-2lR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zdl-jN-4Gk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DXM-mF-2Bh"/>
+                    <connections>
+                        <outlet property="carFuelLabel" destination="j1e-U6-bMc" id="Aj5-CA-zLU"/>
+                        <outlet property="carFuelTextField" destination="sWo-6C-UTY" id="0G6-2p-XJh"/>
+                        <outlet property="carMuszakiLabel" destination="Z3Y-Wa-ram" id="rtm-zw-piz"/>
+                        <outlet property="carMuszakiTextField" destination="f7T-fc-w1X" id="Q8y-rI-Lgr"/>
+                        <outlet property="carNameLabel" destination="27g-ZD-cl0" id="oZ2-d2-2gK"/>
+                        <outlet property="carNameTextField" destination="lkq-hE-jZh" id="dZW-95-RZL"/>
+                        <outlet property="carRendszamLabel" destination="PzE-B6-Igl" id="Amd-hl-uiI"/>
+                        <outlet property="carRendszamTextField" destination="hnI-Iz-kDt" id="YP3-zG-hmn"/>
+                        <outlet property="carServiceLabel" destination="dUU-z0-KVo" id="wVm-JB-qJS"/>
+                        <outlet property="carServiceTextField" destination="C8y-af-2lR" id="dpZ-Iu-e6f"/>
+                        <outlet property="carSpeedometerLabel" destination="cMo-Tk-nNK" id="8uf-Sj-OzO"/>
+                        <outlet property="carSpeedometerTextField" destination="OPL-a5-2tU" id="eCR-jj-49V"/>
+                        <outlet property="carTypeLabel" destination="HPS-qs-QEV" id="aK3-jw-VuI"/>
+                        <outlet property="carTypeTextField" destination="HPS-qs-QEV" id="PdY-ox-roK"/>
+                        <outlet property="carXLabel" destination="Vii-B7-Llc" id="AIw-LZ-iob"/>
+                        <outlet property="carXTextField" destination="q0n-Hv-Cib" id="DO2-dI-b1S"/>
+                        <outlet property="carYLabel" destination="Ejb-L8-ThE" id="Orm-QJ-oXs"/>
+                        <outlet property="carYTextField" destination="8XX-50-gBI" id="hG4-hp-icD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ueP-5K-WZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="7417"/>
         </scene>
         <!--Admin Contacts View Controller-->
         <scene sceneID="cTo-TA-g65">
@@ -2193,6 +2378,29 @@
                 <relationship kind="outlet" name="buszSearchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>
+        <class className="CarAdminViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarAdminViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="carFuelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carFuelTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carMuszakiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carMuszakiTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carRendszamLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carRendszamTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carServiceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carServiceTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carSpeedometerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carSpeedometerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carTypeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carXLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carXTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carYLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carYTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="CarsTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsTableViewCell.h"/>
             <relationships>
@@ -2208,9 +2416,6 @@
         </class>
         <class className="ContactTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButton:"/>
-            </relationships>
         </class>
         <class className="DriverDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverDetailsViewController.h"/>
@@ -2270,9 +2475,6 @@
         </class>
         <class className="JobsTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JobsTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="searchButton:"/>
-            </relationships>
         </class>
         <class className="KamionCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionCell.h"/>
@@ -2450,6 +2652,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Yj0-Cf-Nzf"/>
+        <segue reference="chP-po-wBt"/>
+        <segue reference="5ME-0f-bdf"/>
     </inferredMetricsTieBreakers>
 </document>

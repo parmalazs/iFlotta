@@ -95,6 +95,7 @@
 		61A24ED11754C40F00423A9F /* partnerek146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24EC91754C40F00423A9F /* partnerek146x120.png */; };
 		61A24ED21754C40F00423A9F /* telephelyek146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECA1754C40F00423A9F /* telephelyek146x120.png */; };
 		61A24ED31754C40F00423A9F /* terkep146x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 61A24ECB1754C40F00423A9F /* terkep146x120.png */; };
+		61A60CDA1757C85B000045AD /* CarAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A60CD91757C85B000045AD /* CarAdminViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +246,8 @@
 		61A24EC91754C40F00423A9F /* partnerek146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partnerek146x120.png; sourceTree = "<group>"; };
 		61A24ECA1754C40F00423A9F /* telephelyek146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telephelyek146x120.png; sourceTree = "<group>"; };
 		61A24ECB1754C40F00423A9F /* terkep146x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terkep146x120.png; sourceTree = "<group>"; };
+		61A60CD81757C85B000045AD /* CarAdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAdminViewController.h; sourceTree = "<group>"; };
+		61A60CD91757C85B000045AD /* CarAdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarAdminViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +457,8 @@
 				19A1E54017568C5F009F1419 /* TeherautoCell.m */,
 				19A1E54217568C74009F1419 /* KisteherautoCell.h */,
 				19A1E54317568C75009F1419 /* KisteherautoCell.m */,
+				61A60CD81757C85B000045AD /* CarAdminViewController.h */,
+				61A60CD91757C85B000045AD /* CarAdminViewController.m */,
 			);
 			name = Jarmu;
 			sourceTree = "<group>";
@@ -704,6 +709,7 @@
 				19BDAF161756D3230034EBFF /* MapViewController.m in Sources */,
 				19BDAF171756D3230034EBFF /* AddressAnnotation.m in Sources */,
 				6106189B1757712B0033D93A /* AdminSiteViewController.m in Sources */,
+				61A60CDA1757C85B000045AD /* CarAdminViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

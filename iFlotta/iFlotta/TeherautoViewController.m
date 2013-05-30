@@ -132,13 +132,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
+    
      if (_isAdmin) {
-     [self performSegueWithIdentifier:@"siteAdminDetails" sender:tableView];
+     [self performSegueWithIdentifier:@"teherautoAdminViewSegue" sender:tableView];
      }else{
-     [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
-     }*/
-    [self performSegueWithIdentifier:@"vehiclesTeherautoDetails" sender:tableView];
+     [self performSegueWithIdentifier:@"vehiclesTeherautoDetails" sender:tableView];
+     }
+    //[self performSegueWithIdentifier:@"vehiclesTeherautoDetails" sender:tableView];
 }
 
 /// ennek kellene egy osztalyt felvenni.

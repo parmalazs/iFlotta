@@ -139,14 +139,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
+    
     if (_isAdmin) {
-        [self performSegueWithIdentifier:@"siteAdminDetails" sender:tableView];
+        [self performSegueWithIdentifier:@"autoAdminViewSegue" sender:tableView];
     }else{
         [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
-    }*/
+    }
     
-    [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
+   // [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
     //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
 }
 
