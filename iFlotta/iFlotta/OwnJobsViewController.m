@@ -185,7 +185,9 @@
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             ownJobDetailsViewController.ownJobData = [self.ownJobsArray objectAtIndex: [indexPath row]];
         }
-        
+ 
     }
 }
+
+
 @end

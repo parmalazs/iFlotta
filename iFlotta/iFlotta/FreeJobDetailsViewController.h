@@ -20,4 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *nevLabel;
 @property (strong, nonatomic) IBOutlet UILabel *telLabel;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
+@property (strong, nonatomic) IBOutlet UILabel *label4;
+@property (strong, nonatomic) IBOutlet UILabel *label5;
+
 @end

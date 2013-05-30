@@ -33,11 +33,19 @@
     //self.speedometer.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
     //self.fuel.text = [self.adatDetails valueForKey:@"autoUzemAnyag"];
     
+    self.vehicleType.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.speedometer.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.fuel.backgroundColor = UIColorFromRGB(0xD9B384);
     
-    //self.benzin.text = [self.siteData valueForKey:@"telephelyEmail"];
-    //self.tipus.text = [self.adatDetails valueForKey:@"autoRendszam"];
-    //self.km.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
-    
+    /// labelek
+    self.name.backgroundColor = UIColorFromRGB(0x260B01);
+    self.name.textColor = UIColorFromRGB(0xD9B384);
+    self.benzin.backgroundColor = UIColorFromRGB(0x46594B);
+    self.benzin.textColor = UIColorFromRGB(0xFFFFFF);
+    self.km.backgroundColor = UIColorFromRGB(0x46594B);
+    self.km.textColor = UIColorFromRGB(0xFFFFFF);
+    self.tipus.backgroundColor = UIColorFromRGB(0x46594B);
+    self.tipus.textColor = UIColorFromRGB(0xFFFFFF);
 }
 
 - (void)didReceiveMemoryWarning
