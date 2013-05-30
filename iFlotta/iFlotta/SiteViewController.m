@@ -23,6 +23,10 @@
 
 
 @implementation SiteViewController
+{
+    BOOL _isAdmin;
+}
+
 @synthesize siteSearchBar;
 @synthesize filteredSiteArray;
 
@@ -48,7 +52,7 @@
         _isAdmin = YES;
     }
     
-    dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint",@"image" : @"40-inbox.png"},@{@"name" : @"Cim szerint",@"image":@"166-newspaper.png"},@{@"name":@"Távolság szerint",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
+
     
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
     
@@ -281,6 +285,39 @@
 
 - (void)didSelectItem:(NSDictionary *)item{
     NSLog(@"%@",item);
+    if (_isAdmin)
+    {      
+        switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
+            case 0:
+                NSLog(@"0");
+                break;
+            case 1:
+                NSLog(@"1");
+                break;
+            case 2:
+                NSLog(@"2");
+                break;
+            default:
+                NSLog(@"3");
+                break;
+        }
+    }
+    else
+    {
+        switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
+            case 0:
+                NSLog(@"0");
+                break;
+            case 1:
+                NSLog(@"1");
+                break;
+            default:
+                NSLog(@"2");
+                break;
+        }
+    }
+    
+    
     [dropdownSorted dismiss];
 }
 @end
