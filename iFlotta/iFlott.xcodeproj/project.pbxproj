@@ -78,6 +78,7 @@
 		60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */; };
 		6106189B1757712B0033D93A /* AdminSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106189A1757712B0033D93A /* AdminSiteViewController.m */; };
 		6117E8841757EA9B0050A39A /* SoforAdminDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117E8831757EA9B0050A39A /* SoforAdminDetailViewController.m */; };
+		6117E887175801880050A39A /* JobAdminDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117E886175801880050A39A /* JobAdminDetailsViewController.m */; };
 		61938FEA175380E200A56581 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61938FE8175380E200A56581 /* LoginViewController.m */; };
 		61938FEC1753811600A56581 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEB1753811600A56581 /* MainStoryboard.storyboard */; };
 		61938FF41753816800A56581 /* telephely-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEE1753816800A56581 /* telephely-ikon.png */; };
@@ -229,6 +230,8 @@
 		6106189A1757712B0033D93A /* AdminSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminSiteViewController.m; sourceTree = "<group>"; };
 		6117E8821757EA9B0050A39A /* SoforAdminDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoforAdminDetailViewController.h; sourceTree = "<group>"; };
 		6117E8831757EA9B0050A39A /* SoforAdminDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoforAdminDetailViewController.m; sourceTree = "<group>"; };
+		6117E885175801880050A39A /* JobAdminDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobAdminDetailsViewController.h; sourceTree = "<group>"; };
+		6117E886175801880050A39A /* JobAdminDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobAdminDetailsViewController.m; sourceTree = "<group>"; };
 		6191DB24175561E000E4B09B /* VehiclesDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesDetailsViewController.h; sourceTree = "<group>"; };
 		6191DB25175561E000E4B09B /* VehiclesDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesDetailsViewController.m; sourceTree = "<group>"; };
 		61938FE8175380E200A56581 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				19BA14E91745681C00A79A00 /* CarAddViewController.m */,
 				61A60CDB1757DCFF000045AD /* ContactsAdminViewController.h */,
 				61A60CDC1757DCFF000045AD /* ContactsAdminViewController.m */,
+				6117E885175801880050A39A /* JobAdminDetailsViewController.h */,
+				6117E886175801880050A39A /* JobAdminDetailsViewController.m */,
 			);
 			name = AdminViewControllers;
 			sourceTree = "<group>";
@@ -722,6 +727,7 @@
 				61A60CDA1757C85B000045AD /* CarAdminViewController.m in Sources */,
 				61A60CDD1757DD00000045AD /* ContactsAdminViewController.m in Sources */,
 				6117E8841757EA9B0050A39A /* SoforAdminDetailViewController.m in Sources */,
+				6117E887175801880050A39A /* JobAdminDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

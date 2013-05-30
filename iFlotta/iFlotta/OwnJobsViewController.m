@@ -12,7 +12,9 @@
 #import "OwnJobsTableViewCell.h"
 #import "OwnJobDetailsViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-@interface OwnJobsViewController ()
+@interface OwnJobsViewController (){
+    BOOL _isAdmin;
+}
 
 @end
 
@@ -35,6 +37,16 @@
     [ownJobsSearchBar setShowsScopeBar:NO];
     [ownJobsSearchBar sizeToFit];
     [ownJobsSearchBar setTintColor:UIColorFromRGB(0x260B01)];
+    
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        _isAdmin = NO;
+    }
+    else
+    {
+        _isAdmin = YES;
+    }
     
     CGRect newBounds = [[self tableView] bounds];
     newBounds.origin.y = newBounds.origin.y + ownJobsSearchBar.bounds.size.height;
@@ -145,9 +157,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"ownJobDetails" sender:tableView];
-    //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
-    
+    if (_isAdmin) {
+        [self performSegueWithIdentifier:@"ownJobsAdminSegue" sender:tableView];
+    }else{
+        [self performSegueWithIdentifier:@"ownJobDetails" sender:tableView];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

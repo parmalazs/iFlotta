@@ -1521,6 +1521,7 @@
                         <outlet property="freeJobsSearchBar" destination="anj-zR-LZe" id="oor-2R-DD5"/>
                         <outlet property="searchDisplayController" destination="EYL-nP-CQR" id="Pvf-MH-kWF"/>
                         <segue destination="15X-u6-sq6" kind="push" identifier="freeJobDetails" id="hEs-qA-9Qp"/>
+                        <segue destination="EVC-qe-XkR" kind="push" identifier="freeJobAdminDetails" id="cwD-00-IBw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJc-7M-DjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1660,7 +1661,127 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fA7-3M-xJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469" y="-1832"/>
+            <point key="canvasLocation" x="1727" y="-2162"/>
+        </scene>
+        <!--Job Admin Details View Controller-->
+        <scene sceneID="5Ea-bE-L8M">
+            <objects>
+                <viewController storyboardIdentifier="jobAdminDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EVC-qe-XkR" customClass="JobAdminDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KFQ-0y-vGm">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8wl-xO-L0H">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="MXF-Ad-Pgt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTX-Zl-bxA">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9d-Xx-kgb">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bevetel:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGu-3R-UkC">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Koltseg:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZy-2B-M59">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Uzemanyag:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAc-KD-DrZ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Eszkoz:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIw-Pz-jk5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tipus:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfA-dh-BTG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Komment:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-Bj-Ndt">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-kG-cE1">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-WV-fbg">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8o-Hg-n8D">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qF3-WV-fbg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3wP-wV-GCW"/>
+                            <constraint firstItem="8wl-xO-L0H" firstAttribute="leading" secondItem="rTX-Zl-bxA" secondAttribute="leading" type="default" id="6S7-lw-yj2"/>
+                            <constraint firstItem="jnf-kG-cE1" firstAttribute="leading" secondItem="D9d-Xx-kgb" secondAttribute="leading" type="default" id="8H4-7W-LCw"/>
+                            <constraint firstItem="qF3-WV-fbg" firstAttribute="leading" secondItem="v8o-Hg-n8D" secondAttribute="leading" type="default" id="BX8-ee-OMe"/>
+                            <constraint firstItem="TGu-3R-UkC" firstAttribute="baseline" secondItem="8wl-xO-L0H" secondAttribute="baseline" type="default" id="DWN-Sv-J9P"/>
+                            <constraint firstItem="D9d-Xx-kgb" firstAttribute="top" secondItem="rTX-Zl-bxA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="H3j-K5-hAr"/>
+                            <constraint firstItem="v8o-Hg-n8D" firstAttribute="top" secondItem="qF3-WV-fbg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ke0-qu-HEk"/>
+                            <constraint firstItem="PIw-Pz-jk5" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NM4-tu-B2P"/>
+                            <constraint firstItem="hAc-KD-DrZ" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="100" id="O2W-Fu-F4G"/>
+                            <constraint firstItem="TGu-3R-UkC" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OWc-g7-kro"/>
+                            <constraint firstAttribute="trailing" secondItem="rTX-Zl-bxA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oaq-02-eaq"/>
+                            <constraint firstItem="rTX-Zl-bxA" firstAttribute="top" secondItem="8wl-xO-L0H" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PbD-xH-pwH"/>
+                            <constraint firstItem="EfA-dh-BTG" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QDu-OD-jJa"/>
+                            <constraint firstItem="8wl-xO-L0H" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="TXS-X1-ho1"/>
+                            <constraint firstAttribute="trailing" secondItem="v8o-Hg-n8D" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bsF-zl-Svm"/>
+                            <constraint firstItem="mTr-Bj-Ndt" firstAttribute="baseline" secondItem="v8o-Hg-n8D" secondAttribute="baseline" type="default" id="f2z-Jo-Ty9"/>
+                            <constraint firstItem="jnf-kG-cE1" firstAttribute="top" secondItem="D9d-Xx-kgb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gDf-Qw-426"/>
+                            <constraint firstAttribute="trailing" secondItem="8wl-xO-L0H" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hTs-3i-nDv"/>
+                            <constraint firstItem="D9d-Xx-kgb" firstAttribute="leading" secondItem="rTX-Zl-bxA" secondAttribute="leading" type="default" id="hqF-Jh-IDR"/>
+                            <constraint firstItem="nZy-2B-M59" firstAttribute="baseline" secondItem="rTX-Zl-bxA" secondAttribute="baseline" type="default" id="j7J-ay-gjN"/>
+                            <constraint firstItem="hAc-KD-DrZ" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jx8-eK-pnH"/>
+                            <constraint firstItem="nZy-2B-M59" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qax-vR-5i3"/>
+                            <constraint firstAttribute="trailing" secondItem="D9d-Xx-kgb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qeT-be-AAr"/>
+                            <constraint firstItem="PIw-Pz-jk5" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="136" id="r2Y-ZI-X3j"/>
+                            <constraint firstItem="qF3-WV-fbg" firstAttribute="leading" secondItem="jnf-kG-cE1" secondAttribute="leading" type="default" id="tHe-bs-HF3"/>
+                            <constraint firstItem="EfA-dh-BTG" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="174" id="tha-ug-wmc"/>
+                            <constraint firstAttribute="trailing" secondItem="jnf-kG-cE1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xBb-2a-iEL"/>
+                            <constraint firstItem="qF3-WV-fbg" firstAttribute="top" secondItem="jnf-kG-cE1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xvn-s1-oIH"/>
+                            <constraint firstItem="mTr-Bj-Ndt" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yQI-Ve-0TU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rQc-fc-DhW"/>
+                    <connections>
+                        <outlet property="jobsCommentLabel" destination="mTr-Bj-Ndt" id="koT-9Q-VXB"/>
+                        <outlet property="jobsCommentTextField" destination="v8o-Hg-n8D" id="ihz-JI-0OY"/>
+                        <outlet property="jobsCostLabel" destination="nZy-2B-M59" id="Bfo-jV-yYz"/>
+                        <outlet property="jobsCostsTextField" destination="rTX-Zl-bxA" id="QYd-Yn-9tB"/>
+                        <outlet property="jobsFuelLabel" destination="hAc-KD-DrZ" id="wX9-0M-pMw"/>
+                        <outlet property="jobsFuelTextField" destination="D9d-Xx-kgb" id="MmZ-kR-vQN"/>
+                        <outlet property="jobsIncomeLabel" destination="TGu-3R-UkC" id="UQQ-Tr-pBa"/>
+                        <outlet property="jobsIncomeTextField" destination="8wl-xO-L0H" id="9ep-Vd-m3w"/>
+                        <outlet property="jobsToolsLabel" destination="PIw-Pz-jk5" id="50f-T6-DEu"/>
+                        <outlet property="jobsToolsTextFields" destination="jnf-kG-cE1" id="AVF-8o-kSk"/>
+                        <outlet property="jobsTypeLabel" destination="EfA-dh-BTG" id="pWA-nf-CmX"/>
+                        <outlet property="jobsTypeTextField" destination="qF3-WV-fbg" id="8h8-qh-pcw"/>
+                        <segue destination="15X-u6-sq6" kind="push" id="by4-cB-3RL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u1E-yZ-dQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456" y="-3053"/>
         </scene>
         <!--Own Jobs View Controller - Sajat Munkak-->
         <scene sceneID="x8A-Jh-a1X">
@@ -1717,6 +1838,7 @@
                         <outlet property="ownJobsSearchBar" destination="BBu-0p-oGS" id="x7W-KR-OT6"/>
                         <outlet property="searchDisplayController" destination="3CE-xK-bBo" id="rqf-8n-HX6"/>
                         <segue destination="OXp-Ti-VT0" kind="push" identifier="ownJobDetails" id="i3W-hD-PK0"/>
+                        <segue destination="EVC-qe-XkR" kind="push" identifier="ownJobsAdminSegue" id="ceW-pD-zho"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVk-4g-vSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1856,7 +1978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08Q-vw-mV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="-1309"/>
+            <point key="canvasLocation" x="1746" y="-1281"/>
         </scene>
         <!--Jobs Tab Bar Controller-->
         <scene sceneID="3Ug-kD-qCN">
@@ -2850,6 +2972,23 @@
         <class className="JarmuTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JarmuTabBarController.h"/>
         </class>
+        <class className="JobAdminDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JobAdminDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="jobsCommentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsCommentTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsCostLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsCostsTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsFuelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsFuelTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsIncomeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsIncomeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsToolsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsToolsTextFields" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsTypeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="JobsTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JobsTabBarController.h"/>
         </class>
@@ -3056,7 +3195,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="chP-po-wBt"/>
-        <segue reference="5ME-0f-bdf"/>
+        <segue reference="4k1-KE-Gjt"/>
+        <segue reference="hEs-qA-9Qp"/>
+        <segue reference="ceW-pD-zho"/>
+        <segue reference="kww-q9-2CX"/>
     </inferredMetricsTieBreakers>
 </document>
