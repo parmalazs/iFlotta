@@ -12,7 +12,9 @@
 #import "DataBaseUtil.h"
 #import "Sofor.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-@interface DriverViewController ()
+@interface DriverViewController (){
+    BOOL _isAdmin;
+}
 
 @end
 
@@ -31,6 +33,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        _isAdmin = NO;
+    }
+    else
+    {
+        _isAdmin = YES;
+    }
 
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
@@ -161,9 +173,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"driverDetails" sender:tableView];
-    //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
-    
+    if (_isAdmin) {
+        [self performSegueWithIdentifier:@"driversAdminViewSegue" sender:tableView];
+    }else{
+        [self performSegueWithIdentifier:@"driverDetails" sender:tableView];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
