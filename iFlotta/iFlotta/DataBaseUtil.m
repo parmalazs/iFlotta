@@ -595,6 +595,15 @@ static NSString *aktUser;
 }
 
 
++(void)autoFoglal:(NSString*) autoID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *lefoglalAuto = [self fetchRequestEntity:@"Auto" :@"autoID" :autoID];
+    Auto * aktauto = [lefoglalAuto objectAtIndex:0];
+    aktauto.autoFoglalt = [NSNumber numberWithInt:1];
+    [self saveContext:context];
+}
+
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive
 {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
