@@ -18,6 +18,9 @@
 @end
 
 @implementation KamionViewController
+{
+    BOOL _isAdmin;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,6 +34,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        _isAdmin = NO;
+    }
+    else
+    {
+        _isAdmin = YES;
+    }
+    
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     [self.kamionSearchBar setShowsScopeBar:NO];
     [self.kamionSearchBar sizeToFit];
@@ -119,6 +133,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
+     if (_isAdmin) {
+     [self performSegueWithIdentifier:@"siteAdminDetails" sender:tableView];
+     }else{
+     [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
+     }*/
     [self performSegueWithIdentifier:@"vehiclesKamionDetails" sender:tableView];
     //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
 }

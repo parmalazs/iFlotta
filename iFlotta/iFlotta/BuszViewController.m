@@ -19,6 +19,9 @@
 @end
 
 @implementation BuszViewController
+{
+    BOOL _isAdmin;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,6 +36,15 @@
 {
     [super viewDidLoad];
     
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUser] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        _isAdmin = NO;
+    }
+    else
+    {
+        _isAdmin = YES;
+    }
     
     //// ez a resz cmd+c - cmd+v kompatibilis, generikus nevek vannak, csak a fetch request paramtereket _kell_ atirni!!!!!!!!
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
@@ -125,6 +137,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
+     if (_isAdmin) {
+     [self performSegueWithIdentifier:@"siteAdminDetails" sender:tableView];
+     }else{
+     [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
+     }*/
+    
     [self performSegueWithIdentifier:@"vehiclesBuszDetails" sender:tableView];
     //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
 }

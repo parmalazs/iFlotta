@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSArray *freeJobsArray;
 @property (strong,nonatomic) NSMutableArray *filteredFreeJobsArray;
 
--(void)rendezNev;
+-(void)rendezKoltseg;
 
 -(void)rendezDatum;
 

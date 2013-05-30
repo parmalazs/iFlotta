@@ -188,15 +188,19 @@
     }
 }
 
--(void)rendezNev
+-(void)rendezKoltseg
 {
-    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :[NSNumber numberWithInt:0] :@"munkaNev" :[NSNumber numberWithInt:1]];
+    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :@"0" :@"munkaKoltseg" :[NSNumber numberWithInt:1]];
+    
+    NSLog(@"%@",[[self freeJobsArray] valueForKey:@"munkaDate"]);
+    
     [[self tableView] reloadData];
 }
 
 -(void)rendezDatum
 {
-    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :[NSNumber numberWithInt:0] :@"munkaDate" :[NSNumber numberWithInt:1]];
+    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :@"0" :@"munkaDate" :[NSNumber numberWithInt:1]];
+    NSLog(@"%@",[[self freeJobsArray] valueForKey:@"munkaDate"]);
     [[self tableView] reloadData];
 }
 

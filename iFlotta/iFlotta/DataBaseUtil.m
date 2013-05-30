@@ -114,7 +114,7 @@ static NSString *aktUser;
     return fetchedObjects;
 }
 
-+ (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSNumber*) soforID :(NSString*) sortName :(NSNumber*) sortType {
++ (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) soforID :(NSString*) sortName :(NSNumber*) sortType {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
     // query-re is egy általános fv-t irni a DataBaseUtil-ba
@@ -450,8 +450,6 @@ static NSString *aktUser;
         [aktAuto setValue:[NSNumber numberWithFloat:[[result valueForKey:@"autoXkoordinata"] floatValue] ] forKey:@"autoXkoordinata"];
         [aktAuto setValue:[NSNumber numberWithFloat:[[result valueForKey:@"autoYkoordinata"] floatValue] ] forKey:@"autoYkoordinata"];
     }
-    
-    //
     
     [self saveContext:context];
 }

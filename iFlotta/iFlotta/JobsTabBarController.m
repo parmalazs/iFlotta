@@ -78,7 +78,7 @@
             case 1:
             {
                 NSLog(@"1");
-                freevc.rendezNev;
+                freevc.rendezKoltseg;
                 //ownvc.rendezNev;
             }
                 break;
@@ -97,7 +97,7 @@
             case 0:
             {
                 NSLog(@"0");
-                freevc.rendezNev;
+                freevc.rendezKoltseg;
                 //ownvc.rendezNev;
             }
                 break;
