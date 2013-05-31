@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface PartnerDetailsViewController : UIViewController
+@interface PartnerDetailsViewController : UIViewController <MFMailComposeViewControllerDelegate> { }
 @property (nonatomic, strong) NSManagedObject *partnerData;
 @property (weak, nonatomic) IBOutlet UILabel *partnerNev;
 @property (weak, nonatomic) IBOutlet UILabel *partnerCim;
