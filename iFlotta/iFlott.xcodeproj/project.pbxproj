@@ -74,6 +74,7 @@
 		603EAD2D1753A73900104181 /* OwnJobsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603EAD2C1753A73900104181 /* OwnJobsViewController.m */; };
 		603EAD301753ACEB00104181 /* FreeJobsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 603EAD2F1753ACEB00104181 /* FreeJobsTableViewCell.m */; };
 		603EAD331753AD0400104181 /* OwnJobsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 603EAD321753AD0400104181 /* OwnJobsTableViewCell.m */; };
+		60BF69431758F4EA00BD0918 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BF69421758F4EA00BD0918 /* MessageUI.framework */; };
 		60D27F3E1753EF82003C9D92 /* FreeJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */; };
 		60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */; };
 		6106189B1757712B0033D93A /* AdminSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106189A1757712B0033D93A /* AdminSiteViewController.m */; };
@@ -222,6 +223,7 @@
 		603EAD2F1753ACEB00104181 /* FreeJobsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeJobsTableViewCell.m; sourceTree = "<group>"; };
 		603EAD311753AD0400104181 /* OwnJobsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnJobsTableViewCell.h; sourceTree = "<group>"; };
 		603EAD321753AD0400104181 /* OwnJobsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnJobsTableViewCell.m; sourceTree = "<group>"; };
+		60BF69421758F4EA00BD0918 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		60D27F3C1753EF82003C9D92 /* FreeJobDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeJobDetailsViewController.h; sourceTree = "<group>"; };
 		60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeJobDetailsViewController.m; sourceTree = "<group>"; };
 		60D27F3F1753F033003C9D92 /* OwnJobDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnJobDetailsViewController.h; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60BF69431758F4EA00BD0918 /* MessageUI.framework in Frameworks */,
 				19BDAF0E1756D2E10034EBFF /* QuartzCore.framework in Frameworks */,
 				19BDAF0C1756D2C30034EBFF /* MapKit.framework in Frameworks */,
 				1982C541173BC78D00665C7F /* UIKit.framework in Frameworks */,
@@ -296,6 +299,7 @@
 		1982C53F173BC78D00665C7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60BF69421758F4EA00BD0918 /* MessageUI.framework */,
 				19BDAF0D1756D2E10034EBFF /* QuartzCore.framework */,
 				19BDAF0B1756D2C30034EBFF /* MapKit.framework */,
 				1982C540173BC78D00665C7F /* UIKit.framework */,

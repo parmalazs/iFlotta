@@ -54,4 +54,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)callPartner:(id)sender {
+    NSString *dial=[[NSString alloc] init];
+    dial=@"telprompt://";
+    NSString *number=[[NSString alloc] init];
+    number=[self.partnerData valueForKey:@"partnerTelefonszam"];
+    NSLog([NSString stringWithFormat:@"%@%@", dial, number]);
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", dial, number]]];
+}
+
+- (IBAction)messagePartner:(id)sender {
+}
 @end
