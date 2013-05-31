@@ -48,37 +48,37 @@ self.driverPasswordTextField.delegate = self;
 self.driverBirthdateTextField.delegate = self;
     
     
-    self.driverNameLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverNameLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverNameLabel.textColor = UIColorFromRGB(0xFFFFFF);
     
-    self.driverAdressLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverAdressLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverAdressLabel.textColor = UIColorFromRGB(0xFFFFFF);
     
-    self.driverEmailLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverEmailLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverEmailLabel.textColor = UIColorFromRGB(0xFFFFFF);
     
-    self.driverTelLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverTelLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverTelLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
-    self.driverWebLabel.backgroundColor= UIColorFromRGB(0xD9B384);
+    self.driverWebLabel.backgroundColor= UIColorFromRGB(0x46594B);
     self.driverWebLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
-    self.driverXLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverXLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverXLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
-    self.driverYLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverYLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverYLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
-    self.driverLoginLabel.backgroundColor= UIColorFromRGB(0xD9B384);
+    self.driverLoginLabel.backgroundColor= UIColorFromRGB(0x46594B);
     self.driverLoginLabel.textColor = UIColorFromRGB(0xFFFFFF);
     
-    self.driverPasswordLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverPasswordLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverPasswordLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
-//    self.driverIsAdminLabel.backgroundColor = UIColorFromRGB(0xD9B384);
-//    self.driverIsAdminLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.driverIsAdminLabel.backgroundColor = UIColorFromRGB(0x46594B);
+    self.driverIsAdminLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
-    self.driverBirthdateLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.driverBirthdateLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverBirthdateLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     [self registerForKeyboardNotifications];
 }

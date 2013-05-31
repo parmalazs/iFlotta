@@ -24,4 +24,22 @@
 @property (strong, nonatomic) IBOutlet UILabel *label5;
 - (IBAction)felveszButton:(id)sender;
 
+/*
+@dynamic munkaBefejezesDate;
+@dynamic munkaBevetel;
+@dynamic munkaComment;
+@dynamic munkaDate;
+@dynamic munkaEstimatedTime;
+@dynamic munkaID;
+@dynamic munkaIsActive;
+@dynamic munkaKoltseg;
+@dynamic munkatipusID;
+@dynamic munkaUzemanyagState;
+@dynamic partnerID;
+@dynamic soforID;
+@dynamic telephelyID;
+@dynamic munkaeszkoz;
+@dynamic munkakep;
+@dynamic munkatipus;
+*/
 @end
