@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JobAdminDetailsViewController : UIViewController
+@interface JobAdminDetailsViewController : UIViewController<UITextFieldDelegate>
 
 
 /* EZEK MEG KELLENEK! de a scroll view-val.
@@ -32,6 +32,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *jobsTypeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *jobsCommentTextField;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)saveButtonPushed:(id)sender;
 
 @end

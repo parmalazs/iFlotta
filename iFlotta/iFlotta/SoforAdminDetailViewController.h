@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SoforAdminDetailViewController : UIViewController
+@interface SoforAdminDetailViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *driverNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *driverAdressLabel;
@@ -19,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *driverYLabel;
 @property (strong, nonatomic) IBOutlet UILabel *driverLoginLabel;
 @property (strong, nonatomic) IBOutlet UILabel *driverPasswordLabel;
-@property (strong, nonatomic) IBOutlet UILabel *driverIsAdminLabel;
 @property (strong, nonatomic) IBOutlet UILabel *driverBirthdateLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *driverNameTextField;
@@ -31,8 +30,11 @@
 @property (strong, nonatomic) IBOutlet UITextField *driverYTextField;
 @property (strong, nonatomic) IBOutlet UITextField *driverLoginTextField;
 @property (strong, nonatomic) IBOutlet UITextField *driverPasswordTextField;
-@property (strong, nonatomic) IBOutlet UITextField *driverIsAdminTextField;
+
 @property (strong, nonatomic) IBOutlet UITextField *driverBirthdateTextField;
+
 - (IBAction)saveButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *isAdmin;
 
 @end
