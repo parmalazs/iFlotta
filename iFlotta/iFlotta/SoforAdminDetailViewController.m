@@ -44,7 +44,7 @@ self.driverXTextField.delegate = self;
 self.driverYTextField.delegate = self;
 self.driverLoginTextField.delegate = self;
 self.driverPasswordTextField.delegate = self;
-self.driverIsAdminTextField.delegate = self ;
+//self.driverIsAdminTextField.delegate = self ;
 self.driverBirthdateTextField.delegate = self;
     
     
@@ -75,8 +75,8 @@ self.driverBirthdateTextField.delegate = self;
     self.driverPasswordLabel.backgroundColor = UIColorFromRGB(0xD9B384);
     self.driverPasswordLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
-    self.driverIsAdminLabel.backgroundColor = UIColorFromRGB(0xD9B384);
-    self.driverIsAdminLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+//    self.driverIsAdminLabel.backgroundColor = UIColorFromRGB(0xD9B384);
+//    self.driverIsAdminLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
     self.driverBirthdateLabel.backgroundColor = UIColorFromRGB(0xD9B384);
     self.driverBirthdateLabel.textColor  = UIColorFromRGB(0xFFFFFF);
@@ -154,6 +154,7 @@ self.driverBirthdateTextField.delegate = self;
         CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height+activeField.frame.size.height*2);
         [scrollView setContentOffset:scrollPoint animated:YES];
     }
+
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
