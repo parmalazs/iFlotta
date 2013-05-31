@@ -1731,98 +1731,116 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8wl-xO-L0H">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-9W-T3n">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8wl-xO-L0H">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="161" id="MXF-Ad-Pgt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTX-Zl-bxA">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9d-Xx-kgb">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bevetel:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGu-3R-UkC">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Koltseg:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZy-2B-M59">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Uzemanyag:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAc-KD-DrZ">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Eszkoz:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIw-Pz-jk5">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tipus:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfA-dh-BTG">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Komment:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-Bj-Ndt">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-kG-cE1">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-WV-fbg">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8o-Hg-n8D">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="MXF-Ad-Pgt"/>
+                                    <constraint firstItem="jnf-kG-cE1" firstAttribute="leading" secondItem="qF3-WV-fbg" secondAttribute="leading" type="default" id="4aG-x5-b21"/>
+                                    <constraint firstItem="nZy-2B-M59" firstAttribute="leading" secondItem="QOi-9W-T3n" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6GI-MC-IwH"/>
+                                    <constraint firstAttribute="trailing" secondItem="8wl-xO-L0H" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8yU-eq-9gc"/>
+                                    <constraint firstItem="v8o-Hg-n8D" firstAttribute="baseline" secondItem="mTr-Bj-Ndt" secondAttribute="baseline" type="default" id="AE4-jy-4S3"/>
+                                    <constraint firstItem="D9d-Xx-kgb" firstAttribute="leading" secondItem="rTX-Zl-bxA" secondAttribute="leading" type="default" id="BR5-qW-cpr"/>
+                                    <constraint firstItem="EfA-dh-BTG" firstAttribute="leading" secondItem="QOi-9W-T3n" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CAe-20-dn5"/>
+                                    <constraint firstItem="v8o-Hg-n8D" firstAttribute="top" secondItem="qF3-WV-fbg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EzN-aB-YVx"/>
+                                    <constraint firstItem="hAc-KD-DrZ" firstAttribute="top" secondItem="QOi-9W-T3n" secondAttribute="top" constant="100" id="I2Q-AX-CSp"/>
+                                    <constraint firstItem="hAc-KD-DrZ" firstAttribute="leading" secondItem="QOi-9W-T3n" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JNu-ZN-nrV"/>
+                                    <constraint firstItem="PIw-Pz-jk5" firstAttribute="leading" secondItem="QOi-9W-T3n" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JiC-FN-HEM"/>
+                                    <constraint firstAttribute="trailing" secondItem="qF3-WV-fbg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="K1C-Zc-nWl"/>
+                                    <constraint firstAttribute="trailing" secondItem="rTX-Zl-bxA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="MTb-gU-Fbz"/>
+                                    <constraint firstAttribute="trailing" secondItem="jnf-kG-cE1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OXw-Pe-5gh"/>
+                                    <constraint firstAttribute="trailing" secondItem="v8o-Hg-n8D" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PZb-9f-rBT"/>
+                                    <constraint firstItem="8wl-xO-L0H" firstAttribute="leading" secondItem="QOi-9W-T3n" secondAttribute="leading" constant="139" id="Q5M-9G-KML"/>
+                                    <constraint firstItem="D9d-Xx-kgb" firstAttribute="leading" secondItem="jnf-kG-cE1" secondAttribute="leading" type="default" id="QHO-cK-dgC"/>
+                                    <constraint firstItem="EfA-dh-BTG" firstAttribute="top" secondItem="QOi-9W-T3n" secondAttribute="top" constant="174" id="QWj-l9-guE"/>
+                                    <constraint firstItem="D9d-Xx-kgb" firstAttribute="top" secondItem="rTX-Zl-bxA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tfu-7v-m0w"/>
+                                    <constraint firstItem="TGu-3R-UkC" firstAttribute="leading" secondItem="QOi-9W-T3n" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="W3h-w3-awf"/>
+                                    <constraint firstItem="8wl-xO-L0H" firstAttribute="top" secondItem="QOi-9W-T3n" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YzE-df-Sgn"/>
+                                    <constraint firstItem="PIw-Pz-jk5" firstAttribute="top" secondItem="QOi-9W-T3n" secondAttribute="top" constant="136" id="cXM-2W-vY7"/>
+                                    <constraint firstItem="mTr-Bj-Ndt" firstAttribute="leading" secondItem="QOi-9W-T3n" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fly-33-jRe"/>
+                                    <constraint firstAttribute="trailing" secondItem="D9d-Xx-kgb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gLC-z6-tOa"/>
+                                    <constraint firstAttribute="bottom" secondItem="v8o-Hg-n8D" secondAttribute="bottom" constant="220" id="k4D-h7-8BA"/>
+                                    <constraint firstItem="8wl-xO-L0H" firstAttribute="leading" secondItem="rTX-Zl-bxA" secondAttribute="leading" type="default" id="lvW-BL-q2D"/>
+                                    <constraint firstItem="TGu-3R-UkC" firstAttribute="baseline" secondItem="8wl-xO-L0H" secondAttribute="baseline" type="default" id="mJf-ak-0UP"/>
+                                    <constraint firstItem="rTX-Zl-bxA" firstAttribute="baseline" secondItem="nZy-2B-M59" secondAttribute="baseline" type="default" id="pKR-GQ-Ieo"/>
+                                    <constraint firstItem="qF3-WV-fbg" firstAttribute="leading" secondItem="v8o-Hg-n8D" secondAttribute="leading" type="default" id="txC-sD-jyg"/>
+                                    <constraint firstItem="jnf-kG-cE1" firstAttribute="top" secondItem="D9d-Xx-kgb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="udl-JU-DtH"/>
+                                    <constraint firstItem="rTX-Zl-bxA" firstAttribute="top" secondItem="8wl-xO-L0H" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wFJ-cu-cL1"/>
+                                    <constraint firstItem="qF3-WV-fbg" firstAttribute="top" secondItem="jnf-kG-cE1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xsh-OX-eBS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTX-Zl-bxA">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9d-Xx-kgb">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bevetel:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGu-3R-UkC">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Koltseg:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZy-2B-M59">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Uzemanyag:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAc-KD-DrZ">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Eszkoz:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIw-Pz-jk5">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tipus:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfA-dh-BTG">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Komment:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-Bj-Ndt">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-kG-cE1">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-WV-fbg">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8o-Hg-n8D">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="qF3-WV-fbg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3wP-wV-GCW"/>
-                            <constraint firstItem="8wl-xO-L0H" firstAttribute="leading" secondItem="rTX-Zl-bxA" secondAttribute="leading" type="default" id="6S7-lw-yj2"/>
-                            <constraint firstItem="jnf-kG-cE1" firstAttribute="leading" secondItem="D9d-Xx-kgb" secondAttribute="leading" type="default" id="8H4-7W-LCw"/>
-                            <constraint firstItem="qF3-WV-fbg" firstAttribute="leading" secondItem="v8o-Hg-n8D" secondAttribute="leading" type="default" id="BX8-ee-OMe"/>
-                            <constraint firstItem="TGu-3R-UkC" firstAttribute="baseline" secondItem="8wl-xO-L0H" secondAttribute="baseline" type="default" id="DWN-Sv-J9P"/>
-                            <constraint firstItem="D9d-Xx-kgb" firstAttribute="top" secondItem="rTX-Zl-bxA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="H3j-K5-hAr"/>
-                            <constraint firstItem="v8o-Hg-n8D" firstAttribute="top" secondItem="qF3-WV-fbg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ke0-qu-HEk"/>
-                            <constraint firstItem="PIw-Pz-jk5" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NM4-tu-B2P"/>
-                            <constraint firstItem="hAc-KD-DrZ" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="100" id="O2W-Fu-F4G"/>
-                            <constraint firstItem="TGu-3R-UkC" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OWc-g7-kro"/>
-                            <constraint firstAttribute="trailing" secondItem="rTX-Zl-bxA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oaq-02-eaq"/>
-                            <constraint firstItem="rTX-Zl-bxA" firstAttribute="top" secondItem="8wl-xO-L0H" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PbD-xH-pwH"/>
-                            <constraint firstItem="EfA-dh-BTG" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QDu-OD-jJa"/>
-                            <constraint firstItem="8wl-xO-L0H" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="20" symbolic="YES" type="default" id="TXS-X1-ho1"/>
-                            <constraint firstAttribute="trailing" secondItem="v8o-Hg-n8D" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bsF-zl-Svm"/>
-                            <constraint firstItem="mTr-Bj-Ndt" firstAttribute="baseline" secondItem="v8o-Hg-n8D" secondAttribute="baseline" type="default" id="f2z-Jo-Ty9"/>
-                            <constraint firstItem="jnf-kG-cE1" firstAttribute="top" secondItem="D9d-Xx-kgb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gDf-Qw-426"/>
-                            <constraint firstAttribute="trailing" secondItem="8wl-xO-L0H" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hTs-3i-nDv"/>
-                            <constraint firstItem="D9d-Xx-kgb" firstAttribute="leading" secondItem="rTX-Zl-bxA" secondAttribute="leading" type="default" id="hqF-Jh-IDR"/>
-                            <constraint firstItem="nZy-2B-M59" firstAttribute="baseline" secondItem="rTX-Zl-bxA" secondAttribute="baseline" type="default" id="j7J-ay-gjN"/>
-                            <constraint firstItem="hAc-KD-DrZ" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jx8-eK-pnH"/>
-                            <constraint firstItem="nZy-2B-M59" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qax-vR-5i3"/>
-                            <constraint firstAttribute="trailing" secondItem="D9d-Xx-kgb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qeT-be-AAr"/>
-                            <constraint firstItem="PIw-Pz-jk5" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="136" id="r2Y-ZI-X3j"/>
-                            <constraint firstItem="qF3-WV-fbg" firstAttribute="leading" secondItem="jnf-kG-cE1" secondAttribute="leading" type="default" id="tHe-bs-HF3"/>
-                            <constraint firstItem="EfA-dh-BTG" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" constant="174" id="tha-ug-wmc"/>
-                            <constraint firstAttribute="trailing" secondItem="jnf-kG-cE1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xBb-2a-iEL"/>
-                            <constraint firstItem="qF3-WV-fbg" firstAttribute="top" secondItem="jnf-kG-cE1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xvn-s1-oIH"/>
-                            <constraint firstItem="mTr-Bj-Ndt" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yQI-Ve-0TU"/>
+                            <constraint firstItem="QOi-9W-T3n" firstAttribute="trailing" secondItem="KFQ-0y-vGm" secondAttribute="trailing" type="default" id="6zz-fh-pRe"/>
+                            <constraint firstAttribute="bottom" secondItem="QOi-9W-T3n" secondAttribute="bottom" constant="-93" id="Lsy-SD-Bp7"/>
+                            <constraint firstItem="QOi-9W-T3n" firstAttribute="top" secondItem="KFQ-0y-vGm" secondAttribute="top" type="default" id="g2s-xq-and"/>
+                            <constraint firstItem="QOi-9W-T3n" firstAttribute="leading" secondItem="KFQ-0y-vGm" secondAttribute="leading" type="default" id="jz9-6I-RZO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rQc-fc-DhW"/>
+                    <navigationItem key="navigationItem" id="rQc-fc-DhW">
+                        <barButtonItem key="rightBarButtonItem" title="save" id="Xzx-fG-qWC">
+                            <connections>
+                                <action selector="saveButtonPushed:" destination="EVC-qe-XkR" id="RHu-Dd-QH0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="jobsCommentLabel" destination="mTr-Bj-Ndt" id="koT-9Q-VXB"/>
                         <outlet property="jobsCommentTextField" destination="v8o-Hg-n8D" id="ihz-JI-0OY"/>
@@ -1836,6 +1854,7 @@
                         <outlet property="jobsToolsTextFields" destination="jnf-kG-cE1" id="AVF-8o-kSk"/>
                         <outlet property="jobsTypeLabel" destination="EfA-dh-BTG" id="pWA-nf-CmX"/>
                         <outlet property="jobsTypeTextField" destination="qF3-WV-fbg" id="8h8-qh-pcw"/>
+                        <outlet property="scrollView" destination="QOi-9W-T3n" id="mgR-Dy-jkQ"/>
                         <segue destination="15X-u6-sq6" kind="push" id="by4-cB-3RL"/>
                     </connections>
                 </viewController>
@@ -3139,6 +3158,7 @@
         <class className="JobAdminDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JobAdminDetailsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="saveButtonPushed:"/>
                 <relationship kind="outlet" name="jobsCommentLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="jobsCommentTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="jobsCostLabel" candidateClass="UILabel"/>
@@ -3151,6 +3171,7 @@
                 <relationship kind="outlet" name="jobsToolsTextFields" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="jobsTypeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="jobsTypeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="JobsTabBarController" superclassName="UITabBarController">
@@ -3366,9 +3387,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cwD-00-IBw"/>
-        <segue reference="hEs-qA-9Qp"/>
-        <segue reference="5ME-0f-bdf"/>
         <segue reference="1Ns-oy-JaP"/>
+        <segue reference="5ME-0f-bdf"/>
+        <segue reference="cwD-00-IBw"/>
+        <segue reference="by4-cB-3RL"/>
     </inferredMetricsTieBreakers>
 </document>
