@@ -79,11 +79,8 @@
     [picker setSubject:@"message via iFlotta"];
     
     // Fill out the email body text
-    
-    NSString *emailBody = [NSString stringWithFormat:@"by %@", [self.partnerData valueForKey:@"partnerNev"]];
-    
-    
-    [picker setMessageBody:emailBody isHTML:YES]; // depends. Mostly YES, unless you want to send it as plain text (boring)
+    NSArray *toRecipients = [NSArray arrayWithObjects:[self.partnerData valueForKey:@"partnerEmailcim"], nil];
+    [picker setToRecipients:toRecipients];
     
     picker.navigationBar.barStyle = UIBarStyleBlack; // choose your style, unfortunately, Translucent colors behave quirky.
     
