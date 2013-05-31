@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AdminSiteViewController : UIViewController
+@interface AdminSiteViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *siteNevLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cimLabel;
@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *yLabel;
 @property (strong, nonatomic) IBOutlet UITextField *xTextField;
 @property (strong, nonatomic) IBOutlet UITextField *yTextField;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)makePhotoButtonPressed:(id)sender;
 
