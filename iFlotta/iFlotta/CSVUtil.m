@@ -9,18 +9,17 @@
 #import "CSVUtil.h"
 
 @implementation CSVUtil
--(void)ArrayToCSV {
-    NSArray *firstArray, *secondArray, *thirdArray;
+-(void)ArrayToCSV:(NSArray *)nameArray : (NSArray *) phoneArray : (NSArray *) emailArray {
     
-    NSMutableString *csv = [NSMutableString stringWithString:@"Name,Date,Miles"];
+    NSMutableString *csv = [NSMutableString stringWithString:@"Name,Phone,Email"];
     
-    NSUInteger count = [firstArray count];
+    NSUInteger count = [nameArray count];
     // provided all arrays are of the same length
     for (NSUInteger i=0; i<count; i++ ) {
-        [csv appendFormat:@"\n\"%@\",%@,\"%d\"",
-         [firstArray objectAtIndex:i],
-         [secondArray objectAtIndex:i],
-         [[thirdArray objectAtIndex:i] integerValue]
+        [csv appendFormat:@"\n\"%@\",%@,\"%@\"",
+         [nameArray objectAtIndex:i],
+         [phoneArray objectAtIndex:i],
+         [emailArray objectAtIndex:i]
          ];
         // instead of integerValue may be used intValue or other, it depends how array was created
     }
