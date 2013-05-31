@@ -58,6 +58,10 @@
 +(void)JsonBuilderSender:(NSArray*) senderObject : (NSString*) objectTipus {
     
     NSMutableDictionary* object = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* json = [[NSMutableDictionary alloc] init];
+    [json setObject:object forKey:@"objects"];
+    [json setObject:@"insert" forKey:@"action"];
+    
     
     if ([objectTipus isEqualToString:@"Sofor"])
     {
@@ -75,14 +79,36 @@
         [object setObject:[aktsofor valueForKey:@"soforIsAdmin"] forKey:@"soforIsAdmin"];
         [object setObject:[aktsofor valueForKey:@"soforProfilKepId"] forKey:@"soforProfilKepID"];
         [object setObject:[aktsofor valueForKey:@"soforIsActive"] forKey:@"soforIsActive"];
+        
+        [json setObject:@"sofor" forKey:@"tableName"];
     }
+    if ([objectTipus isEqualToString:@"Auto"])
+    {
+        NSLog(@"%@",[senderObject objectAtIndex:0]);
+        NSManagedObject *aktauto = [senderObject objectAtIndex:0];
+        
+       
+        
+        [object setObject:[aktauto valueForKey:@"autoNev"] forKey:@"autoNev"];
+        [object setObject:[aktauto valueForKey:@"autoIsActive"] forKey:@"autoIsActive"];
+        [object setObject:[aktauto valueForKey:@"autoFoglalt"] forKey:@"autoFoglalt"];
+        [object setObject:[aktauto valueForKey:@"autoLastSoforID"] forKey:@"autoLastSoforID"];
+        [object setObject:[aktauto valueForKey:@"autoRendszam"] forKey:@"autoRendszam"];
+        [object setObject:[aktauto valueForKey:@"autoTipus"] forKey:@"autoTipus"];
+        [object setObject:[aktauto valueForKey:@"autoKilometerOra"] forKey:@"autoKilometerOra"];
+        [object setObject:[aktauto valueForKey:@"autoLastTelephelyID"] forKey:@"autoLastTelephelyID"];
+        [object setObject:[aktauto valueForKey:@"autoUzemAnyag"] forKey:@"autoUzemAnyag"];
+        [object setObject:[aktauto valueForKey:@"autoLastSzervizDate"] forKey:@"autoLastSzervizDate"];
+        [object setObject:[aktauto valueForKey:@"autoLastUpDate"] forKey:@"autoLastUpDate"];
+        [object setObject:[aktauto valueForKey:@"autoMuszakiVizsgaDate"] forKey:@"autoMuszakiVizsgaDate"];
+        [object setObject:[aktauto valueForKey:@"autoProfilKepID"] forKey:@"autoProfilKepID"];
+        [object setObject:[aktauto valueForKey:@"autoXkoordinata"] forKey:@"autoXkoordinata"];
+        [object setObject:[aktauto valueForKey:@"autoYkoordinata"] forKey:@"autoYkoordinata"];
+        
+        [json setObject:@"auto" forKey:@"tableName"];
+    }
+        
     
-    NSMutableDictionary* json = [[NSMutableDictionary alloc] init];
-    
-    
-    [json setObject:object forKey:@"objects"];
-    [json setObject:@"insert" forKey:@"action"];
-    [json setObject:@"sofor" forKey:@"tableName"];
     
     NSMutableDictionary* jsonv = [[NSMutableDictionary alloc] init];
     [jsonv setObject:json forKey:@"json"];

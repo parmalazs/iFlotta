@@ -36,9 +36,11 @@
 + (NSString*)aktUserID;
 + (NSString*)foglaltAutoID;
 + (BOOL) IsEmpty:(id) thing;
++(BOOL) IsInsert:(NSArray*) labels;
 +(BOOL)autoFoglal:(NSString*) autoID;
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID;
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName;
 +(void)autoFoglal:(NSString*) autoID :(NSNumber*) foglal;
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive;
++(void)insertAuto:(NSNumber*) autoID : (NSString*) autoNev : (NSString*) autoRendszam : (NSString*) autoTipus : (NSString*) autoLastSzervizDate : (NSString*) autoLastUpDate : (NSString*) autoMuszakiVizsgaDate : (NSNumber*) autoKilometerOra : (NSNumber*) autoLastTelephelyID : (NSNumber*) autoUzemAnyag : (NSNumber*) autoXkoordinata : (NSNumber*) autoYkoordinata : (NSNumber*) autoProfilKepID;
 @end

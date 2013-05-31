@@ -687,6 +687,7 @@ static NSString *foglaltautoID;
     
     
     // Üres sztring vizsgálatok kellenek még!!!!;
+    [newAuto setValue:[NSNumber numberWithInt:[autoID intValue]] forKey:@"autoID"];
     [newAuto setValue:autoNev forKey:@"autoNev"];
     [newAuto setValue:[NSNumber numberWithInt:1] forKey:@"autoIsActive"];
     [newAuto setValue:[NSNumber numberWithInt:0] forKey:@"autoFoglalt"];
@@ -705,7 +706,6 @@ static NSString *foglaltautoID;
     
     [self saveContext:context];
 }
-
 
 
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName {
@@ -746,6 +746,15 @@ static NSString *foglaltautoID;
     NSError* error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     return fetchedObjects;
+}
+
+
++(BOOL) IsInsert:(NSArray*) labels
+{
+    for (NSString* aktlabel in labels) {
+        if ([self IsEmpty:aktlabel]) return NO;
+    }
+    return YES;
 }
 
 + (BOOL) IsEmpty:(id) thing {

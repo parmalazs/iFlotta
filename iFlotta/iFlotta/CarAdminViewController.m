@@ -7,13 +7,19 @@
 //
 
 #import "CarAdminViewController.h"
+#import "DataBaseUtil.h"
+#import "JsonUtil.h"
+
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface CarAdminViewController ()
 
 @end
 
 @implementation CarAdminViewController
-
+{
+    NSArray  * labelElements;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -63,9 +69,45 @@
 }
 
 - (IBAction)takePicture:(id)sender {
+    
 }
 
 - (IBAction)saveButton:(id)sender {
+    
+    NSNumber *maxid = [DataBaseUtil fetchRequestMaxID:@"Auto" :@"autoID"];
+    
+    int value = [maxid intValue];
+    maxid = [NSNumber numberWithInt:value + 1];
+    NSLog(@"%@",maxid);
+    
+    labelElements = [[NSArray alloc]
+                          initWithObjects:_carNameTextField.text,
+                          _carTypeTextField.text,
+                          _carSpeedometerTextField.text,
+                          _carFuelTextField.text,
+                          _carRendszamTextField.text,
+                          _carMuszakiTextField.text,
+                          _carServiceTextField.text,
+                          _carXTextField.text,
+                          _carYTextField.text,
+                          nil];
+    
+    
+    if (![DataBaseUtil IsInsert:labelElements])
+    {
+        NSLog(@"Nincs kitöltve minden!");
+    }
+    else
+    {
+        [DataBaseUtil insertAuto:[[NSNumber alloc] initWithInt:[maxid intValue]] :_carNameTextField.text :_carRendszamTextField.text :_carTypeTextField.text :_carServiceTextField.text :_carServiceTextField.text :_carMuszakiTextField.text :[[NSNumber alloc] initWithInt:[[_carSpeedometerTextField text] intValue]] :[[NSNumber alloc] initWithInt:11] :[[NSNumber alloc] initWithInt:[[_carFuelTextField text] intValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:2]];
+        
+        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Auto" :@"autoID" :[maxid stringValue] ];
+        
+        NSLog(@"%@",[obj objectAtIndex:0]);
+        
+        [JsonUtil JsonBuilderSender:obj :@"Auto"];
+    }
+
     
 }
 @end
