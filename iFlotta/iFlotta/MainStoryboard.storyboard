@@ -780,7 +780,7 @@
                     <connections>
                         <outlet property="buszSearchBar" destination="WaW-yb-Loc" id="Gq9-Jg-MUG"/>
                         <outlet property="searchDisplayController" destination="MsQ-hW-TXH" id="2fO-ib-n3p"/>
-                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesKamionDetails" id="1Ns-oy-JaP"/>
+                        <segue destination="bpA-F9-eRp" kind="push" identifier="vehiclesBuszDetails" id="1Ns-oy-JaP"/>
                         <segue destination="hqd-f5-Af1" kind="push" identifier="buszAdminViewSegue" id="91I-hE-1Wq"/>
                     </connections>
                 </tableViewController>
@@ -1025,7 +1025,7 @@
             <objects>
                 <viewController storyboardIdentifier="vehiclesDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bpA-F9-eRp" customClass="VehiclesDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2La-cZ-qIL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AutoNév" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhe-Uu-2au">
@@ -3226,9 +3226,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4k1-KE-Gjt"/>
+        <segue reference="5ME-0f-bdf"/>
+        <segue reference="1Ns-oy-JaP"/>
         <segue reference="hEs-qA-9Qp"/>
         <segue reference="ceW-pD-zho"/>
-        <segue reference="kww-q9-2CX"/>
     </inferredMetricsTieBreakers>
 </document>

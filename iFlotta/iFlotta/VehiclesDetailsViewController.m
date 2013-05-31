@@ -31,9 +31,9 @@
     
     //self.profilImage.image=[self.adatDetails valueForKey:@"autoKep"];
     self.name.text = [self.adatDetails valueForKey:@"autoNev"];
-    //self.vehicleType.text = [self.adatDetails valueForKey:@"autoTipus"];
-    //self.speedometer.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
-    //self.fuel.text = [self.adatDetails valueForKey:@"autoUzemAnyag"];
+    self.vehicleType.text = [self.adatDetails valueForKey:@"autoTipus"];
+    self.speedometer.text = [[self.adatDetails valueForKey:@"autoKilometerOra"] stringValue];
+    self.fuel.text = [[self.adatDetails valueForKey:@"autoUzemAnyag"] stringValue];
     
     self.vehicleType.backgroundColor = UIColorFromRGB(0xD9B384);
     self.speedometer.backgroundColor = UIColorFromRGB(0xD9B384);

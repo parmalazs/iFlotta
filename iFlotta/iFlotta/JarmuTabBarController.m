@@ -36,7 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    self.delegate = self;
 
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
@@ -178,6 +179,29 @@
     }
     
     [dropdownSorted dismiss];
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    NSArray *tabViewControllers = tabBarController.viewControllers;
+    UIView * fromView = tabBarController.selectedViewController.view;
+    UIView * toView = viewController.view;
+    if (fromView == toView)
+        return true;
+    NSUInteger fromIndex = [tabViewControllers indexOfObject:tabBarController.selectedViewController];
+    NSUInteger toIndex = [tabViewControllers indexOfObject:viewController];
+    
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.6
+                       options: toIndex > fromIndex ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            tabBarController.selectedIndex = toIndex;
+                        }
+                    }];
+    
+    return true;
 }
 
 @end

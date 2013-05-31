@@ -141,7 +141,7 @@
      if (_isAdmin) {
      [self performSegueWithIdentifier:@"buszAdminViewSegue" sender:tableView];
      }else{
-     [self performSegueWithIdentifier:@"vehiclesKamionDetails" sender:tableView];
+     [self performSegueWithIdentifier:@"vehiclesBuszDetails" sender:tableView];
      }
     
    // [self performSegueWithIdentifier:@"vehiclesBuszDetails" sender:tableView];
