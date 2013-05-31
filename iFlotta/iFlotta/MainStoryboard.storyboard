@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12B2080" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -2598,14 +2598,8 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cim:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-YL-3jD">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="57" id="072-wn-Pfb"/>
                                     <constraint firstAttribute="height" constant="80" id="osc-n8-arB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tel:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRv-gM-64e">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -2615,15 +2609,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="E-mail:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDR-1W-lLg">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Lhg-hz-6rB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="e-mail" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWa-Nl-39w">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="249-jE-pf9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -2639,17 +2628,50 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wmq-vF-9OX"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmP-93-0Gx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="598-Wa-k7w"/>
+                                    <constraint firstAttribute="width" constant="74" id="6Rp-RY-3oX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Hívás">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callPartner:" destination="aEW-dA-E1e" eventType="touchUpInside" id="Euo-sw-zhB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oym-iY-cj4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="0DR-YE-lbV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Üzenet">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="messagePartner:" destination="aEW-dA-E1e" eventType="touchUpInside" id="SMy-Op-Yph"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xWa-Nl-39w" firstAttribute="top" secondItem="e5a-BA-uma" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0pf-t7-6Oz"/>
                             <constraint firstItem="omT-Cw-KEJ" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5a5-Pl-rCm"/>
-                            <constraint firstItem="EDR-1W-lLg" firstAttribute="top" secondItem="yRv-gM-64e" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Ehl-ZO-a4O"/>
+                            <constraint firstItem="DmP-93-0Gx" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="11" id="Bls-Bp-i15"/>
+                            <constraint firstItem="DmP-93-0Gx" firstAttribute="leading" secondItem="Oym-iY-cj4" secondAttribute="leading" type="default" id="Cj1-Je-r9F"/>
                             <constraint firstItem="omT-Cw-KEJ" firstAttribute="top" secondItem="mfK-U8-FWP" secondAttribute="top" constant="20" symbolic="YES" type="default" id="J75-jP-HXG"/>
-                            <constraint firstItem="yRv-gM-64e" firstAttribute="centerY" secondItem="e5a-BA-uma" secondAttribute="centerY" type="user" id="Jaw-P5-aHR"/>
                             <constraint firstAttribute="trailing" secondItem="JGr-ni-nhv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KC1-QN-IZ0"/>
                             <constraint firstAttribute="trailing" secondItem="e5a-BA-uma" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M11-nO-MKV"/>
-                            <constraint firstItem="yRv-gM-64e" firstAttribute="top" secondItem="OCc-YL-3jD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="R5g-PL-sPE"/>
+                            <constraint firstItem="e5a-BA-uma" firstAttribute="top" secondItem="KRc-oE-ztY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ORs-az-90y"/>
                             <constraint firstItem="KRc-oE-ztY" firstAttribute="top" secondItem="OCc-YL-3jD" secondAttribute="top" type="default" id="ROE-9F-bvg"/>
                             <constraint firstAttribute="trailing" secondItem="Wmq-vF-9OX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RVT-Oj-NwE"/>
                             <constraint firstAttribute="bottom" secondItem="xWa-Nl-39w" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="UA8-pA-du0"/>
@@ -2657,30 +2679,28 @@
                             <constraint firstItem="JGr-ni-nhv" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XYk-DP-Oim"/>
                             <constraint firstItem="OCc-YL-3jD" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YBe-fG-pAt"/>
                             <constraint firstItem="KRc-oE-ztY" firstAttribute="leading" secondItem="OCc-YL-3jD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Zwc-QX-rRr"/>
+                            <constraint firstItem="xWa-Nl-39w" firstAttribute="baseline" secondItem="Oym-iY-cj4" secondAttribute="baseline" type="default" id="apZ-8F-vbW"/>
                             <constraint firstAttribute="trailing" secondItem="omT-Cw-KEJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="d8M-x8-ovh"/>
-                            <constraint firstItem="e5a-BA-uma" firstAttribute="leading" secondItem="yRv-gM-64e" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="efp-aN-JzC"/>
+                            <constraint firstItem="DmP-93-0Gx" firstAttribute="centerX" secondItem="OCc-YL-3jD" secondAttribute="centerX" type="default" id="dkc-sQ-B5Q"/>
+                            <constraint firstAttribute="bottom" secondItem="Oym-iY-cj4" secondAttribute="bottom" constant="28" id="dnc-c7-OGI"/>
+                            <constraint firstAttribute="bottom" secondItem="DmP-93-0Gx" secondAttribute="bottom" constant="71" id="dw3-3L-tcx"/>
                             <constraint firstItem="OCc-YL-3jD" firstAttribute="baseline" secondItem="KRc-oE-ztY" secondAttribute="baseline" type="default" id="gmz-Xi-R0v"/>
-                            <constraint firstAttribute="bottom" secondItem="EDR-1W-lLg" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="h1r-5w-duU"/>
                             <constraint firstItem="KRc-oE-ztY" firstAttribute="leading" secondItem="e5a-BA-uma" secondAttribute="leading" type="default" id="izi-i0-E3k"/>
                             <constraint firstItem="xWa-Nl-39w" firstAttribute="leading" secondItem="e5a-BA-uma" secondAttribute="leading" type="default" id="owE-7B-OMD"/>
                             <constraint firstItem="JGr-ni-nhv" firstAttribute="top" secondItem="omT-Cw-KEJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="quJ-yt-Epl"/>
-                            <constraint firstItem="yRv-gM-64e" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rsn-ga-yow"/>
                             <constraint firstAttribute="bottom" secondItem="Wmq-vF-9OX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="sdK-Ak-hnY"/>
+                            <constraint firstItem="DmP-93-0Gx" firstAttribute="baseline" secondItem="e5a-BA-uma" secondAttribute="baseline" type="default" id="uGa-fJ-8ck"/>
                             <constraint firstAttribute="trailing" secondItem="xWa-Nl-39w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uJO-Je-5p2"/>
-                            <constraint firstItem="EDR-1W-lLg" firstAttribute="leading" secondItem="mfK-U8-FWP" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vOa-cx-qoz"/>
-                            <constraint firstItem="xWa-Nl-39w" firstAttribute="leading" secondItem="EDR-1W-lLg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xgt-S9-fpF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="luP-x5-mX4"/>
                     <connections>
                         <outlet property="PartnerEmail" destination="xWa-Nl-39w" id="ouv-ET-xj9"/>
-                        <outlet property="emailLabel" destination="EDR-1W-lLg" id="82D-sN-nhz"/>
                         <outlet property="nevLabel" destination="OCc-YL-3jD" id="bYa-B0-ZO8"/>
                         <outlet property="partnerCim" destination="KRc-oE-ztY" id="VZb-Iv-Ihq"/>
                         <outlet property="partnerNev" destination="omT-Cw-KEJ" id="lK3-yi-2bo"/>
                         <outlet property="partnerTelefonszam" destination="e5a-BA-uma" id="IsL-Ve-bu8"/>
                         <outlet property="profilImage" destination="JGr-ni-nhv" id="YHl-Lm-YMH"/>
-                        <outlet property="telLabel" destination="yRv-gM-64e" id="jX3-kp-lkq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itE-mV-gTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2859,6 +2879,375 @@
         <image name="placeholder.png" width="960" height="960"/>
         <image name="telephelyek146x120.png" width="146" height="120"/>
     </resources>
+    <classes>
+        <class className="AdminSiteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminSiteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="makePhotoButtonPressed:"/>
+                <relationship kind="outlet" name="cimLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cimTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="siteNevLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteNevTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="telTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="xLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="xTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="yLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BuszCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buszLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BuszViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buszSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="CarAdminViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarAdminViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveButton:"/>
+                <relationship kind="action" name="takePicture:"/>
+                <relationship kind="outlet" name="carFuelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carFuelTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carMuszakiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carMuszakiTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carRendszamLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carRendszamTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carServiceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carServiceTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carSpeedometerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carSpeedometerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carTypeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carXLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carXTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="carYLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carYTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="CarsTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buszLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CarsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="ContactTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactTabBarController.h"/>
+        </class>
+        <class className="ContactsAdminViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsAdminViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contactsAdressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsAdressTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="contactsEmailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsEmailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="contactsNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="contactsTelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsTelTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="contactsWebLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsWebTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="contactsXLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsXTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="contactsYLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contactsYTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DriverDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profilImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="soforCim" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="soforEmail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="soforKep" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="soforNev" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="soforTelefonszam" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DriverTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="driverLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DriverViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DriverViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="driverSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="FreeJobDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="label4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="label5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FreeJobsTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobsTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="jobLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FreeJobsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="freeJobsSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="JarmuTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JarmuTabBarController.h"/>
+        </class>
+        <class className="JobAdminDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JobAdminDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="jobsCommentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsCommentTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsCostLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsCostsTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsFuelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsFuelTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsIncomeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsIncomeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsToolsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsToolsTextFields" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="jobsTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobsTypeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="JobsTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JobsTabBarController.h"/>
+        </class>
+        <class className="KamionCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="kamionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KamionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="kamionSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="KisteherautoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="kisteherautoLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KisteherautoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="kisteherautoSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="userLoginButton:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="logo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pic4" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userPasswordLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MainPageNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageNavigationViewController.h"/>
+        </class>
+        <class className="MainPageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainPageTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="NavBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="adminButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MainTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageElement" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imageNavigate" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelElement" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OwnJobDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OwnJobDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute1" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute3" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobAttribute5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="label4" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="label5" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OwnJobsTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OwnJobsTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ownJobLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OwnJobsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OwnJobsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ownJobsSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="PartnerDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="callPartner:"/>
+                <relationship kind="action" name="messagePartner:"/>
+                <relationship kind="outlet" name="PartnerEmail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="partnerCim" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="partnerNev" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="partnerTelefonszam" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profilImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PartnerTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="partnerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PartnerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="partnerSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="SiteDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profilImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="siteAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sitePhone" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SiteTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="siteLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SiteViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="siteSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="SoforAdminDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SoforAdminDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveButton:"/>
+                <relationship kind="outlet" name="driverAdressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverAdressTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverBirthdateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverBirthdateTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverEmailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverEmailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverIsAdminLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverIsAdminTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverLoginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverLoginTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverPasswordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverPasswordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverTelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverTelTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverWebLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverWebTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverXLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverXTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="driverYLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="driverYTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TeherautoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="teherautoLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TeherautoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="teherautoSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="VehiclesDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VehiclesDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="foglalasButtonPushed:"/>
+                <relationship kind="outlet" name="benzin" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fuel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="km" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profilImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="speedometer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tipus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="vehicleType" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

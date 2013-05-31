@@ -19,5 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *telLabel;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *profilImage;
+- (IBAction)callPartner:(id)sender;
+- (IBAction)messagePartner:(id)sender;
 
 @end
