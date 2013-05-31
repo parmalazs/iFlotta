@@ -31,12 +31,14 @@
 + (void)fillProfilkepTable;
 + (void)fillMunkakepTable;
 + (void)fillAutoTable;
-+(void) setUser:(NSString*)admin :(NSString*)userid;
++(void) setUser:(NSString*)admin :(NSString*)userid :(NSString*)foglaltauto;
 + (NSString*)aktUserAdmin;
 + (NSString*)aktUserID;
++ (NSString*)foglaltAutoID;
 + (BOOL) IsEmpty:(id) thing;
++(BOOL)autoFoglal:(NSString*) autoID;
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID;
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName;
-
++(void)autoFoglal:(NSString*) autoID :(NSNumber*) foglal;
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive;
 @end

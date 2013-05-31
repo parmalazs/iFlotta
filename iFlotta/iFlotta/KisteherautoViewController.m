@@ -222,4 +222,9 @@
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó" :@"autoRendszam" :[NSNumber numberWithInt:1]];
     [[self tableView] reloadData];
 }
+
+-(void)frissit {
+    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó"];
+    [[self tableView] reloadData];
+}
 @end

@@ -22,6 +22,7 @@
 @implementation DataBaseUtil
 static NSString *isAdmin;
 static NSString *aktUserID;
+static NSString *foglaltautoID;
 
 + (NSString*)aktUserAdmin
 {
@@ -30,6 +31,11 @@ static NSString *aktUserID;
 + (NSString*)aktUserID
 {
     return aktUserID;
+}
+
++ (NSString*)foglaltAutoID
+{
+    return foglaltautoID;
 }
 
 + (void) deleteAllObjects: (NSString *) entityDescription  :(NSManagedObjectContext*) context {
@@ -57,9 +63,10 @@ static NSString *aktUserID;
     }
 }
 
-+(void) setUser:(NSString*)admin :(NSString*)userid {
++(void) setUser:(NSString*)admin :(NSString*)userid :(NSString*)foglaltauto {
     isAdmin = admin;
     aktUserID = userid;
+    foglaltautoID = foglaltauto;
 }
 
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName {
@@ -607,7 +614,31 @@ static NSString *aktUserID;
     NSArray *lefoglalAuto = [self fetchRequestEntity:@"Auto" :@"autoID" :autoID];
     Auto * aktauto = [lefoglalAuto objectAtIndex:0];
     aktauto.autoFoglalt = [NSNumber numberWithInt:[foglal intValue]];
+    if ([foglal boolValue])
+    {
+        aktauto.autoLastSoforID = [NSNumber numberWithInt:[[self aktUserID] intValue]];
+    }
+    else
+    {
+        aktauto.autoLastSoforID = [NSNumber numberWithInt:0];
+    }
+    
+    foglaltautoID = autoID;
     [self saveContext:context];
+}
+
++(BOOL)autoFoglal:(NSString*) autoID {
+    NSArray *autok = [self fetchRequest:@"Auto" :@"1" :@"autoIsActive"];
+    
+    for (id aktauto in autok) {
+        if ([[aktauto valueForKey:@"autoLastSoforID"] isEqualToNumber:[NSNumber numberWithInt:[[self aktUserID] intValue] ]])
+        {
+            NSLog(@"Van már rajtad auto, koccolj le!");
+            foglaltautoID = [aktauto valueForKey:@"autoID"];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 +(void)munkaFelvesz:(NSString*) munkaID

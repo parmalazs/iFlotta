@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CarAdminViewController : UIViewController
-
+@property (nonatomic, strong) NSManagedObject *adatDetails;
 @property (strong, nonatomic) IBOutlet UITextField *carNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *carTypeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *carSpeedometerTextField;

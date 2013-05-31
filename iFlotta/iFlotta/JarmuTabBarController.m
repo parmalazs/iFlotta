@@ -42,11 +42,11 @@
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
         _isAdmin = NO;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Jármű leadás",@"image":@"166-newspaper.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új autó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új busz felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új teherautó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új kisteherautó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új kamion felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Jármű leadás",@"image":@"166-newspaper.png"},@{@"name" : @"Új autó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új busz felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új teherautó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új kisteherautó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új kamion felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
     }
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
 
@@ -84,13 +84,10 @@
                 break;
             case 1:
                 NSLog(@"1");
+                
                 break;
             case 2:
-            {
                 NSLog(@"2");
-                //pvc.rendezNev;
-                //dvc.rendezNev;
-            }
                 break;
             case 3:
             {
@@ -109,6 +106,13 @@
             case 5:
             {
                 NSLog(@"5");
+                //pvc.rendezNev;
+                //dvc.rendezNev;
+            }
+                break;
+            case 6:
+            {
+                NSLog(@"6");
                 autovc.rendezNev;
                 buszvc.rendezNev;
                 kamionvc.rendezNev;
@@ -118,7 +122,7 @@
                 break;
             default:
             {
-                NSLog(@"6");
+                NSLog(@"7");
                 autovc.rendezRendszam;
                 buszvc.rendezRendszam;
                 kamionvc.rendezRendszam;
@@ -134,6 +138,25 @@
             case 0:
             {
                 NSLog(@"0");
+                if ([DataBaseUtil autoFoglal:[DataBaseUtil  foglaltAutoID]])
+                {
+                    NSLog(@"Leadjuk");
+                    [DataBaseUtil autoFoglal:[DataBaseUtil foglaltAutoID] : [NSNumber numberWithInt:0] ];
+                    autovc.frissit;
+                    buszvc.frissit;
+                    kamionvc.frissit;
+                    teherautovc.frissit;
+                    kisteherautovc.frissit;
+                }
+                else
+                {
+                    NSLog(@"Nincs autód, vegyél fel vmt!");
+                }
+            }
+                break;
+            case 1:
+            {
+                NSLog(@"1");
                 autovc.rendezNev;
                 buszvc.rendezNev;
                 kamionvc.rendezNev;
@@ -143,7 +166,7 @@
                 break;
             default:
             {
-                NSLog(@"1");
+                NSLog(@"2");
                 autovc.rendezRendszam;
                 buszvc.rendezRendszam;
                 kamionvc.rendezRendszam;

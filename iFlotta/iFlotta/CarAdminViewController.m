@@ -63,5 +63,6 @@
 }
 
 - (IBAction)foglalasBtnPushed:(id)sender {
+    
 }
 @end

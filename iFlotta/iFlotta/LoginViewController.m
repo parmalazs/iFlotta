@@ -93,7 +93,7 @@
         if ([tmpLogin isEqualToString:self.userName.text] && [tmpPassword isEqualToString:self.userPassword.text] )
         {
             MainPageNavigationViewController *mainPage = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"MainPageStoryboardID"];
-            [DataBaseUtil setUser:[aktsofor valueForKey:@"soforIsAdmin"] :[aktsofor valueForKey:@"soforID"]];
+            [DataBaseUtil setUser:[aktsofor valueForKey:@"soforIsAdmin"] :[aktsofor valueForKey:@"soforID"] :@"0" ];
             
         [self presentViewController:mainPage animated:YES completion:^{
             
