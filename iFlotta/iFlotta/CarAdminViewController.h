@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CarAdminViewController : UIViewController
+@interface CarAdminViewController : UIViewController<UITextFieldDelegate>
 @property (nonatomic, strong) NSManagedObject *adatDetails;
 @property (strong, nonatomic) IBOutlet UITextField *carNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *carTypeTextField;
@@ -30,6 +30,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *carXLabel;
 @property (strong, nonatomic) IBOutlet UILabel *carYLabel;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)takePicture:(id)sender;
 - (IBAction)saveButton:(id)sender;
