@@ -52,7 +52,7 @@
     newBounds.origin.y = newBounds.origin.y + ownJobsSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
-    self.ownJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
+    self.ownJobsArray = [DataBaseUtil fetchRequestSajatMunkak];
     
     
     //filteredOwnJobsArray = [NSMutableArray arrayWithCapacity:[self.ownJobsArray count]];

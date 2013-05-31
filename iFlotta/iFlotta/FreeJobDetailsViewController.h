@@ -22,5 +22,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @property (strong, nonatomic) IBOutlet UILabel *label4;
 @property (strong, nonatomic) IBOutlet UILabel *label5;
+- (IBAction)felveszButton:(id)sender;
 
 @end
