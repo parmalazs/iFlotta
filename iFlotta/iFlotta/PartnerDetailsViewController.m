@@ -64,5 +64,54 @@
 }
 
 - (IBAction)messagePartner:(id)sender {
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        [self showEmailModalView];
+    }
+    
+}
+
+-(void) showEmailModalView {
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self; // &lt;- very important step if you want feedbacks on what the user did with your email sheet
+    
+    [picker setSubject:@"message via iFlotta"];
+    
+    // Fill out the email body text
+    NSArray *toRecipients = [NSArray arrayWithObjects:[self.partnerData valueForKey:@"partnerEmailcim"], nil];
+    [picker setToRecipients:toRecipients];
+    
+    picker.navigationBar.barStyle = UIBarStyleBlack; // choose your style, unfortunately, Translucent colors behave quirky.
+    
+    [self presentModalViewController:picker animated:YES];
+    
+}
+// Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    // Notifies users about errors associated with the interface
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            break;
+        case MFMailComposeResultSaved:
+            break;
+        case MFMailComposeResultSent:
+            break;
+        case MFMailComposeResultFailed:
+            break;
+            
+        default:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Sending Failed - Unknown Error :-("
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
+            
+            break;
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 @end

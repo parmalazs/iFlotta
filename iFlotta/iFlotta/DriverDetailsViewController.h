@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface DriverDetailsViewController : UIViewController
+@interface DriverDetailsViewController : UIViewController <MFMailComposeViewControllerDelegate> { }
+
 @property (nonatomic, strong) NSManagedObject *driverData;
 @property (weak, nonatomic) IBOutlet UILabel *soforNev;
 @property (weak, nonatomic) IBOutlet UILabel *soforCim;
@@ -20,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *telLabel;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *profilImage;
+- (IBAction)callDriver:(id)sender;
+- (IBAction)endEmail:(id)sender;
 
 
 @end
