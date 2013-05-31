@@ -44,6 +44,7 @@
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody: requestData];
     
+    NSLog(@"jsonstring: %@",jsonString);
     
     //NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
     
@@ -55,17 +56,33 @@
     NSLog(@"Válasz2: %@", string);
 }
 
-+(void)JsonBuilderSender:(NSArray*) senderObject : (NSString*) objectTipus {
++(void)JsonBuilderSender:(NSArray*) senderObject : (NSString*) objectTipus :(NSString*) actionTipus {
     
     NSMutableDictionary* object = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* json = [[NSMutableDictionary alloc] init];
     [json setObject:object forKey:@"objects"];
-    [json setObject:@"insert" forKey:@"action"];
+    
+    
+    if ([actionTipus isEqualToString:@"insert"])
+    {
+        [json setObject:@"insert" forKey:@"action"];
+    }
+    else
+    {
+        [json setObject:@"update" forKey:@"action"];
+    }
+    
     
     
     if ([objectTipus isEqualToString:@"Sofor"])
     {
         NSManagedObject *aktsofor = [senderObject objectAtIndex:0];
+        
+        /*
+        if ([actionTipus isEqualToString:@"update"])
+        {
+            [json setObject:[aktsofor valueForKey:@"soforID"] forKey:@"id"];
+        }*/
         
         [object setObject:[aktsofor valueForKey:@"soforPass"] forKey:@"soforPass"];
         [object setObject:[aktsofor valueForKey:@"soforNev"] forKey:@"soforNev"];
@@ -82,13 +99,21 @@
         
         [json setObject:@"sofor" forKey:@"tableName"];
     }
+    
     if ([objectTipus isEqualToString:@"Auto"])
     {
-        NSLog(@"%@",[senderObject objectAtIndex:0]);
         NSManagedObject *aktauto = [senderObject objectAtIndex:0];
         
-       
+        if ([actionTipus isEqualToString:@"update"])
+        {
+            //[json setObject:[aktauto valueForKey:@"autoID"] forKey:@"id"];
+        }
+        else
+        {
+            //[object setObject:[aktauto valueForKey:@"autoID"] forKey:@"autoID"];
+        }
         
+        [object setObject:[aktauto valueForKey:@"autoID"] forKey:@"autoId"];
         [object setObject:[aktauto valueForKey:@"autoNev"] forKey:@"autoNev"];
         [object setObject:[aktauto valueForKey:@"autoIsActive"] forKey:@"autoIsActive"];
         [object setObject:[aktauto valueForKey:@"autoFoglalt"] forKey:@"autoFoglalt"];

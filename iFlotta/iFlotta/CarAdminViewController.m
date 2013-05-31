@@ -105,7 +105,7 @@
         
         NSLog(@"%@",[obj objectAtIndex:0]);
         
-        [JsonUtil JsonBuilderSender:obj :@"Auto"];
+        [JsonUtil JsonBuilderSender:obj :@"Auto" :@"insert"];
     }
 
     

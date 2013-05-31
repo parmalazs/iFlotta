@@ -101,6 +101,6 @@
     
     NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
     
-    [JsonUtil JsonBuilderSender:obj :@"Sofor"];
+    [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"insert"];
 }
 @end
