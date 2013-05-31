@@ -8,6 +8,8 @@
 
 #import "FreeJobDetailsViewController.h"
 #import "DataBaseUtil.h"
+#import "JsonUtil.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface FreeJobDetailsViewController ()
 
@@ -68,6 +70,14 @@
 
 - (IBAction)felveszButton:(id)sender {
     [DataBaseUtil munkaFelvesz:[[_freeJobData valueForKey:@"munkaID"] stringValue]];
+    
+    
+    NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[[_freeJobData valueForKey:@"munkaID"] stringValue] ];
+    
+    NSLog(@"%@",[obj objectAtIndex:0]);
+    
+    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"update"];
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
                                                     message:@"Az adott munkát felvette!"
                                                    delegate:nil

@@ -8,6 +8,8 @@
 
 #import "VehiclesDetailsViewController.h"
 #import "DataBaseUtil.h"
+#import "JsonUtil.h"
+
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface VehiclesDetailsViewController ()
@@ -63,12 +65,32 @@
     {
         // Alert kell ide!!!!
         NSLog(@"Foglalt");
-        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
+                                                        message:@"Az adott jármű már foglalt, kérem válasszon másikat!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
     else
     {
         NSLog(@"Felvéve");
         [DataBaseUtil autoFoglal:[[self adatDetails] valueForKey:@"autoID"] :[NSNumber numberWithInt:1] ];
+        
+        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Auto" :@"autoID" :[[self adatDetails] valueForKey:@"autoID"] ];
+        
+        //NSLog(@"%@",[obj objectAtIndex:0]);
+        
+        [JsonUtil JsonBuilderSender:obj :@"Auto" :@"update"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
+                                                        message:@"Az adott járművet lefoglalta!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        
     }
     
 }

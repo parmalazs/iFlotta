@@ -86,6 +86,7 @@
 // Login
 - (IBAction)userLoginButton:(id)sender {
     
+    
     NSArray *fetchedObjects = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
     
     for (NSManagedObject *aktsofor in fetchedObjects) {

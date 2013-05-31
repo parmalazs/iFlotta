@@ -118,7 +118,7 @@ self.driverBirthdateTextField.delegate = self;
     
     NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
     
-    [JsonUtil JsonBuilderSender:obj :@"Sofor"];
+    [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"insert"];
 }
 
 // Call this method somewhere in your view controller setup code.

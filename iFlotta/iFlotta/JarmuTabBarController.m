@@ -15,6 +15,8 @@
 #import "TeherautoViewController.h"
 #import "DataBaseUtil.h"
 #import "CarAdminViewController.h"
+#import "JsonUtil.h"
+
 
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -120,6 +122,21 @@
                 {
                     NSLog(@"Leadjuk");
                     [DataBaseUtil autoFoglal:[DataBaseUtil foglaltAutoID] : [NSNumber numberWithInt:0] ];
+                    
+                    NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Auto" :@"autoID" :[DataBaseUtil foglaltAutoID] ];
+                    
+                    //NSLog(@"%@",[obj objectAtIndex:0]);
+                    
+                    [JsonUtil JsonBuilderSender:obj :@"Auto" :@"update"];
+                    
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
+                                                                    message:@"A járművet sikeresen leadta!"
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                    
+                    
                     autovc.frissit;
                     buszvc.frissit;
                     kamionvc.frissit;
