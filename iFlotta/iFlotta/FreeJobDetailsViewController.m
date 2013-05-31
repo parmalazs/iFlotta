@@ -7,6 +7,7 @@
 //
 
 #import "FreeJobDetailsViewController.h"
+#import "DataBaseUtil.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface FreeJobDetailsViewController ()
 
@@ -65,4 +66,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)felveszButton:(id)sender {
+    [DataBaseUtil munkaFelvesz:[[_freeJobData valueForKey:@"munkaID"] stringValue]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
+                                                    message:@"Az adott munkát felvette!"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    // egy alertview
+}
 @end

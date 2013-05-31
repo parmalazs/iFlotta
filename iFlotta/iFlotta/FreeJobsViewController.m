@@ -40,6 +40,10 @@
     [freeJobsSearchBar sizeToFit];
     [freeJobsSearchBar setTintColor:UIColorFromRGB(0x260B01)];
     
+    CGRect newBounds = [[self tableView] bounds];
+    newBounds.origin.y = newBounds.origin.y + freeJobsSearchBar.bounds.size.height;
+    [[self tableView] setBounds:newBounds];
+    
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
@@ -50,10 +54,6 @@
         _isAdmin = YES;
     }
     
-    
-    CGRect newBounds = [[self tableView] bounds];
-    newBounds.origin.y = newBounds.origin.y ;//+ //freeJobsSearchBar.bounds.size.height;
-    [[self tableView] setBounds:newBounds];
     
     self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
 
@@ -202,6 +202,63 @@
         
     }
 }
+
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	// Update the filtered array based on the search text and scope.
+	
+    // Remove all objects from the filtered search array
+	[self.filteredFreeJobsArray removeAllObjects];
+    
+	// Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.munkaDate contains[c] %@) or (SELF.munkaComment contains[c] %@) or (SELF.munkaBefejezesDate contains[c] %@)",searchText,searchText,searchText,searchText];
+    NSArray *tempArray = [self.freeJobsArray filteredArrayUsingPredicate:predicate];
+    
+    if([scope isEqualToString:@"Dátum"])
+    {
+        // Further filter the array with the scope
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"(SELF.munkaDate contains[c] %@)",searchText];
+        tempArray = [self.freeJobsArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    else if([scope isEqualToString:@"Komment"])
+    {
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.munkaComment contains[c] %@",searchText];
+        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    else if([scope isEqualToString:@"Befejezés"])
+    {
+        NSPredicate *scopePredicate = [NSPredicate predicateWithFormat:@"SELF.munkaBefejezesDate contains[c] %@",searchText];
+        tempArray = [tempArray filteredArrayUsingPredicate:scopePredicate];
+    }
+    filteredFreeJobsArray = [NSMutableArray arrayWithArray:tempArray];
+    //NSLog(@"Array: %d", filteredSiteArray.count);
+}
+
+
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
 
 -(void)rendezKoltseg
 {

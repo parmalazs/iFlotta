@@ -24,13 +24,14 @@
     //self.window.backgroundColor = [UIColor whiteColor];
     //[self.window makeKeyAndVisible];
 
-    
+    /*
     // Ezzel a három hivással lehet beszúrni lokális adatbázisbe, utána lekérdezzük azt, majd a kapott objektumot elküldjük
     [DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:678] :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :[[NSNumber alloc] initWithBool:YES] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithBool:YES]];
     
     NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :@"678"];
     
-    [JsonUtil JsonBuilderSender:obj :@"Sofor"];
+    
+    [JsonUtil JsonBuilderSender:obj :@"Sofor"];*/
     
     [self.window makeKeyAndVisible];
     

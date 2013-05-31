@@ -16,6 +16,7 @@
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) sortName :(NSNumber*) sortType;
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName :(NSString*) sortName :(NSNumber*) sortType;
 + (NSArray*)fetchRequestJarmu:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) tipusName;
++ (NSArray*)fetchRequestSajatMunkak;
 + (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSNumber*) soforID;
 + (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) soforID :(NSString*) sortName :(NSNumber*) sortType;
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName ;
@@ -38,6 +39,8 @@
 + (BOOL) IsEmpty:(id) thing;
 +(BOOL) IsInsert:(NSArray*) labels;
 +(BOOL)autoFoglal:(NSString*) autoID;
++(void)munkaLead:(NSString*) munkaID;
++(void)munkaFelvesz:(NSString*) munkaID;
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID;
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName;
 +(void)autoFoglal:(NSString*) autoID :(NSNumber*) foglal;

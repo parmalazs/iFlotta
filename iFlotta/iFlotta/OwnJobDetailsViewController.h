@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *jobAttribute3;
 @property (strong, nonatomic) IBOutlet UILabel *jobAttribute4;
 @property (strong, nonatomic) IBOutlet UILabel *jobAttribute5;
+- (IBAction)leadButton:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *nevLabel;
 @property (strong, nonatomic) IBOutlet UILabel *telLabel;

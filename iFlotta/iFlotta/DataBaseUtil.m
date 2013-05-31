@@ -127,6 +127,24 @@ static NSString *foglaltautoID;
     return fetchedObjects;
 }
 
++ (NSArray*)fetchRequestSajatMunkak {
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Munka" inManagedObjectContext:context];
+    
+    NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"munkaIsActive == 1 && soforID == %@", aktUserID];
+    
+    [fetchRequest setPredicate:IsActivePredicate];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
+
 + (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) soforID :(NSString*) sortName :(NSNumber*) sortType {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
@@ -646,9 +664,18 @@ static NSString *foglaltautoID;
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     NSArray *munkafelvesz = [self fetchRequestEntity:@"Munka" :@"munkaID" :munkaID];
     Munka * aktmunka = [munkafelvesz objectAtIndex:0];
-    aktmunka.soforID = [NSNumber numberWithInt:1];
+    aktmunka.soforID = [NSNumber numberWithInt:[aktUserID intValue]];
     [self saveContext:context];
 }
++(void)munkaLead:(NSString*) munkaID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Munka" :@"munkaID" :munkaID];
+    Munka * aktmunka = [munkafelvesz objectAtIndex:0];
+    aktmunka.soforID = [NSNumber numberWithInt:0];
+    [self saveContext:context];
+}
+
 
 
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive
