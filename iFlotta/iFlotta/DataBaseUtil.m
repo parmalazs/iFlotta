@@ -675,6 +675,39 @@ static NSString *foglaltautoID;
     [self saveContext:context];
 }
 
+
+
++(void)insertAuto:(NSNumber*) autoID : (NSString*) autoNev : (NSString*) autoRendszam : (NSString*) autoTipus : (NSString*) autoLastSzervizDate : (NSString*) autoLastUpDate : (NSString*) autoMuszakiVizsgaDate : (NSNumber*) autoKilometerOra : (NSNumber*) autoLastTelephelyID : (NSNumber*) autoUzemAnyag : (NSNumber*) autoXkoordinata : (NSNumber*) autoYkoordinata : (NSNumber*) autoProfilKepID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    Auto* newAuto = [NSEntityDescription
+                       insertNewObjectForEntityForName:@"Auto"
+                       inManagedObjectContext:context];
+    
+    
+    // Üres sztring vizsgálatok kellenek még!!!!;
+    [newAuto setValue:autoNev forKey:@"autoNev"];
+    [newAuto setValue:[NSNumber numberWithInt:1] forKey:@"autoIsActive"];
+    [newAuto setValue:[NSNumber numberWithInt:0] forKey:@"autoFoglalt"];
+    [newAuto setValue:[NSNumber numberWithInt:0] forKey:@"autoLastSoforID"];
+    [newAuto setValue:autoRendszam forKey:@"autoRendszam"];
+    [newAuto setValue:autoTipus forKey:@"autoTipus"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoKilometerOra intValue]] forKey:@"autoKilometerOra"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoLastTelephelyID intValue]] forKey:@"autoLastTelephelyID"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoUzemAnyag intValue]] forKey:@"autoUzemAnyag"];
+    [newAuto setValue:autoLastSzervizDate forKey:@"autoLastSzervizDate"];
+    [newAuto setValue:autoLastUpDate forKey:@"autoLastUpDate"];
+    [newAuto setValue:autoMuszakiVizsgaDate forKey:@"autoMuszakiVizsgaDate"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoProfilKepID intValue]] forKey:@"autoProfilKepID"];
+    [newAuto setValue:[NSNumber numberWithDouble:[autoXkoordinata doubleValue]] forKey:@"autoXkoordinata"];
+    [newAuto setValue:[NSNumber numberWithDouble:[autoYkoordinata doubleValue]] forKey:@"autoYkoordinata"];
+    
+    [self saveContext:context];
+}
+
+
+
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
@@ -697,9 +730,6 @@ static NSString *foglaltautoID;
     
     return [[fetchedObjects objectAtIndex:0] valueForKey:sortName];
 }
-
-
-
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
