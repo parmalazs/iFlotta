@@ -62,7 +62,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)foglalasBtnPushed:(id)sender {
+- (IBAction)takePicture:(id)sender {
+}
+
+- (IBAction)saveButton:(id)sender {
     
 }
 @end

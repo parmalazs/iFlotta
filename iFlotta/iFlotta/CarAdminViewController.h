@@ -31,6 +31,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *carYLabel;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+- (IBAction)takePicture:(id)sender;
+- (IBAction)saveButton:(id)sender;
 
-- (IBAction)foglalasBtnPushed:(id)sender;
+
 @end

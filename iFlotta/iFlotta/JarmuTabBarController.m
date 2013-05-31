@@ -14,6 +14,8 @@
 #import "KisteherautoViewController.h"
 #import "TeherautoViewController.h"
 #import "DataBaseUtil.h"
+#import "CarAdminViewController.h"
+
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface JarmuTabBarController ()
@@ -47,7 +49,7 @@
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Jármű leadás",@"image":@"166-newspaper.png"},@{@"name" : @"Új autó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új busz felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új teherautó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új kisteherautó felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Új kamion felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új jármű felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
     }
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
 
@@ -80,40 +82,15 @@
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
+            {
                 NSLog(@"0");
-                
+                CarAdminViewController *carAdminViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"carAdminViewController"];
+                [self.navigationController pushViewController:carAdminViewController animated:YES];
+            }
                 break;
             case 1:
-                NSLog(@"1");
-                
-                break;
-            case 2:
+            {
                 NSLog(@"2");
-                break;
-            case 3:
-            {
-                NSLog(@"3");
-                //pvc.rendezNev;
-                //dvc.rendezNev;
-            }
-                break;
-            case 4:
-            {
-                NSLog(@"4");
-                //pvc.rendezNev;
-                //dvc.rendezNev;
-            }
-                break;
-            case 5:
-            {
-                NSLog(@"5");
-                //pvc.rendezNev;
-                //dvc.rendezNev;
-            }
-                break;
-            case 6:
-            {
-                NSLog(@"6");
                 autovc.rendezNev;
                 buszvc.rendezNev;
                 kamionvc.rendezNev;
@@ -123,7 +100,7 @@
                 break;
             default:
             {
-                NSLog(@"7");
+                NSLog(@"3");
                 autovc.rendezRendszam;
                 buszvc.rendezRendszam;
                 kamionvc.rendezRendszam;

@@ -448,8 +448,6 @@
 			children = (
 				19C64A09173D5A9C005B7F2A /* CarsViewController.h */,
 				19C64A0A173D5A9C005B7F2A /* CarsViewController.m */,
-				6117E8821757EA9B0050A39A /* SoforAdminDetailViewController.h */,
-				6117E8831757EA9B0050A39A /* SoforAdminDetailViewController.m */,
 				19C1B3DC1743AE630053949C /* CarsTableViewCell.h */,
 				19C1B3DD1743AE630053949C /* CarsTableViewCell.m */,
 				19D027B21752A6CF00E3AEAD /* JarmuTabBarController.h */,
@@ -481,6 +479,8 @@
 		19D027C51752AAFD00E3AEAD /* Kontakt */ = {
 			isa = PBXGroup;
 			children = (
+				6117E8821757EA9B0050A39A /* SoforAdminDetailViewController.h */,
+				6117E8831757EA9B0050A39A /* SoforAdminDetailViewController.m */,
 				19C64A12173D7646005B7F2A /* ContactTabBarController.h */,
 				19C64A13173D7646005B7F2A /* ContactTabBarController.m */,
 				19BBA20A173DBC2D00631B16 /* DriverViewController.h */,
