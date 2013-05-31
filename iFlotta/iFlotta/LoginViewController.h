@@ -22,5 +22,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *pic4;
 
 - (IBAction)userLoginButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
