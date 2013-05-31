@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactsAdminViewController : UIViewController
+@interface ContactsAdminViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *contactsNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *contactsAdressTextField;
@@ -26,5 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *contactsXLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contactsYLabel;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+- (IBAction)saveButtonPushed:(id)sender; // meg nincs kesz, csak behuztam ! - geza
 
 @end
