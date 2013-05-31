@@ -33,6 +33,16 @@
     
     [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"update"];*/
     
+    /*
+    [DataBaseUtil insertMunka : @"2012.02.12" : [[NSNumber alloc] initWithInt : 666] : @"jajderosszprogramozni"  : @"2012.02.12" : @"2012.02.13" : [[NSNumber alloc] initWithInt : 3000] : [[NSNumber alloc] initWithInt : 1] : [[NSNumber alloc] initWithInt : 666] : [[NSNumber alloc] initWithInt : 1] : [[NSNumber alloc] initWithInt : 666] : [[NSNumber alloc] initWithInt : 1] : [[NSNumber alloc] initWithInt : 1] : [[NSNumber alloc] initWithInt : 1]];
+    
+    NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :@"3000"];//mintha Sofor lenne a visszatérési értéke
+    
+    NSLog(@"array: %@", obj);
+    
+    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];
+    */
+    
     [self.window makeKeyAndVisible];
     
     return YES;

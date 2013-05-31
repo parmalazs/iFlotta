@@ -44,6 +44,7 @@
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID;
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName;
 +(void)autoFoglal:(NSString*) autoID :(NSNumber*) foglal;
++(void)insertMunka:(NSString*) munkaBefejezesDate : (NSNumber*) munkaBevetel : (NSString*) munkaComment : (NSString*) munkaDate : (NSString*) munkaEstimatedTime : (NSNumber*) munkaID :(NSNumber*) munkaIsActive : (NSNumber*) munkaKoltseg : (NSNumber*) munkatipusID : (NSNumber*) munkaUzemanyagState : (NSNumber*) partnerID : (NSNumber*) soforID : (NSNumber*) telephelyID;
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive;
 +(void)insertAuto:(NSNumber*) autoID : (NSString*) autoNev : (NSString*) autoRendszam : (NSString*) autoTipus : (NSString*) autoLastSzervizDate : (NSString*) autoLastUpDate : (NSString*) autoMuszakiVizsgaDate : (NSNumber*) autoKilometerOra : (NSNumber*) autoLastTelephelyID : (NSNumber*) autoUzemAnyag : (NSNumber*) autoXkoordinata : (NSNumber*) autoYkoordinata : (NSNumber*) autoProfilKepID;
 @end

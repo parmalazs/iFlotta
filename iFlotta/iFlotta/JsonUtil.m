@@ -40,7 +40,7 @@
     
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody: requestData];
     
@@ -63,14 +63,7 @@
     [json setObject:object forKey:@"objects"];
     
     
-    if ([actionTipus isEqualToString:@"insert"])
-    {
-        [json setObject:@"insert" forKey:@"action"];
-    }
-    else
-    {
-        [json setObject:@"update" forKey:@"action"];
-    }
+
     
     
     
@@ -133,6 +126,72 @@
         [json setObject:@"auto" forKey:@"tableName"];
     }
         
+    if ([objectTipus isEqualToString:@"Munka"])
+    {
+        NSLog(@"MunkaInsert");
+        //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
+        NSManagedObject *aktMunka = [senderObject objectAtIndex:0];
+        
+        [object setObject:[aktMunka valueForKey:@"munkaBefejezesDate"] forKey:@"munkaBefejezesDate"];
+        [object setObject:[aktMunka valueForKey:@"munkaBevetel"] forKey:@"munkaBevetel"];
+        [object setObject:[aktMunka valueForKey:@"munkaComment"] forKey:@"munkaComment"];
+        [object setObject:[aktMunka valueForKey:@"munkaDate"] forKey:@"munkaDate"];
+        [object setObject:[aktMunka valueForKey:@"munkaEstimatedTime"] forKey:@"munkaEstimatedTime"];
+        [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
+        [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
+        [object setObject:[aktMunka valueForKey:@"munkaKoltseg"] forKey:@"munkaKoltseg"];
+        [object setObject:[aktMunka valueForKey:@"munkatipusID"] forKey:@"munkatipusID"];
+        [object setObject:[aktMunka valueForKey:@"munkaUzemanyagState"] forKey:@"munkaUzemanyagState"];
+        [object setObject:[aktMunka valueForKey:@"partnerID"] forKey:@"partnerID"];
+        [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
+        [object setObject:[aktMunka valueForKey:@"telephelyID"] forKey:@"telephelyID"];
+        
+        [json setObject:@"munka" forKey:@"tableName"];
+    }
+    if ([objectTipus isEqualToString:@"Telephely"])
+    {
+        //NSLog(@"TelephelyInsert");
+        //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
+        NSManagedObject *aktTelephely = [senderObject objectAtIndex:0];
+        
+        [object setObject:[aktTelephely valueForKey:@"telephelyCim"] forKey:@"telephelyCim"];
+        [object setObject:[aktTelephely valueForKey:@"telephelyEmail"] forKey:@"telephelyEmail"];
+        [object setObject:[aktTelephely valueForKey:@"telephelyID"] forKey:@"telephelyId"];
+        [object setObject:[aktTelephely valueForKey:@"telephelyNev"] forKey:@"telephelyNev"];
+        [object setObject:[aktTelephely valueForKey:@"telephelyTelefonszam"] forKey:@"telephelyTelefonszam"];
+        [object setObject:[aktTelephely valueForKey:@"telephelyXkoordinata"] forKey:@"telephelyXkoordinata"];
+        [object setObject:[aktTelephely valueForKey:@"telephelyYkoordinata"] forKey:@"telephelyYkoordinata"];
+        [object setObject:[aktTelephely valueForKey:@"telephelyIsActive"] forKey:@"telephelyIsActive"];
+        
+        [json setObject:@"telephely" forKey:@"tableName"];
+    }
+    if ([objectTipus isEqualToString:@"Partner"])
+    {
+        //NSLog(@"PartnerInsert");
+        //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
+        NSManagedObject *aktPartner = [senderObject objectAtIndex:0];
+        
+        [object setObject:[aktPartner valueForKey:@"partnerCim"] forKey:@"partnerCim"];
+        [object setObject:[aktPartner valueForKey:@"partnerEmailcim"] forKey:@"partnerEmailcim"];
+        [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
+        [object setObject:[aktPartner valueForKey:@"partnerNev"] forKey:@"partnerNev"];
+        [object setObject:[aktPartner valueForKey:@"partnerTelefonszam"] forKey:@"partnerTelefonszam"];
+        [object setObject:[aktPartner valueForKey:@"partnerWeboldal"] forKey:@"partnerWeboldal"];
+        [object setObject:[aktPartner valueForKey:@"partnerXkoordinata"] forKey:@"partnerXkoordinata"];
+        [object setObject:[aktPartner valueForKey:@"partnerYkoordinata"] forKey:@"partnerYkoordinata"];
+        [object setObject:[aktPartner valueForKey:@"partnerIsActive"] forKey:@"partnerIsActive"];
+        
+        [json setObject:@"partner" forKey:@"tableName"];
+    }
+    
+    if ([actionTipus isEqualToString:@"insert"])
+    {
+        [json setObject:@"insert" forKey:@"action"];
+    }
+    else
+    {
+        [json setObject:@"update" forKey:@"action"];
+    }
     
     
     NSMutableDictionary* jsonv = [[NSMutableDictionary alloc] init];

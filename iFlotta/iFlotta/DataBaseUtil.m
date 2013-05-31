@@ -735,6 +735,80 @@ static NSString *foglaltautoID;
 }
 
 
++(void)insertTelephely:(NSString*) telephelyCim : (NSString*) telephelyEmail : (NSNumber*) telephelyID : (NSString*) telephelyNev : (NSString*) telephelyTelefonszam : (NSNumber*) telephelyXkoordinata : (NSNumber*) telephelyYkoordinata : (NSNumber*) telephelyIsActive
+{//coredatebe beteszi de mysqlbe nem
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    Telephely* newTelephely = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Telephely"
+                               inManagedObjectContext:context];
+    
+    
+    // Üres sztring vizsgálatok kellenek még!!!!;
+    [newTelephely setValue : telephelyCim forKey : @"telephelyCim"];
+    [newTelephely setValue : telephelyEmail forKey : @"telephelyEmail"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyID intValue]] forKey:@"telephelyID"];
+    [newTelephely setValue:telephelyNev forKey:@"telephelyNev"];
+    [newTelephely setValue:telephelyTelefonszam forKey:@"telephelyTelefonszam"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyXkoordinata intValue]] forKey:@"telephelyXkoordinata"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyYkoordinata intValue]] forKey:@"telephelyYkoordinata"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyIsActive intValue]] forKey:@"telephelyIsActive"];
+    
+    [self saveContext:context];
+}
+
++(void)insertPartner:(NSString*) partnerCim : (NSString*) partnerEmailcim : (NSNumber*) partnerID : (NSString*) partnerNev : (NSString*) partnerWeboldal : (NSString*) partnerTelefonszam : (NSNumber*) partnerXkoordinata : (NSNumber*) partnerYkoordinata : (NSNumber*) partnerIsActive
+{//coredatebe beteszi de mysqlbe nem
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    Partner* newPartner = [NSEntityDescription
+                           insertNewObjectForEntityForName:@"Partner"
+                           inManagedObjectContext:context];
+    
+    
+    // Üres sztring vizsgálatok kellenek még!!!!;
+    [newPartner setValue : partnerCim forKey : @"partnerCim"];
+    [newPartner setValue : partnerEmailcim forKey : @"partnerEmailcim"];
+    [newPartner setValue:[NSNumber numberWithInt: [partnerID intValue]] forKey:@"partnerID"];
+    [newPartner setValue:partnerNev forKey:@"partnerNev"];
+    [newPartner setValue:partnerTelefonszam forKey:@"partnerTelefonszam"];
+    [newPartner setValue:partnerWeboldal forKey:@"partnerWeboldal"];
+    [newPartner setValue:[NSNumber numberWithInt:[partnerXkoordinata intValue]] forKey:@"partnerXkoordinata"];
+    [newPartner setValue:[NSNumber numberWithInt:[partnerYkoordinata intValue]] forKey:@"partnerYkoordinata"];
+    [newPartner setValue:[NSNumber numberWithInt:[partnerIsActive intValue]] forKey:@"partnerIsActive"];
+    
+    [self saveContext:context];
+}
+
++(void)insertMunka:(NSString*) munkaBefejezesDate : (NSNumber*) munkaBevetel : (NSString*) munkaComment : (NSString*) munkaDate : (NSString*) munkaEstimatedTime : (NSNumber*) munkaID :(NSNumber*) munkaIsActive : (NSNumber*) munkaKoltseg : (NSNumber*) munkatipusID : (NSNumber*) munkaUzemanyagState : (NSNumber*) partnerID : (NSNumber*) soforID : (NSNumber*) telephelyID
+{//rinyál a munkaKepDate re vagy itt vagy a sendbe
+    
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    Munka* newMunka = [NSEntityDescription
+                       insertNewObjectForEntityForName:@"Munka"
+                       inManagedObjectContext:context];
+    
+    // Üres sztring vizsgálatok kellenek még!!!!;
+    [newMunka setValue : munkaBefejezesDate forKey : @"munkaBefejezesDate"];
+    [newMunka setValue:[NSNumber numberWithInt: [munkaBevetel intValue]] forKey:@"munkaBevetel"];
+    [newMunka setValue: munkaComment forKey:@"munkaComment"];
+    [newMunka setValue:munkaDate forKey:@"munkaDate"];
+    [newMunka setValue:munkaEstimatedTime forKey:@"munkaEstimatedTime"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaID intValue]] forKey:@"munkaID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaIsActive intValue ]] forKey:@"munkaIsActive"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaKoltseg intValue ]] forKey:@"munkaKoltseg"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkatipusID intValue ]] forKey:@"munkatipusID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaUzemanyagState intValue ]] forKey:@"munkaUzemanyagState"];
+    [newMunka setValue: [NSNumber numberWithInt: [ partnerID intValue ]] forKey:@"partnerID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ soforID intValue ]] forKey:@"soforID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ telephelyID intValue ]] forKey:@"telephelyID"];
+    
+    [self saveContext:context];
+}
+
+
+
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
