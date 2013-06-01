@@ -85,6 +85,7 @@
 		6117E8841757EA9B0050A39A /* SoforAdminDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117E8831757EA9B0050A39A /* SoforAdminDetailViewController.m */; };
 		6117E887175801880050A39A /* JobAdminDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117E886175801880050A39A /* JobAdminDetailsViewController.m */; };
 		61793336175A777F00C3C367 /* ImageConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 61793335175A777F00C3C367 /* ImageConverter.m */; };
+		61793339175A792700C3C367 /* ImageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 61793338175A792700C3C367 /* ImageSender.m */; };
 		61938FEA175380E200A56581 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61938FE8175380E200A56581 /* LoginViewController.m */; };
 		61938FEC1753811600A56581 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEB1753811600A56581 /* MainStoryboard.storyboard */; };
 		61938FF41753816800A56581 /* telephely-ikon.png in Resources */ = {isa = PBXBuildFile; fileRef = 61938FEE1753816800A56581 /* telephely-ikon.png */; };
@@ -248,6 +249,8 @@
 		61793333175A755300C3C367 /* NSDataAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		61793334175A777E00C3C367 /* ImageConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageConverter.h; sourceTree = "<group>"; };
 		61793335175A777F00C3C367 /* ImageConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageConverter.m; sourceTree = "<group>"; };
+		61793337175A792700C3C367 /* ImageSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSender.h; sourceTree = "<group>"; };
+		61793338175A792700C3C367 /* ImageSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSender.m; sourceTree = "<group>"; };
 		6191DB24175561E000E4B09B /* VehiclesDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesDetailsViewController.h; sourceTree = "<group>"; };
 		6191DB25175561E000E4B09B /* VehiclesDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesDetailsViewController.m; sourceTree = "<group>"; };
 		61938FE8175380E200A56581 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 				60BF69451759210100BD0918 /* CSVUtil.m */,
 				61793334175A777E00C3C367 /* ImageConverter.h */,
 				61793335175A777F00C3C367 /* ImageConverter.m */,
+				61793337175A792700C3C367 /* ImageSender.h */,
+				61793338175A792700C3C367 /* ImageSender.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -760,6 +765,7 @@
 				6117E887175801880050A39A /* JobAdminDetailsViewController.m in Sources */,
 				60BF69461759210100BD0918 /* CSVUtil.m in Sources */,
 				61793336175A777F00C3C367 /* ImageConverter.m in Sources */,
+				61793339175A792700C3C367 /* ImageSender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
