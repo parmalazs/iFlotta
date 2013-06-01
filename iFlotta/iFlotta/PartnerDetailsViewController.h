@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *partnerTelefonszam;
 @property (weak, nonatomic) IBOutlet UILabel *PartnerEmail;
 
+@property (strong, nonatomic) IBOutlet UIImageView *mapImage;
+
 @property (strong, nonatomic) IBOutlet UILabel *nevLabel;
 @property (strong, nonatomic) IBOutlet UILabel *telLabel;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
