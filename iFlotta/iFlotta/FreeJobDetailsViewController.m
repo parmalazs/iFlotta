@@ -76,7 +76,7 @@
     
     NSLog(@"%@",[obj objectAtIndex:0]);
     
-    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"munkafevesz"];
+    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"munkafelvesz"];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
                                                     message:@"Az adott munkát felvette!"

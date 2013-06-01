@@ -143,8 +143,15 @@
         //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
         NSManagedObject *aktMunka = [senderObject objectAtIndex:0];
         
-        if ([actionTipus isEqualToString:@"munkafelvesz"])
+        
+        if ([actionTipus isEqualToString:@"munkalead"])
         {
+            [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
+            [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
+        }
+        else if ([actionTipus isEqualToString:@"munkafelvesz"])
+        {
+            NSLog(@"munkafelvesz");
             [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
             [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
             
@@ -175,8 +182,6 @@
     }
     if ([objectTipus isEqualToString:@"Telephely"])
     {
-        //NSLog(@"TelephelyInsert");
-        //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
         NSManagedObject *aktTelephely = [senderObject objectAtIndex:0];
         
         [object setObject:[aktTelephely valueForKey:@"telephelyCim"] forKey:@"telephelyCim"];
