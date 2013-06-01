@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -122,6 +122,7 @@
                             <constraint firstItem="e4o-Va-Qg0" firstAttribute="trailing" secondItem="4QG-Y4-g94" secondAttribute="trailing" type="default" id="yRq-LS-2Lk"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="loginButton" destination="ZEE-JQ-aGd" id="3JC-WX-6f7"/>
                         <outlet property="logo" destination="bfH-3l-ZFI" id="42A-yK-X7n"/>
@@ -273,7 +274,6 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCn-7y-zjh">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="8jG-I3-jGP"/>
-                                                <constraint firstAttribute="width" constant="178" id="fHm-jH-QCw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -283,6 +283,7 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="gCn-7y-zjh" firstAttribute="top" secondItem="UCE-ku-BvS" secondAttribute="top" constant="20" type="default" id="NH3-OU-GLw"/>
+                                    <constraint firstAttribute="trailing" secondItem="gCn-7y-zjh" secondAttribute="trailing" constant="20" type="default" id="QyZ-lY-e9W"/>
                                     <constraint firstItem="NLT-Fw-XvW" firstAttribute="centerY" secondItem="UCE-ku-BvS" secondAttribute="centerY" type="default" id="mJ9-hK-a4w"/>
                                     <constraint firstItem="NLT-Fw-XvW" firstAttribute="leading" secondItem="UCE-ku-BvS" secondAttribute="leading" constant="20" type="user" id="xov-vH-uOy"/>
                                     <constraint firstItem="gCn-7y-zjh" firstAttribute="leading" secondItem="NLT-Fw-XvW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="z0z-fx-UE9"/>
@@ -298,6 +299,7 @@
                     <navigationItem key="navigationItem" title="iFlotta" id="e7Q-Qg-0q9">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="IDM-gZ-EHh"/>
                     </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <segue destination="EyN-6l-lw3" kind="push" id="irW-gd-loQ"/>
                         <segue destination="e3y-w3-fsN" kind="push" id="zAH-Hz-NBi"/>
@@ -2074,6 +2076,7 @@
             <objects>
                 <navigationController storyboardIdentifier="MainPageStoryboardID" definesPresentationContext="YES" id="1Fy-tz-WmU" customClass="MainPageNavigationViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="eEi-W1-i6W"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="khS-zm-bXC">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
