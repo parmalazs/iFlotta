@@ -1,5 +1,5 @@
 //
-//  Image.h
+//  ImageConverter.h
 //  iFlott
 //
 //  Created by hallgato1 on 2013.06.01..
@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Image : NSObject
-
-
+@interface ImageConverter : NSObject
 + (NSString *)getStringFromImage:(UIImage *)image;
 + (UIImage*)imageFromMainBundleFile:(NSString*)aFileName;
-
 @end

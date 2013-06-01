@@ -1,16 +1,14 @@
 //
-//  Image.m
+//  ImageConverter.m
 //  iFlott
 //
 //  Created by hallgato1 on 2013.06.01..
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
-
-#import "Image.h"
 #import "NSDataAdditions.h"
+#import "ImageConverter.h"
 
-@implementation Image
-
+@implementation ImageConverter
 +(NSString *)getStringFromImage:(UIImage *)image{
 	if(image){
 		NSData *dataObj = UIImagePNGRepresentation(image);
