@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tAV-fz-0yK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -1530,7 +1530,7 @@
             </objects>
             <point key="canvasLocation" x="3898" y="-164"/>
         </scene>
-        <!--Free Jobs View Controller - Szabad munkák-->
+        <!--Free Jobs View Controller-->
         <scene sceneID="yLo-JZ-7BY">
             <objects>
                 <viewController storyboardIdentifier="freeJobsViewController" id="zGc-lY-9NE" customClass="FreeJobsViewController" sceneMemberID="viewController">
@@ -1580,7 +1580,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Szabad munkák" id="U6m-Rf-obK"/>
+                    <tabBarItem key="tabBarItem" title="" image="listkicsi.png" id="U6m-Rf-obK"/>
                     <navigationItem key="navigationItem" id="wq9-77-pIX"/>
                     <connections>
                         <outlet property="freeJobsSearchBar" destination="anj-zR-LZe" id="oor-2R-DD5"/>
@@ -1890,7 +1890,7 @@
             </objects>
             <point key="canvasLocation" x="1456" y="-3053"/>
         </scene>
-        <!--Own Jobs View Controller - Sajat Munkak-->
+        <!--Own Jobs View Controller-->
         <scene sceneID="x8A-Jh-a1X">
             <objects>
                 <tableViewController storyboardIdentifier="ownJobsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dHN-O5-9Zs" customClass="OwnJobsViewController" sceneMemberID="viewController">
@@ -1940,7 +1940,7 @@
                             <outlet property="delegate" destination="dHN-O5-9Zs" id="MeJ-v4-5wb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Sajat Munkak" id="PIV-XJ-2Tn"/>
+                    <tabBarItem key="tabBarItem" title="" image="dispatch_orderkicsi.png" id="PIV-XJ-2Tn"/>
                     <connections>
                         <outlet property="ownJobsSearchBar" destination="BBu-0p-oGS" id="x7W-KR-OT6"/>
                         <outlet property="searchDisplayController" destination="3CE-xK-bBo" id="rqf-8n-HX6"/>
@@ -2150,7 +2150,7 @@
             </objects>
             <point key="canvasLocation" x="-261" y="2203"/>
         </scene>
-        <!--Driver View Controller - Sofőrök-->
+        <!--Driver View Controller-->
         <scene sceneID="owV-YZ-5Py">
             <objects>
                 <tableViewController id="dyO-81-vpy" customClass="DriverViewController" sceneMemberID="viewController">
@@ -2237,7 +2237,7 @@
                             <outlet property="delegate" destination="dyO-81-vpy" id="eqo-Mx-fJy"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Sofőrök" id="KJU-Sr-rYC"/>
+                    <tabBarItem key="tabBarItem" title="" image="operator2kicsi.png" id="KJU-Sr-rYC"/>
                     <navigationItem key="navigationItem" id="3Xy-ek-JZr"/>
                     <connections>
                         <outlet property="driverSearchBar" destination="wgR-S2-sIf" id="dPU-fD-Y9q"/>
@@ -2259,7 +2259,7 @@
             </objects>
             <point key="canvasLocation" x="1232" y="1273"/>
         </scene>
-        <!--Partner View Controller - Partnerek-->
+        <!--Partner View Controller-->
         <scene sceneID="dXe-rF-lEp">
             <objects>
                 <tableViewController id="XJI-Av-4vP" customClass="PartnerViewController" sceneMemberID="viewController">
@@ -2314,7 +2314,7 @@
                             <outlet property="delegate" destination="XJI-Av-4vP" id="3PM-DA-lPu"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Partnerek" id="LUO-Se-dfe"/>
+                    <tabBarItem key="tabBarItem" title="" image="administratorkicsi.png" id="LUO-Se-dfe"/>
                     <navigationItem key="navigationItem" id="pej-jh-tFx"/>
                     <connections>
                         <outlet property="partnerSearchBar" destination="n5p-ia-3L4" id="lat-6H-1LN"/>
@@ -3099,12 +3099,16 @@
         <image name="F-saroklogo_72x72.png" width="72" height="72"/>
         <image name="Flotta-logo_303x209.png" width="303" height="209"/>
         <image name="admin146x120.png" width="146" height="120"/>
+        <image name="administratorkicsi.png" width="30" height="30"/>
         <image name="buskicsi.png" width="44" height="29"/>
         <image name="car146x120.png" width="146" height="120"/>
         <image name="carkicsi.PNG" width="30" height="24"/>
+        <image name="dispatch_orderkicsi.png" width="25" height="30"/>
         <image name="foto146x120.png" width="146" height="120"/>
         <image name="gomb_1a_146x120.png" width="146" height="120"/>
         <image name="jobs146x120.png" width="146" height="120"/>
+        <image name="listkicsi.png" width="24" height="30"/>
+        <image name="operator2kicsi.png" width="30" height="31"/>
         <image name="partnerek146x120.png" width="146" height="120"/>
         <image name="placeholder.png" width="960" height="960"/>
         <image name="semi-trailer_truckkicsi.png" width="51" height="29"/>
@@ -3507,9 +3511,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4k1-KE-Gjt"/>
-        <segue reference="kww-q9-2CX"/>
+        <segue reference="hEs-qA-9Qp"/>
         <segue reference="cwD-00-IBw"/>
-        <segue reference="by4-cB-3RL"/>
+        <segue reference="kww-q9-2CX"/>
+        <segue reference="4k1-KE-Gjt"/>
     </inferredMetricsTieBreakers>
 </document>
