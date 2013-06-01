@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BuszCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *buszLabel;
+@property (strong, nonatomic) IBOutlet UILabel *buszName;
+
+@property (strong, nonatomic) IBOutlet UILabel *buszMail;
+@property (strong, nonatomic) IBOutlet UILabel *buszTel;
 
 @end

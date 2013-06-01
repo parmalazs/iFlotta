@@ -10,5 +10,8 @@
 
 @interface OwnJobsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *ownJobLabel;
+@property (strong, nonatomic) IBOutlet UILabel *jobTel;
+@property (strong, nonatomic) IBOutlet UILabel *jobName;
+@property (strong, nonatomic) IBOutlet UILabel *jobMail;
 
 @end
