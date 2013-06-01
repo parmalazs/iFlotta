@@ -123,7 +123,11 @@
 	else
 	{
         driver = [self.driverArray objectAtIndex:[indexPath row]];
-        [[(DriverTableViewCell*)cell driverLabel] setText:[driver soforNev]];
+        [[(DriverTableViewCell*)cell driverNameLabel] setText:[driver soforNev]];
+        [[(DriverTableViewCell*)cell driverTelLabel] setText:[driver soforTelefonszam]];
+        [[(DriverTableViewCell*)cell driverEmailLabel] setText:[driver soforEmail]];
+        [[(DriverTableViewCell*)cell driverWebLabel] setText:[driver soforBirthDate]];
+        [[(DriverTableViewCell*)cell driverImageView] setImage:[UIImage imageNamed:@"partnerek_ikon.png"]];
     }
     
     return cell;
