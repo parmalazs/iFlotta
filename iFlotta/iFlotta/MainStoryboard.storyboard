@@ -715,7 +715,7 @@
                             <outlet property="delegate" destination="ErY-Ue-ijr" id="upg-3s-7L2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Autó" id="EoW-eX-lgi"/>
+                    <tabBarItem key="tabBarItem" title="" image="carkicsi.PNG" id="EoW-eX-lgi"/>
                     <navigationItem key="navigationItem" title="Autók" id="rpf-09-6SN"/>
                     <connections>
                         <outlet property="searchBar" destination="dr4-cg-ya1" id="Xfc-bg-QqO"/>
@@ -737,7 +737,7 @@
             </objects>
             <point key="canvasLocation" x="1232" y="5508"/>
         </scene>
-        <!--Busz View Controller - Busz-->
+        <!--Busz View Controller-->
         <scene sceneID="poH-LW-Wl4">
             <objects>
                 <tableViewController storyboardIdentifier="buszViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Yg-Wd-fAh" customClass="BuszViewController" sceneMemberID="viewController">
@@ -789,7 +789,7 @@
                             <outlet property="delegate" destination="6Yg-Wd-fAh" id="F8O-0d-waw"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Busz" id="goJ-xa-ywQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="buskicsi.png" id="goJ-xa-ywQ"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nzg-Qt-gQL"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -813,7 +813,7 @@
             </objects>
             <point key="canvasLocation" x="1232" y="6145"/>
         </scene>
-        <!--Kamion View Controller - Kamion-->
+        <!--Kamion View Controller-->
         <scene sceneID="0jx-Bu-akW">
             <objects>
                 <tableViewController storyboardIdentifier="kamionViewController" id="fDZ-vU-hdI" customClass="KamionViewController" sceneMemberID="viewController">
@@ -865,7 +865,7 @@
                             <outlet property="delegate" destination="fDZ-vU-hdI" id="txA-RR-Zjr"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Kamion" id="m9u-cq-hBb"/>
+                    <tabBarItem key="tabBarItem" title="" image="semi-trailer_truckkicsi.png" id="m9u-cq-hBb"/>
                     <connections>
                         <outlet property="kamionSearchBar" destination="ujV-wz-POt" id="Qai-Dh-X9z"/>
                         <outlet property="searchDisplayController" destination="oYg-Fc-Q7K" id="9nA-wg-lOc"/>
@@ -886,7 +886,7 @@
             </objects>
             <point key="canvasLocation" x="1240" y="6805"/>
         </scene>
-        <!--Teherauto View Controller - Teherautó-->
+        <!--Teherauto View Controller-->
         <scene sceneID="o1i-fi-Mn0">
             <objects>
                 <tableViewController storyboardIdentifier="teherautoViewController" id="DX2-ic-Nuh" customClass="TeherautoViewController" sceneMemberID="viewController">
@@ -940,7 +940,7 @@
                             <outlet property="delegate" destination="DX2-ic-Nuh" id="BiH-np-BZD"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Teherautó" id="IPe-iT-zfl"/>
+                    <tabBarItem key="tabBarItem" title="" image="truckkicsi.png" id="IPe-iT-zfl"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="n5A-1c-Nns" id="TtC-WF-nbt"/>
                         <outlet property="teherautoSearchBar" destination="pMQ-de-dA8" id="Nsm-6w-uIQ"/>
@@ -1015,7 +1015,7 @@
                             <outlet property="delegate" destination="JJT-eo-ODQ" id="Snu-h1-2aR"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Kisteherautó" id="jat-KM-4Vz"/>
+                    <tabBarItem key="tabBarItem" title="Kisteherautó" image="truck2kicsi.png" id="jat-KM-4Vz"/>
                     <connections>
                         <outlet property="kisteherautoSearchBar" destination="Zu5-eY-UuL" id="hal-nt-nxH"/>
                         <outlet property="searchDisplayController" destination="nTn-xV-WuH" id="pdU-uv-lEL"/>
@@ -1041,7 +1041,7 @@
             <objects>
                 <viewController storyboardIdentifier="vehiclesDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bpA-F9-eRp" customClass="VehiclesDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2La-cZ-qIL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AutoNév" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhe-Uu-2au">
@@ -3099,13 +3099,18 @@
         <image name="F-saroklogo_72x72.png" width="72" height="72"/>
         <image name="Flotta-logo_303x209.png" width="303" height="209"/>
         <image name="admin146x120.png" width="146" height="120"/>
+        <image name="buskicsi.png" width="44" height="29"/>
         <image name="car146x120.png" width="146" height="120"/>
+        <image name="carkicsi.PNG" width="30" height="24"/>
         <image name="foto146x120.png" width="146" height="120"/>
         <image name="gomb_1a_146x120.png" width="146" height="120"/>
         <image name="jobs146x120.png" width="146" height="120"/>
         <image name="partnerek146x120.png" width="146" height="120"/>
         <image name="placeholder.png" width="960" height="960"/>
+        <image name="semi-trailer_truckkicsi.png" width="51" height="29"/>
         <image name="telephelyek146x120.png" width="146" height="120"/>
+        <image name="truck2kicsi.png" width="36" height="30"/>
+        <image name="truckkicsi.png" width="30" height="24"/>
     </resources>
     <classes>
         <class className="AdminSiteViewController" superclassName="UIViewController">
@@ -3502,8 +3507,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ns-oy-JaP"/>
-        <segue reference="5ME-0f-bdf"/>
+        <segue reference="4k1-KE-Gjt"/>
+        <segue reference="kww-q9-2CX"/>
         <segue reference="cwD-00-IBw"/>
         <segue reference="by4-cB-3RL"/>
     </inferredMetricsTieBreakers>
