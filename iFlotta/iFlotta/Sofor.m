@@ -14,17 +14,17 @@
 
 @implementation Sofor
 
-@dynamic soforBirthDate;
-@dynamic soforCim;
-@dynamic soforEmail;
+@dynamic soforBirthDate; // csak részletező
+@dynamic soforCim; // csak részletező
+@dynamic soforEmail; // mind2
 @dynamic soforID;
 @dynamic soforIsAdmin;
 @dynamic soforLogin;
-@dynamic soforNev;
+@dynamic soforNev; // mind2
 @dynamic soforPass;
 @dynamic soforProfilKepId;
-@dynamic soforRegTime;
-@dynamic soforTelefonszam;
+@dynamic soforRegTime; // csak részletező
+@dynamic soforTelefonszam; // mind2
 @dynamic soforIsActive;
 @dynamic autoRelationship;
 @dynamic munka;
