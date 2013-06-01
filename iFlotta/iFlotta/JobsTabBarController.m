@@ -10,6 +10,8 @@
 #import "FreeJobsViewController.h"
 #import "OwnJobsViewController.h"
 #import "DataBaseUtil.h"
+#import "JobAdminDetailsViewController.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
@@ -33,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.delegate = self;
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
@@ -72,8 +75,10 @@
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
-                NSLog(@"0");
-                
+            {
+                JobAdminDetailsViewController *jobAdminDetailsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobAdminDetailsViewController"];
+                [self.navigationController pushViewController:jobAdminDetailsViewController animated:YES];
+            }
                 break;
             case 1:
             {
@@ -112,5 +117,26 @@
     
     [dropdownSorted dismiss];
 }
-
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    NSArray *tabViewControllers = tabBarController.viewControllers;
+    UIView * fromView = tabBarController.selectedViewController.view;
+    UIView * toView = viewController.view;
+    if (fromView == toView)
+        return true;
+    NSUInteger fromIndex = [tabViewControllers indexOfObject:tabBarController.selectedViewController];
+    NSUInteger toIndex = [tabViewControllers indexOfObject:viewController];
+    
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.6
+                       options: toIndex > fromIndex ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            tabBarController.selectedIndex = toIndex;
+                        }
+                    }];
+    
+    return true;
+}
 @end

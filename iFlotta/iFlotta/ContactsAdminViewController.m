@@ -7,10 +7,14 @@
 //
 
 #import "ContactsAdminViewController.h"
+#import "DataBaseUtil.h"
+#import "JsonUtil.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface ContactsAdminViewController (){
     UITextField *activeField;
+    NSArray* labelElements;
 }
 
 @end
@@ -135,5 +139,40 @@
 
 
 - (IBAction)saveButtonPushed:(id)sender {
+    
+    NSNumber *maxid = [DataBaseUtil fetchRequestMaxID:@"Partner" :@"partnerID"];
+    
+    int value = [maxid intValue];
+    maxid = [NSNumber numberWithInt:value + 1];
+    
+    labelElements = [[NSArray alloc]
+                     initWithObjects:_contactsNameTextField.text,
+                     _contactsAdressTextField.text,
+                     _contactsEmailTextField.text,
+                     _contactsTelTextField.text,
+                     _contactsWebTextField.text,
+                     _contactsXTextField.text,
+                     _contactsYTextField.text,
+                     nil];
+    
+    
+    if (![DataBaseUtil IsInsert:labelElements])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Partner"
+                                                        message:@"Kérem töltsön ki minden mezőt!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+
+        [DataBaseUtil insertPartner:_contactsAdressTextField.text :_contactsEmailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_contactsNameTextField.text :_contactsWebTextField.text :_contactsTelTextField.text :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithInt:1]];
+        
+        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Partner" :@"partnerID" :[maxid stringValue]];
+        NSLog(@"%@",[obj objectAtIndex:0]);
+        [JsonUtil JsonBuilderSender:obj :@"Partner" :@"insert"];
+    }
 }
 @end

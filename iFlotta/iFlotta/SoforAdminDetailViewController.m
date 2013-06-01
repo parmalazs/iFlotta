@@ -13,6 +13,7 @@
 
 @interface SoforAdminDetailViewController (){
     UITextField* activeField;
+    NSArray* labelElements;
 }
 
 @end
@@ -90,35 +91,46 @@ self.driverBirthdateTextField.delegate = self;
 }
 
 - (IBAction)saveButton:(id)sender {
-    /*@property (strong, nonatomic) IBOutlet UITextField *driverNameTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverAdressTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverEmailTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverTelTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverWebTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverXTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverYTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverLoginTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverPasswordTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverIsAdminTextField;
-    @property (strong, nonatomic) IBOutlet UITextField *driverBirthdateTextField;
    
-    +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive
-    { */
-    
-    //+ (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName {
-    
     NSNumber *maxid = [DataBaseUtil fetchRequestMaxID:@"Sofor" :@"soforID"];
     
     int value = [maxid intValue];
     maxid = [NSNumber numberWithInt:value + 1];
     
-    //NSLog(@"%@",maxid);
+
+    labelElements = [[NSArray alloc]
+                     initWithObjects:
+                     _driverNameTextField.text,
+                     _driverAdressTextField.text,
+                     _driverEmailTextField.text,
+                     _driverTelTextField.text,
+                     _driverWebTextField.text,
+                     _driverXTextField.text,
+                     _driverYTextField.text,
+                     _driverLoginTextField.text,
+                     _driverPasswordTextField.text,
+                     _driverBirthdateTextField.text,
+                     nil];
     
-    [DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:[maxid intValue]] :_driverNameTextField.text  :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :@"iOSPista" :[[NSNumber alloc] initWithBool:YES] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithBool:YES]];
     
-    NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
-    
-    [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"insert"];
+    if (![DataBaseUtil IsInsert:labelElements])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sofőr"
+                                                        message:@"Kérem töltsön ki minden mezőt!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        
+        [DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:[maxid intValue]] :_driverNameTextField.text  :_driverAdressTextField.text :_driverLoginTextField.text :_driverPasswordTextField.text :_driverTelTextField.text :@"DateNow" :_driverBirthdateTextField.text :_driverEmailTextField.text :[[NSNumber alloc] initWithInt:0] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithInt:1]];
+        
+        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
+        
+        [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"insert"];
+    }
 }
 
 // Call this method somewhere in your view controller setup code.

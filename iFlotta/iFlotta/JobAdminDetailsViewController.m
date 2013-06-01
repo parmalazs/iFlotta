@@ -7,10 +7,14 @@
 //
 
 #import "JobAdminDetailsViewController.h"
+#import "DataBaseUtil.h"
+#import "JsonUtil.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface JobAdminDetailsViewController (){
     UITextField* activeField;
+    NSArray* labelElements;
 }
 
 @end
@@ -67,6 +71,42 @@
 }
 
 - (IBAction)saveButtonPushed:(id)sender {
+    NSNumber *maxid = [DataBaseUtil fetchRequestMaxID:@"Munka" :@"munkaID"];
+    
+    int value = [maxid intValue];
+    maxid = [NSNumber numberWithInt:value + 1];
+    
+    labelElements = [[NSArray alloc]
+                     initWithObjects:_jobsCostsTextField.text,
+                     _jobsIncomeTextField.text,
+                     _jobsFuelTextField.text,
+                     _jobsToolsTextFields.text,
+                     _jobsTypeTextField.text,
+                     _jobsCommentTextField.text,
+                     nil];
+    
+    
+    if (![DataBaseUtil IsInsert:labelElements])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
+                                                        message:@"Kérem töltsön ki minden mezőt!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+
+        // VAN EGY PÁR ÉGETETT ADAT, AZOKAT ÁTIRNI MÉG!
+        
+        [DataBaseUtil insertMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"2012.02.12" :[[NSNumber alloc] initWithInt:[maxid intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
+        
+        
+        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[maxid stringValue]];
+        NSLog(@"%@",[obj objectAtIndex:0]);
+        [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];
+    }
 }
 // Call this method somewhere in your view controller setup code.
 

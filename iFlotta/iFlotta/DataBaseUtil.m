@@ -736,7 +736,7 @@ static NSString *foglaltautoID;
 
 
 +(void)insertTelephely:(NSString*) telephelyCim : (NSString*) telephelyEmail : (NSNumber*) telephelyID : (NSString*) telephelyNev : (NSString*) telephelyTelefonszam : (NSNumber*) telephelyXkoordinata : (NSNumber*) telephelyYkoordinata : (NSNumber*) telephelyIsActive
-{//coredatebe beteszi de mysqlbe nem
+{
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
     Telephely* newTelephely = [NSEntityDescription
@@ -758,7 +758,7 @@ static NSString *foglaltautoID;
 }
 
 +(void)insertPartner:(NSString*) partnerCim : (NSString*) partnerEmailcim : (NSNumber*) partnerID : (NSString*) partnerNev : (NSString*) partnerWeboldal : (NSString*) partnerTelefonszam : (NSNumber*) partnerXkoordinata : (NSNumber*) partnerYkoordinata : (NSNumber*) partnerIsActive
-{//coredatebe beteszi de mysqlbe nem
+{
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
     Partner* newPartner = [NSEntityDescription
@@ -781,7 +781,7 @@ static NSString *foglaltautoID;
 }
 
 +(void)insertMunka:(NSString*) munkaBefejezesDate : (NSNumber*) munkaBevetel : (NSString*) munkaComment : (NSString*) munkaDate : (NSString*) munkaEstimatedTime : (NSNumber*) munkaID :(NSNumber*) munkaIsActive : (NSNumber*) munkaKoltseg : (NSNumber*) munkatipusID : (NSNumber*) munkaUzemanyagState : (NSNumber*) partnerID : (NSNumber*) soforID : (NSNumber*) telephelyID
-{//rinyál a munkaKepDate re vagy itt vagy a sendbe
+{
     
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
@@ -789,7 +789,6 @@ static NSString *foglaltautoID;
                        insertNewObjectForEntityForName:@"Munka"
                        inManagedObjectContext:context];
     
-    // Üres sztring vizsgálatok kellenek még!!!!;
     [newMunka setValue : munkaBefejezesDate forKey : @"munkaBefejezesDate"];
     [newMunka setValue:[NSNumber numberWithInt: [munkaBevetel intValue]] forKey:@"munkaBevetel"];
     [newMunka setValue: munkaComment forKey:@"munkaComment"];

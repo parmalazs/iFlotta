@@ -10,6 +10,9 @@
 #import "DriverViewController.h"
 #import "PartnerViewController.h"
 #import "DataBaseUtil.h"
+#import "SoforAdminDetailViewController.h"
+#import "ContactsAdminViewController.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface ContactTabBarController ()
 
@@ -31,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.delegate = self;
+    
     // Admin ellenőrzés
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
@@ -62,10 +67,15 @@
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
-                NSLog(@"0");
+            {
+                SoforAdminDetailViewController *soforAdminDetailViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"soforAdminDetailViewController"];
+                [self.navigationController pushViewController:soforAdminDetailViewController animated:YES];
+            }
                 break;
             case 1:
-                NSLog(@"1");
+            {
+                ContactsAdminViewController *contactsAdminViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"contactsAdminViewController"];
+                [self.navigationController pushViewController:contactsAdminViewController animated:YES];            }
                 break;
             case 2:
             {
@@ -105,5 +115,26 @@
     
     [dropdownSorted dismiss];
 }
-
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    NSArray *tabViewControllers = tabBarController.viewControllers;
+    UIView * fromView = tabBarController.selectedViewController.view;
+    UIView * toView = viewController.view;
+    if (fromView == toView)
+        return true;
+    NSUInteger fromIndex = [tabViewControllers indexOfObject:tabBarController.selectedViewController];
+    NSUInteger toIndex = [tabViewControllers indexOfObject:viewController];
+    
+    [UIView transitionFromView:fromView
+                        toView:toView
+                      duration:0.6
+                       options: toIndex > fromIndex ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight
+                    completion:^(BOOL finished) {
+                        if (finished) {
+                            tabBarController.selectedIndex = toIndex;
+                        }
+                    }];
+    
+    return true;
+}
 @end

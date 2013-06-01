@@ -10,6 +10,7 @@
 #import "DataBaseUtil.h"
 #import "SiteTableViewCell.h"
 #import "SiteDetailsViewController.h"
+#import "AdminSiteViewController.h"
 #import "Telephely.h"
 
 
@@ -289,6 +290,11 @@
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
                 NSLog(@"0");
+                {
+                    AdminSiteViewController *adminSiteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adminSiteViewController"];
+                    [self.navigationController pushViewController:adminSiteViewController animated:YES];
+                }
+                
                 break;
             case 1:
                 {

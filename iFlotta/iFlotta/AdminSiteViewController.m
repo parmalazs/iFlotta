@@ -8,10 +8,15 @@
 
 #import "AdminSiteViewController.h"
 #import "SiteDetailsViewController.h"
+#import "DataBaseUtil.h"
+#import "JsonUtil.h"
+
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface AdminSiteViewController (){
     UITextField* activeField;
+    NSArray* labelElements;
 }
 
 @end
@@ -53,6 +58,43 @@
 
 - (IBAction)makePhotoButtonPressed:(id)sender {
 }///////////////////////////innentol copy //////////////////////////////////////////////////
+
+- (IBAction)saveButton:(id)sender {
+    NSNumber *maxid = [DataBaseUtil fetchRequestMaxID:@"Telephely" :@"telephelyID"];
+    
+    int value = [maxid intValue];
+    maxid = [NSNumber numberWithInt:value + 1];
+    
+    labelElements = [[NSArray alloc]
+                     initWithObjects:_siteNevTextField.text,
+                     _cimTextField.text,
+                     _telTextField.text,
+                     _emailTextField.text,
+                     _xTextField.text,
+                     _yTextField.text,
+                     nil];
+    
+    
+    if (![DataBaseUtil IsInsert:labelElements])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
+                                                        message:@"Kérem töltsön ki minden mezőt!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        
+        // VAN EGY PÁR ÉGETETT ADAT, AZOKAT ÁTIRNI MÉG!
+        [DataBaseUtil insertTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
+        
+        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[maxid stringValue]];
+        NSLog(@"%@",[obj objectAtIndex:0]);
+        [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"insert"];
+    }
+}
 // Call this method somewhere in your view controller setup code.
 
 - (void)registerForKeyboardNotifications

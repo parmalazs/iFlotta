@@ -40,8 +40,8 @@
     
     NSLog(@"array: %@", obj);
     
-    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];
-    */
+    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];*/
+    
     
     [self.window makeKeyAndVisible];
     

@@ -27,5 +27,6 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)makePhotoButtonPressed:(id)sender;
+- (IBAction)saveButton:(id)sender;
 
 @end

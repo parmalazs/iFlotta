@@ -43,7 +43,9 @@
 +(void)munkaFelvesz:(NSString*) munkaID;
 + (NSArray*)fetchRequestEntity:(NSString*) entityName : (NSString*) IDName :(NSString*) ID;
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName;
++(void)insertTelephely:(NSString*) telephelyCim : (NSString*) telephelyEmail : (NSNumber*) telephelyID : (NSString*) telephelyNev : (NSString*) telephelyTelefonszam : (NSNumber*) telephelyXkoordinata : (NSNumber*) telephelyYkoordinata : (NSNumber*) telephelyIsActive;
 +(void)autoFoglal:(NSString*) autoID :(NSNumber*) foglal;
++(void)insertPartner:(NSString*) partnerCim : (NSString*) partnerEmailcim : (NSNumber*) partnerID : (NSString*) partnerNev : (NSString*) partnerWeboldal : (NSString*) partnerTelefonszam : (NSNumber*) partnerXkoordinata : (NSNumber*) partnerYkoordinata : (NSNumber*) partnerIsActive;
 +(void)insertMunka:(NSString*) munkaBefejezesDate : (NSNumber*) munkaBevetel : (NSString*) munkaComment : (NSString*) munkaDate : (NSString*) munkaEstimatedTime : (NSNumber*) munkaID :(NSNumber*) munkaIsActive : (NSNumber*) munkaKoltseg : (NSNumber*) munkatipusID : (NSNumber*) munkaUzemanyagState : (NSNumber*) partnerID : (NSNumber*) soforID : (NSNumber*) telephelyID;
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive;
 +(void)insertAuto:(NSNumber*) autoID : (NSString*) autoNev : (NSString*) autoRendszam : (NSString*) autoTipus : (NSString*) autoLastSzervizDate : (NSString*) autoLastUpDate : (NSString*) autoMuszakiVizsgaDate : (NSNumber*) autoKilometerOra : (NSNumber*) autoLastTelephelyID : (NSNumber*) autoUzemAnyag : (NSNumber*) autoXkoordinata : (NSNumber*) autoYkoordinata : (NSNumber*) autoProfilKepID;
