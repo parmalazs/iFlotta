@@ -97,11 +97,23 @@
                 dvc.rendezNev;
             }
                 break;
-            default:
+            case 3:
             {
                 NSLog(@"3");
                 pvc.rendezCim;
-                dvc.rendezCim;
+                dvc.rendezCim;                
+            }
+                break;
+            case 4:
+            {
+                NSLog(@"4");
+                pvc.sendCSV;
+            }
+                break;
+            default:
+            {
+                NSLog(@"5");
+                dvc.sendCSV;
             }
                 break;
         }
@@ -116,11 +128,24 @@
                 dvc.rendezNev;
             }
                 break;
-            default:
+            case 1:
             {
                 NSLog(@"1");
                 pvc.rendezCim;
                 dvc.rendezCim;
+            }
+                break;
+            case 2:
+            {
+                NSLog(@"2");
+                pvc.sendCSV;
+                
+            }
+                break;
+            default:
+            {
+                NSLog(@"3");
+                dvc.sendCSV;                
             }
                 break;
         }

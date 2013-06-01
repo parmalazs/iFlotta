@@ -100,14 +100,17 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
             break;
         case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
             break;
         case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
             break;
         case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
             break;
-            
         default:
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Sending Failed - Unknown Error :-("
@@ -116,6 +119,7 @@
         }
             
             break;
+
     }
     [self dismissModalViewControllerAnimated:YES];
 }

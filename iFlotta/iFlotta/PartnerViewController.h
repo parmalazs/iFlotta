@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MBDropdown.h"
+#import "CSVUtil.h"
+#import <MessageUI/MessageUI.h>
 
-@interface PartnerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface PartnerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MFMailComposeViewControllerDelegate> { }
 @property IBOutlet UISearchBar *partnerSearchBar;
 @property (nonatomic, strong) NSArray *partnerArray;
 @property (strong,nonatomic) NSMutableArray *filteredPartnerArray;
