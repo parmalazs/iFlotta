@@ -18,7 +18,7 @@
     NSUInteger count = [nameArray count];
     // provided all arrays are of the same length
     for (NSUInteger i=0; i<count; i++ ) {
-        [csv appendFormat:@"\n\"%@\",%@,\"%@\"",
+        [csv appendFormat:@"\n\"%@\";%@;\"%@\"",
          [nameArray objectAtIndex:i],
          [phoneArray objectAtIndex:i],
          [emailArray objectAtIndex:i]
@@ -48,7 +48,7 @@
     NSUInteger count = [nameArray count];
     // provided all arrays are of the same length
     for (NSUInteger i=0; i<count; i++ ) {
-        [csvDriver appendFormat:@"\n\"%@\",%@,\"%@\"",
+        [csvDriver appendFormat:@"\n\"%@\";%@;\"%@\"",
          [nameArray objectAtIndex:i],
          [phoneArray objectAtIndex:i],
          [emailArray objectAtIndex:i]
