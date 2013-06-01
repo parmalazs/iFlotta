@@ -81,6 +81,8 @@
 		60BF69461759210100BD0918 /* CSVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BF69451759210100BD0918 /* CSVUtil.m */; };
 		60D27F3E1753EF82003C9D92 /* FreeJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */; };
 		60D27F411753F033003C9D92 /* OwnJobDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */; };
+		60E78849175A6BC70003D4D5 /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E78848175A6BC70003D4D5 /* MapPinAnnotation.m */; };
+		60E7884B175A80490003D4D5 /* arrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E7884A175A80480003D4D5 /* arrest.png */; };
 		6106189B1757712B0033D93A /* AdminSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6106189A1757712B0033D93A /* AdminSiteViewController.m */; };
 		6117E8841757EA9B0050A39A /* SoforAdminDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117E8831757EA9B0050A39A /* SoforAdminDetailViewController.m */; };
 		6117E887175801880050A39A /* JobAdminDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6117E886175801880050A39A /* JobAdminDetailsViewController.m */; };
@@ -239,6 +241,9 @@
 		60D27F3D1753EF82003C9D92 /* FreeJobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeJobDetailsViewController.m; sourceTree = "<group>"; };
 		60D27F3F1753F033003C9D92 /* OwnJobDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnJobDetailsViewController.h; sourceTree = "<group>"; };
 		60D27F401753F033003C9D92 /* OwnJobDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnJobDetailsViewController.m; sourceTree = "<group>"; };
+		60E78847175A6BC60003D4D5 /* MapPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPinAnnotation.h; sourceTree = "<group>"; };
+		60E78848175A6BC70003D4D5 /* MapPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPinAnnotation.m; sourceTree = "<group>"; };
+		60E7884A175A80480003D4D5 /* arrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrest.png; sourceTree = "<group>"; };
 		610618991757712B0033D93A /* AdminSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminSiteViewController.h; sourceTree = "<group>"; };
 		6106189A1757712B0033D93A /* AdminSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminSiteViewController.m; sourceTree = "<group>"; };
 		6117E8821757EA9B0050A39A /* SoforAdminDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoforAdminDetailViewController.h; sourceTree = "<group>"; };
@@ -349,6 +354,7 @@
 				61A24EC31754C3FC00423A9F /* ikonok */,
 				1982C595173BD3A100665C7F /* iFlottaDataModel.xcdatamodeld */,
 				19C2FC5C175A2775000D0291 /* background.png */,
+				60E7884A175A80480003D4D5 /* arrest.png */,
 				1982C54A173BC78D00665C7F /* iFlott-Info.plist */,
 				1982C54B173BC78D00665C7F /* InfoPlist.strings */,
 				1982C54E173BC78D00665C7F /* main.m */,
@@ -434,6 +440,8 @@
 				19BDAF121756D3230034EBFF /* MapViewController.m */,
 				19BDAF131756D3230034EBFF /* AddressAnnotation.h */,
 				19BDAF141756D3230034EBFF /* AddressAnnotation.m */,
+				60E78847175A6BC60003D4D5 /* MapPinAnnotation.h */,
+				60E78848175A6BC70003D4D5 /* MapPinAnnotation.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -693,6 +701,7 @@
 				19C2FC53175A17B7000D0291 /* menulabel198x45.png in Resources */,
 				19C2FC5B175A1DC8000D0291 /* menudarklabel198x45-1.png in Resources */,
 				19C2FC5D175A2775000D0291 /* background.png in Resources */,
+				60E7884B175A80490003D4D5 /* arrest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +773,7 @@
 				6117E8841757EA9B0050A39A /* SoforAdminDetailViewController.m in Sources */,
 				6117E887175801880050A39A /* JobAdminDetailsViewController.m in Sources */,
 				60BF69461759210100BD0918 /* CSVUtil.m in Sources */,
+				60E78849175A6BC70003D4D5 /* MapPinAnnotation.m in Sources */,
 				61793336175A777F00C3C367 /* ImageConverter.m in Sources */,
 				61793339175A792700C3C367 /* ImageSender.m in Sources */,
 			);
