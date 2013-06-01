@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface CSVUtil : NSObject
--(void)ArrayToCSV:(NSArray *)firstArray : (NSArray *) secondArray : (NSArray *) thirdArray;
++(NSString*)PartnerToCSV:(NSArray *)firstArray : (NSArray *) secondArray : (NSArray *) thirdArray;
++(NSString*)SoforToCSV:(NSArray *)firstArray : (NSArray *) secondArray : (NSArray *) thirdArray;
 @end

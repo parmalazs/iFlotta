@@ -41,11 +41,11 @@
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
         _isAdmin = NO;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Cim szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Cim szerint rendezés",@"image":@"280-clapboard.png"},@{@"name":@"Partnerek importálása"},@{@"name":@"Sofőrök importálása"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új sofőr felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Új partner felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Cim szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új sofőr felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Új partner felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Cim szerint rendezés",@"image":@"280-clapboard.png"},@{@"name":@"Partnerek importálása"},@{@"name":@"Sofőrök importálása"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
     }
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
     
@@ -84,11 +84,23 @@
                 dvc.rendezNev;
             }
                 break;
-            default:
+            case 3:
             {
                 NSLog(@"3");
                 pvc.rendezCim;
-                dvc.rendezCim;
+                dvc.rendezCim;                
+            }
+                break;
+            case 4:
+            {
+                NSLog(@"4");
+                pvc.sendCSV;
+            }
+                break;
+            default:
+            {
+                NSLog(@"5");
+                dvc.sendCSV;
             }
                 break;
         }
@@ -103,11 +115,24 @@
                 dvc.rendezNev;
             }
                 break;
-            default:
+            case 1:
             {
                 NSLog(@"1");
                 pvc.rendezCim;
                 dvc.rendezCim;
+            }
+                break;
+            case 2:
+            {
+                NSLog(@"2");
+                pvc.sendCSV;
+                
+            }
+                break;
+            default:
+            {
+                NSLog(@"3");
+                dvc.sendCSV;                
             }
                 break;
         }

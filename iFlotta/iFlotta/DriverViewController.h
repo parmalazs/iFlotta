@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBDropdown.h"
+#import "CSVUtil.h"
+#import <MessageUI/MessageUI.h>
 
-@interface DriverViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface DriverViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MFMailComposeViewControllerDelegate> { }
 @property (weak, nonatomic) IBOutlet UISearchBar *driverSearchBar;
 @property (nonatomic, strong) NSArray *driverArray;
 @property (strong,nonatomic) NSMutableArray *filteredDriverArray;
@@ -16,4 +19,5 @@
 
 -(void)rendezNev;
 -(void)rendezCim;
+-(void)sendCSV;
 @end

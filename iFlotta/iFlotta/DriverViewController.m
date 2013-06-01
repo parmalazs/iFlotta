@@ -264,4 +264,66 @@
     [[self tableView] reloadData];
 }
 
+-(void)sendCSV {
+    NSMutableArray *driversName=[NSMutableArray arrayWithCapacity:[self.driverArray count]] ;
+    for (id akt in self.driverArray) {
+        [driversName addObject:[akt soforNev]];
+    }
+    NSMutableArray *driversPhone=[NSMutableArray arrayWithCapacity:[self.driverArray count]] ;
+    for (id akt in self.driverArray) {
+        [driversPhone addObject:[akt soforTelefonszam]];
+    }
+    NSMutableArray *driversEmail=[NSMutableArray arrayWithCapacity:[self.driverArray count]] ;
+    for (id akt in self.driverArray) {
+        [driversEmail addObject:[akt soforEmail]];
+    }
+    
+    NSString *csv=[CSVUtil SoforToCSV:driversName :driversPhone :driversEmail];
+    NSData *attachment=[NSData dataWithContentsOfFile:csv];
+    
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self; // &lt;- very important step if you want feedbacks on what the user did with your email sheet
+    
+    [picker setSubject:@"message via iFlotta"];
+    
+    // Fill out the email body text
+    [picker addAttachmentData:attachment mimeType:@"text/csv" fileName:@"drivers.csv"];
+    
+    
+    picker.navigationBar.barStyle = UIBarStyleBlack; // choose your style, unfortunately, Translucent colors behave quirky.
+    
+    [self presentModalViewController:picker animated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    // Notifies users about errors associated with the interface
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Sending Failed - Unknown Error :-("
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
+            
+            break;
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
 @end

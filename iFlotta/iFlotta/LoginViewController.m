@@ -54,8 +54,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initDatabase];
-    
+    self.initData;
     userName.delegate=self;
     userPassword.delegate=self;
     [self registerForKeyboardNotifications];
@@ -103,6 +102,10 @@
         }
 
     }
+}
+
+-(void)initData{
+    [self initDatabase];
 }
 
 -(void)changeToLogin{
