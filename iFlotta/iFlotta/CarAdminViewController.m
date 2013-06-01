@@ -109,7 +109,12 @@
     
     if (![DataBaseUtil IsInsert:labelElements])
     {
-        NSLog(@"Nincs kitöltve minden!");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
+                                                        message:@"Kérem adjon meg minden mezőt!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
     else
     {
@@ -120,9 +125,15 @@
         NSLog(@"%@",[obj objectAtIndex:0]);
         
         [JsonUtil JsonBuilderSender:obj :@"Auto" :@"insert"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
+                                                        message:@"Új jármű felvéve!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        [self.navigationController popViewControllerAnimated: YES];
     }
-
-    
 }
 
 ///////////////////////////innentol copy //////////////////////////////////////////////////

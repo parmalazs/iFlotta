@@ -19,5 +19,6 @@
 
 -(void)rendezNev;
 -(void)rendezCim;
+-(void)frissit;
 -(void)sendCSV;
 @end

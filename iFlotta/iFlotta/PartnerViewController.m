@@ -59,12 +59,14 @@
     newBounds.origin.y = newBounds.origin.y + partnerSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
+    /*
     self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"];
-    
-    NSLog(@"Adatok: %@",self.partnerArray);
-
     filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
-    [[self tableView] reloadData];    
+     */
+    
+    [[self tableView] reloadData];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -275,6 +277,12 @@
     [[self tableView] reloadData];
 }
 
+-(void)frissit
+{
+    self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"];
+    filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
+    [[self tableView] reloadData];
+}
 -(void)sendCSV {
     NSMutableArray *partnersName=[NSMutableArray arrayWithCapacity:[self.partnerArray count]] ;
     for (id akt in self.partnerArray) {

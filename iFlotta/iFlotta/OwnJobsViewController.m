@@ -172,6 +172,10 @@
         ownJobDetailsViewController.ownJobData = [self.ownJobsArray objectAtIndex: [indexPath row]];
     }
 }
-
+-(void)frissit
+{
+    self.ownJobsArray = [DataBaseUtil fetchRequestSajatMunkak];
+    [[self tableView] reloadData];
+}
 
 @end

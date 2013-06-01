@@ -79,8 +79,6 @@
         
         NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Auto" :@"autoID" :[[self adatDetails] valueForKey:@"autoID"] ];
         
-        //NSLog(@"%@",[obj objectAtIndex:0]);
-        
         [JsonUtil JsonBuilderSender:obj :@"Auto" :@"update"];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
@@ -90,7 +88,7 @@
                                               otherButtonTitles:nil];
         [alert show];
         
-        
+        [self.navigationController popViewControllerAnimated: YES];
     }
     
 }

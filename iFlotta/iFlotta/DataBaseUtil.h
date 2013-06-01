@@ -32,6 +32,7 @@
 + (void)fillProfilkepTable;
 + (void)fillMunkakepTable;
 + (void)fillAutoTable;
++(BOOL)autoFoglalt;
 +(void) setUser:(NSString*)admin :(NSString*)userid :(NSString*)foglaltauto;
 + (NSString*)aktUserAdmin;
 + (NSString*)aktUserID;

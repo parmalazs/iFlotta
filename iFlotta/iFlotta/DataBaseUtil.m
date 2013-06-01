@@ -625,6 +625,23 @@ static NSString *foglaltautoID;
     [self saveContext:context];
 }
 
+// nem kelll
++(BOOL)autoFoglalt
+{
+    NSArray *autom = [self fetchRequestEntity:@"Auto" :@"autoID" :aktUserID];
+    
+    for (id aktauot in autom) {
+        //if ([aktauot autoFoglal:[])
+        {
+            Auto * aktauto = aktauot;
+            foglaltautoID = [aktauto.autoID stringValue];
+            return [self autoFoglal:[aktauto.autoID stringValue]];
+        }
+    }
+    
+    return NO;
+}
+
 
 +(void)autoFoglal:(NSString*) autoID :(NSNumber*) foglal
 {
@@ -632,15 +649,7 @@ static NSString *foglaltautoID;
     NSArray *lefoglalAuto = [self fetchRequestEntity:@"Auto" :@"autoID" :autoID];
     Auto * aktauto = [lefoglalAuto objectAtIndex:0];
     aktauto.autoFoglalt = [NSNumber numberWithInt:[foglal intValue]];
-    if ([foglal boolValue])
-    {
-        aktauto.autoLastSoforID = [NSNumber numberWithInt:[[self aktUserID] intValue]];
-    }
-    else
-    {
-        aktauto.autoLastSoforID = [NSNumber numberWithInt:0];
-    }
-    
+    aktauto.autoLastSoforID = [NSNumber numberWithInt:[[self aktUserID] intValue]];
     foglaltautoID = autoID;
     [self saveContext:context];
 }
@@ -649,7 +658,7 @@ static NSString *foglaltautoID;
     NSArray *autok = [self fetchRequest:@"Auto" :@"1" :@"autoIsActive"];
     
     for (id aktauto in autok) {
-        if ([[aktauto valueForKey:@"autoLastSoforID"] isEqualToNumber:[NSNumber numberWithInt:[[self aktUserID] intValue] ]])
+        if ([[aktauto valueForKey:@"autoLastSoforID"] isEqualToNumber:[NSNumber numberWithInt:[[self aktUserID] intValue] ]] && [[aktauto valueForKey:@"autoFoglalt"] isEqualToNumber:[NSNumber numberWithBool:YES]])
         {
             NSLog(@"Van már rajtad auto, koccolj le!");
             foglaltautoID = [aktauto valueForKey:@"autoID"];
