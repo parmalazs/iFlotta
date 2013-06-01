@@ -181,7 +181,9 @@
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
         NSLog(@"LOG: %@",[car autoNev]);
-        [[(KamionCell*)cell kamionLabel] setText:[car autoNev]];
+        [[(KamionCell*)cell kamionName] setText:[car autoNev]];
+        [[(KamionCell*)cell kamionTel] setText:[car autoRendszam]];
+        [[(KamionCell*)cell kamionMail] setText:[NSString stringWithFormat:@"%@ liter",[car autoUzemAnyag].stringValue]];
     }
     
     return cell;

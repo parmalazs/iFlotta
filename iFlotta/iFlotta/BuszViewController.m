@@ -185,7 +185,9 @@
 	else
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
-        [[(BuszCell*)cell buszLabel] setText:[car autoNev]];
+        [[(BuszCell*)cell buszName] setText:[car autoNev]];
+        [[(BuszCell*)cell buszTel] setText:[car autoRendszam]];
+        [[(BuszCell*)cell buszMail] setText:[NSString stringWithFormat:@"%@ liter",[car autoUzemAnyag].stringValue]];
     }
     
     return cell;

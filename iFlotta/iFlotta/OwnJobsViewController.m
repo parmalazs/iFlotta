@@ -113,7 +113,7 @@
     //[[cell ] setText:[job munkaDate]];
     [[cell jobName] setText:[job munkaDate]];
     [[cell jobTel] setText:[job munkaBefejezesDate]];
-    [[cell jobMail] setText:[job munkaBevetel]];
+    [[cell jobMail] setText:[job munkaBevetel].stringValue];
     return cell;
 }
 

@@ -188,7 +188,10 @@
 	else
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
-        [[(CarsTableViewCell*)cell carsLabel] setText:[car autoNev]];
+        [[(CarsTableViewCell*)cell carName] setText:[car autoNev]];
+        [[(CarsTableViewCell*)cell carTel] setText:[car autoRendszam]];
+        [[(CarsTableViewCell*)cell carMail] setText:[NSString stringWithFormat:@"%@ liter",[car autoUzemAnyag].stringValue]];
+        
     }
    
     return cell;

@@ -153,7 +153,9 @@
 	else
 	{
         site = [self.siteArray objectAtIndex:[indexPath row]];
-        [[(SiteTableViewCell*)cell siteLabel] setText:[site telephelyNev]];
+        [[(SiteTableViewCell*)cell siteName] setText:[site telephelyNev]];
+        [[(SiteTableViewCell*)cell siteTel] setText:[site telephelyTelefonszam]];
+        [[(SiteTableViewCell*)cell siteMail] setText:[site telephelyEmail]];
     }
     
     return cell;
