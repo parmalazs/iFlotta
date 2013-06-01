@@ -76,7 +76,7 @@
     
     NSLog(@"%@",[obj objectAtIndex:0]);
     
-    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"update"];
+    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"munkafevesz"];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
                                                     message:@"Az adott munkát felvette!"
@@ -84,6 +84,6 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
-    // egy alertview
+    [self.navigationController popViewControllerAnimated: YES];
 }
 @end

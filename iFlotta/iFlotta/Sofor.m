@@ -15,16 +15,16 @@
 @implementation Sofor
 
 @dynamic soforBirthDate;
-@dynamic soforCim;
-@dynamic soforEmail;
+@dynamic soforCim; 
+@dynamic soforEmail; 
 @dynamic soforID;
 @dynamic soforIsAdmin;
 @dynamic soforLogin;
-@dynamic soforNev;
+@dynamic soforNev; 
 @dynamic soforPass;
 @dynamic soforProfilKepId;
 @dynamic soforRegTime;
-@dynamic soforTelefonszam;
+@dynamic soforTelefonszam; 
 @dynamic soforIsActive;
 @dynamic autoRelationship;
 @dynamic munka;

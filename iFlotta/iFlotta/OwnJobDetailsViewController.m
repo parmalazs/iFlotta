@@ -82,5 +82,6 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+    [self.navigationController popViewControllerAnimated: YES];
 }
 @end
