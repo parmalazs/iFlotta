@@ -33,6 +33,7 @@
     self.sitePhone.text         = [self.siteData valueForKey:@"telephelyTelefonszam"];
     self.siteMail.text          = [self.siteData valueForKey:@"telephelyEmail"];
     
+    
     self.siteAddress.backgroundColor    = UIColorFromRGB(0xD9B384);
     self.siteName.backgroundColor       = UIColorFromRGB(0x260B01);
     self.siteName.textColor             = UIColorFromRGB(0xD9B384);
@@ -47,6 +48,13 @@
     self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
 	// Do any additional setup after loading the view.
+    
+    NSString *staticMapUrl = [NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&markers=%f,%f&%@&sensor=true",[[self.siteData valueForKey:@"telephelyXkoordinata"] floatValue], [[self.siteData valueForKey:@"telephelyYkoordinata"] floatValue],[[self.siteData valueForKey:@"telephelyXkoordinata"] floatValue], [[self.siteData valueForKey:@"telephelyYkoordinata"] floatValue],@"zoom=13&size=200x200"];
+    NSLog(staticMapUrl);
+    NSURL *mapUrl = [NSURL URLWithString:[staticMapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:mapUrl]];
+    self.mapImage.image = image;
+    //self.mapImage
 }
 
 - (void)didReceiveMemoryWarning

@@ -642,6 +642,7 @@
                     <navigationItem key="navigationItem" id="JJb-pC-6mQ"/>
                     <connections>
                         <outlet property="emailLabel" destination="czC-Ko-aCs" id="bK1-bG-iXn"/>
+                        <outlet property="mapImage" destination="rrg-Ag-XBl" id="gic-VM-oFf"/>
                         <outlet property="nevLabel" destination="yZu-tn-Rc5" id="GC8-Ux-Sye"/>
                         <outlet property="profilImage" destination="rrg-Ag-XBl" id="wLg-T4-nxU"/>
                         <outlet property="siteAddress" destination="fPs-W0-xu0" id="yoS-P2-HD0"/>
@@ -1132,6 +1133,7 @@
                         <outlet property="benzin" destination="Nx3-ji-MkX" id="a8V-tr-v0G"/>
                         <outlet property="fuel" destination="CZz-Hf-ZtL" id="h1k-ZH-2up"/>
                         <outlet property="km" destination="5va-eY-TWD" id="m89-ww-alg"/>
+                        <outlet property="mapImage" destination="Gcb-Th-BrX" id="X7j-ey-Hde"/>
                         <outlet property="name" destination="dhe-Uu-2au" id="40m-Ob-j1i"/>
                         <outlet property="profilImage" destination="Gcb-Th-BrX" id="TXY-JV-kZp"/>
                         <outlet property="speedometer" destination="05d-gV-qna" id="b1B-Fa-NjM"/>
@@ -2813,6 +2815,7 @@
                     <navigationItem key="navigationItem" id="luP-x5-mX4"/>
                     <connections>
                         <outlet property="PartnerEmail" destination="xWa-Nl-39w" id="ouv-ET-xj9"/>
+                        <outlet property="mapImage" destination="JGr-ni-nhv" id="dxn-w4-Vhb"/>
                         <outlet property="nevLabel" destination="OCc-YL-3jD" id="bYa-B0-ZO8"/>
                         <outlet property="partnerCim" destination="KRc-oE-ztY" id="VZb-Iv-Ihq"/>
                         <outlet property="partnerNev" destination="omT-Cw-KEJ" id="lK3-yi-2bo"/>
@@ -3300,6 +3303,7 @@
                 <relationship kind="action" name="messagePartner:"/>
                 <relationship kind="outlet" name="PartnerEmail" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="partnerCim" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="partnerNev" candidateClass="UILabel"/>
@@ -3324,6 +3328,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteDetailsViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profilImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="siteAddress" candidateClass="UILabel"/>
@@ -3393,6 +3398,7 @@
                 <relationship kind="outlet" name="benzin" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="fuel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="km" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="name" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profilImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="speedometer" candidateClass="UILabel"/>

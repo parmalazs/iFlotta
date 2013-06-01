@@ -47,6 +47,13 @@
     self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
     
+    NSString *staticMapUrl = [NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&markers=%f,%f&%@&sensor=true",[[self.partnerData valueForKey:@"partnerXkoordinata"] floatValue], [[self.partnerData valueForKey:@"partnerYkoordinata"] floatValue],[[self.partnerData valueForKey:@"partnerXkoordinata"] floatValue], [[self.partnerData valueForKey:@"partnerYkoordinata"] floatValue],@"zoom=13&size=200x200"];
+    
+    NSLog(staticMapUrl);
+    NSURL *mapUrl = [NSURL URLWithString:[staticMapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:mapUrl]];
+    self.mapImage.image = image;
+    
     
     
     [CSVUtil PartnerToCSV:[NSArray arrayWithObject:[self.partnerData valueForKey:@"partnerNev"]] :[NSArray arrayWithObject:[self.partnerData valueForKey:@"partnerTelefonszam"]] :[NSArray arrayWithObject:[self.partnerData valueForKey:@"partnerEmailcim"]]];
