@@ -2745,10 +2745,12 @@
                     <connections>
                         <outlet property="nevLabel" destination="JSu-dc-OU9" id="rpB-w3-cTd"/>
                         <outlet property="profilImage" destination="WED-K3-ofr" id="XDN-Pw-svQ"/>
+                        <outlet property="soforBirthDateh" destination="zZI-n9-wB2" id="4rQ-4p-bvN"/>
                         <outlet property="soforCim" destination="b3S-cT-Gpe" id="cLs-DS-WVR"/>
                         <outlet property="soforEmail" destination="uZp-Qf-Odw" id="sUG-Dl-mz9"/>
                         <outlet property="soforKep" destination="WED-K3-ofr" id="Od5-gF-xMr"/>
                         <outlet property="soforNev" destination="lhi-hc-zRh" id="CG7-V4-QpC"/>
+                        <outlet property="soforRegTime" destination="lGa-Jt-hsK" id="gEC-8B-Ay1"/>
                         <outlet property="soforTelefonszam" destination="6oe-pJ-gLV" id="HQ7-b2-y6h"/>
                     </connections>
                 </viewController>
@@ -3204,15 +3206,15 @@
             <relationships>
                 <relationship kind="action" name="callDriver:"/>
                 <relationship kind="action" name="endEmail:"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nevLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profilImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="soforBirthDateh" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="soforCim" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="soforEmail" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="soforKep" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="soforNev" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="soforRegTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="soforTelefonszam" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="telLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="DriverTableViewCell" superclassName="UITableViewCell">

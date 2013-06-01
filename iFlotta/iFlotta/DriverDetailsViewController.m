@@ -48,10 +48,8 @@
     /// ezek a labelek
     self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
     self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);
-    self.telLabel.backgroundColor   = UIColorFromRGB(0x46594B);
-    self.telLabel.textColor         = UIColorFromRGB(0xFFFFFF);
-    self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
-    self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
+    self.soforEmail.backgroundColor = UIColorFromRGB(0x46594B);
+    self.soforEmail.textColor       = UIColorFromRGB(0xFFFFFF);
 }
 
 - (void)didReceiveMemoryWarning

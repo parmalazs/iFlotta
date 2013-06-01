@@ -14,7 +14,7 @@
 
 @implementation Sofor
 
-@dynamic soforBirthDate; // csak részletező
+@dynamic soforBirthDate;
 @dynamic soforCim; 
 @dynamic soforEmail; 
 @dynamic soforID;
@@ -23,7 +23,7 @@
 @dynamic soforNev; 
 @dynamic soforPass;
 @dynamic soforProfilKepId;
-@dynamic soforRegTime; // csak részletező
+@dynamic soforRegTime;
 @dynamic soforTelefonszam; 
 @dynamic soforIsActive;
 @dynamic autoRelationship;
