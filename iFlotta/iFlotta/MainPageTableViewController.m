@@ -120,7 +120,7 @@
     cell.labelElement.text = [self.labelElements
                               objectAtIndex: [indexPath row]];
     cell.labelElement.textColor = UIColorFromRGB(0xD9B384);
-    cell.labelElement.backgroundColor = UIColorFromRGB(0x260B01);
+    cell.labelElement.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"menudarklabel198x45-1.png"]];
     cell.contentView.backgroundColor= UIColorFromRGB(0xA6977C);
     
     

@@ -43,6 +43,8 @@
 		19C1B3DE1743AE630053949C /* CarsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C1B3DD1743AE630053949C /* CarsTableViewCell.m */; };
 		19C1B3E21743B8BC0053949C /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C1B3E11743B8BC0053949C /* placeholder.png */; };
 		19C2B0831755A17500DCE556 /* VehiclesDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191DB25175561E000E4B09B /* VehiclesDetailsViewController.m */; };
+		19C2FC53175A17B7000D0291 /* menulabel198x45.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C2FC52175A17B7000D0291 /* menulabel198x45.png */; };
+		19C2FC5B175A1DC8000D0291 /* menudarklabel198x45-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C2FC5A175A1DC8000D0291 /* menudarklabel198x45-1.png */; };
 		19C51E57173C6D920000B353 /* JsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E56173C6D920000B353 /* JsonUtil.m */; };
 		19C51E5A173C84F30000B353 /* MainPageNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E59173C84F30000B353 /* MainPageNavigationViewController.m */; };
 		19C51E5D173C89030000B353 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C51E5C173C89030000B353 /* MainPageTableViewController.m */; };
@@ -160,6 +162,8 @@
 		19C1B3DC1743AE630053949C /* CarsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarsTableViewCell.h; sourceTree = "<group>"; };
 		19C1B3DD1743AE630053949C /* CarsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewCell.m; sourceTree = "<group>"; };
 		19C1B3E11743B8BC0053949C /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		19C2FC52175A17B7000D0291 /* menulabel198x45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menulabel198x45.png; sourceTree = "<group>"; };
+		19C2FC5A175A1DC8000D0291 /* menudarklabel198x45-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menudarklabel198x45-1.png"; sourceTree = "<group>"; };
 		19C51E55173C6D920000B353 /* JsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtil.h; sourceTree = "<group>"; };
 		19C51E56173C6D920000B353 /* JsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtil.m; sourceTree = "<group>"; };
 		19C51E58173C84F30000B353 /* MainPageNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageNavigationViewController.h; sourceTree = "<group>"; };
@@ -582,6 +586,8 @@
 				61A24EC51754C40F00423A9F /* car146x120.png */,
 				61A24EC61754C40F00423A9F /* foto146x120.png */,
 				61A24EC71754C40F00423A9F /* gomb146x120.png */,
+				19C2FC52175A17B7000D0291 /* menulabel198x45.png */,
+				19C2FC5A175A1DC8000D0291 /* menudarklabel198x45-1.png */,
 				61A24EC81754C40F00423A9F /* jobs146x120.png */,
 				61A24EC91754C40F00423A9F /* partnerek146x120.png */,
 				61A24ECA1754C40F00423A9F /* telephelyek146x120.png */,
@@ -667,6 +673,8 @@
 				19BDAF1E1756D34C0034EBFF /* 280-clapboard@2x.png in Resources */,
 				19BDAF1F1756D34C0034EBFF /* 166-newspaper.png in Resources */,
 				19BDAF201756D34C0034EBFF /* 166-newspaper@2x.png in Resources */,
+				19C2FC53175A17B7000D0291 /* menulabel198x45.png in Resources */,
+				19C2FC5B175A1DC8000D0291 /* menudarklabel198x45-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

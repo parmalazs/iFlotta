@@ -40,11 +40,10 @@
     
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody: requestData];
     
-    NSLog(@"jsonstring: %@",jsonString);
     
     //NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
     
@@ -96,6 +95,20 @@
         {
             [object setObject:[aktauto valueForKey:@"autoID"] forKey:@"autoId"];
             [object setObject:[aktauto valueForKey:@"autoFoglalt"] forKey:@"autoFoglalt"];
+            [object setObject:[aktauto valueForKey:@"autoNev"] forKey:@"autoNev"];
+            [object setObject:[aktauto valueForKey:@"autoIsActive"] forKey:@"autoIsActive"];
+            [object setObject:[aktauto valueForKey:@"autoLastSoforID"] forKey:@"autoLastSoforID"];
+            [object setObject:[aktauto valueForKey:@"autoRendszam"] forKey:@"autoRendszam"];
+            [object setObject:@"autoTipusssss" forKey:@"autoTipus"];
+            //[object setObject:[aktauto valueForKey:@"autoKilometerOra"] forKey:@"autoKilometerOra"];
+            //[object setObject:[aktauto valueForKey:@"autoLastTelephelyID"] forKey:@"autoLastTelephelyID"];
+            //[object setObject:[aktauto valueForKey:@"autoUzemAnyag"] forKey:@"autoUzemAnyag"];
+            //[object setObject:[aktauto valueForKey:@"autoLastSzervizDate"] forKey:@"autoLastSzervizDate"];
+            //[object setObject:[aktauto valueForKey:@"autoLastUpDate"] forKey:@"autoLastUpDate"];
+            //[object setObject:[aktauto valueForKey:@"autoMuszakiVizsgaDate"] forKey:@"autoMuszakiVizsgaDate"];
+            //[object setObject:[aktauto valueForKey:@"autoProfilKepID"] forKey:@"autoProfilKepID"];
+            //[object setObject:[aktauto valueForKey:@"autoXkoordinata"] forKey:@"autoXkoordinata"];
+            //[object setObject:[aktauto valueForKey:@"autoYkoordinata"] forKey:@"autoYkoordinata"];
         }
         else
         {
