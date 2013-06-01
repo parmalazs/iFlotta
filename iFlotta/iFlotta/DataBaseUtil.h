@@ -11,6 +11,13 @@
 
 
 @interface DataBaseUtil : NSObject
+
++(void)telephelyDelete:(NSString*) telephelyID;
++(void)munkaDelete:(NSString*) munkaID;
++(void)soforDelete:(NSString*) soforID;
++(void)partnerDelete:(NSString*) partnerID;
++(void)autoDelete:(NSString*) autoID;
+
 + (void) deleteAllObjects: (NSString *) entityDescription  :(NSManagedObjectContext*) context;
 + (void)saveContext:(NSManagedObjectContext *)managedObjectContext;
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) sortName :(NSNumber*) sortType;

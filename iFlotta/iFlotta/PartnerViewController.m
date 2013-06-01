@@ -150,35 +150,51 @@
  }
  */
 
-/*
+
  // Override to support editing the table view.
  - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
  {
  if (editingStyle == UITableViewCellEditingStyleDelete) {
  // Delete the row from the data source
+     
+     if (_isAdmin)
+     {
+         Partner *site = [[self partnerArray] objectAtIndex:[indexPath row]];
+         [DataBaseUtil partnerDelete:[[site partnerID] stringValue]];
+         [self.partnerArray removeObjectAtIndex:indexPath.row];
+     }
+     else
+     {
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Partner"
+                                                         message:@"Adott partner törölve!"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+         [alert show];
+     }
  [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
  }
  else if (editingStyle == UITableViewCellEditingStyleInsert) {
  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
  }
  }
- */
+ 
 
-/*
+
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
  {
  }
- */
+ 
 
-/*
+
  // Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
  {
  // Return NO if you do not want the item to be re-orderable.
  return YES;
  }
- */
+ 
 
 #pragma mark - Table view delegate
 
@@ -269,22 +285,23 @@
 
 -(void)rendezNev
 {
-    self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerNev" :[NSNumber numberWithInt:1]];
+    self.partnerArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerNev" :[NSNumber numberWithInt:1]]];
     [[self tableView] reloadData];
 }
 
 -(void)rendezCim
 {
-    self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerCim" :[NSNumber numberWithInt:1]];
+    self.partnerArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerCim" :[NSNumber numberWithInt:1]]];
     [[self tableView] reloadData];
 }
 
 -(void)frissit
 {
-    self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"];
-    //filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
+    self.partnerArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"]];
+    filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
     [[self tableView] reloadData];
 }
+
 -(void)sendCSV {
     NSMutableArray *partnersName=[NSMutableArray arrayWithCapacity:[self.partnerArray count]] ;
     for (id akt in self.partnerArray) {

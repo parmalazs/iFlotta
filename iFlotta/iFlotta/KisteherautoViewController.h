@@ -10,7 +10,7 @@
 
 @interface KisteherautoViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *kisteherautoSearchBar;
-@property (nonatomic, strong) NSArray *cellLabelName;
+@property (nonatomic, strong) NSMutableArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 
 -(void)rendezNev;

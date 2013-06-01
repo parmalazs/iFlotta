@@ -13,7 +13,7 @@
 
 @interface DriverViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MFMailComposeViewControllerDelegate> { }
 @property (weak, nonatomic) IBOutlet UISearchBar *driverSearchBar;
-@property (nonatomic, strong) NSArray *driverArray;
+@property (nonatomic, strong) NSMutableArray *driverArray;
 @property (strong,nonatomic) NSMutableArray *filteredDriverArray;
 
 

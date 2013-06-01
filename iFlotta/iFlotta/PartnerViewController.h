@@ -13,7 +13,7 @@
 
 @interface PartnerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MFMailComposeViewControllerDelegate> { }
 @property IBOutlet UISearchBar *partnerSearchBar;
-@property (nonatomic, strong) NSArray *partnerArray;
+@property (nonatomic, strong) NSMutableArray *partnerArray;
 @property (strong,nonatomic) NSMutableArray *filteredPartnerArray;
 
 -(void)rendezNev;

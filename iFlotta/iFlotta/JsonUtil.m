@@ -67,6 +67,15 @@
     {
         NSManagedObject *aktsofor = [senderObject objectAtIndex:0];
         
+        
+        
+        if ([actionTipus isEqualToString:@"delete"])
+        {
+            [object setObject:[aktsofor valueForKey:@"soforID"] forKey:@"soforId"];
+            [object setObject:@"0" forKey:@"soforIsActive"];
+        }
+        else
+        {
         /*
         if ([actionTipus isEqualToString:@"update"])
         {
@@ -85,6 +94,7 @@
         [object setObject:[aktsofor valueForKey:@"soforIsAdmin"] forKey:@"soforIsAdmin"];
         [object setObject:[aktsofor valueForKey:@"soforProfilKepId"] forKey:@"soforProfilKepID"];
         [object setObject:[aktsofor valueForKey:@"soforIsActive"] forKey:@"soforIsActive"];
+        }
         
         [json setObject:@"sofor" forKey:@"tableName"];
     }
@@ -93,6 +103,12 @@
     {
         NSManagedObject *aktauto = [senderObject objectAtIndex:0];
         
+        if ([actionTipus isEqualToString:@"delete"])
+        {
+            [object setObject:[aktauto valueForKey:@"autoID"] forKey:@"autoId"];
+            [object setObject:@"0" forKey:@"autoIsActive"];
+        }
+        else
         if ([actionTipus isEqualToString:@"update"])
         {
             [object setObject:[aktauto valueForKey:@"autoID"] forKey:@"autoId"];
@@ -101,16 +117,16 @@
             [object setObject:[aktauto valueForKey:@"autoIsActive"] forKey:@"autoIsActive"];
             [object setObject:[aktauto valueForKey:@"autoLastSoforID"] forKey:@"autoLastSoforID"];
             [object setObject:[aktauto valueForKey:@"autoRendszam"] forKey:@"autoRendszam"];
-            //[object setObject:@"autoTipusssss" forKey:@"autoTipus"];
-            //[object setObject:[aktauto valueForKey:@"autoKilometerOra"] forKey:@"autoKilometerOra"];
-            //[object setObject:[aktauto valueForKey:@"autoLastTelephelyID"] forKey:@"autoLastTelephelyID"];
-            //[object setObject:[aktauto valueForKey:@"autoUzemAnyag"] forKey:@"autoUzemAnyag"];
-            //[object setObject:[aktauto valueForKey:@"autoLastSzervizDate"] forKey:@"autoLastSzervizDate"];
-            //[object setObject:[aktauto valueForKey:@"autoLastUpDate"] forKey:@"autoLastUpDate"];
-            //[object setObject:[aktauto valueForKey:@"autoMuszakiVizsgaDate"] forKey:@"autoMuszakiVizsgaDate"];
-            //[object setObject:[aktauto valueForKey:@"autoProfilKepID"] forKey:@"autoProfilKepID"];
-            //[object setObject:[aktauto valueForKey:@"autoXkoordinata"] forKey:@"autoXkoordinata"];
-            //[object setObject:[aktauto valueForKey:@"autoYkoordinata"] forKey:@"autoYkoordinata"];
+            [object setObject:[aktauto valueForKey:@"autoTipus"] forKey:@"autoTipus"];
+            [object setObject:[aktauto valueForKey:@"autoKilometerOra"] forKey:@"autoKilometerOra"];
+            [object setObject:[aktauto valueForKey:@"autoLastTelephelyID"] forKey:@"autoLastTelephelyID"];
+            [object setObject:[aktauto valueForKey:@"autoUzemAnyag"] forKey:@"autoUzemAnyag"];
+            [object setObject:[aktauto valueForKey:@"autoLastSzervizDate"] forKey:@"autoLastSzervizDate"];
+            [object setObject:[aktauto valueForKey:@"autoLastUpDate"] forKey:@"autoLastUpDate"];
+            [object setObject:[aktauto valueForKey:@"autoMuszakiVizsgaDate"] forKey:@"autoMuszakiVizsgaDate"];
+            [object setObject:[aktauto valueForKey:@"autoProfilKepID"] forKey:@"autoProfilKepID"];
+            [object setObject:[aktauto valueForKey:@"autoXkoordinata"] forKey:@"autoXkoordinata"];
+            [object setObject:[aktauto valueForKey:@"autoYkoordinata"] forKey:@"autoYkoordinata"];
         }
         else
         {
@@ -184,14 +200,22 @@
     {
         NSManagedObject *aktTelephely = [senderObject objectAtIndex:0];
         
-        [object setObject:[aktTelephely valueForKey:@"telephelyCim"] forKey:@"telephelyCim"];
-        [object setObject:[aktTelephely valueForKey:@"telephelyEmail"] forKey:@"telephelyEmail"];
-        [object setObject:[aktTelephely valueForKey:@"telephelyID"] forKey:@"telephelyId"];
-        [object setObject:[aktTelephely valueForKey:@"telephelyNev"] forKey:@"telephelyNev"];
-        [object setObject:[aktTelephely valueForKey:@"telephelyTelefonszam"] forKey:@"telephelyTelefonszam"];
-        [object setObject:[aktTelephely valueForKey:@"telephelyXkoordinata"] forKey:@"telephelyXkoordinata"];
-        [object setObject:[aktTelephely valueForKey:@"telephelyYkoordinata"] forKey:@"telephelyYkoordinata"];
-        [object setObject:[aktTelephely valueForKey:@"telephelyIsActive"] forKey:@"telephelyIsActive"];
+        if ([actionTipus isEqualToString:@"delete"])
+        {
+            [object setObject:[aktTelephely valueForKey:@"telephelyID"] forKey:@"telephelyId"];
+            [object setObject:@"0" forKey:@"telephelyIsActive"];
+        }
+        else
+        {
+            [object setObject:[aktTelephely valueForKey:@"telephelyCim"] forKey:@"telephelyCim"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyEmail"] forKey:@"telephelyEmail"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyID"] forKey:@"telephelyId"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyNev"] forKey:@"telephelyNev"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyTelefonszam"] forKey:@"telephelyTelefonszam"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyXkoordinata"] forKey:@"telephelyXkoordinata"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyYkoordinata"] forKey:@"telephelyYkoordinata"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyIsActive"] forKey:@"telephelyIsActive"];
+        }
         
         [json setObject:@"telephely" forKey:@"tableName"];
     }
@@ -201,15 +225,24 @@
         //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
         NSManagedObject *aktPartner = [senderObject objectAtIndex:0];
         
-        [object setObject:[aktPartner valueForKey:@"partnerCim"] forKey:@"partnerCim"];
-        [object setObject:[aktPartner valueForKey:@"partnerEmailcim"] forKey:@"partnerEmailcim"];
-        [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
-        [object setObject:[aktPartner valueForKey:@"partnerNev"] forKey:@"partnerNev"];
-        [object setObject:[aktPartner valueForKey:@"partnerTelefonszam"] forKey:@"partnerTelefonszam"];
-        [object setObject:[aktPartner valueForKey:@"partnerWeboldal"] forKey:@"partnerWeboldal"];
-        [object setObject:[aktPartner valueForKey:@"partnerXkoordinata"] forKey:@"partnerXkoordinata"];
-        [object setObject:[aktPartner valueForKey:@"partnerYkoordinata"] forKey:@"partnerYkoordinata"];
-        [object setObject:[aktPartner valueForKey:@"partnerIsActive"] forKey:@"partnerIsActive"];
+        
+        if ([actionTipus isEqualToString:@"delete"])
+        {
+            [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
+            [object setObject:@"0" forKey:@"partnerIsActive"];
+        }
+        else
+        {
+            [object setObject:[aktPartner valueForKey:@"partnerCim"] forKey:@"partnerCim"];
+            [object setObject:[aktPartner valueForKey:@"partnerEmailcim"] forKey:@"partnerEmailcim"];
+            [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
+            [object setObject:[aktPartner valueForKey:@"partnerNev"] forKey:@"partnerNev"];
+            [object setObject:[aktPartner valueForKey:@"partnerTelefonszam"] forKey:@"partnerTelefonszam"];
+            [object setObject:[aktPartner valueForKey:@"partnerWeboldal"] forKey:@"partnerWeboldal"];
+            [object setObject:[aktPartner valueForKey:@"partnerXkoordinata"] forKey:@"partnerXkoordinata"];
+            [object setObject:[aktPartner valueForKey:@"partnerYkoordinata"] forKey:@"partnerYkoordinata"];
+            [object setObject:[aktPartner valueForKey:@"partnerIsActive"] forKey:@"partnerIsActive"];
+        }
         
         [json setObject:@"partner" forKey:@"tableName"];
     }

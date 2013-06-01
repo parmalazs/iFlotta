@@ -55,17 +55,10 @@
     }
     
     
-    //self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
-    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunkak];
+    self.freeJobsArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequestSzabadMunkak]];
     
     filteredFreeJobsArray = [NSMutableArray arrayWithCapacity:[self.freeJobsArray count]];
     [[self tableView] reloadData];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -146,35 +139,52 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        
+        if (_isAdmin)
+        {
+            Munka *site = [[self freeJobsArray] objectAtIndex:[indexPath row]];
+            [DataBaseUtil munkaDelete:[[site munkaID] stringValue]];
+            [self.freeJobsArray removeObjectAtIndex:indexPath.row];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
+                                                            message:@"Adott telephely törölve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -275,7 +285,7 @@
 
 -(void)frissit
 {
-    self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunkak];
+    self.freeJobsArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequestSzabadMunkak]];
     filteredFreeJobsArray = [NSMutableArray arrayWithCapacity:[self.freeJobsArray count]];
     [[self tableView] reloadData];
 }
