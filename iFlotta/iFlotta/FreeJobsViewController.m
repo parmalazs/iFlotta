@@ -179,8 +179,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_isAdmin) {
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"freeJobAdminDetails" sender:tableView];
     }else{
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"freeJobDetails" sender:tableView];
     }
 }

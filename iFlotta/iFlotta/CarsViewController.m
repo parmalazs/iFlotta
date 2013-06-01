@@ -143,8 +143,10 @@
 {
     
     if (_isAdmin) {
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"autoAdminViewSegue" sender:tableView];
     }else{
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"vehiclesAutoDetails" sender:tableView];
     }
     

@@ -136,8 +136,10 @@
 {
     
      if (_isAdmin) {
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"kamionAdminViewSegue" sender:tableView];
      }else{
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"vehiclesKamionDetails" sender:tableView];
      }
    // [self performSegueWithIdentifier:@"vehiclesKamionDetails" sender:tableView];

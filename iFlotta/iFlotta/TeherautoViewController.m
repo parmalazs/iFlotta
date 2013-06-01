@@ -136,8 +136,10 @@
 {
     
      if (_isAdmin) {
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"teherautoAdminViewSegue" sender:tableView];
      }else{
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"vehiclesTeherautoDetails" sender:tableView];
      }
     //[self performSegueWithIdentifier:@"vehiclesTeherautoDetails" sender:tableView];

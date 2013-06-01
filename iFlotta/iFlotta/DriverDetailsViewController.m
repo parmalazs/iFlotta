@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    self.navigationItem.backBarButtonItem = nil;
     /// ezeken jelennek meg az adatok
     
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
@@ -121,5 +123,6 @@
     }
     [self dismissModalViewControllerAnimated:YES];
 }
+
 
 @end

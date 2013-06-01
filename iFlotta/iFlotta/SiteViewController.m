@@ -203,8 +203,10 @@
 {
     
     if (_isAdmin) {
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"siteAdminDetails" sender:tableView];
     }else{
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"siteDetails" sender:tableView];
     //[self.navigationController pushViewController:siteDetailsViewController animated:YES];
     }

@@ -140,8 +140,10 @@
 {
     
      if (_isAdmin) {
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"buszAdminViewSegue" sender:tableView];
      }else{
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"vehiclesBuszDetails" sender:tableView];
      }
     
