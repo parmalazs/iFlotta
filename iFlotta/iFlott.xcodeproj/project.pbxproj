@@ -245,6 +245,8 @@
 		6117E886175801880050A39A /* JobAdminDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobAdminDetailsViewController.m; sourceTree = "<group>"; };
 		61793330175A751700C3C367 /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		61793331175A751700C3C367 /* Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		61793332175A755300C3C367 /* NSDataAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		61793333175A755300C3C367 /* NSDataAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		6191DB24175561E000E4B09B /* VehiclesDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehiclesDetailsViewController.h; sourceTree = "<group>"; };
 		6191DB25175561E000E4B09B /* VehiclesDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehiclesDetailsViewController.m; sourceTree = "<group>"; };
 		61938FE8175380E200A56581 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -362,6 +364,8 @@
 				61793330175A751700C3C367 /* Image.h */,
 				61793331175A751700C3C367 /* Image.m */,
 				19C51E55173C6D920000B353 /* JsonUtil.h */,
+				61793332175A755300C3C367 /* NSDataAdditions.h */,
+				61793333175A755300C3C367 /* NSDataAdditions.m */,
 				19C51E56173C6D920000B353 /* JsonUtil.m */,
 				60BF69441759210100BD0918 /* CSVUtil.h */,
 				60BF69451759210100BD0918 /* CSVUtil.m */,
