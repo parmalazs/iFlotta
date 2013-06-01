@@ -135,7 +135,9 @@
 	{
         partner = [self.partnerArray objectAtIndex:[indexPath row]];
         NSLog(@"Partner: %@",[partner partnerNev]);
-        [[(PartnerTableViewCell*)cell partnerLabel] setText:[partner partnerNev]];
+        [[(PartnerTableViewCell*)cell jobName] setText:[partner partnerNev]];
+        [[(PartnerTableViewCell*)cell jobTel] setText:[partner partnerTelefonszam]];
+        [[(PartnerTableViewCell*)cell jobMail] setText:[partner partnerEmailcim]];
     }
     
     return cell;
