@@ -30,6 +30,11 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,10 +60,10 @@
     newBounds.origin.y = newBounds.origin.y + driverSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
-    /*
+    
     self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
     filteredDriverArray = [NSMutableArray arrayWithCapacity:[self.driverArray count]];
-    */
+    
     [[self tableView] reloadData];
 }
 
@@ -115,6 +120,7 @@
     
     if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
+        NSLog(@"%lu",(unsigned long)[filteredDriverArray count]);
         driver = [filteredDriverArray objectAtIndex:[indexPath row]];
         
         [[cell textLabel] setText:[driver soforNev]];
@@ -132,7 +138,12 @@
     
     return cell;
 }
-
+/*
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    
+}
+*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -177,8 +188,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_isAdmin) {
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"driversAdminViewSegue" sender:tableView];
     }else{
+        [self.searchDisplayController setActive:NO animated:YES];
         [self performSegueWithIdentifier:@"driverDetails" sender:tableView];
     }
 }
@@ -190,6 +203,8 @@
         
         if(sender == self.searchDisplayController.searchResultsTableView) {
             NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            //self.frissit;
+            NSLog(@"%lu",(unsigned long)[filteredDriverArray count]);
             driverDetailsViewController.driverData = [filteredDriverArray objectAtIndex: [indexPath row]];
         }
         else {
@@ -208,6 +223,7 @@
 	// Update the filtered array based on the search text and scope.
 	
     // Remove all objects from the filtered search array
+    NSLog(@"ANYÁD");
 	[self.filteredDriverArray removeAllObjects];
     
 	// Filter the array using NSPredicate
@@ -229,7 +245,6 @@
     filteredDriverArray = [NSMutableArray arrayWithArray:tempArray];
 }
 
-
 #pragma mark - UISearchDisplayController Delegate Methods
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -242,6 +257,7 @@
     return YES;
 }
 
+//-(void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 {
@@ -266,7 +282,9 @@
 -(void)frissit
 {
     self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
+    NSLog(@"%lu",(unsigned long)[self.driverArray count]);
     filteredDriverArray = [NSMutableArray arrayWithCapacity:[self.driverArray count]];
+    NSLog(@"%lu",(unsigned long)[filteredDriverArray count]);
     [[self tableView] reloadData];
 }
 

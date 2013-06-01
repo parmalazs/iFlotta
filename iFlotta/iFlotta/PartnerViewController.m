@@ -187,8 +187,10 @@
     
         
         if (_isAdmin) {
+            [self.searchDisplayController setActive:NO animated:YES];
             [self performSegueWithIdentifier:@"contactsAdminViewSegue" sender:tableView];
         }else{
+            [self.searchDisplayController setActive:NO animated:YES];
             [self performSegueWithIdentifier:@"partnerDetails" sender:tableView];
         }
         
@@ -280,7 +282,7 @@
 -(void)frissit
 {
     self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"];
-    filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
+    //filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
     [[self tableView] reloadData];
 }
 -(void)sendCSV {

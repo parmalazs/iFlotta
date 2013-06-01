@@ -136,8 +136,10 @@
 {
     
      if (_isAdmin) {
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"kisteherautoAdminViewSegue" sender:tableView];
      }else{
+         [self.searchDisplayController setActive:NO animated:YES];
      [self performSegueWithIdentifier:@"vehiclesKisteherautoDetails" sender:tableView];
      }
     //[self performSegueWithIdentifier:@"vehiclesKisteherautoDetails" sender:tableView];
