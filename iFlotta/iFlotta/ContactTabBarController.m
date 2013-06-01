@@ -52,11 +52,11 @@
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
         _isAdmin = NO;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Cim szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Cim szerint rendezés",@"image":@"image"},@{@"name":@"Export sofőr",@"image":@"image"},@{@"name":@"Export partner",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:4]];
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új sofőr felvétel",@"image" : @"image"},@{@"name" : @"Új partner felvétel",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Cim szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új sofőr felvétel",@"image" : @"image"},@{@"name" : @"Új partner felvétel",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Cim szerint rendezés",@"image":@"image"},@{@"name":@"Export sofőr",@"image":@"image"},@{@"name":@"Export partner",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:6]];
     }
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
     
@@ -101,19 +101,20 @@
             {
                 NSLog(@"3");
                 pvc.rendezCim;
-                dvc.rendezCim;                
+                dvc.rendezCim;
             }
                 break;
             case 4:
             {
                 NSLog(@"4");
-                pvc.sendCSV;
+                dvc.sendCSV;
             }
+                
                 break;
             default:
             {
                 NSLog(@"5");
-                dvc.sendCSV;
+                pvc.sendCSV;
             }
                 break;
         }
@@ -127,25 +128,27 @@
                 pvc.rendezNev;
                 dvc.rendezNev;
             }
+                
                 break;
             case 1:
             {
-                NSLog(@"1");
+                NSLog(@"0");
                 pvc.rendezCim;
                 dvc.rendezCim;
             }
+                
                 break;
             case 2:
             {
                 NSLog(@"2");
-                pvc.sendCSV;
-                
+                dvc.sendCSV;
             }
+                
                 break;
             default:
             {
                 NSLog(@"3");
-                dvc.sendCSV;                
+                pvc.sendCSV;
             }
                 break;
         }
