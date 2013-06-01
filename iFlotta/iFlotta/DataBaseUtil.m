@@ -693,7 +693,7 @@ static NSString *foglaltautoID;
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Munka" inManagedObjectContext:context];
     
-    NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"munkaIsActive == 1 && soforID != 0"];
+    NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"munkaIsActive == 1 && soforID == 0"];
     
     [fetchRequest setPredicate:IsActivePredicate];
     [fetchRequest setEntity:entity];

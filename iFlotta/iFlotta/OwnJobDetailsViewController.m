@@ -73,7 +73,7 @@
     
     NSLog(@"%@",[obj objectAtIndex:0]);
     
-    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"update"];
+    [JsonUtil JsonBuilderSender:obj :@"Munka" :@"munkalead"];
     
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
