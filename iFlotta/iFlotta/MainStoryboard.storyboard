@@ -389,6 +389,11 @@
                                     <constraint firstItem="GZN-Cu-Iyk" firstAttribute="top" secondItem="blQ-EF-gKU" secondAttribute="top" type="default" id="wRj-Ms-lfH"/>
                                     <constraint firstItem="NYm-Wu-hT0" firstAttribute="top" secondItem="GZN-Cu-Iyk" secondAttribute="top" type="default" id="zBZ-Ib-3sZ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="siteMail" destination="blQ-EF-gKU" id="wbe-mX-PhH"/>
+                                    <outlet property="siteName" destination="GZN-Cu-Iyk" id="9qP-3S-BQh"/>
+                                    <outlet property="siteTel" destination="Xgb-pT-y5U" id="Opt-SJ-QsL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -764,6 +769,11 @@
                                     <constraint firstItem="FY0-JK-0ma" firstAttribute="top" secondItem="XRw-3h-EEi" secondAttribute="top" type="default" id="iv6-ft-yfy"/>
                                     <constraint firstItem="FY0-JK-0ma" firstAttribute="bottom" secondItem="uAk-sh-QnZ" secondAttribute="bottom" type="default" id="ndD-iR-UBL"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="carMail" destination="FY0-JK-0ma" id="9rq-Ts-l3V"/>
+                                    <outlet property="carName" destination="XRw-3h-EEi" id="VzV-Ph-MUE"/>
+                                    <outlet property="carTel" destination="VhK-jg-9RX" id="WdS-dr-Hui"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -867,6 +877,11 @@
                                     <constraint firstItem="M9I-Rv-Z8E" firstAttribute="top" secondItem="fKP-Y2-7jd" secondAttribute="top" type="default" id="tjK-L8-z1y"/>
                                     <constraint firstItem="M9I-Rv-Z8E" firstAttribute="bottom" secondItem="QfO-kj-wSF" secondAttribute="bottom" type="default" id="xw1-mE-RC0"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="buszMail" destination="QfO-kj-wSF" id="fmt-K2-615"/>
+                                    <outlet property="buszName" destination="fKP-Y2-7jd" id="d4P-aD-baZ"/>
+                                    <outlet property="buszTel" destination="iBR-N0-AvN" id="ycu-d5-jM8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -972,6 +987,11 @@
                                     <constraint firstItem="Ifv-wq-noQ" firstAttribute="leading" secondItem="BGG-uE-OyA" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="k3y-6O-PTx"/>
                                     <constraint firstItem="Ifv-wq-noQ" firstAttribute="top" secondItem="BGG-uE-OyA" secondAttribute="top" type="default" id="rt1-oO-fik"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="kamionMail" destination="hZ1-GH-6og" id="hNa-GE-V3y"/>
+                                    <outlet property="kamionName" destination="Ifv-wq-noQ" id="xQp-zn-jjG"/>
+                                    <outlet property="kamionTel" destination="Fxz-C3-7yI" id="VUI-v4-9Gz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1065,15 +1085,20 @@
                                 <constraints>
                                     <constraint firstItem="ujn-dx-LuF" firstAttribute="top" secondItem="7sK-xh-DTM" secondAttribute="top" type="default" id="6JL-mS-D7t"/>
                                     <constraint firstItem="rF3-10-UCa" firstAttribute="trailing" secondItem="ujn-dx-LuF" secondAttribute="trailing" type="default" id="6np-YB-o6M"/>
-                                    <constraint firstItem="rF3-10-UCa" firstAttribute="top" secondItem="zSu-X7-G0k" secondAttribute="top" constant="18" id="ALs-y7-V19"/>
                                     <constraint firstItem="rF3-10-UCa" firstAttribute="leading" secondItem="lzP-RH-JiR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="He3-vA-uD8"/>
                                     <constraint firstItem="ujn-dx-LuF" firstAttribute="top" secondItem="lzP-RH-JiR" secondAttribute="top" type="default" id="L17-ki-ztS"/>
                                     <constraint firstItem="ujn-dx-LuF" firstAttribute="leading" secondItem="lzP-RH-JiR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="MNR-pJ-koz"/>
+                                    <constraint firstItem="rF3-10-UCa" firstAttribute="top" secondItem="zSu-X7-G0k" secondAttribute="top" constant="20" type="default" id="ZYf-5P-LOu"/>
                                     <constraint firstItem="7sK-xh-DTM" firstAttribute="bottom" secondItem="lzP-RH-JiR" secondAttribute="bottom" type="default" id="ZbR-3T-3l5"/>
                                     <constraint firstItem="lzP-RH-JiR" firstAttribute="leading" secondItem="zSu-X7-G0k" secondAttribute="leading" constant="13" id="aen-LL-IfC"/>
                                     <constraint firstAttribute="trailing" secondItem="7sK-xh-DTM" secondAttribute="trailing" constant="20" type="default" id="kxz-0C-kfB"/>
                                     <constraint firstItem="lzP-RH-JiR" firstAttribute="top" secondItem="zSu-X7-G0k" secondAttribute="top" constant="4" id="oWK-mB-l8Z"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="teherautoMail" destination="7sK-xh-DTM" id="hXq-gx-S8J"/>
+                                    <outlet property="teherautoName" destination="ujn-dx-LuF" id="SUI-y2-uej"/>
+                                    <outlet property="teherautoTel" destination="rF3-10-UCa" id="151-74-d4Q"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1176,6 +1201,11 @@
                                     <constraint firstItem="bsT-uy-rFU" firstAttribute="bottom" secondItem="NwX-P1-aiU" secondAttribute="bottom" type="default" id="uHy-8o-jkl"/>
                                     <constraint firstItem="ECy-Rv-JF9" firstAttribute="leading" secondItem="bsT-uy-rFU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wYp-8Z-fqK"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="kisteherautoMail" destination="NwX-P1-aiU" id="6UA-nX-jS2"/>
+                                    <outlet property="kisteherautoName" destination="zOr-ay-Hg1" id="tWu-vg-8vE"/>
+                                    <outlet property="kisteherautoTel" destination="ECy-Rv-JF9" id="PVw-le-UOv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1773,6 +1803,11 @@
                                     <constraint firstItem="tHy-G1-lBN" firstAttribute="top" secondItem="Kcl-uA-ZZA" secondAttribute="top" constant="18" id="hyu-0E-1SR"/>
                                     <constraint firstItem="tHy-G1-lBN" firstAttribute="leading" secondItem="ebf-u0-bd7" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nx5-di-iJ4"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="jobEmail" destination="djU-Py-vMD" id="ME8-PN-XSI"/>
+                                    <outlet property="jobName" destination="Er6-dk-wjl" id="9pF-Hc-CFO"/>
+                                    <outlet property="jobTel" destination="tHy-G1-lBN" id="V4z-Yg-yOl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -2155,6 +2190,11 @@
                                     <constraint firstAttribute="trailing" secondItem="1tn-3y-2Je" secondAttribute="trailing" constant="20" type="default" id="sJ5-a3-3kW"/>
                                     <constraint firstItem="sdc-0u-njr" firstAttribute="top" secondItem="s7X-0P-sp7" secondAttribute="top" type="default" id="t76-RN-LeX"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="jobMail" destination="1tn-3y-2Je" id="3ds-Zi-1nL"/>
+                                    <outlet property="jobName" destination="sdc-0u-njr" id="Ckb-P9-s3s"/>
+                                    <outlet property="jobTel" destination="h3a-Cr-BWh" id="doL-ky-A63"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2555,6 +2595,11 @@
                                     <constraint firstItem="svh-Al-TES" firstAttribute="bottom" secondItem="gEA-yl-xhY" secondAttribute="bottom" type="default" id="rmI-X5-IFu"/>
                                     <constraint firstItem="ebD-5G-fpm" firstAttribute="top" secondItem="svh-Al-TES" secondAttribute="top" type="default" id="wQV-My-l8j"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="jobMail" destination="gEA-yl-xhY" id="w2w-ls-5Mf"/>
+                                    <outlet property="jobName" destination="ebD-5G-fpm" id="Xbc-cI-xT5"/>
+                                    <outlet property="jobTel" destination="xeD-De-fST" id="8Yu-Nb-MhX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -3392,7 +3437,9 @@
         <class className="BuszCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuszCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="buszLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buszMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buszName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buszTel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="BuszViewController" superclassName="UITableViewController">
@@ -3432,6 +3479,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarsTableViewCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="buszLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="carTel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="carsLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -3516,7 +3566,10 @@
         <class className="FreeJobsTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeJobsTableViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="jobEmail" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="jobLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobTel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="FreeJobsViewController" superclassName="UITableViewController">
@@ -3554,6 +3607,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KamionCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="kamionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="kamionMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="kamionName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="kamionTel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="KamionViewController" superclassName="UITableViewController">
@@ -3565,7 +3621,9 @@
         <class className="KisteherautoCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KisteherautoCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="kisteherautoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="kisteherautoMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="kisteherautoName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="kisteherautoTel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="KisteherautoViewController" superclassName="UITableViewController">
@@ -3637,6 +3695,9 @@
         <class className="OwnJobsTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OwnJobsTableViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="jobMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobTel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="ownJobLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -3665,6 +3726,9 @@
         <class className="PartnerTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PartnerTableViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="jobMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="jobTel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="partnerLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -3692,6 +3756,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTableViewCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="siteLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="siteTel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SiteViewController" superclassName="UITableViewController">
@@ -3732,7 +3799,9 @@
         <class className="TeherautoCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TeherautoCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="teherautoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teherautoMail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teherautoName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teherautoTel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TeherautoViewController" superclassName="UITableViewController">
@@ -3763,9 +3832,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hEs-qA-9Qp"/>
-        <segue reference="ceW-pD-zho"/>
         <segue reference="kww-q9-2CX"/>
         <segue reference="4k1-KE-Gjt"/>
+        <segue reference="hEs-qA-9Qp"/>
+        <segue reference="ceW-pD-zho"/>
     </inferredMetricsTieBreakers>
 </document>

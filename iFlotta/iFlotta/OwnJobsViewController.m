@@ -110,7 +110,10 @@
     
     Munka *job= nil;
     job = [self.ownJobsArray objectAtIndex:[indexPath row]];
-    [[cell ownJobLabel] setText:[job munkaDate]];
+    //[[cell ] setText:[job munkaDate]];
+    [[cell jobName] setText:[job munkaDate]];
+    [[cell jobTel] setText:[job munkaBefejezesDate]];
+    [[cell jobMail] setText:[job munkaBevetel]];
     return cell;
 }
 

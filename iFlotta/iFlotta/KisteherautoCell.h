@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface KisteherautoCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *kisteherautoLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *kisteherautoName;
+@property (strong, nonatomic) IBOutlet UILabel *kisteherautoMail;
+
+@property (strong, nonatomic) IBOutlet UILabel *kisteherautoTel;
 @end

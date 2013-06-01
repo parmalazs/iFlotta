@@ -11,5 +11,8 @@
 @interface SiteTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *siteLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *siteName;
+@property (strong, nonatomic) IBOutlet UILabel *siteTel;
+@property (strong, nonatomic) IBOutlet UILabel *siteMail;
 
 @end

@@ -10,5 +10,8 @@
 
 @interface FreeJobsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *jobLabel;
+@property (strong, nonatomic) IBOutlet UILabel *jobTel;
+@property (strong, nonatomic) IBOutlet UILabel *jobEmail;
 
+@property (strong, nonatomic) IBOutlet UILabel *jobName;
 @end

@@ -11,4 +11,7 @@
 @interface KamionCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *kamionLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *kamionName;
+@property (strong, nonatomic) IBOutlet UILabel *kamionTel;
+@property (strong, nonatomic) IBOutlet UILabel *kamionMail;
 @end

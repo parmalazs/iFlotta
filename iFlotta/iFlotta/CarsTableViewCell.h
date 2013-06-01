@@ -11,5 +11,8 @@
 @interface CarsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *carsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *buszLabel;
+@property (strong, nonatomic) IBOutlet UILabel *carMail;
 
+@property (strong, nonatomic) IBOutlet UILabel *carTel;
+@property (strong, nonatomic) IBOutlet UILabel *carName;
 @end

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TeherautoCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *teherautoLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *teherautoName;
+@property (strong, nonatomic) IBOutlet UILabel *teherautoTel;
+@property (strong, nonatomic) IBOutlet UILabel *teherautoMail;
 
 @end

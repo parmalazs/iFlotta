@@ -131,7 +131,9 @@
 	else
 	{
         job = [self.freeJobsArray objectAtIndex:[indexPath row]];
-        [[(FreeJobsTableViewCell*)cell jobLabel] setText:[job munkaDate]];
+        [[(FreeJobsTableViewCell*)cell jobName] setText:[job munkaDate]];
+        [[(FreeJobsTableViewCell*)cell jobTel] setText:[job munkaBefejezesDate]];
+        [[(FreeJobsTableViewCell*)cell jobEmail] setText:[job munkaBevetel].stringValue];
     }
     
     return cell;
