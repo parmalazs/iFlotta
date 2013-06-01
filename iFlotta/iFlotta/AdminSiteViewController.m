@@ -93,6 +93,15 @@
         NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[maxid stringValue]];
         NSLog(@"%@",[obj objectAtIndex:0]);
         [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"insert"];
+        
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
+                                                        message:@"Új telephely feléve!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self.navigationController popViewControllerAnimated: YES];
     }
 }
 // Call this method somewhere in your view controller setup code.

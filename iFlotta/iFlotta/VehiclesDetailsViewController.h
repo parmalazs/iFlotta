@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *speedometer;
 @property (strong, nonatomic) IBOutlet UILabel *fuel;
 
+@property (strong, nonatomic) IBOutlet UIImageView *mapImage;
+
 @property (strong, nonatomic) IBOutlet UILabel *benzin;
 @property (strong, nonatomic) IBOutlet UILabel *tipus;
 @property (strong, nonatomic) IBOutlet UILabel *km;

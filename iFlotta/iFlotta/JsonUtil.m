@@ -143,26 +143,45 @@
         //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
         NSManagedObject *aktMunka = [senderObject objectAtIndex:0];
         
-        [object setObject:[aktMunka valueForKey:@"munkaBefejezesDate"] forKey:@"munkaBefejezesDate"];
-        [object setObject:[aktMunka valueForKey:@"munkaBevetel"] forKey:@"munkaBevetel"];
-        [object setObject:[aktMunka valueForKey:@"munkaComment"] forKey:@"munkaComment"];
-        [object setObject:[aktMunka valueForKey:@"munkaDate"] forKey:@"munkaDate"];
-        [object setObject:[aktMunka valueForKey:@"munkaEstimatedTime"] forKey:@"munkaEstimatedTime"];
-        [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
-        [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
-        [object setObject:[aktMunka valueForKey:@"munkaKoltseg"] forKey:@"munkaKoltseg"];
-        [object setObject:[aktMunka valueForKey:@"munkatipusID"] forKey:@"munkatipusID"];
-        [object setObject:[aktMunka valueForKey:@"munkaUzemanyagState"] forKey:@"munkaUzemanyagState"];
-        [object setObject:[aktMunka valueForKey:@"partnerID"] forKey:@"partnerID"];
-        [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
-        [object setObject:[aktMunka valueForKey:@"telephelyID"] forKey:@"telephelyID"];
+        
+        if ([actionTipus isEqualToString:@"munkalead"])
+        {
+            [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
+            [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
+        }
+        else if ([actionTipus isEqualToString:@"munkafelvesz"])
+        {
+            NSLog(@"munkafelvesz");
+            [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
+            [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
+            
+        }
+        else if ([actionTipus isEqualToString:@"munkadelete"])
+        {
+            [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
+            [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
+        }
+        else
+        {
+            [object setObject:[aktMunka valueForKey:@"munkaBefejezesDate"] forKey:@"munkaBefejezesDate"];
+            [object setObject:[aktMunka valueForKey:@"munkaBevetel"] forKey:@"munkaBevetel"];
+            [object setObject:[aktMunka valueForKey:@"munkaComment"] forKey:@"munkaComment"];
+            [object setObject:[aktMunka valueForKey:@"munkaDate"] forKey:@"munkaDate"];
+            [object setObject:[aktMunka valueForKey:@"munkaEstimatedTime"] forKey:@"munkaEstimatedTime"];
+            [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
+            [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
+            [object setObject:[aktMunka valueForKey:@"munkaKoltseg"] forKey:@"munkaKoltseg"];
+            [object setObject:[aktMunka valueForKey:@"munkatipusID"] forKey:@"munkatipusID"];
+            [object setObject:[aktMunka valueForKey:@"munkaUzemanyagState"] forKey:@"munkaUzemanyagState"];
+            [object setObject:[aktMunka valueForKey:@"partnerID"] forKey:@"partnerID"];
+            [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
+            [object setObject:[aktMunka valueForKey:@"telephelyID"] forKey:@"telephelyID"];
+        }
         
         [json setObject:@"munka" forKey:@"tableName"];
     }
     if ([objectTipus isEqualToString:@"Telephely"])
     {
-        //NSLog(@"TelephelyInsert");
-        //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
         NSManagedObject *aktTelephely = [senderObject objectAtIndex:0];
         
         [object setObject:[aktTelephely valueForKey:@"telephelyCim"] forKey:@"telephelyCim"];

@@ -106,6 +106,14 @@
         NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[maxid stringValue]];
         NSLog(@"%@",[obj objectAtIndex:0]);
         [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
+                                                        message:@"Új munka felvéve!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self.navigationController popViewControllerAnimated: YES];
     }
 }
 // Call this method somewhere in your view controller setup code.

@@ -684,7 +684,24 @@ static NSString *foglaltautoID;
     aktmunka.soforID = [NSNumber numberWithInt:0];
     [self saveContext:context];
 }
-
++ (NSArray*)fetchRequestSzabadMunkak
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Munka" inManagedObjectContext:context];
+    
+    NSPredicate *IsActivePredicate = [NSPredicate predicateWithFormat:@"munkaIsActive == 1 && soforID == 0"];
+    
+    [fetchRequest setPredicate:IsActivePredicate];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
 
 
 +(void)insertSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive

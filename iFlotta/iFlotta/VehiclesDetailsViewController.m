@@ -50,6 +50,13 @@
     self.km.textColor = UIColorFromRGB(0xFFFFFF);
     self.tipus.backgroundColor = UIColorFromRGB(0x46594B);
     self.tipus.textColor = UIColorFromRGB(0xFFFFFF);
+    
+    NSString *staticMapUrl = [NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?center=%f,%f&markers=%f,%f&%@&sensor=true",[[self.adatDetails valueForKey:@"autoXkoordinata"] floatValue], [[self.adatDetails valueForKey:@"autoYkoordinata"] floatValue],[[self.adatDetails valueForKey:@"autoXkoordinata"] floatValue], [[self.adatDetails valueForKey:@"autoYkoordinata"] floatValue],@"zoom=13&size=200x200"];
+    
+    NSLog(staticMapUrl);
+    NSURL *mapUrl = [NSURL URLWithString:[staticMapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:mapUrl]];
+    self.mapImage.image = image;
 }
 
 - (void)didReceiveMemoryWarning
