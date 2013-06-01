@@ -171,8 +171,16 @@
         [DataBaseUtil insertPartner:_contactsAdressTextField.text :_contactsEmailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_contactsNameTextField.text :_contactsWebTextField.text :_contactsTelTextField.text :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithInt:1]];
         
         NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Partner" :@"partnerID" :[maxid stringValue]];
-        NSLog(@"%@",[obj objectAtIndex:0]);
         [JsonUtil JsonBuilderSender:obj :@"Partner" :@"insert"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Partner"
+                                                        message:@"Új partner felvéve!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        [self.navigationController popViewControllerAnimated: YES];
     }
 }
 @end

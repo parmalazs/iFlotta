@@ -130,6 +130,15 @@ self.driverBirthdateTextField.delegate = self;
         NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
         
         [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"insert"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sofőr"
+                                                        message:@"Új sofőr felvéve!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        [self.navigationController popViewControllerAnimated: YES];
     }
 }
 

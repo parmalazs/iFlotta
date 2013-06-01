@@ -21,6 +21,8 @@
 @implementation ContactTabBarController
 {
     BOOL _isAdmin;
+    PartnerViewController *pvc;
+    DriverViewController *dvc;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +31,15 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSArray * vc = [self viewControllers];
+    pvc = [vc objectAtIndex:1];
+    dvc = [vc objectAtIndex:0];
+    pvc.frissit;
+    dvc.frissit;
 }
 
 - (void)viewDidLoad
@@ -41,11 +52,11 @@
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
         _isAdmin = NO;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Cim szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Cim szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új sofőr felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Új partner felvétel",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Cim szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új sofőr felvétel",@"image" : @"image"},@{@"name" : @"Új partner felvétel",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Cim szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
     }
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
     
@@ -60,9 +71,11 @@
 }
 - (void)didSelectItem:(NSDictionary *)item{
     NSLog(@"%@",item);
+    /*
     NSArray * vc = [self viewControllers];
     PartnerViewController *pvc = [vc objectAtIndex:1];
-    DriverViewController *dvc = [vc objectAtIndex:0];
+    DriverViewController *dvc = [vc objectAtIndex:0];*/
+    
     if (_isAdmin)
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {

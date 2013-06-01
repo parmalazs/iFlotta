@@ -16,4 +16,5 @@
 
 -(void)rendezNev;
 -(void)rendezCim;
+-(void)frissit;
 @end

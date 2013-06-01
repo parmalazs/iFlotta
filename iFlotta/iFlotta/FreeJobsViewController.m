@@ -56,8 +56,6 @@
     
     
     self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
-
-    //self.freeJobsArray = [DataBaseUtil fetchRequestSzabadMunka:@"Munka" :@"1" :@"munkaIsActive" :@"0" :@"munkaKoltseg" :[NSNumber numberWithInt:1]];
     
     filteredFreeJobsArray = [NSMutableArray arrayWithCapacity:[self.freeJobsArray count]];
     [[self tableView] reloadData];
@@ -272,4 +270,10 @@
     [[self tableView] reloadData];
 }
 
+-(void)frissit
+{
+    self.freeJobsArray = [DataBaseUtil fetchRequest:@"Munka" :@"1" :@"munkaIsActive"];
+    filteredFreeJobsArray = [NSMutableArray arrayWithCapacity:[self.freeJobsArray count]];
+    [[self tableView] reloadData];
+}
 @end

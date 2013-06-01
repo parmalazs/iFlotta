@@ -59,11 +59,11 @@
     newBounds.origin.y = newBounds.origin.y + partnerSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
+    /*
     self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"];
-    
-    NSLog(@"Adatok: %@",self.partnerArray);
-
     filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
+     */
+    
     [[self tableView] reloadData];
     
     
@@ -274,6 +274,13 @@
 -(void)rendezCim
 {
     self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerCim" :[NSNumber numberWithInt:1]];
+    [[self tableView] reloadData];
+}
+
+-(void)frissit
+{
+    self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive"];
+    filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
     [[self tableView] reloadData];
 }
 

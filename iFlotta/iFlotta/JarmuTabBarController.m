@@ -27,6 +27,13 @@
 @implementation JarmuTabBarController
 {
     BOOL _isAdmin;
+    
+    BOOL _vanautom;
+    CarsViewController *autovc;
+    BuszViewController *buszvc;
+    KamionViewController *kamionvc;
+    TeherautoViewController *teherautovc;
+    KisteherautoViewController *kisteherautovc;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,22 +44,73 @@
     return self;
 }
 
-- (void)viewDidLoad
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-
-    self.delegate = self;
-
+    NSArray * vc = [self viewControllers];
+    autovc = [vc objectAtIndex:0];
+    buszvc = [vc objectAtIndex:1];
+    kamionvc = [vc objectAtIndex:2];
+    teherautovc = [vc objectAtIndex:3];
+    kisteherautovc = [vc objectAtIndex:4];
+    
+    autovc.frissit;
+    buszvc.frissit;
+    kamionvc.frissit;
+    teherautovc.frissit;
+    kisteherautovc.frissit;
+    
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
         _isAdmin = NO;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Jármű leadás",@"image":@"166-newspaper.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        
+        if ([DataBaseUtil autoFoglal:@"kamambert"])
+        {
+            _vanautom=YES;
+            dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Járművem",@"image":@"image"},@{@"name" : @"Jármű leadás",@"image":@"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:4]];
+        }
+        else
+        {
+            dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:2]];
+        }
+        
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új jármű felévete",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Rendszám szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új jármű felévete",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:3]];
     }
+    self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    _vanautom=NO;
+    self.delegate = self;
+
+    
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        _isAdmin = NO;
+        if ([DataBaseUtil autoFoglal:@"kamambert"])
+        {
+            _vanautom=YES;
+            dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Járművem",@"image":@"image"},@{@"name" : @"Jármű leadás",@"image":@"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:4]];
+        }
+        else
+        {
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:2]];
+        }
+
+        
+    }else{
+        _isAdmin = YES;
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új jármű felévete",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:3]];
+    }
+    
+    
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
 
     
@@ -72,14 +130,6 @@
 }
 
 - (void)didSelectItem:(NSDictionary *)item{
-    NSLog(@"%@",item);
-    NSArray * vc = [self viewControllers];
-    CarsViewController *autovc = [vc objectAtIndex:0];
-    BuszViewController *buszvc = [vc objectAtIndex:1];
-    KamionViewController *kamionvc = [vc objectAtIndex:2];
-    TeherautoViewController *teherautovc = [vc objectAtIndex:3];
-    KisteherautoViewController *kisteherautovc = [vc objectAtIndex:4];
-    
     if (_isAdmin)
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
@@ -115,9 +165,10 @@
     else
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
-            case 0:
+            case 1:
             {
-                NSLog(@"0");
+                NSLog(@"1");
+                
                 if ([DataBaseUtil autoFoglal:[DataBaseUtil  foglaltAutoID]])
                 {
                     NSLog(@"Leadjuk");
@@ -128,6 +179,8 @@
                     //NSLog(@"%@",[obj objectAtIndex:0]);
                     
                     [JsonUtil JsonBuilderSender:obj :@"Auto" :@"update"];
+                    
+                    //[self.navigationController popViewControllerAnimated: YES];
                     
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
                                                                     message:@"A járművet sikeresen leadta!"
@@ -142,16 +195,26 @@
                     kamionvc.frissit;
                     teherautovc.frissit;
                     kisteherautovc.frissit;
+                    [dropdownSorted dismiss];
+                    [self viewDidLoad];
+                    
                 }
                 else
                 {
                     NSLog(@"Nincs autód, vegyél fel vmt!");
                 }
+                
             }
                 break;
-            case 1:
+            case 0:
             {
-                NSLog(@"1");
+                NSLog(@"JÁRMŰ MEGTEKINTÉSE");
+
+            }
+                break;
+            case 2:
+            {
+                NSLog(@"2");
                 autovc.rendezNev;
                 buszvc.rendezNev;
                 kamionvc.rendezNev;

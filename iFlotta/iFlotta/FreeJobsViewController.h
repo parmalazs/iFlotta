@@ -14,7 +14,7 @@
 @property (strong,nonatomic) NSMutableArray *filteredFreeJobsArray;
 
 -(void)rendezKoltseg;
-
 -(void)rendezDatum;
+-(void)frissit;
 
 @end

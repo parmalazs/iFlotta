@@ -55,11 +55,10 @@
     newBounds.origin.y = newBounds.origin.y + driverSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
-    
+    /*
     self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
-    
-    
     filteredDriverArray = [NSMutableArray arrayWithCapacity:[self.driverArray count]];
+    */
     [[self tableView] reloadData];
 }
 
@@ -259,5 +258,13 @@
     self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive" :@"soforCim" :[NSNumber numberWithInt:1]];
     [[self tableView] reloadData];
 }
+
+-(void)frissit
+{
+    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
+    filteredDriverArray = [NSMutableArray arrayWithCapacity:[self.driverArray count]];
+    [[self tableView] reloadData];
+}
+
 
 @end

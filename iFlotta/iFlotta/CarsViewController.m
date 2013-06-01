@@ -59,10 +59,11 @@
     newBounds.origin.y = newBounds.origin.y + self.searchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
+    /*
     // itt ird at
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Személygépjármű"];
     
-    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];
+    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];*/
     [[self tableView] reloadData];
     /// eddig masold
     
@@ -235,6 +236,7 @@
 
 -(void)frissit {
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Személygépjármű"];
+    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];
     [[self tableView] reloadData];
 }
 

@@ -22,6 +22,19 @@
 @implementation JobsTabBarController
 {
     BOOL _isAdmin;
+    FreeJobsViewController *freevc;
+    OwnJobsViewController *ownvc;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSArray * vc = [self viewControllers];
+    freevc = [vc objectAtIndex:0];
+    ownvc = [vc objectAtIndex:1];
+    
+    freevc.frissit;
+    ownvc.frissit;
+
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,11 +56,11 @@
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
         _isAdmin = NO;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Dátum szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Dátum szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új munka felévtel",@"image" : @"40-inbox.png"},@{@"name" : @"Név szerint rendezés",@"image":@"166-newspaper.png"},@{@"name":@"Dátum szerint rendezés",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új munka felévtel",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Dátum szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:5]];
     }
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
     
@@ -67,10 +80,11 @@
 }
 - (void)didSelectItem:(NSDictionary *)item{
     NSLog(@"%@",item);
+    /*
     NSArray * vc = [self viewControllers];
     FreeJobsViewController *freevc = [vc objectAtIndex:0];
     OwnJobsViewController *ownvc = [vc objectAtIndex:1];
-    
+    */
     if (_isAdmin)
     {
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {

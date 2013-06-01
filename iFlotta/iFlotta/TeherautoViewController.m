@@ -53,9 +53,11 @@
     newBounds.origin.y = newBounds.origin.y + self.teherautoSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
+    /*
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Teherautó"];
     
     self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];
+     */
     [[self tableView] reloadData];
 }
 
@@ -224,6 +226,7 @@
 
 -(void)frissit {
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Teherautó"];
+    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];
     [[self tableView] reloadData];
 }
 

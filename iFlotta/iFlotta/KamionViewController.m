@@ -54,9 +54,10 @@
     newBounds.origin.y = newBounds.origin.y + self.kamionSearchBar.bounds.size.height;
     [[self tableView] setBounds:newBounds];
     
-    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kamion"];
+    /*self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kamion"];
     
-    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];
+    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];*/
+    
     [[self tableView] reloadData];
 }
 
@@ -226,6 +227,7 @@
 
 -(void)frissit {
     self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kamion"];
+    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];
     [[self tableView] reloadData];
 }
 @end
