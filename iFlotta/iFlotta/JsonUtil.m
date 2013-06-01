@@ -36,12 +36,14 @@
                                     initWithURL:[NSURL
                                                  URLWithString:@"http://www.flotta.host-ed.me/index33.php"]];
     
-    NSData *requestData = [NSData dataWithBytes:[jsonString UTF8String] length:[jsonString length]];
+   // NSData *requestData = [NSData dataWithBytes:[jsonString UTF8String] length:[jsonString length]];
+    NSData *requestData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
     [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json charset=utf-8" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
+    
     [request setHTTPBody: requestData];
     
     
