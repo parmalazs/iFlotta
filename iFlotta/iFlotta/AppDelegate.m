@@ -10,6 +10,9 @@
 #import "DataBaseUtil.h"
 #import "JsonUtil.h"
 #import "Sofor.h"
+#import "ImageConverter.h"
+#import "NSDataAdditions.h"
+
 
 @implementation AppDelegate
 
@@ -41,7 +44,13 @@
     NSLog(@"array: %@", obj);
     
     [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];*/
-    
+//    UIImage * img = [ImageConverter imageFromMainBundleFile:@"autok.png"];
+//    NSLog(@"kep letrehoyas");
+//    NSString * base64 = [ImageConverter getStringFromImage:img];
+//    NSLog(@"%@",base64);
+//    NSMutableDictionary *imageToSend = [[NSMutableDictionary alloc] init];
+//    [imageToSend setObject:base64 forKey:@"image"];
+//    [JsonUtil JsonSender:imageToSend];
     
     [self.window makeKeyAndVisible];
     
