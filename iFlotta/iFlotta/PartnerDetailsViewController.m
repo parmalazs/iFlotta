@@ -46,6 +46,10 @@
     self.telLabel.textColor         = UIColorFromRGB(0xFFFFFF);
     self.emailLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.emailLabel.textColor       = UIColorFromRGB(0xFFFFFF);
+    
+    
+    
+    [CSVUtil PartnerToCSV:[NSArray arrayWithObject:[self.partnerData valueForKey:@"partnerNev"]] :[NSArray arrayWithObject:[self.partnerData valueForKey:@"partnerTelefonszam"]] :[NSArray arrayWithObject:[self.partnerData valueForKey:@"partnerEmailcim"]]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,14 +99,17 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
             break;
         case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
             break;
         case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
             break;
         case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
             break;
-            
         default:
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Sending Failed - Unknown Error :-("

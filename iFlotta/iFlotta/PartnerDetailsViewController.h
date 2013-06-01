@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "CSVUtil.h"
 
 @interface PartnerDetailsViewController : UIViewController <MFMailComposeViewControllerDelegate> { }
 @property (nonatomic, strong) NSManagedObject *partnerData;

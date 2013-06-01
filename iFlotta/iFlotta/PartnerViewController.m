@@ -64,9 +64,7 @@
     NSLog(@"Adatok: %@",self.partnerArray);
 
     filteredPartnerArray = [NSMutableArray arrayWithCapacity:[self.partnerArray count]];
-    [[self tableView] reloadData];
-    
-    
+    [[self tableView] reloadData];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -276,5 +274,68 @@
     self.partnerArray = [DataBaseUtil fetchRequest:@"Partner" :@"1" :@"partnerIsActive" :@"partnerCim" :[NSNumber numberWithInt:1]];
     [[self tableView] reloadData];
 }
+
+-(void)sendCSV {
+    NSMutableArray *partnersName=[NSMutableArray arrayWithCapacity:[self.partnerArray count]] ;
+    for (id akt in self.partnerArray) {
+        [partnersName addObject:[akt partnerNev]];
+    }
+    NSMutableArray *partnersPhone=[NSMutableArray arrayWithCapacity:[self.partnerArray count]] ;
+    for (id akt in self.partnerArray) {
+        [partnersPhone addObject:[akt partnerTelefonszam]];
+    }
+    NSMutableArray *partnersEmail=[NSMutableArray arrayWithCapacity:[self.partnerArray count]] ;
+    for (id akt in self.partnerArray) {
+        [partnersEmail addObject:[akt partnerEmailcim]];
+    }
+    
+    NSString *csv=[CSVUtil PartnerToCSV:partnersName :partnersPhone :partnersEmail];
+    NSData *attachment=[NSData dataWithContentsOfFile:csv];
+    
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self; // &lt;- very important step if you want feedbacks on what the user did with your email sheet
+    
+    [picker setSubject:@"message via iFlotta"];
+    
+    // Fill out the email body text
+    [picker addAttachmentData:attachment mimeType:@"text/csv" fileName:@"partners.csv"];
+    
+    
+    picker.navigationBar.barStyle = UIBarStyleBlack; // choose your style, unfortunately, Translucent colors behave quirky.
+    
+    [self presentModalViewController:picker animated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    // Notifies users about errors associated with the interface
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Sending Failed - Unknown Error :-("
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
+            
+            break;
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
 
 @end
