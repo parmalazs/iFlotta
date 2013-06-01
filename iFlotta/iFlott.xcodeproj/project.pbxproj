@@ -769,6 +769,7 @@
 				6117E887175801880050A39A /* JobAdminDetailsViewController.m in Sources */,
 				60BF69461759210100BD0918 /* CSVUtil.m in Sources */,
 				60E78849175A6BC70003D4D5 /* MapPinAnnotation.m in Sources */,
+				61793336175A777F00C3C367 /* ImageConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

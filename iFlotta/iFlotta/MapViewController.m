@@ -50,7 +50,7 @@
     _mapView.delegate = self;
     
        
-     dropdown = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Autók",@"image" : @"40-inbox.png"},@{@"name" : @"Partnerek",@"image":@"166-newspaper.png"},@{@"name":@"Telephelyek",@"image":@"280-clapboard.png"},@{@"name" : @"Napi útvonal",@"image" : @"40-inbox.png"},@{@"name" : @"Szabad munkák",@"image" : @"40-inbox.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:0]];
+     dropdown = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Autók",@"image" : @"40-inbox.png"},@{@"name" : @"Partnerek",@"image":@"166-newspaper.png"},@{@"name":@"Telephelyek",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:0]];
     
     self.navigationItem.rightBarButtonItem = dropdown.barButton;
     
