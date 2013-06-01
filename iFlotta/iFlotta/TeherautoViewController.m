@@ -123,7 +123,9 @@
 	{
         car = [self.cellLabelName objectAtIndex:[indexPath row]];
         NSLog(@"LOG: %@",[car autoNev]);
-        [[(TeherautoCell*)cell teherautoLabel] setText:[car autoNev]];
+        [[(TeherautoCell*)cell teherautoName] setText:[car autoNev]];
+        [[(TeherautoCell*)cell teherautoTel] setText:[car autoRendszam]];
+        [[(TeherautoCell*)cell teherautoMail] setText:[NSString stringWithFormat:@"%@ liter",[car autoUzemAnyag].stringValue]];
     }
     
     return cell;
