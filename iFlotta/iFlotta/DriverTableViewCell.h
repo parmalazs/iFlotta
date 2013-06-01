@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DriverTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *driverLabel;
+@property (weak, nonatomic) IBOutlet UILabel *driverNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *driverTelLabel;
+@property (strong, nonatomic) IBOutlet UILabel *driverWebLabel;
+@property (strong, nonatomic) IBOutlet UILabel *driverEmailLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *driverImageView;
 
 @end
