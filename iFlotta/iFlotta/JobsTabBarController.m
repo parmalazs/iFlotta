@@ -91,6 +91,7 @@
             case 0:
             {
                 JobAdminDetailsViewController *jobAdminDetailsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"jobAdminDetailsViewController"];
+                jobAdminDetailsViewController.siteData = nil;
                 [self.navigationController pushViewController:jobAdminDetailsViewController animated:YES];
             }
                 break;

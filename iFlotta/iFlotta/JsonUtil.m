@@ -67,8 +67,6 @@
     {
         NSManagedObject *aktsofor = [senderObject objectAtIndex:0];
         
-        
-        
         if ([actionTipus isEqualToString:@"delete"])
         {
             [object setObject:[aktsofor valueForKey:@"soforID"] forKey:@"soforId"];
@@ -76,12 +74,6 @@
         }
         else
         {
-        /*
-        if ([actionTipus isEqualToString:@"update"])
-        {
-            [json setObject:[aktsofor valueForKey:@"soforID"] forKey:@"id"];
-        }*/
-        
         [object setObject:[aktsofor valueForKey:@"soforPass"] forKey:@"soforPass"];
         [object setObject:[aktsofor valueForKey:@"soforNev"] forKey:@"soforNev"];
         [object setObject:[aktsofor valueForKey:@"soforID"] forKey:@"soforId"];
@@ -107,26 +99,6 @@
         {
             [object setObject:[aktauto valueForKey:@"autoID"] forKey:@"autoId"];
             [object setObject:@"0" forKey:@"autoIsActive"];
-        }
-        else
-        if ([actionTipus isEqualToString:@"update"])
-        {
-            [object setObject:[aktauto valueForKey:@"autoID"] forKey:@"autoId"];
-            [object setObject:[aktauto valueForKey:@"autoFoglalt"] forKey:@"autoFoglalt"];
-            [object setObject:[aktauto valueForKey:@"autoNev"] forKey:@"autoNev"];
-            [object setObject:[aktauto valueForKey:@"autoIsActive"] forKey:@"autoIsActive"];
-            [object setObject:[aktauto valueForKey:@"autoLastSoforID"] forKey:@"autoLastSoforID"];
-            [object setObject:[aktauto valueForKey:@"autoRendszam"] forKey:@"autoRendszam"];
-            [object setObject:[aktauto valueForKey:@"autoTipus"] forKey:@"autoTipus"];
-            [object setObject:[aktauto valueForKey:@"autoKilometerOra"] forKey:@"autoKilometerOra"];
-            [object setObject:[aktauto valueForKey:@"autoLastTelephelyID"] forKey:@"autoLastTelephelyID"];
-            [object setObject:[aktauto valueForKey:@"autoUzemAnyag"] forKey:@"autoUzemAnyag"];
-            [object setObject:[aktauto valueForKey:@"autoLastSzervizDate"] forKey:@"autoLastSzervizDate"];
-            [object setObject:[aktauto valueForKey:@"autoLastUpDate"] forKey:@"autoLastUpDate"];
-            [object setObject:[aktauto valueForKey:@"autoMuszakiVizsgaDate"] forKey:@"autoMuszakiVizsgaDate"];
-            [object setObject:[aktauto valueForKey:@"autoProfilKepID"] forKey:@"autoProfilKepID"];
-            [object setObject:[aktauto valueForKey:@"autoXkoordinata"] forKey:@"autoXkoordinata"];
-            [object setObject:[aktauto valueForKey:@"autoYkoordinata"] forKey:@"autoYkoordinata"];
         }
         else
         {
@@ -206,13 +178,6 @@
             [object setObject:@"0" forKey:@"telephelyIsActive"];
         }
         else
-        if ([actionTipus isEqualToString:@"update"])
-        {
-            [object setObject:[aktTelephely valueForKey:@"telephelyID"] forKey:@"telephelyId"];
-            [object setObject:[aktTelephely valueForKey:@"telephelyIsActive"] forKey:@"telephelyIsActive"];
-            [object setObject:[aktTelephely valueForKey:@"telephelyNev"] forKey:@"telephelyNev"];
-        }
-        else
         {
             [object setObject:[aktTelephely valueForKey:@"telephelyCim"] forKey:@"telephelyCim"];
             [object setObject:[aktTelephely valueForKey:@"telephelyEmail"] forKey:@"telephelyEmail"];
@@ -228,8 +193,6 @@
     }
     if ([objectTipus isEqualToString:@"Partner"])
     {
-        //NSLog(@"PartnerInsert");
-        //NSLog(@"ADATOK KÜLDÉSHEZ: %@",[senderObject objectAtIndex:0]);
         NSManagedObject *aktPartner = [senderObject objectAtIndex:0];
         
         
@@ -237,13 +200,6 @@
         {
             [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
             [object setObject:@"0" forKey:@"partnerIsActive"];
-        }
-        else
-        if ([actionTipus isEqualToString:@"update"])
-        {
-            [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
-            [object setObject:[aktPartner valueForKey:@"partnerIsActive"] forKey:@"partnerIsActive"];
-            [object setObject:[aktPartner valueForKey:@"partnerNev"] forKey:@"partnerNev"];
         }
         else
         {

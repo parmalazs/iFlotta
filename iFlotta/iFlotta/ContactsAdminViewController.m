@@ -188,18 +188,35 @@
     }
     else
     {
-
-        [DataBaseUtil insertPartner:_contactsAdressTextField.text :_contactsEmailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_contactsNameTextField.text :_contactsWebTextField.text :_contactsTelTextField.text :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithInt:1]];
         
-        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Partner" :@"partnerID" :[maxid stringValue]];
-        [JsonUtil JsonBuilderSender:obj :@"Partner" :@"insert"];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Partner"
-                                                        message:@"Új partner felvéve!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        if (self.siteData == nil)
+        {
+            [DataBaseUtil insertPartner:_contactsAdressTextField.text :_contactsEmailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_contactsNameTextField.text :_contactsWebTextField.text :_contactsTelTextField.text :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithInt:1]];
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Partner" :@"partnerID" :[maxid stringValue]];
+            [JsonUtil JsonBuilderSender:obj :@"Partner" :@"insert"];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Partner"
+                                                            message:@"Új partner felvéve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            [DataBaseUtil updatePartner:_contactsAdressTextField.text :_contactsEmailTextField.text :[[NSNumber alloc] initWithInt:[[self.siteData valueForKey:@"partnerID"] intValue]] :_contactsNameTextField.text :_contactsWebTextField.text :_contactsTelTextField.text :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_contactsXTextField text] doubleValue] ] :[[NSNumber alloc] initWithInt:1]];
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Partner" :@"partnerID" :[[self.siteData valueForKey:@"partnerID"] stringValue]];
+            [JsonUtil JsonBuilderSender:obj :@"Partner" :@"update"];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Partner"
+                                                            message:@"Partner módositva!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
         
         [self.navigationController popViewControllerAnimated: YES];
     }

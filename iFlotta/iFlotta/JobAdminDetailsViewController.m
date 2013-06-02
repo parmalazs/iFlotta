@@ -127,22 +127,40 @@
     }
     else
     {
+        
+        if (self.siteData == nil)
+        {
+            [DataBaseUtil insertMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"2012.02.12" :[[NSNumber alloc] initWithInt:[maxid intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
+            
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[maxid stringValue]];
+            NSLog(@"%@",[obj objectAtIndex:0]);
+            [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
+                                                            message:@"Új munka felvéve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            [DataBaseUtil updateMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"2012.02.12" :[[NSNumber alloc] initWithInt:[[self.siteData valueForKey:@"munkaID"] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
+            
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[[self.siteData valueForKey:@"munkaID"] stringValue]];
+            NSLog(@"%@",[obj objectAtIndex:0]);
+            [JsonUtil JsonBuilderSender:obj :@"Munka" :@"update"];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
+                                                            message:@"Munka módositva!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
 
-        // VAN EGY PÁR ÉGETETT ADAT, AZOKAT ÁTIRNI MÉG!
-        
-        [DataBaseUtil insertMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"2012.02.12" :[[NSNumber alloc] initWithInt:[maxid intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
-        
-        
-        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[maxid stringValue]];
-        NSLog(@"%@",[obj objectAtIndex:0]);
-        [JsonUtil JsonBuilderSender:obj :@"Munka" :@"insert"];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
-                                                        message:@"Új munka felvéve!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
         [self.navigationController popViewControllerAnimated: YES];
     }
 }

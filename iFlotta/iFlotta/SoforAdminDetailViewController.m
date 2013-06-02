@@ -45,22 +45,7 @@ self.driverPasswordTextField.delegate = self;
 //self.driverIsAdminTextField.delegate = self ;
 self.driverBirthdateTextField.delegate = self;
     
-    /*
-     @dynamic soforBirthDate;
-     @dynamic soforCim;
-     @dynamic soforEmail;
-     @dynamic soforID;
-     @dynamic soforIsAdmin;
-     @dynamic soforLogin;
-     @dynamic soforNev;
-     @dynamic soforPass;
-     @dynamic soforProfilKepId;
-     @dynamic soforRegTime;
-     @dynamic soforTelefonszam;
-     @dynamic soforIsActive;
-     @dynamic autoRelationship;
-     @dynamic munka;
-     @dynamic profilkep;*/
+
     
     self.driverNameLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverNameLabel.textColor = UIColorFromRGB(0xFFFFFF);
@@ -135,19 +120,36 @@ self.driverBirthdateTextField.delegate = self;
     }
     else
     {
-        
-        [DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:[maxid intValue]] :_driverNameTextField.text  :_driverAdressTextField.text :_driverLoginTextField.text :_driverPasswordTextField.text :_driverTelTextField.text :@"DateNow" :_driverBirthdateTextField.text :_driverEmailTextField.text :[[NSNumber alloc] initWithInt:0] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithInt:1]];
-        
-        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
-        
-        [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"insert"];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sofőr"
-                                                        message:@"Új sofőr felvéve!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        if (self.siteData == nil)
+        {
+            [DataBaseUtil insertSofor:[[NSNumber alloc] initWithInt:[maxid intValue]] :_driverNameTextField.text  :_driverAdressTextField.text :_driverLoginTextField.text :_driverPasswordTextField.text :_driverTelTextField.text :@"DateNow" :_driverBirthdateTextField.text :_driverEmailTextField.text :[[NSNumber alloc] initWithInt:0] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithInt:1]];
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[maxid stringValue] ];
+            
+            [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"insert"];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sofőr"
+                                                            message:@"Új sofőr felvéve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            [DataBaseUtil updateSofor:[[NSNumber alloc] initWithInt:[[self.siteData valueForKey:@"soforID"] intValue]] :_driverNameTextField.text  :_driverAdressTextField.text :_driverLoginTextField.text :_driverPasswordTextField.text :_driverTelTextField.text :@"DateNow" :_driverBirthdateTextField.text :_driverEmailTextField.text :[[NSNumber alloc] initWithInt:0] :[[NSNumber alloc] initWithInt:2] :[[NSNumber alloc] initWithInt:1]];
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Sofor" :@"soforID" :[[self.siteData valueForKey:@"soforID"] stringValue] ];
+            
+            [JsonUtil JsonBuilderSender:obj :@"Sofor" :@"update"];
+            
+            UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"Sofőr"
+                                                            message:@"Sofőr módositva!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert2 show];
+        }
         
         [self.navigationController popViewControllerAnimated: YES];
     }

@@ -9,6 +9,7 @@
 #import "OwnJobDetailsViewController.h"
 #import "DataBaseUtil.h"
 #import "JsonUtil.h"
+#import "Munkatipus.h"
 
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -31,22 +32,31 @@
 {
     [super viewDidLoad];
 	self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    //    self.jobAttribute1.text = [self.driverData valueForKey:@"soforCim"];
+    
+    // ITT LEKÉRDEZNI
+    NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[[self ownJobData] valueForKey:@"munkatipusID"] stringValue]];
+    
+    Munkatipus * mt = [tmp objectAtIndex:0];
+    self.jobAttribute1.text = [mt munkaTipusNev];
+    
+    //self.jobAttribute1.text = [self.freeJobData valueForKey:@"munkatipusID"];
     self.jobAttribute1.backgroundColor = UIColorFromRGB(0xD9B384);
     self.jobAttribute1.textColor = UIColorFromRGB(0x260B01);
-    //    self.jobAttribute2.text = [self.driverData valueForKey:@"soforNev"];
+    self.jobAttribute2.text = [[self.ownJobData valueForKey:@"munkaUzemanyagState"] stringValue];
     self.jobAttribute2.backgroundColor = UIColorFromRGB(0xD9B384);
     self.jobAttribute2.textColor = UIColorFromRGB(0x260B01);
     
-    //    self.jobAttribute3.text = [self.driverData valueForKey:@"soforTelefonszam"];
+    self.jobAttribute3.text = [[self.ownJobData valueForKey:@"munkaBevetel"] stringValue];
     self.jobAttribute3.backgroundColor = UIColorFromRGB(0xD9B384);
     self.jobAttribute3.textColor = UIColorFromRGB(0x260B01);
-    //    self.jobAttribute4.text = [self.driverData valueForKey:@"soforEmail"];
+    self.jobAttribute4.text = [[self.ownJobData valueForKey:@"munkaKoltseg"] stringValue];
     self.jobAttribute4.backgroundColor = UIColorFromRGB(0xD9B384);
     self.jobAttribute4.textColor = UIColorFromRGB(0x260B01);
     
     self.jobAttribute5.backgroundColor = UIColorFromRGB(0xD9B384);
     self.jobAttribute5.textColor = UIColorFromRGB(0x260B01);
+    
+    self.jobAttribute5.text = [self.ownJobData valueForKey:@"munkaComment"];
     
     /// ezek a labelek
     self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);

@@ -108,31 +108,38 @@
         
         if (self.siteData == nil)
         {
-        [DataBaseUtil insertTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
+            [DataBaseUtil insertTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
+            
             NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[maxid stringValue]];
             [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"insert"];
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
+                                                            message:@"Új telephely feléve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
         }
         else
         {
             NSLog(@"%@",_siteNevTextField.text);
             NSLog(@"%@",[[self siteData] valueForKey:@"telephelyID"]);
             
-            [DataBaseUtil insertTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[[self.siteData valueForKey:@"telephelyID"] intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
+            [DataBaseUtil updateTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[[self.siteData valueForKey:@"telephelyID"] intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
+            
             NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[[self.siteData valueForKey:@"telephelyID"] stringValue]];
-            NSLog(@"%@",[[obj objectAtIndex:0] valueForKey:@"telephelyNev"]);
-            NSLog(@"%@",[[obj objectAtIndex:0] valueForKey:@"telephelyID"]);
             [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"update"];
+            
+            UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"Telephely"
+                                                            message:@"Telephely módositva!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert2 show];
         }
         
-        
-        
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
-                                                        message:@"Új telephely feléve!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+
         [self.navigationController popViewControllerAnimated: YES];
         
     }

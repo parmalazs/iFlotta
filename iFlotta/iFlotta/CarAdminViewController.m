@@ -79,7 +79,7 @@
 
     self.carSpeedometerLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carSpeedometerLabel.textColor = UIColorFromRGB(0xFFFFFF);
-    self.carSpeedometerTextField.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
+    self.carSpeedometerTextField.text = [[self.adatDetails valueForKey:@"autoKilometerOra"] stringValue];
     
     self.carRendszamLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carRendszamLabel.textColor = UIColorFromRGB(0xFFFFFF);
@@ -91,23 +91,19 @@
     
     self.carServiceLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carServiceLabel.textColor = UIColorFromRGB(0xFFFFFF);
-    self.carServiceTextField.text = [self.adatDetails valueForKey:@"autoSzervizDate"];
+    self.carServiceTextField.text = [self.adatDetails valueForKey:@"autoLastSzervizDate"];
     
     self.carXLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carXLabel.textColor = UIColorFromRGB(0xFFFFFF);
-    self.carXTextField.text = [self.adatDetails valueForKey:@"autoXkoordinata"];
+    self.carXTextField.text = [[self.adatDetails valueForKey:@"autoXkoordinata"] stringValue];
    
     self.carYLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carYLabel.textColor = UIColorFromRGB(0xFFFFFF);
-    self.carYTextField.text = [self.adatDetails valueForKey:@"autoYkoordinata"];
+    self.carYTextField.text = [[self.adatDetails valueForKey:@"autoYkoordinata"] stringValue];
     
     self.carFuelLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carFuelLabel.textColor = UIColorFromRGB(0xFFFFFF);
-    self.carFuelTextField.text = [self.adatDetails valueForKey:@"autoUzemanyag"];
-    
-    
-    
-    
+    self.carFuelTextField.text = [[self.adatDetails valueForKey:@"autoUzemAnyag"] stringValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,26 +148,37 @@
     }
     else
     {
-        [DataBaseUtil insertAuto:[[NSNumber alloc] initWithInt:[maxid intValue]] :_carNameTextField.text :_carRendszamTextField.text :_carTypeTextField.text :_carServiceTextField.text :_carServiceTextField.text :_carMuszakiTextField.text :[[NSNumber alloc] initWithInt:[[_carSpeedometerTextField text] intValue]] :[[NSNumber alloc] initWithInt:11] :[[NSNumber alloc] initWithInt:[[_carFuelTextField text] intValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:2]];
-        
-        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Auto" :@"autoID" :[maxid stringValue] ];
-        
-        NSLog(@"%@",[obj objectAtIndex:0]);
-        
-        
         if (self.adatDetails == nil)
+        {
+            [DataBaseUtil insertAuto:[[NSNumber alloc] initWithInt:[maxid intValue]] :_carNameTextField.text :_carRendszamTextField.text :_carTypeTextField.text :_carServiceTextField.text :_carServiceTextField.text :_carMuszakiTextField.text :[[NSNumber alloc] initWithInt:[[_carSpeedometerTextField text] intValue]] :[[NSNumber alloc] initWithInt:11] :[[NSNumber alloc] initWithInt:[[_carFuelTextField text] intValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:2]];
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Auto" :@"autoID" :[maxid stringValue] ];
             [JsonUtil JsonBuilderSender:obj :@"Auto" :@"insert"];
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
+                                                            message:@"Új jármű felvéve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+            
         else
+        {
+            [DataBaseUtil updateAuto:[[NSNumber alloc] initWithInt:[[self.adatDetails valueForKey:@"autoID" ] intValue]] :_carNameTextField.text :_carRendszamTextField.text :_carTypeTextField.text :_carServiceTextField.text :_carServiceTextField.text :_carMuszakiTextField.text :[[NSNumber alloc] initWithInt:[[_carSpeedometerTextField text] intValue]] :[[NSNumber alloc] initWithInt:11] :[[NSNumber alloc] initWithInt:[[_carFuelTextField text] intValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue] ] :[[NSNumber alloc] initWithDouble:[[_carXTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:2]];
+            
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Auto" :@"autoID" :[[[self adatDetails] valueForKey:@"autoID"] stringValue] ];
             [JsonUtil JsonBuilderSender:obj :@"Auto" :@"update"];
- 
-        
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
-                                                        message:@"Új jármű felvéve!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
+                                                            message:@"Jármű módositva!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
         
         [self.navigationController popViewControllerAnimated: YES];
     }

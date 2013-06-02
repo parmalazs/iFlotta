@@ -780,7 +780,29 @@ static NSString *foglaltautoID;
     
     [self saveContext:context];
 }
-
++(void)updateSofor:(NSNumber*) soforID : (NSString*) soforNev : (NSString*) soforCim : (NSString*) soforLogin : (NSString*) soforPass : (NSString*) soforTelefonszam : (NSString*) soforRegTime : (NSString*) soforBirthDate : (NSString*) soforEmail : (NSNumber*) soforIsAdmin : (NSNumber*) soforProfilKepId : (NSNumber*) soforIsActive
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Sofor" :@"soforID" :[soforID stringValue]];
+    
+    Sofor* newSofor = [munkafelvesz objectAtIndex:0];
+    
+    [newSofor setValue:soforNev forKey:@"soforNev"];
+    [newSofor setValue:soforLogin forKey:@"soforLogin"];
+    [newSofor setValue:soforPass forKey:@"soforPass"];
+    [newSofor setValue:[NSNumber numberWithBool:[soforIsActive boolValue]] forKey:@"soforIsActive"];
+    [newSofor setValue:[NSNumber numberWithBool:[soforIsAdmin boolValue] ] forKey:@"soforIsAdmin"];
+    [newSofor setValue:[NSNumber numberWithInt:[soforID intValue]] forKey:@"soforID"];
+    [newSofor setValue:[NSNumber numberWithInt:[soforProfilKepId intValue]] forKey:@"soforProfilKepId"];
+    [newSofor setValue:soforBirthDate forKey:@"soforBirthDate"];
+    [newSofor setValue:soforCim forKey:@"soforCim"];
+    [newSofor setValue:soforEmail forKey:@"soforEmail"];
+    [newSofor setValue:soforRegTime forKey:@"soforRegTime"];
+    [newSofor setValue:soforTelefonszam forKey:@"soforTelefonszam"];
+    
+    [self saveContext:context];
+}
 
 
 +(void)insertAuto:(NSNumber*) autoID : (NSString*) autoNev : (NSString*) autoRendszam : (NSString*) autoTipus : (NSString*) autoLastSzervizDate : (NSString*) autoLastUpDate : (NSString*) autoMuszakiVizsgaDate : (NSNumber*) autoKilometerOra : (NSNumber*) autoLastTelephelyID : (NSNumber*) autoUzemAnyag : (NSNumber*) autoXkoordinata : (NSNumber*) autoYkoordinata : (NSNumber*) autoProfilKepID
@@ -813,6 +835,34 @@ static NSString *foglaltautoID;
     [self saveContext:context];
 }
 
++(void)updateAuto:(NSNumber*) autoID : (NSString*) autoNev : (NSString*) autoRendszam : (NSString*) autoTipus : (NSString*) autoLastSzervizDate : (NSString*) autoLastUpDate : (NSString*) autoMuszakiVizsgaDate : (NSNumber*) autoKilometerOra : (NSNumber*) autoLastTelephelyID : (NSNumber*) autoUzemAnyag : (NSNumber*) autoXkoordinata : (NSNumber*) autoYkoordinata : (NSNumber*) autoProfilKepID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Auto" :@"autoID" :[autoID stringValue]];
+    
+    Auto* newAuto = [munkafelvesz objectAtIndex:0];
+    
+    // Üres sztring vizsgálatok kellenek még!!!!;
+    [newAuto setValue:[NSNumber numberWithInt:[autoID intValue]] forKey:@"autoID"];
+    [newAuto setValue:autoNev forKey:@"autoNev"];
+    [newAuto setValue:[NSNumber numberWithInt:1] forKey:@"autoIsActive"];
+    [newAuto setValue:[NSNumber numberWithInt:0] forKey:@"autoFoglalt"];
+    [newAuto setValue:[NSNumber numberWithInt:0] forKey:@"autoLastSoforID"];
+    [newAuto setValue:autoRendszam forKey:@"autoRendszam"];
+    [newAuto setValue:autoTipus forKey:@"autoTipus"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoKilometerOra intValue]] forKey:@"autoKilometerOra"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoLastTelephelyID intValue]] forKey:@"autoLastTelephelyID"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoUzemAnyag intValue]] forKey:@"autoUzemAnyag"];
+    [newAuto setValue:autoLastSzervizDate forKey:@"autoLastSzervizDate"];
+    [newAuto setValue:autoLastUpDate forKey:@"autoLastUpDate"];
+    [newAuto setValue:autoMuszakiVizsgaDate forKey:@"autoMuszakiVizsgaDate"];
+    [newAuto setValue:[NSNumber numberWithInt:[autoProfilKepID intValue]] forKey:@"autoProfilKepID"];
+    [newAuto setValue:[NSNumber numberWithDouble:[autoXkoordinata doubleValue]] forKey:@"autoXkoordinata"];
+    [newAuto setValue:[NSNumber numberWithDouble:[autoYkoordinata doubleValue]] forKey:@"autoYkoordinata"];
+
+    [self saveContext:context];
+}
 
 +(void)insertTelephely:(NSString*) telephelyCim : (NSString*) telephelyEmail : (NSNumber*) telephelyID : (NSString*) telephelyNev : (NSString*) telephelyTelefonszam : (NSNumber*) telephelyXkoordinata : (NSNumber*) telephelyYkoordinata : (NSNumber*) telephelyIsActive
 {
@@ -835,15 +885,55 @@ static NSString *foglaltautoID;
     
     [self saveContext:context];
 }
-
-+(void)insertPartner:(NSString*) partnerCim : (NSString*) partnerEmailcim : (NSNumber*) partnerID : (NSString*) partnerNev : (NSString*) partnerWeboldal : (NSString*) partnerTelefonszam : (NSNumber*) partnerXkoordinata : (NSNumber*) partnerYkoordinata : (NSNumber*) partnerIsActive
++(void)updateTelephely:(NSString*) telephelyCim : (NSString*) telephelyEmail : (NSNumber*) telephelyID : (NSString*) telephelyNev : (NSString*) telephelyTelefonszam : (NSNumber*) telephelyXkoordinata : (NSNumber*) telephelyYkoordinata : (NSNumber*) telephelyIsActive
 {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
     
-    Partner* newPartner = [NSEntityDescription
-                           insertNewObjectForEntityForName:@"Partner"
-                           inManagedObjectContext:context];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Telephely" :@"telephelyID" :[telephelyID stringValue]];
     
+    Telephely* newTelephely = [munkafelvesz objectAtIndex:0];
+    
+    // Üres sztring vizsgálatok kellenek még!!!!;
+    [newTelephely setValue : telephelyCim forKey : @"telephelyCim"];
+    [newTelephely setValue : telephelyEmail forKey : @"telephelyEmail"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyID intValue]] forKey:@"telephelyID"];
+    [newTelephely setValue:telephelyNev forKey:@"telephelyNev"];
+    [newTelephely setValue:telephelyTelefonszam forKey:@"telephelyTelefonszam"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyXkoordinata intValue]] forKey:@"telephelyXkoordinata"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyYkoordinata intValue]] forKey:@"telephelyYkoordinata"];
+    [newTelephely setValue:[NSNumber numberWithInt:[telephelyIsActive intValue]] forKey:@"telephelyIsActive"];
+    
+    [self saveContext:context];
+}
++(void)insertPartner:(NSString*) partnerCim : (NSString*) partnerEmailcim : (NSNumber*) partnerID : (NSString*) partnerNev : (NSString*) partnerWeboldal : (NSString*) partnerTelefonszam : (NSNumber*) partnerXkoordinata : (NSNumber*) partnerYkoordinata : (NSNumber*) partnerIsActive
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    Partner* newPartner = [NSEntityDescription
+                       insertNewObjectForEntityForName:@"Partner"
+                       inManagedObjectContext:context];
+    
+    // Üres sztring vizsgálatok kellenek még!!!!;
+    [newPartner setValue : partnerCim forKey : @"partnerCim"];
+    [newPartner setValue : partnerEmailcim forKey : @"partnerEmailcim"];
+    [newPartner setValue:[NSNumber numberWithInt: [partnerID intValue]] forKey:@"partnerID"];
+    [newPartner setValue:partnerNev forKey:@"partnerNev"];
+    [newPartner setValue:partnerTelefonszam forKey:@"partnerTelefonszam"];
+    [newPartner setValue:partnerWeboldal forKey:@"partnerWeboldal"];
+    [newPartner setValue:[NSNumber numberWithInt:[partnerXkoordinata intValue]] forKey:@"partnerXkoordinata"];
+    [newPartner setValue:[NSNumber numberWithInt:[partnerYkoordinata intValue]] forKey:@"partnerYkoordinata"];
+    [newPartner setValue:[NSNumber numberWithInt:[partnerIsActive intValue]] forKey:@"partnerIsActive"];
+    
+    [self saveContext:context];
+}
+
++(void)updatePartner:(NSString*) partnerCim : (NSString*) partnerEmailcim : (NSNumber*) partnerID : (NSString*) partnerNev : (NSString*) partnerWeboldal : (NSString*) partnerTelefonszam : (NSNumber*) partnerXkoordinata : (NSNumber*) partnerYkoordinata : (NSNumber*) partnerIsActive
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Partner" :@"partnerID" :[partnerID stringValue]];
+    
+    Partner* newPartner = [munkafelvesz objectAtIndex:0];
+
     
     // Üres sztring vizsgálatok kellenek még!!!!;
     [newPartner setValue : partnerCim forKey : @"partnerCim"];
@@ -884,7 +974,31 @@ static NSString *foglaltautoID;
     
     [self saveContext:context];
 }
-
++(void)updateMunka:(NSString*) munkaBefejezesDate : (NSNumber*) munkaBevetel : (NSString*) munkaComment : (NSString*) munkaDate : (NSString*) munkaEstimatedTime : (NSNumber*) munkaID :(NSNumber*) munkaIsActive : (NSNumber*) munkaKoltseg : (NSNumber*) munkatipusID : (NSNumber*) munkaUzemanyagState : (NSNumber*) partnerID : (NSNumber*) soforID : (NSNumber*) telephelyID
+{
+    
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Munka" :@"munkaID" :[munkaID stringValue]];
+    
+    Munka* newMunka = [munkafelvesz objectAtIndex:0];
+    
+    [newMunka setValue : munkaBefejezesDate forKey : @"munkaBefejezesDate"];
+    [newMunka setValue:[NSNumber numberWithInt: [munkaBevetel intValue]] forKey:@"munkaBevetel"];
+    [newMunka setValue: munkaComment forKey:@"munkaComment"];
+    [newMunka setValue:munkaDate forKey:@"munkaDate"];
+    [newMunka setValue:munkaEstimatedTime forKey:@"munkaEstimatedTime"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaID intValue]] forKey:@"munkaID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaIsActive intValue ]] forKey:@"munkaIsActive"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaKoltseg intValue ]] forKey:@"munkaKoltseg"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkatipusID intValue ]] forKey:@"munkatipusID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ munkaUzemanyagState intValue ]] forKey:@"munkaUzemanyagState"];
+    [newMunka setValue: [NSNumber numberWithInt: [ partnerID intValue ]] forKey:@"partnerID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ soforID intValue ]] forKey:@"soforID"];
+    [newMunka setValue: [NSNumber numberWithInt: [ telephelyID intValue ]] forKey:@"telephelyID"];
+    
+    [self saveContext:context];
+}
 
 
 + (NSNumber*)fetchRequestMaxID:(NSString*) entityName : (NSString*) sortName {
