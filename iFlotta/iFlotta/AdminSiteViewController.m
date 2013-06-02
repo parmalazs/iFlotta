@@ -63,8 +63,8 @@
     self.cimTextField.text = [self.siteData valueForKey:@"telephelyCim"];
     self.telTextField.text = [self.siteData valueForKey:@"telephelyTelefonszam"];
     self.emailTextField.text = [self.siteData valueForKey:@"telephelyEmail"];
-    self.xTextField.text = [self.siteData valueForKey:@"telephelyXkoordinata"];
-    self.yTextField.text = [self.siteData valueForKey:@"telephelyYkoordinata"];
+    self.xTextField.text = [[self.siteData valueForKey:@"telephelyXkoordinata"] stringValue];
+    self.yTextField.text = [[self.siteData valueForKey:@"telephelyYkoordinata"] stringValue];
     
 }
 
