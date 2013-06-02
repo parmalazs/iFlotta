@@ -36,6 +36,18 @@
 {
     [super viewDidLoad];
     
+    /*
+     @dynamic telephelyCim;
+     @dynamic telephelyEmail;
+     @dynamic telephelyID;
+     @dynamic telephelyNev;
+     @dynamic telephelyTelefonszam;
+     @dynamic telephelyXkoordinata;
+     @dynamic telephelyYkoordinata;
+     @dynamic telephelyIsActive;
+     @dynamic autoRelationship;
+     @dynamic munka;
+     */
     
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
@@ -46,6 +58,13 @@
     self.emailTextField.delegate = self;
     self.xTextField.delegate = self;
     self.yTextField.delegate = self;
+    
+    self.siteNevTextField.text = [self.siteData valueForKey:@"telephelyNev"];
+    self.cimTextField.text = [self.siteData valueForKey:@"telephelyCim"];
+    self.telTextField.text = [self.siteData valueForKey:@"telephelyTelefonszam"];
+    self.emailTextField.text = [self.siteData valueForKey:@"telephelyEmail"];
+    self.xTextField.text = [self.siteData valueForKey:@"telephelyXkoordinata"];
+    self.yTextField.text = [self.siteData valueForKey:@"telephelyYkoordinata"];
     
 }
 
