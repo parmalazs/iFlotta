@@ -10,7 +10,7 @@
 
 @interface BuszViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *buszSearchBar;
-@property (nonatomic, strong) NSArray *cellLabelName;
+@property (nonatomic, strong) NSMutableArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 
 -(void)rendezNev;

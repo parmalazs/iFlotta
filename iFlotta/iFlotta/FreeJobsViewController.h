@@ -10,7 +10,7 @@
 
 @interface FreeJobsViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *freeJobsSearchBar;
-@property (nonatomic, strong) NSArray *freeJobsArray;
+@property (nonatomic, strong) NSMutableArray *freeJobsArray;
 @property (strong,nonatomic) NSMutableArray *filteredFreeJobsArray;
 
 -(void)rendezKoltseg;

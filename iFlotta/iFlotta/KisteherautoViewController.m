@@ -61,6 +61,64 @@
     [[self tableView] reloadData];
 }
 
+
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        if (_isAdmin)
+        {
+            Auto *site = [[self cellLabelName] objectAtIndex:[indexPath row]];
+            [DataBaseUtil autoDelete:[[site autoID] stringValue]];
+            [self.cellLabelName removeObjectAtIndex:indexPath.row];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Auto"
+                                                            message:@"Adott auto törölve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+    
+    /*else if (editingStyle == UITableViewCellEditingStyleInsert) {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }   */
+}
+
+
+
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    
+}
+
+
+
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -219,18 +277,18 @@
 }
 -(void)rendezNev
 {
-    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó" :@"autoNev" :[NSNumber numberWithInt:1]];
+    self.cellLabelName = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó" :@"autoNev" :[NSNumber numberWithInt:1]]];
     [[self tableView] reloadData];
 }
 
 -(void)rendezRendszam
 {
-    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó" :@"autoRendszam" :[NSNumber numberWithInt:1]];
+    self.cellLabelName = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó" :@"autoRendszam" :[NSNumber numberWithInt:1]]];
     [[self tableView] reloadData];
 }
 
 -(void)frissit {
-    self.cellLabelName = [DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó"];
+    self.cellLabelName = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequestJarmu:@"Auto" :@"1" :@"autoIsActive" :@"Kisteherautó"]];
     
     self.filteredArray = [NSMutableArray arrayWithCapacity:[self.cellLabelName count]];
     [[self tableView] reloadData];

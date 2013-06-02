@@ -11,7 +11,7 @@
 @interface CarsViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, strong) NSArray *cellLabelName;
+@property (nonatomic, strong) NSMutableArray *cellLabelName;
 @property (strong, nonatomic) NSMutableArray *filteredArray;
 
 -(void)rendezNev;

@@ -61,7 +61,7 @@
     [[self tableView] setBounds:newBounds];
     
     
-    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
+    self.driverArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"]];
     filteredDriverArray = [NSMutableArray arrayWithCapacity:[self.driverArray count]];
     
     [[self tableView] reloadData];
@@ -138,12 +138,7 @@
     
     return cell;
 }
-/*
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    
-}
-*/
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,35 +148,50 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        if (_isAdmin)
+        {
+            Sofor *site = [[self driverArray] objectAtIndex:[indexPath row]];
+            [DataBaseUtil soforDelete:[[site soforID] stringValue]];
+            [self.driverArray removeObjectAtIndex:indexPath.row];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sofőr"
+                                                            message:@"Adott sofőr törölve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
 #pragma mark - Table view delegate
 
 
@@ -270,21 +280,19 @@
 }
 -(void)rendezNev
 {
-    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive" :@"soforNev" :[NSNumber numberWithInt:1]];
+    self.driverArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive" :@"soforNev" :[NSNumber numberWithInt:1]]];
     [[self tableView] reloadData];
 }
 -(void)rendezCim
 {
-    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive" :@"soforCim" :[NSNumber numberWithInt:1]];
+    self.driverArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive" :@"soforCim" :[NSNumber numberWithInt:1]]];
     [[self tableView] reloadData];
 }
 
 -(void)frissit
 {
-    self.driverArray = [DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"];
-    NSLog(@"%lu",(unsigned long)[self.driverArray count]);
+    self.driverArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Sofor" :@"1" :@"soforIsActive"]];
     filteredDriverArray = [NSMutableArray arrayWithCapacity:[self.driverArray count]];
-    NSLog(@"%lu",(unsigned long)[filteredDriverArray count]);
     [[self tableView] reloadData];
 }
 

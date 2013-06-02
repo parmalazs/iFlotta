@@ -8,6 +8,7 @@
 
 #import "SiteViewController.h"
 #import "DataBaseUtil.h"
+#import "JsonUtil.h"
 #import "SiteTableViewCell.h"
 #import "SiteDetailsViewController.h"
 #import "AdminSiteViewController.h"
@@ -39,7 +40,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive"];
+    self.siteArray =  [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive"]];
     filteredSiteArray = [NSMutableArray arrayWithCapacity:[self.siteArray count]];
     [[self tableView] reloadData];
 }
@@ -160,44 +161,63 @@
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        if (_isAdmin)
+        {
+            Telephely *site = [[self siteArray] objectAtIndex:[indexPath row]];
+            [DataBaseUtil telephelyDelete:[[site telephelyID] stringValue]];
+            [self.siteArray removeObjectAtIndex:indexPath.row];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
+                                                            message:@"Adott telephely törölve!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        
+    }
+    
+    /*else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }   */
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
 
 #pragma mark - Table view delegate
 

@@ -406,11 +406,11 @@ static NSString *foglaltautoID;
      insertNewObjectForEntityForName:@"Munkatipus"
      inManagedObjectContext:context];
          
-         if (![self IsEmpty:([result valueForKey:@"munkatipusNev"])]) {
-             [aktMunkatipus setValue:[result valueForKey:@"munkatipusNev"] forKey:@"munkatipusNev"];
+         if (![self IsEmpty:([result valueForKey:@"munkaTipusNev"])]) {
+             [aktMunkatipus setValue:[result valueForKey:@"munkaTipusNev"] forKey:@"munkaTipusNev"];
          }
-         if (![self IsEmpty:([result valueForKey:@"munkatipusID"])]) {
-             [aktMunkatipus setValue:[NSNumber numberWithInt:[[result valueForKey:@"munkatipusID"] intValue] ] forKey:@"munkatipusID"];
+         if (![self IsEmpty:([result valueForKey:@"munkaTipusID"])]) {
+             [aktMunkatipus setValue:[NSNumber numberWithInt:[[result valueForKey:@"munkaTipusID"] intValue] ] forKey:@"munkaTipusID"];
          }    
      
      }
@@ -684,6 +684,59 @@ static NSString *foglaltautoID;
     aktmunka.soforID = [NSNumber numberWithInt:0];
     [self saveContext:context];
 }
+
++(void)telephelyDelete:(NSString*) telephelyID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Telephely" :@"telephelyID" :telephelyID];
+    Telephely * aktmunka = [munkafelvesz objectAtIndex:0];
+    aktmunka.telephelyIsActive = [NSNumber numberWithInt:0];
+    [self saveContext:context];
+    [JsonUtil JsonBuilderSender:munkafelvesz : @"Telephely" :@"delete"];
+    
+}
+
++(void)munkaDelete:(NSString*) munkaID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Munka" :@"munkaID" :munkaID];
+    Munka * aktmunka = [munkafelvesz objectAtIndex:0];
+    aktmunka.munkaIsActive = [NSNumber numberWithInt:0];
+    [self saveContext:context];
+    [JsonUtil JsonBuilderSender:munkafelvesz : @"Munka" :@"munkadelete"];
+    
+}
++(void)soforDelete:(NSString*) soforID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Sofor" :@"soforID" :soforID];
+    Sofor * aktmunka = [munkafelvesz objectAtIndex:0];
+    aktmunka.soforIsActive = [NSNumber numberWithInt:0];
+    [self saveContext:context];
+    [JsonUtil JsonBuilderSender:munkafelvesz : @"Sofor" :@"delete"];
+    
+}
++(void)partnerDelete:(NSString*) partnerID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Partner" :@"partnerID" :partnerID];
+    Partner * aktmunka = [munkafelvesz objectAtIndex:0];
+    aktmunka.partnerIsActive = [NSNumber numberWithInt:0];
+    [self saveContext:context];
+    [JsonUtil JsonBuilderSender:munkafelvesz : @"Partner" :@"delete"];
+    
+}
++(void)autoDelete:(NSString*) autoID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    NSArray *munkafelvesz = [self fetchRequestEntity:@"Auto" :@"autoID" :autoID];
+    Auto * aktmunka = [munkafelvesz objectAtIndex:0];
+    aktmunka.autoIsActive = [NSNumber numberWithInt:0];
+    [self saveContext:context];
+    [JsonUtil JsonBuilderSender:munkafelvesz : @"Auto" :@"delete"];
+    
+}
+
 + (NSArray*)fetchRequestSzabadMunkak
 {
     NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
@@ -865,6 +918,25 @@ static NSString *foglaltautoID;
                                    entityForName:entityName inManagedObjectContext:context];
     
     NSPredicate *Predicate = [NSPredicate predicateWithFormat:@"%K == %@", IDName, ID];
+    
+    [fetchRequest setPredicate:Predicate];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
+
++ (NSArray*)fetchRequestMunkaTipus:(NSString*) munkaTipusID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Munkatipus" inManagedObjectContext:context];
+    
+    NSPredicate *Predicate = [NSPredicate predicateWithFormat:@"munkaTipusID == %@", munkaTipusID];
     
     [fetchRequest setPredicate:Predicate];
     [fetchRequest setEntity:entity];

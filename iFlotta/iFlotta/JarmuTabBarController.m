@@ -44,6 +44,37 @@
     return self;
 }
 
+-(void)friss
+{
+    autovc.frissit;
+    buszvc.frissit;
+    kamionvc.frissit;
+    teherautovc.frissit;
+    kisteherautovc.frissit;
+    
+    NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
+    if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
+    {
+        _isAdmin = NO;
+        
+        if ([DataBaseUtil autoFoglal:@"kamambert"])
+        {
+            _vanautom=YES;
+            dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Járművem",@"image":@"image"},@{@"name" : @"Jármű leadás",@"image":@"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:4]];
+        }
+        else
+        {
+            dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:2]];
+        }
+        
+        
+    }else{
+        _isAdmin = YES;
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új jármű felévete",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image":@"image"},@{@"name":@"Rendszám szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:3]];
+    }
+    self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     NSArray * vc = [self viewControllers];
@@ -89,7 +120,7 @@
     _vanautom=NO;
     self.delegate = self;
 
-    
+    /*
     NSNumber* tmp = [NSNumber numberWithInt:[[DataBaseUtil aktUserAdmin] intValue] ];
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
@@ -113,7 +144,7 @@
     
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;
 
-    
+    */
     
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
 }
@@ -196,20 +227,37 @@
                     teherautovc.frissit;
                     kisteherautovc.frissit;
                     [dropdownSorted dismiss];
-                    [self viewDidLoad];
+                    
+                    [self friss];
                     
                 }
                 else
                 {
-                    NSLog(@"Nincs autód, vegyél fel vmt!");
+                    //NSLog(@"Nincs autód, vegyél fel vmt!");
+                    autovc.rendezRendszam;
+                    buszvc.rendezRendszam;
+                    kamionvc.rendezRendszam;
+                    teherautovc.rendezRendszam;
+                    kisteherautovc.rendezRendszam;
                 }
                 
             }
                 break;
             case 0:
             {
-                NSLog(@"JÁRMŰ MEGTEKINTÉSE");
-
+                if ([DataBaseUtil autoFoglal:@"kamambert"])
+                {
+                    NSLog(@"JÁRMŰ MEGTEKINTÉSE");
+                }
+                else
+                {
+                    autovc.rendezNev;
+                    buszvc.rendezNev;
+                    kamionvc.rendezNev;
+                    teherautovc.rendezNev;
+                    kisteherautovc.rendezNev;
+                    //[dropdownSorted dismiss];
+                }
             }
                 break;
             case 2:
