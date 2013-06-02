@@ -49,8 +49,7 @@
     _mapView.showsUserLocation = YES;
     _mapView.delegate = self;
     
-       
-     dropdown = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Autók",@"image" : @"40-inbox.png"},@{@"name" : @"Partnerek",@"image":@"166-newspaper.png"},@{@"name":@"Telephelyek",@"image":@"280-clapboard.png"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:0]];
+     dropdown = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Autók",@"image" : @"40-inbox.png"},@{@"name" : @"Partnerek",@"image":@"image"},@{@"name":@"Telephelyek",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:0]];
     
     self.navigationItem.rightBarButtonItem = dropdown.barButton;
     
