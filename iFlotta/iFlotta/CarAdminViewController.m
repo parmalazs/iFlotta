@@ -45,35 +45,69 @@
     self.carXTextField.delegate=self;
     self.carYTextField.delegate=self;
     
+    /*
+     @dynamic autoFoglalt;
+     @dynamic autoID;
+     @dynamic autoKilometerOra;
+     @dynamic autoLastSoforID;
+     @dynamic autoLastSzervizDate;
+     @dynamic autoLastTelephelyID;
+     @dynamic autoLastUpDate;
+     @dynamic autoMuszakiVizsgaDate;
+     @dynamic autoNev;
+     @dynamic autoProfilKepID;
+     @dynamic autoRendszam;
+     @dynamic autoTipus;
+     @dynamic autoUzemAnyag;
+     @dynamic autoXkoordinata;
+     @dynamic autoYkoordinata;
+     @dynamic autoIsActive;
+     @dynamic autokep;
+     @dynamic sofor;
+     @dynamic telephely;
+     */
     [self registerForKeyboardNotifications];
 	 self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
     self.carNameLabel.backgroundColor= UIColorFromRGB(0x46594B);
     self.carNameLabel.textColor= UIColorFromRGB(0xFFFFFF);
+    self.carNameTextField.text = [self.adatDetails valueForKey:@"autoNev"];
     
     self.carTypeLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carTypeLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.carTypeTextField.text = [self.adatDetails valueForKey:@"autoTipus"];
 
     self.carSpeedometerLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carSpeedometerLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.carSpeedometerTextField.text = [self.adatDetails valueForKey:@"autoKilometerOra"];
     
     self.carRendszamLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carRendszamLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.carRendszamTextField.text = [self.adatDetails valueForKey:@"autoRendszam"];
     
     self.carMuszakiLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carMuszakiLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.carMuszakiTextField.text = [self.adatDetails valueForKey:@"autoMuszakiVizsgaDate"];
     
     self.carServiceLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carServiceLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.carServiceTextField.text = [self.adatDetails valueForKey:@"autoSzervizDate"];
     
     self.carXLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carXLabel.textColor = UIColorFromRGB(0xFFFFFF);
-    
+    self.carXTextField.text = [self.adatDetails valueForKey:@"autoXkoordinata"];
+   
     self.carYLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carYLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.carYTextField.text = [self.adatDetails valueForKey:@"autoYkoordinata"];
     
     self.carFuelLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.carFuelLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.carFuelTextField.text = [self.adatDetails valueForKey:@"autoUzemanyag"];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
