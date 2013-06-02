@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DataBaseUtil.h"
+#import "Munkatipus.h"
 @interface JobAdminDetailsViewController : UIViewController<UITextFieldDelegate>
 @property (nonatomic, strong) NSManagedObject *siteData;
 
@@ -21,14 +22,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *jobsIncomeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *jobsCostLabel;
 @property (strong, nonatomic) IBOutlet UILabel *jobsFuelLabel;
-@property (strong, nonatomic) IBOutlet UILabel *jobsToolsLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *jobsToolsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *jobsTypeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *jobsCommentLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *jobsIncomeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *jobsCostsTextField;
 @property (strong, nonatomic) IBOutlet UITextField *jobsFuelTextField;
-@property (strong, nonatomic) IBOutlet UITextField *jobsToolsTextFields;
+//@property (strong, nonatomic) IBOutlet UITextField *jobsToolsTextFields;
 @property (strong, nonatomic) IBOutlet UITextField *jobsTypeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *jobsCommentTextField;
 

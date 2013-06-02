@@ -34,11 +34,35 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
-    
+    /*
+     @dynamic munkaBefejezesDate;
+     @dynamic munkaBevetel;
+     @dynamic munkaComment;
+     @dynamic munkaDate;
+     @dynamic munkaEstimatedTime;
+     @dynamic munkaID;
+     @dynamic munkaIsActive;
+     @dynamic munkaKoltseg;
+     @dynamic munkatipusID;
+     @dynamic munkaUzemanyagState;
+     @dynamic partnerID;
+     @dynamic soforID;
+     @dynamic telephelyID;
+     @dynamic munkaeszkoz;
+     @dynamic munkakep;
+     @dynamic munkatipus;
+     @dynamic partner;
+     @dynamic sofor;
+     @dynamic telephely;
+     */
     self.jobsIncomeTextField.delegate =self;
+    self.jobsIncomeTextField.text = [[self.siteData valueForKey:@"munkaBevetel"] stringValue];
     self.jobsCostsTextField.delegate = self;
+    self.jobsCostsTextField.text = [[self.siteData valueForKey:@"munkaKoltseg"]  stringValue];
     self.jobsFuelTextField.delegate = self;
-    self.jobsToolsTextFields.delegate = self;
+    self.jobsFuelTextField.text = [[self.siteData valueForKey:@"munkaUzemanyagState"] stringValue];
+   // self.jobsToolsTextFields.delegate = self;
+
     self.jobsTypeTextField.delegate = self;
     self.jobsCommentTextField.delegate = self;
     
@@ -51,15 +75,21 @@
     self.jobsFuelLabel.backgroundColor= UIColorFromRGB(0x46594B);
     self.jobsFuelLabel.textColor= UIColorFromRGB(0xFFFFFF);
     
-    self.jobsToolsLabel.backgroundColor = UIColorFromRGB(0x46594B);
-    self.jobsToolsLabel.textColor = UIColorFromRGB(0xFFFFFF);
+//    self.jobsToolsLabel.backgroundColor = UIColorFromRGB(0x46594B);
+//    self.jobsToolsLabel.textColor = UIColorFromRGB(0xFFFFFF);
     
     self.jobsTypeLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.jobsTypeLabel.textColor = UIColorFromRGB(0xFFFFFF);
     
+    NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[[self siteData] valueForKey:@"munkatipusID"] stringValue]];
+    
+    Munkatipus * mt = [tmp objectAtIndex:0];
+    self.jobsTypeTextField.text = [mt munkaTipusNev];
+    
     self.jobsCommentLabel.backgroundColor= UIColorFromRGB(0x46594B);
     self.jobsCommentLabel.textColor= UIColorFromRGB(0xFFFFFF);
-    
+    self.jobsCommentTextField.delegate = self;
+    self.jobsCommentTextField.text = [self.siteData valueForKey:@"munkaComment"];
     [self registerForKeyboardNotifications];
     
 }
@@ -80,7 +110,7 @@
                      initWithObjects:_jobsCostsTextField.text,
                      _jobsIncomeTextField.text,
                      _jobsFuelTextField.text,
-                     _jobsToolsTextFields.text,
+                     _jobsCostsTextField.text,
                      _jobsTypeTextField.text,
                      _jobsCommentTextField.text,
                      nil];
