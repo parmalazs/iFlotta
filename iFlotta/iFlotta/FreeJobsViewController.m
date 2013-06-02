@@ -10,7 +10,7 @@
 #import "DataBaseUtil.h"
 #import "Munka.h"
 #import "Munkatipus.h"
-
+#import "JobAdminDetailsViewController.h"
 #import "FreeJobsTableViewCell.h"
 #import "FreeJobDetailsViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -224,6 +224,20 @@
         }
         
     }
+    else
+        if ( [[segue identifier] isEqualToString:@"freeJobAdminDetails"] ) {
+            JobAdminDetailsViewController *freeJobDetailsViewController = [segue destinationViewController];
+            
+            if(sender == self.searchDisplayController.searchResultsTableView) {
+                NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+                freeJobDetailsViewController.siteData = [filteredFreeJobsArray objectAtIndex: [indexPath row]];
+            }
+            else {
+                NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+                freeJobDetailsViewController.siteData = [self.freeJobsArray objectAtIndex: [indexPath row]];
+            }
+            
+        }
 }
 
 

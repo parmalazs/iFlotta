@@ -11,6 +11,8 @@
 #import "DriverDetailsViewController.h"
 #import "DataBaseUtil.h"
 #import "Sofor.h"
+#import "SoforAdminDetailViewController.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface DriverViewController (){
     BOOL _isAdmin;
@@ -221,8 +223,23 @@
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             driverDetailsViewController.driverData = [self.driverArray objectAtIndex: [indexPath row]];
         }
-        
+
     }
+    else
+        if ( [[segue identifier] isEqualToString:@"driversAdminViewSegue"] ) {
+            SoforAdminDetailViewController *driverDetailsViewController = [segue destinationViewController];
+            
+            if(sender == self.searchDisplayController.searchResultsTableView) {
+                NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+                driverDetailsViewController.siteData = [filteredDriverArray objectAtIndex: [indexPath row]];
+            }
+            else {
+                NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+                driverDetailsViewController.siteData = [self.driverArray objectAtIndex: [indexPath row]];
+            }
+            
+        }
+    
 }
 
 

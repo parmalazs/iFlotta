@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ContactsAdminViewController : UIViewController<UITextFieldDelegate>
+@property (nonatomic, strong) NSManagedObject *siteData;
 
 @property (strong, nonatomic) IBOutlet UITextField *contactsNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *contactsAdressTextField;

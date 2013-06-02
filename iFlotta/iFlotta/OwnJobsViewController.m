@@ -163,12 +163,13 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{/*
     if (_isAdmin) {
         [self performSegueWithIdentifier:@"ownJobsAdminSegue" sender:tableView];
     }else{
         [self performSegueWithIdentifier:@"ownJobDetails" sender:tableView];
-    }
+    }*/
+    [self performSegueWithIdentifier:@"ownJobDetails" sender:tableView];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

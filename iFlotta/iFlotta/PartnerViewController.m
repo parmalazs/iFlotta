@@ -11,6 +11,8 @@
 #import "Partner.h"
 #import "PartnerTableViewCell.h"
 #import "PartnerDetailsViewController.h"
+#import "ContactsAdminViewController.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface PartnerViewController (){
     BOOL _isAdmin;
@@ -230,6 +232,20 @@
         }
         
     }
+    else
+        if ( [[segue identifier] isEqualToString:@"contactsAdminViewSegue"] ) {
+            ContactsAdminViewController *partnerDetailsViewController = [segue destinationViewController];
+            
+            if(sender == self.searchDisplayController.searchResultsTableView) {
+                NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+                partnerDetailsViewController.siteData = [filteredPartnerArray objectAtIndex: [indexPath row]];
+            }
+            else {
+                NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+                partnerDetailsViewController.siteData = [self.partnerArray objectAtIndex: [indexPath row]];
+            }
+            
+        }
 }
 
 #pragma mark Content Filtering

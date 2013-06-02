@@ -5,12 +5,13 @@
 //  Created by Csüti on 5/26/13.
 //  Copyright (c) 2013 Csüti. All rights reserved.
 //
-
+#import "CarAddViewController.h"
 #import "TeherautoViewController.h"
 #import "DataBaseUtil.h"
 #import "TeherautoCell.h"
 #import "VehiclesDetailsViewController.h"
 #import "Auto.h"
+#import "CarAdminViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface TeherautoViewController ()
 
@@ -220,6 +221,18 @@
             vehiclesDetailsViewController.adatDetails = [self.cellLabelName objectAtIndex: [indexPath row]];
         }
         
+    }
+    else if ( [[segue identifier] isEqualToString:@"autoAdminViewSegue"] )
+    {
+        CarAdminViewController *siteDetailsViewController = [segue destinationViewController];
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            siteDetailsViewController.adatDetails = [self.filteredArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            siteDetailsViewController.adatDetails = [self.cellLabelName objectAtIndex: [indexPath row]];
+        }
     }
 }
 

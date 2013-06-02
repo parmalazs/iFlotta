@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SoforAdminDetailViewController : UIViewController<UITextFieldDelegate>
+@property (nonatomic, strong) NSManagedObject *siteData;
 
 @property (strong, nonatomic) IBOutlet UILabel *driverNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *driverAdressLabel;

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface JobAdminDetailsViewController : UIViewController<UITextFieldDelegate>
-
+@property (nonatomic, strong) NSManagedObject *siteData;
 
 /* EZEK MEG KELLENEK! de a scroll view-val.
 @dynamic munkaBefejezesDate;
