@@ -158,7 +158,14 @@
         
         NSLog(@"%@",[obj objectAtIndex:0]);
         
-        [JsonUtil JsonBuilderSender:obj :@"Auto" :@"insert"];
+        
+        if (self.adatDetails == nil)
+            [JsonUtil JsonBuilderSender:obj :@"Auto" :@"insert"];
+        else
+            [JsonUtil JsonBuilderSender:obj :@"Auto" :@"update"];
+ 
+        
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Jármű"
                                                         message:@"Új jármű felvéve!"
                                                        delegate:nil

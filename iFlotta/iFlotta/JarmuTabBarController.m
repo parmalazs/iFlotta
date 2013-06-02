@@ -168,6 +168,7 @@
             {
                 NSLog(@"0");
                 CarAdminViewController *carAdminViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"carAdminViewController"];
+                carAdminViewController.adatDetails = nil;
                 [self.navigationController pushViewController:carAdminViewController animated:YES];
             }
                 break;
