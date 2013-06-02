@@ -121,14 +121,22 @@
         job = [filteredFreeJobsArray objectAtIndex:[indexPath row]];
         
         [[cell textLabel] setText:[job munkaDate]];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        if ([indexPath row] % 2) {
+            cell.contentView.backgroundColor = UIColorFromRGB(0xA6977C);
+        }else{
+            cell.contentView.backgroundColor = UIColorFromRGB(0xD9B384);
+        }
+       // [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
 	else
 	{
         job = [self.freeJobsArray objectAtIndex:[indexPath row]];
         [[(FreeJobsTableViewCell*)cell jobName] setText:[job munkaDate]];
-        [[(FreeJobsTableViewCell*)cell jobTel] setText:[job munkaBefejezesDate]];
-        [[(FreeJobsTableViewCell*)cell jobEmail] setText:[job munkaBevetel].stringValue];	
+        NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[job munkatipusID] stringValue]];
+        
+        Munkatipus * mt = [tmp objectAtIndex:0];
+        [[(FreeJobsTableViewCell*)cell jobTel] setText:[mt munkaTipusNev]];
+        [[(FreeJobsTableViewCell*)cell jobEmail] setText:[job munkaBevetel].stringValue];
     }
     
     return cell;
