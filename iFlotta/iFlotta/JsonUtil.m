@@ -206,6 +206,13 @@
             [object setObject:@"0" forKey:@"telephelyIsActive"];
         }
         else
+        if ([actionTipus isEqualToString:@"update"])
+        {
+            [object setObject:[aktTelephely valueForKey:@"telephelyID"] forKey:@"telephelyId"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyIsActive"] forKey:@"telephelyIsActive"];
+            [object setObject:[aktTelephely valueForKey:@"telephelyNev"] forKey:@"telephelyNev"];
+        }
+        else
         {
             [object setObject:[aktTelephely valueForKey:@"telephelyCim"] forKey:@"telephelyCim"];
             [object setObject:[aktTelephely valueForKey:@"telephelyEmail"] forKey:@"telephelyEmail"];
@@ -230,6 +237,13 @@
         {
             [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
             [object setObject:@"0" forKey:@"partnerIsActive"];
+        }
+        else
+        if ([actionTipus isEqualToString:@"update"])
+        {
+            [object setObject:[aktPartner valueForKey:@"partnerID"] forKey:@"partnerId"];
+            [object setObject:[aktPartner valueForKey:@"partnerIsActive"] forKey:@"partnerIsActive"];
+            [object setObject:[aktPartner valueForKey:@"partnerNev"] forKey:@"partnerNev"];
         }
         else
         {

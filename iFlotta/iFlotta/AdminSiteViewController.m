@@ -106,17 +106,23 @@
     else
     {
         
-        // VAN EGY PÁR ÉGETETT ADAT, AZOKAT ÁTIRNI MÉG!
-        [DataBaseUtil insertTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
-        
-        NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[maxid stringValue]];
-        NSLog(@"%@",[obj objectAtIndex:0]);
-        
         if (self.siteData == nil)
+        {
+        [DataBaseUtil insertTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[maxid intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[maxid stringValue]];
             [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"insert"];
+        }
         else
+        {
+            NSLog(@"%@",_siteNevTextField.text);
+            NSLog(@"%@",[[self siteData] valueForKey:@"telephelyID"]);
+            
+            [DataBaseUtil insertTelephely:_cimTextField.text :_emailTextField.text :[[NSNumber alloc] initWithInt:[[self.siteData valueForKey:@"telephelyID"] intValue]] :_siteNevTextField.text : _telTextField.text :[[NSNumber alloc] initWithDouble:[[_xTextField text] doubleValue]] :[[NSNumber alloc] initWithDouble:[[_yTextField text] doubleValue]] :[[NSNumber alloc] initWithInt:1]];
+            NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[[self.siteData valueForKey:@"telephelyID"] stringValue]];
+            NSLog(@"%@",[[obj objectAtIndex:0] valueForKey:@"telephelyNev"]);
+            NSLog(@"%@",[[obj objectAtIndex:0] valueForKey:@"telephelyID"]);
             [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"update"];
-        
+        }
         
         
         
