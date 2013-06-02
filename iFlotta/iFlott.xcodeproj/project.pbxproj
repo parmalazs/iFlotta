@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B17317175B183A0096F0FB /* carjo.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 10B17316175B183A0096F0FB /* carjo.PNG */; };
+		10B17319175B186E0096F0FB /* kontakt.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B17318175B186E0096F0FB /* kontakt.png */; };
 		1982C541173BC78D00665C7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1982C540173BC78D00665C7F /* UIKit.framework */; };
 		1982C543173BC78D00665C7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1982C542173BC78D00665C7F /* Foundation.framework */; };
 		1982C545173BC78D00665C7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1982C544173BC78D00665C7F /* CoreGraphics.framework */; };
@@ -120,6 +122,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10B17316175B183A0096F0FB /* carjo.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carjo.PNG; sourceTree = "<group>"; };
+		10B17318175B186E0096F0FB /* kontakt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kontakt.png; sourceTree = "<group>"; };
 		1982C53D173BC78D00665C7F /* iFlott.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlott.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1982C540173BC78D00665C7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1982C542173BC78D00665C7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -482,7 +486,9 @@
 			isa = PBXGroup;
 			children = (
 				19BDAF191756D34C0034EBFF /* 280-clapboard.png */,
+				10B17316175B183A0096F0FB /* carjo.PNG */,
 				6179334E175A9C1100C3C367 /* truck2kicsi.png */,
+				10B17318175B186E0096F0FB /* kontakt.png */,
 				61793346175A9A6200C3C367 /* carkicsi.PNG */,
 				61793356175AA63F00C3C367 /* listkicsi.png */,
 				61793354175AA60E00C3C367 /* dispatch_orderkicsi.png */,
@@ -738,6 +744,8 @@
 				61793353175AA5D800C3C367 /* administratorkicsi.png in Resources */,
 				61793355175AA60E00C3C367 /* dispatch_orderkicsi.png in Resources */,
 				61793357175AA63F00C3C367 /* listkicsi.png in Resources */,
+				10B17317175B183A0096F0FB /* carjo.PNG in Resources */,
+				10B17319175B186E0096F0FB /* kontakt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,23 +35,31 @@
     self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
     self.soforCim.text = [self.driverData valueForKey:@"soforCim"];
-    self.soforCim.backgroundColor = UIColorFromRGB(0xD9B384);
-    
     self.soforNev.text = [self.driverData valueForKey:@"soforNev"];
+    self.soforTelefonszam.text = [self.driverData valueForKey:@"soforTelefonszam"];
+    self.soforEmail.text = [self.driverData valueForKey:@"soforEmail"];
+    
+    
     self.soforNev.backgroundColor = UIColorFromRGB(0x260B01);
     self.soforNev.textColor = UIColorFromRGB(0xD9B384);
-
-    self.soforTelefonszam.text = [self.driverData valueForKey:@"soforTelefonszam"];
+    
     self.soforTelefonszam.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.soforTelefonszam.textColor = UIColorFromRGB(0x260B01);
     
-    self.soforEmail.text = [self.driverData valueForKey:@"soforEmail"];
-    self.soforEmail.backgroundColor = UIColorFromRGB(0xD9B384);
-    
+    self.nevLabel.backgroundColor = UIColorFromRGB(0x46594B);
+    self.nevLabel.textColor = UIColorFromRGB(0xFFFFFF);
     /// ezek a labelek
-    self.nevLabel.backgroundColor   = UIColorFromRGB(0x46594B);
-    self.nevLabel.textColor         = UIColorFromRGB(0xFFFFFF);
-    self.soforEmail.backgroundColor = UIColorFromRGB(0x46594B);
-    self.soforEmail.textColor       = UIColorFromRGB(0xFFFFFF);
+    self.soforCim.backgroundColor   = UIColorFromRGB(0xD9B384);
+    self.soforCim.textColor         = UIColorFromRGB(0x260B01);
+
+    self.soforEmail.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.soforEmail.textColor       = UIColorFromRGB(0x260B01);
+
+    
+    self.soforCim.backgroundColor = UIColorFromRGB(0xD9B384);
+    self.soforCim.textColor = UIColorFromRGB(0x260B01);
+
+
 }
 
 - (void)didReceiveMemoryWarning
