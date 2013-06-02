@@ -29,6 +29,7 @@
 + (NSArray*)fetchRequestSzabadMunka:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName :(NSString*) soforID :(NSString*) sortName :(NSNumber*) sortType;
 + (NSArray*)fetchRequest:(NSString*) entityName :(NSString*) IsActive :(NSString*) IsActiveName ;
 + (NSArray*)fetchAllRequest:(NSString*) entityName;
++ (NSArray*)fetchRequestMunkaTipus:(NSString*) munkaTipusID;
 + (void)fillSoforTable;
 + (void)fillAutokepTable;
 + (void)fillPartnerTable;

@@ -406,11 +406,11 @@ static NSString *foglaltautoID;
      insertNewObjectForEntityForName:@"Munkatipus"
      inManagedObjectContext:context];
          
-         if (![self IsEmpty:([result valueForKey:@"munkatipusNev"])]) {
-             [aktMunkatipus setValue:[result valueForKey:@"munkatipusNev"] forKey:@"munkatipusNev"];
+         if (![self IsEmpty:([result valueForKey:@"munkaTipusNev"])]) {
+             [aktMunkatipus setValue:[result valueForKey:@"munkaTipusNev"] forKey:@"munkaTipusNev"];
          }
-         if (![self IsEmpty:([result valueForKey:@"munkatipusID"])]) {
-             [aktMunkatipus setValue:[NSNumber numberWithInt:[[result valueForKey:@"munkatipusID"] intValue] ] forKey:@"munkatipusID"];
+         if (![self IsEmpty:([result valueForKey:@"munkaTipusID"])]) {
+             [aktMunkatipus setValue:[NSNumber numberWithInt:[[result valueForKey:@"munkaTipusID"] intValue] ] forKey:@"munkaTipusID"];
          }    
      
      }
@@ -918,6 +918,25 @@ static NSString *foglaltautoID;
                                    entityForName:entityName inManagedObjectContext:context];
     
     NSPredicate *Predicate = [NSPredicate predicateWithFormat:@"%K == %@", IDName, ID];
+    
+    [fetchRequest setPredicate:Predicate];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+}
+
++ (NSArray*)fetchRequestMunkaTipus:(NSString*) munkaTipusID
+{
+    NSManagedObjectContext* context = [[AppDelegate sharedAppDelegate] managedObjectContext];
+    
+    // query-re is egy általános fv-t irni a DataBaseUtil-ba
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Munkatipus" inManagedObjectContext:context];
+    
+    NSPredicate *Predicate = [NSPredicate predicateWithFormat:@"munkaTipusID == %@", munkaTipusID];
     
     [fetchRequest setPredicate:Predicate];
     [fetchRequest setEntity:entity];

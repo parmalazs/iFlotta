@@ -9,6 +9,8 @@
 #import "FreeJobsViewController.h"
 #import "DataBaseUtil.h"
 #import "Munka.h"
+#import "Munkatipus.h"
+
 #import "FreeJobsTableViewCell.h"
 #import "FreeJobDetailsViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -125,7 +127,10 @@
 	{
         job = [self.freeJobsArray objectAtIndex:[indexPath row]];
         [[(FreeJobsTableViewCell*)cell jobName] setText:[job munkaDate]];
-        [[(FreeJobsTableViewCell*)cell jobTel] setText:[job munkaBefejezesDate]];
+        NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[job munkatipusID] stringValue]];
+        
+        Munkatipus * mt = [tmp objectAtIndex:0];
+        [[(FreeJobsTableViewCell*)cell jobTel] setText:[mt munkaTipusNev]];
         [[(FreeJobsTableViewCell*)cell jobEmail] setText:[job munkaBevetel].stringValue];
     }
     

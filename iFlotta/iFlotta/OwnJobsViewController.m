@@ -8,6 +8,7 @@
 
 #import "OwnJobsViewController.h"
 #import "DataBaseUtil.h"
+#import "Munkatipus.h"
 #import "Munka.h"
 #import "OwnJobsTableViewCell.h"
 #import "OwnJobDetailsViewController.h"
@@ -112,7 +113,10 @@
     job = [self.ownJobsArray objectAtIndex:[indexPath row]];
     //[[cell ] setText:[job munkaDate]];
     [[cell jobName] setText:[job munkaDate]];
-    [[cell jobTel] setText:[job munkaBefejezesDate]];
+    NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[job munkatipusID] stringValue]];
+    
+    Munkatipus * mt = [tmp objectAtIndex:0];
+    [[cell jobTel] setText:[mt munkaTipusNev]];
     [[cell jobMail] setText:[job munkaBevetel].stringValue];
     return cell;
 }
