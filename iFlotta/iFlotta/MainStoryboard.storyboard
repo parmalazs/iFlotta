@@ -760,7 +760,7 @@
                             <outlet property="delegate" destination="ErY-Ue-ijr" id="upg-3s-7L2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="carkicsi.PNG" id="EoW-eX-lgi"/>
+                    <tabBarItem key="tabBarItem" title="" image="carjo.PNG" id="EoW-eX-lgi"/>
                     <navigationItem key="navigationItem" title="Autók" id="rpf-09-6SN"/>
                     <connections>
                         <outlet property="searchBar" destination="dr4-cg-ya1" id="Xfc-bg-QqO"/>
@@ -3248,7 +3248,7 @@
         <image name="auto-ikon.png" width="72" height="72"/>
         <image name="buskicsi.png" width="44" height="29"/>
         <image name="car146x120.png" width="146" height="120"/>
-        <image name="carkicsi.PNG" width="30" height="24"/>
+        <image name="carjo.PNG" width="48" height="30"/>
         <image name="dispatch_orderkicsi.png" width="25" height="30"/>
         <image name="gomb_1a_146x120.png" width="146" height="120"/>
         <image name="jobs146x120.png" width="146" height="120"/>
