@@ -40,47 +40,58 @@ self.driverNameTextField.delegate = self;
 self.driverAdressTextField.delegate = self;
 self.driverEmailTextField.delegate = self;
 self.driverTelTextField.delegate = self;
-self.driverWebTextField.delegate = self;
-self.driverXTextField.delegate = self;
-self.driverYTextField.delegate = self;
 self.driverLoginTextField.delegate = self;
 self.driverPasswordTextField.delegate = self;
 //self.driverIsAdminTextField.delegate = self ;
 self.driverBirthdateTextField.delegate = self;
     
+    /*
+     @dynamic soforBirthDate;
+     @dynamic soforCim;
+     @dynamic soforEmail;
+     @dynamic soforID;
+     @dynamic soforIsAdmin;
+     @dynamic soforLogin;
+     @dynamic soforNev;
+     @dynamic soforPass;
+     @dynamic soforProfilKepId;
+     @dynamic soforRegTime;
+     @dynamic soforTelefonszam;
+     @dynamic soforIsActive;
+     @dynamic autoRelationship;
+     @dynamic munka;
+     @dynamic profilkep;*/
     
     self.driverNameLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverNameLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.driverNameTextField.text = [self.siteData valueForKey:@"soforNev"];
     
     self.driverAdressLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverAdressLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.driverAdressTextField.text = [self.siteData valueForKey:@"soforCim"];
     
     self.driverEmailLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverEmailLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.driverEmailTextField.text = [self.siteData valueForKey:@"soforEmail"];
     
     self.driverTelLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverTelLabel.textColor  = UIColorFromRGB(0xFFFFFF);
-    
-    self.driverWebLabel.backgroundColor= UIColorFromRGB(0x46594B);
-    self.driverWebLabel.textColor  = UIColorFromRGB(0xFFFFFF);
-    
-    self.driverXLabel.backgroundColor = UIColorFromRGB(0x46594B);
-    self.driverXLabel.textColor  = UIColorFromRGB(0xFFFFFF);
-    
-    self.driverYLabel.backgroundColor = UIColorFromRGB(0x46594B);
-    self.driverYLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.driverTelTextField.text = [self.siteData valueForKey:@"soforTelefonszam"];
     
     self.driverLoginLabel.backgroundColor= UIColorFromRGB(0x46594B);
     self.driverLoginLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.driverLoginTextField.text = [self.siteData valueForKey:@"soforLogin"];
     
     self.driverPasswordLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverPasswordLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.driverPasswordTextField.text = [self.siteData valueForKey:@"soforPass"];
     
     self.driverIsAdminLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverIsAdminLabel.textColor  = UIColorFromRGB(0xFFFFFF);
     
     self.driverBirthdateLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.driverBirthdateLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.driverBirthdateTextField.text = [self.siteData valueForKey:@"soforBirthDate"];
     [self registerForKeyboardNotifications];
 }
 

@@ -35,26 +35,47 @@
     [super viewDidLoad];
 	self.view.backgroundColor = UIColorFromRGB(0xA6977C);
     
+    /*
+     @dynamic partnerCim;
+     @dynamic partnerEmailcim;
+     @dynamic partnerID;
+     @dynamic partnerNev;
+     @dynamic partnerTelefonszam;
+     @dynamic partnerWeboldal;
+     @dynamic partnerXkoordinata;
+     @dynamic partnerYkoordinata;
+     @dynamic partnerIsActive;
+     @dynamic munka;
+     @dynamic partnerkepek;
+     */
+    
     self.contactsNameLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.contactsNameLabel.textColor = UIColorFromRGB(0xFFFFFF);
+    self.contactsNameTextField.text = [self.siteData valueForKey:@"partnerNev"];
     
     self.contactsAdressLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.contactsAdressLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.contactsAdressTextField.text = [self.siteData valueForKey:@"partnerCim"];
     
     self.contactsEmailLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.contactsEmailLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.contactsEmailTextField.text = [self.siteData valueForKey:@"partnerEmailcim"];
     
     self.contactsTelLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.contactsTelLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.contactsTelTextField.text = [self.siteData valueForKey:@"partnerTelefonszam"];
     
     self.contactsWebLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.contactsWebLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.contactsWebTextField.text = [self.siteData valueForKey:@"partnerWeboldal"];
     
     self.contactsXLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.contactsXLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.contactsXTextField.text = [[self.siteData valueForKey:@"partnerXkoordinata"] stringValue];
     
     self.contactsYLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.contactsYLabel.textColor  = UIColorFromRGB(0xFFFFFF);
+    self.contactsYTextField.text = [[self.siteData valueForKey:@"partnerYkoordinata"] stringValue];
     
     self.contactsNameTextField.delegate = self;
     self.contactsAdressTextField.delegate = self;
