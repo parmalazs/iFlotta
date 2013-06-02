@@ -222,7 +222,7 @@
         }
         
     }
-    else if ( [[segue identifier] isEqualToString:@"autoAdminViewSegue"] )
+    else if ( [[segue identifier] isEqualToString:@"teherautoAdminViewSegue"] )
     {
         CarAdminViewController *siteDetailsViewController = [segue destinationViewController];
         if(sender == self.searchDisplayController.searchResultsTableView) {

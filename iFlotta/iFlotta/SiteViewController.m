@@ -54,11 +54,11 @@
     if ([tmp isEqualToNumber:[NSNumber numberWithInt:0]])
     {
         _isAdmin = NO;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint",@"image" : @"image"},@{@"name" : @"Cim szerint",@"image":@"image"},@{@"name":@"Távolság szerint",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Név szerint",@"image" : @"image"},@{@"name" : @"Cim szerint",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
         
     }else{
         _isAdmin = YES;
-        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új telephely",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image" : @"image"},@{@"name" : @"Cim szerint rendezés",@"image":@"image"},@{@"name":@"Távolság szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
+        dropdownSorted = [[MBDropdown alloc] initWithPresentingView:self.view andItems:@[@{@"name" : @"Új telephely",@"image" : @"image"},@{@"name" : @"Név szerint rendezés",@"image" : @"image"},@{@"name" : @"Cim szerint rendezés",@"image":@"image"}] delegate:self kezdpoz:[[NSNumber alloc] initWithInt:40]];
     }
     
     self.navigationItem.rightBarButtonItem = dropdownSorted.barButton;

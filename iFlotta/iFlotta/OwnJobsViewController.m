@@ -115,6 +115,8 @@
     [[cell jobName] setText:[job munkaDate]];
     NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[job munkatipusID] stringValue]];
     
+    NSLog(@"%@",[tmp objectAtIndex:0]);
+    
     Munkatipus * mt = [tmp objectAtIndex:0];
     [[cell jobTel] setText:[mt munkaTipusNev]];
     [[cell jobMail] setText:[job munkaBevetel].stringValue];

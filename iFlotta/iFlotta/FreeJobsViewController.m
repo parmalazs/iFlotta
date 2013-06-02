@@ -166,8 +166,8 @@
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
-                                                            message:@"Adott telephely törölve!"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Munka"
+                                                            message:@"Adott munka törölve!"
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
