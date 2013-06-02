@@ -3497,8 +3497,6 @@
                 <relationship kind="outlet" name="jobsFuelTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="jobsIncomeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="jobsIncomeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="jobsToolsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="jobsToolsTextFields" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="jobsTypeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="jobsTypeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
