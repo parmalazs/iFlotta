@@ -56,11 +56,11 @@
      @dynamic telephely;
      */
     self.jobsIncomeTextField.delegate =self;
-    self.jobsIncomeTextField.text = [[self.siteData valueForKey:@"munkaBevetel"] stringValue];
+    
     self.jobsCostsTextField.delegate = self;
-    self.jobsCostsTextField.text = [[self.siteData valueForKey:@"munkaKoltseg"]  stringValue];
+    
     self.jobsFuelTextField.delegate = self;
-    self.jobsFuelTextField.text = [[self.siteData valueForKey:@"munkaUzemanyagState"] stringValue];
+    
    // self.jobsToolsTextFields.delegate = self;
 
     self.jobsTypeTextField.delegate = self;
@@ -81,15 +81,23 @@
     self.jobsTypeLabel.backgroundColor = UIColorFromRGB(0x46594B);
     self.jobsTypeLabel.textColor = UIColorFromRGB(0xFFFFFF);
     
-    NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[[self siteData] valueForKey:@"munkatipusID"] stringValue]];
+    NSLog(@"%@",[[[self siteData] valueForKey:@"munkatipusID"] stringValue]);
     
-    Munkatipus * mt = [tmp objectAtIndex:0];
-    self.jobsTypeTextField.text = [mt munkaTipusNev];
+    if (self.siteData!=nil)
+    {
+        NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[[self siteData] valueForKey:@"munkatipusID"] stringValue]];
+        self.jobsIncomeTextField.text = [[self.siteData valueForKey:@"munkaBevetel"] stringValue];
+        self.jobsCostsTextField.text = [[self.siteData valueForKey:@"munkaKoltseg"]  stringValue];
+        self.jobsFuelTextField.text = [[self.siteData valueForKey:@"munkaUzemanyagState"] stringValue];
+        self.jobsCommentTextField.text = [self.siteData valueForKey:@"munkaComment"];
+        Munkatipus * mt = [tmp objectAtIndex:0];
+        self.jobsTypeTextField.text = [mt munkaTipusNev];
+    }
     
     self.jobsCommentLabel.backgroundColor= UIColorFromRGB(0x46594B);
     self.jobsCommentLabel.textColor= UIColorFromRGB(0xFFFFFF);
     self.jobsCommentTextField.delegate = self;
-    self.jobsCommentTextField.text = [self.siteData valueForKey:@"munkaComment"];
+    
     [self registerForKeyboardNotifications];
     
 }
@@ -130,8 +138,7 @@
         
         if (self.siteData == nil)
         {
-            [DataBaseUtil insertMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"2012.02.12" :[[NSNumber alloc] initWithInt:[maxid intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
-            
+            [DataBaseUtil insertMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"234" :[[NSNumber alloc] initWithInt:[maxid intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
             
             NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[maxid stringValue]];
             NSLog(@"%@",[obj objectAtIndex:0]);

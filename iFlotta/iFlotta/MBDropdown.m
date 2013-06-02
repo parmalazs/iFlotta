@@ -18,7 +18,7 @@
         _barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showDropdown:)];
         presentingView = view;
         presentingDelegate = delegate;
-        [self setFrame:CGRectMake(160, [kp floatValue], 150, dropdownHeight)];
+        [self setFrame:CGRectMake(160, [kp floatValue], 200, dropdownHeight)];
 
         
         CAGradientLayer *headerLayer = [CAGradientLayer layer];

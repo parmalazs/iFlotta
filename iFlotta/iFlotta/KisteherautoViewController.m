@@ -222,6 +222,18 @@
         }
         
     }
+    else if ( [[segue identifier] isEqualToString:@"kisteherautoAdminViewSegue"] )
+    {
+        CarAdminViewController *siteDetailsViewController = [segue destinationViewController];
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            siteDetailsViewController.adatDetails = [self.filteredArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            siteDetailsViewController.adatDetails = [self.cellLabelName objectAtIndex: [indexPath row]];
+        }
+    }
 }
 
 #pragma mark Content Filtering
