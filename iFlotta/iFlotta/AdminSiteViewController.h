@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AdminSiteViewController : UIViewController<UITextFieldDelegate>
+@property (nonatomic, strong) NSManagedObject *siteData;
 
 @property (strong, nonatomic) IBOutlet UILabel *siteNevLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cimLabel;

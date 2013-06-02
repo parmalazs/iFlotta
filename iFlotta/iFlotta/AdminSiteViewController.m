@@ -92,7 +92,14 @@
         
         NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Telephely" :@"telephelyID" :[maxid stringValue]];
         NSLog(@"%@",[obj objectAtIndex:0]);
-        [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"insert"];
+        
+        if (self.siteData == nil)
+            [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"insert"];
+        else
+            [JsonUtil JsonBuilderSender:obj :@"Telephely" :@"update"];
+        
+        
+        
         
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Telephely"
@@ -102,6 +109,7 @@
                                               otherButtonTitles:nil];
         [alert show];
         [self.navigationController popViewControllerAnimated: YES];
+        
     }
 }
 // Call this method somewhere in your view controller setup code.

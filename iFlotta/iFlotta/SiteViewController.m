@@ -249,6 +249,18 @@
             siteDetailsViewController.siteData = [self.siteArray objectAtIndex: [indexPath row]];
         }
     }
+    else if ( [[segue identifier] isEqualToString:@"siteAdminDetails"] )
+    {
+        AdminSiteViewController *siteDetailsViewController = [segue destinationViewController];
+        if(sender == self.searchDisplayController.searchResultsTableView) {
+            NSIndexPath *indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            siteDetailsViewController.siteData = [filteredSiteArray objectAtIndex: [indexPath row]];
+        }
+        else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            siteDetailsViewController.siteData = [self.siteArray objectAtIndex: [indexPath row]];
+        }
+    }
 }
 
 #pragma mark Content Filtering
@@ -322,24 +334,22 @@
                 NSLog(@"0");
                 {
                     AdminSiteViewController *adminSiteViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adminSiteViewController"];
+                    adminSiteViewController.siteData = nil;
                     [self.navigationController pushViewController:adminSiteViewController animated:YES];
                 }
                 
                 break;
             case 1:
                 {
-                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyNev" :[NSNumber numberWithInt:1]];
-                    [[self tableView] reloadData];
-                }
-                break;
-                case 2:
-                {
-                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyCim" :[NSNumber numberWithInt:1]];
+                    self.siteArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyNev" :[NSNumber numberWithInt:1]]];
                     [[self tableView] reloadData];
                 }
                 break;
             default:
-                NSLog(@"3");
+                {
+                    self.siteArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyCim" :[NSNumber numberWithInt:1]]];
+                    [[self tableView] reloadData];
+                }
                 break;
         }
     }
@@ -348,18 +358,15 @@
         switch ((unsigned long)[[item valueForKey:@"row"] indexAtPosition:1]) {
             case 0:
                 {
-                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyNev" :[NSNumber numberWithInt:1]];
-                    [[self tableView] reloadData];
-                }
-                break;
-            case 1:
-                {
-                    self.siteArray = [DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyCim" :[NSNumber numberWithInt:1]];
+                    self.siteArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyNev" :[NSNumber numberWithInt:1]]];
                     [[self tableView] reloadData];
                 }
                 break;
             default:
-                NSLog(@"2");
+                {
+                    self.siteArray = [NSMutableArray arrayWithArray:[DataBaseUtil fetchRequest:@"Telephely" :@"1" :@"telephelyIsActive" :@"telephelyCim" :[NSNumber numberWithInt:1]]];
+                    [[self tableView] reloadData];
+                }
                 break;
         }
     }
