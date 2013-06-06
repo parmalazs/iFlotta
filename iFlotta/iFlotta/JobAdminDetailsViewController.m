@@ -152,9 +152,10 @@
             [alert show];
         }
         else
-        {
+        {/*
             [DataBaseUtil updateMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"2012.02.12" :[[NSNumber alloc] initWithInt:[[self.siteData valueForKey:@"munkaID"] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
-            
+            */
+            [DataBaseUtil updateMunka:@"2012.02.12" :[[NSNumber alloc] initWithInt:[[_jobsIncomeTextField text] intValue] ] :_jobsCommentTextField.text :@"2012.02.12" :@"2012.02.12" :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:[[_jobsCostsTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsTypeTextField text] intValue]] :[[NSNumber alloc] initWithInt:[[_jobsFuelTextField text] intValue]] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1] :[[NSNumber alloc] initWithInt:1]];
             
             NSArray *obj = [DataBaseUtil fetchRequestEntity:@"Munka" :@"munkaID" :[[self.siteData valueForKey:@"munkaID"] stringValue]];
             NSLog(@"%@",[obj objectAtIndex:0]);

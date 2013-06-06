@@ -961,12 +961,14 @@ static NSString *foglaltautoID;
     [newMunka setValue : munkaBefejezesDate forKey : @"munkaBefejezesDate"];
     [newMunka setValue:[NSNumber numberWithInt: [munkaBevetel intValue]] forKey:@"munkaBevetel"];
     [newMunka setValue: munkaComment forKey:@"munkaComment"];
-    [newMunka setValue:munkaDate forKey:@"munkaDate"];
-    [newMunka setValue:munkaEstimatedTime forKey:@"munkaEstimatedTime"];
+    [newMunka setValue: munkaDate forKey:@"munkaDate"];
+    [newMunka setValue: munkaEstimatedTime forKey:@"munkaEstimatedTime"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaID intValue]] forKey:@"munkaID"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaIsActive intValue ]] forKey:@"munkaIsActive"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaKoltseg intValue ]] forKey:@"munkaKoltseg"];
-    [newMunka setValue: [NSNumber numberWithInt: [ munkatipusID intValue ]] forKey:@"munkatipusID"];
+    //[newMunka setValue: [NSNumber numberWithInt: [ munkatipusID intValue ]] forKey:@"munkatipusID"];
+    [newMunka setValue: [NSNumber numberWithInt:1] forKey:@"munkatipusID"];
+    
     [newMunka setValue: [NSNumber numberWithInt: [ munkaUzemanyagState intValue ]] forKey:@"munkaUzemanyagState"];
     [newMunka setValue: [NSNumber numberWithInt: [ partnerID intValue ]] forKey:@"partnerID"];
     [newMunka setValue: [NSNumber numberWithInt: [ soforID intValue ]] forKey:@"soforID"];
@@ -983,6 +985,9 @@ static NSString *foglaltautoID;
     
     Munka* newMunka = [munkafelvesz objectAtIndex:0];
     
+    NSLog(@"%@", [munkafelvesz objectAtIndex:0]);
+    
+    
     [newMunka setValue : munkaBefejezesDate forKey : @"munkaBefejezesDate"];
     [newMunka setValue:[NSNumber numberWithInt: [munkaBevetel intValue]] forKey:@"munkaBevetel"];
     [newMunka setValue: munkaComment forKey:@"munkaComment"];
@@ -991,6 +996,7 @@ static NSString *foglaltautoID;
     [newMunka setValue: [NSNumber numberWithInt: [ munkaID intValue]] forKey:@"munkaID"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaIsActive intValue ]] forKey:@"munkaIsActive"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaKoltseg intValue ]] forKey:@"munkaKoltseg"];
+    
     [newMunka setValue: [NSNumber numberWithInt: [ munkatipusID intValue ]] forKey:@"munkatipusID"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaUzemanyagState intValue ]] forKey:@"munkaUzemanyagState"];
     [newMunka setValue: [NSNumber numberWithInt: [ partnerID intValue ]] forKey:@"partnerID"];

@@ -113,6 +113,7 @@
     job = [self.ownJobsArray objectAtIndex:[indexPath row]];
     //[[cell ] setText:[job munkaDate]];
     [[cell jobName] setText:[job munkaDate]];
+    NSLog(@"%@",[job munkatipusID]);
     NSArray * tmp = [DataBaseUtil fetchRequestMunkaTipus:[[job munkatipusID] stringValue]];
     
     NSLog(@"%@",[tmp objectAtIndex:0]);

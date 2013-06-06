@@ -8,6 +8,7 @@
 
 #import "JsonUtil.h"
 #import "Sofor.h"
+#import "DataBaseUtil.h"
 
 
 
@@ -150,26 +151,32 @@
             [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
         }
         else
-        {/*
-
-            @property (nonatomic, retain) NSNumber * munkatipusID;
-            @property (nonatomic, retain) NSNumber * partnerID;
-            @property (nonatomic, retain) NSNumber * soforID;
-            @property (nonatomic, retain) NSNumber * telephelyID;*/
+        {
+            /*
+            if (![DataBaseUtil IsEmpty:([aktMunka valueForKey:@"munkaBefejezesDate"])])
+                [object setObject:[aktMunka valueForKey:@"munkaBefejezesDate"] forKey:@"munkaBefejezesDate"];
+            else
+                [object setObject:@"2013.06.06" forKey:@"munkaBefejezesDate"];*/
             
-            [object setObject:[aktMunka valueForKey:@"munkaBefejezesDate"] forKey:@"munkaBefejezesDate"];
-            [object setObject:[aktMunka valueForKey:@"munkaBevetel"] forKey:@"munkaBevetel"];
-            [object setObject:[aktMunka valueForKey:@"munkaComment"] forKey:@"munkaComment"];
+            //[object setObject:[aktMunka valueForKey:@"munkaBefejezesDate"] forKey:@"munkaBefejezesDate"];
+            
+            /*
+
             [object setObject:[aktMunka valueForKey:@"munkaDate"] forKey:@"munkaDate"];
             [object setObject:[aktMunka valueForKey:@"munkaEstimatedTime"] forKey:@"munkaEstimatedTime"];
+             */
+            
+            
             [object setObject:[aktMunka valueForKey:@"munkaID"] forKey:@"munkaId"];
-            [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
-            [object setObject:[aktMunka valueForKey:@"munkaKoltseg"] forKey:@"munkaKoltseg"];
-            //[object setObject:[aktMunka valueForKey:@"munkatipusID"] forKey:@"munkatipusID"];
-            [object setObject:[aktMunka valueForKey:@"munkaUzemanyagState"] forKey:@"munkaUzemanyagState"];
             [object setObject:[aktMunka valueForKey:@"partnerID"] forKey:@"partnerID"];
             [object setObject:[aktMunka valueForKey:@"soforID"] forKey:@"soforID"];
             [object setObject:[aktMunka valueForKey:@"telephelyID"] forKey:@"telephelyID"];
+            [object setObject:[aktMunka valueForKey:@"munkaComment"] forKey:@"munkaComment"];
+            [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
+            [object setObject:[aktMunka valueForKey:@"munkatipusID"] forKey:@"munkatipusID"];
+            [object setObject:[aktMunka valueForKey:@"munkaKoltseg"] forKey:@"munkaKoltseg"];
+            [object setObject:[aktMunka valueForKey:@"munkaUzemanyagState"] forKey:@"munkaUzemanyagState"];
+            [object setObject:[aktMunka valueForKey:@"munkaBevetel"] forKey:@"munkaBevetel"];
         }
         
         [json setObject:@"munka" forKey:@"tableName"];
