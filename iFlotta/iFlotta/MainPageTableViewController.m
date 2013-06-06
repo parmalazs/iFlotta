@@ -42,7 +42,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0x260B01);
-    
+    self.tableView.separatorColor = UIColorFromRGB(0x000000);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
