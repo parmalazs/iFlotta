@@ -204,6 +204,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    UITextField *tf=(UITextField*)[self.view viewWithTag:textField.tag+1];
+    [tf becomeFirstResponder];
     
     return YES;
 }
