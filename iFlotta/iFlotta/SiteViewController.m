@@ -117,6 +117,10 @@
     }
 }
 
+-(void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
+    tableView.backgroundColor=UIColorFromRGB(0xA6977C);
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
@@ -148,7 +152,11 @@
         site = [filteredSiteArray objectAtIndex:[indexPath row]];
         
         [[cell textLabel] setText:[site telephelyNev]];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        if ([indexPath row] % 2) {
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xA6977C)];
+        }else{
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xD9B384)];
+        }
     }
 	else
 	{

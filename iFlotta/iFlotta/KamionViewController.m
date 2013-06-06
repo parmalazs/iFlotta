@@ -146,6 +146,10 @@
     }
 }
 
+-(void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
+    tableView.backgroundColor=UIColorFromRGB(0xA6977C);
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /// ezt ne fejeltsd el atirni ha masolod!
@@ -175,7 +179,11 @@
         car = [self.filteredArray objectAtIndex:[indexPath row]];
         
         [[cell textLabel] setText:[car autoNev]];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        if ([indexPath row] % 2) {
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xA6977C)];
+        }else{
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xD9B384)];
+        }
     }
 	else
 	{

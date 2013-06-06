@@ -131,7 +131,11 @@
         partner = [filteredPartnerArray objectAtIndex:[indexPath row]];
         
         [[cell textLabel] setText:[partner partnerNev]];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        if ([indexPath row] % 2) {
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xA6977C)];
+        }else{
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xD9B384)];
+        }
     }
 	else
 	{
@@ -154,6 +158,9 @@
  }
  */
 
+-(void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
+    tableView.backgroundColor=UIColorFromRGB(0xA6977C);
+}
 
  // Override to support editing the table view.
  - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

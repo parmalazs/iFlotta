@@ -182,6 +182,10 @@
         ownJobDetailsViewController.ownJobData = [self.ownJobsArray objectAtIndex: [indexPath row]];
     }
 }
+
+-(void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
+    tableView.backgroundColor=UIColorFromRGB(0xA6977C);
+}
 -(void)frissit
 {
     self.ownJobsArray = [DataBaseUtil fetchRequestSajatMunkak];

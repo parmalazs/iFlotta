@@ -74,6 +74,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -122,9 +123,9 @@
         
         [[cell textLabel] setText:[job munkaDate]];
         if ([indexPath row] % 2) {
-            cell.contentView.backgroundColor = UIColorFromRGB(0xA6977C);
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xA6977C)];
         }else{
-            cell.contentView.backgroundColor = UIColorFromRGB(0xD9B384);
+            [[cell textLabel] setBackgroundColor:UIColorFromRGB(0xD9B384)];
         }
        // [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
@@ -151,6 +152,10 @@
 }
 */
 
+-(void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView{
+    tableView.backgroundColor=UIColorFromRGB(0xA6977C);
+}
+
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -172,9 +177,12 @@
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
+            Munka *site = [[self freeJobsArray] objectAtIndex:[indexPath row]];
+            [self.freeJobsArray removeObjectAtIndex:indexPath.row];
         }
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
