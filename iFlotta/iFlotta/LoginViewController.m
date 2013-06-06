@@ -52,6 +52,10 @@
         [tf becomeFirstResponder];
         return NO;
     }
+    
+    if (textField.tag ==43) {
+        [self userLoginButton:nil];
+    }
     return YES;
 }
 
