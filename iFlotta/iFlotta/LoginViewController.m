@@ -47,7 +47,11 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    
+    if (textField.tag == 42) { // ref: The Hitchhiker's Guide to the Galaxy
+        UITextField* tf = (UITextField*)[self.view viewWithTag:43];
+        [tf becomeFirstResponder];
+        return NO;
+    }
     return YES;
 }
 
@@ -280,7 +284,7 @@
     // If active text field is hidden by keyboard, scroll it so it's visible
     // Your application might not need or want this behavior.
     CGRect aRect = self.view.frame;
-    aRect.size.height -= kbSize.height;
+    aRect.size.height -= kbSize.height*2;
     if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
         CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height+activeField.frame.size.height*2);
         [scrollView setContentOffset:scrollPoint animated:YES];
