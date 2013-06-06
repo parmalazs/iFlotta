@@ -181,9 +181,12 @@
                                                         delegate:nil
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles:nil];
+         Partner *site = [[self partnerArray] objectAtIndex:[indexPath row]];
+         [self.partnerArray removeObjectAtIndex:indexPath.row];
          [alert show];
      }
  [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+     [tableView reloadData];
  }
  else if (editingStyle == UITableViewCellEditingStyleInsert) {
  // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

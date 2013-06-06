@@ -197,10 +197,13 @@
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
+            Telephely *site = [[self siteArray] objectAtIndex:[indexPath row]];
+            [self.siteArray removeObjectAtIndex:indexPath.row];
             [alert show];
         }
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadData];
         
     }
     

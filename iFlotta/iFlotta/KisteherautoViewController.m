@@ -89,11 +89,13 @@
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
+            Auto *site = [[self cellLabelName] objectAtIndex:[indexPath row]];
+            [self.cellLabelName removeObjectAtIndex:indexPath.row];
             [alert show];
         }
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
+        [tableView reloadData];
     }
     
     /*else if (editingStyle == UITableViewCellEditingStyleInsert) {
