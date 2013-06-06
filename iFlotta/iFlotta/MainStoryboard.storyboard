@@ -425,21 +425,21 @@
         <scene sceneID="okN-R6-z3H">
             <objects>
                 <viewController storyboardIdentifier="adminSiteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mm4-3i-xWD" customClass="AdminSiteViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GYl-RX-LYy">
+                    <view key="view" tag="6" contentMode="scaleToFill" id="GYl-RX-LYy">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNf-GP-7ry">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Neve:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcT-Xf-hVU">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="VUa-KN-kY5"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cim:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeg-Kd-Wfc">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="57" id="aWz-hw-i5h"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -455,26 +455,27 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" image="F-saroklogo_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="8gS-x3-pNC"/>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vrq-SH-EPA">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vrq-SH-EPA">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjB-9h-BfR">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjB-9h-BfR">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B2G-ku-dTf">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B2G-ku-dTf">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NR1-Ns-hdh">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NR1-Ns-hdh">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="212" id="5V2-fc-4Wk"/>
+                                            <constraint firstAttribute="height" constant="30" id="GEb-Bf-Bsj"/>
+                                            <constraint firstAttribute="width" constant="204" id="mqY-tu-Mon"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLP-DM-HJE">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLP-DM-HJE">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="72" id="1UW-eE-hvb"/>
                                         </constraints>
@@ -497,43 +498,43 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="NR1-Ns-hdh" firstAttribute="leading" secondItem="vrq-SH-EPA" secondAttribute="leading" type="default" id="1L5-71-h9S"/>
-                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="trailing" secondItem="J4k-K1-1uW" secondAttribute="trailing" type="default" id="4uh-bq-vO6"/>
-                                    <constraint firstItem="eeg-Kd-Wfc" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="62" id="8As-hU-jG3"/>
-                                    <constraint firstItem="B2G-ku-dTf" firstAttribute="top" secondItem="kjB-9h-BfR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="90d-Ix-LaZ"/>
-                                    <constraint firstItem="4Nh-Xt-Rkx" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="100" id="C4C-Q1-lDB"/>
-                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="trailing" secondItem="vrq-SH-EPA" secondAttribute="trailing" type="default" id="CYq-tJ-JBJ"/>
+                                    <constraint firstItem="tz3-Ti-exS" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="218" id="0r2-Vj-OkL"/>
+                                    <constraint firstItem="jcT-Xf-hVU" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="28" id="2eS-EZ-2p5"/>
+                                    <constraint firstItem="B2G-ku-dTf" firstAttribute="top" secondItem="kjB-9h-BfR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2oH-gc-Q3A"/>
+                                    <constraint firstItem="eeg-Kd-Wfc" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="66" id="AQ2-yR-wXB"/>
+                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="top" secondItem="vrq-SH-EPA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CPq-MF-adP"/>
+                                    <constraint firstItem="NR1-Ns-hdh" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="96" id="Cv8-4P-EEg"/>
+                                    <constraint firstAttribute="trailing" secondItem="kjB-9h-BfR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dzr-2M-Xgf"/>
+                                    <constraint firstAttribute="trailing" secondItem="B2G-ku-dTf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="F0d-GG-YsW"/>
+                                    <constraint firstItem="4Nh-Xt-Rkx" firstAttribute="trailing" secondItem="eeg-Kd-Wfc" secondAttribute="trailing" type="default" id="FEd-Uk-MNa"/>
                                     <constraint firstItem="05k-HH-98G" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="J4b-Lb-fsO"/>
-                                    <constraint firstItem="8gS-x3-pNC" firstAttribute="trailing" secondItem="B2G-ku-dTf" secondAttribute="trailing" type="default" id="Lo5-ho-bzl"/>
-                                    <constraint firstItem="tz3-Ti-exS" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="214" id="MHq-iH-sX7"/>
+                                    <constraint firstItem="4Nh-Xt-Rkx" firstAttribute="trailing" secondItem="lRR-ll-QLq" secondAttribute="trailing" type="default" id="JAQ-QU-a54"/>
+                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="top" secondItem="B2G-ku-dTf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NIa-JK-Iht"/>
+                                    <constraint firstItem="8gS-x3-pNC" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="213" id="ODe-2z-dfu"/>
                                     <constraint firstItem="eeg-Kd-Wfc" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ojc-S8-WWe"/>
-                                    <constraint firstItem="vrq-SH-EPA" firstAttribute="top" secondItem="NR1-Ns-hdh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QGl-Iq-e85"/>
-                                    <constraint firstItem="vrq-SH-EPA" firstAttribute="trailing" secondItem="NR1-Ns-hdh" secondAttribute="trailing" type="default" id="R5L-1r-E5M"/>
-                                    <constraint firstItem="J4k-K1-1uW" firstAttribute="top" secondItem="BLP-DM-HJE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Sw9-6L-t8e"/>
-                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="top" secondItem="B2G-ku-dTf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Trz-AB-Ncm"/>
-                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="trailing" secondItem="B2G-ku-dTf" secondAttribute="trailing" type="default" id="U9K-LF-Xuu"/>
-                                    <constraint firstItem="NR1-Ns-hdh" firstAttribute="leading" secondItem="jcT-Xf-hVU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="WGA-z9-giB"/>
-                                    <constraint firstItem="lRR-ll-QLq" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="138" id="XiG-yZ-pyd"/>
+                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="leading" secondItem="B2G-ku-dTf" secondAttribute="leading" type="default" id="SEB-w6-xe9"/>
+                                    <constraint firstItem="tz3-Ti-exS" firstAttribute="trailing" secondItem="05k-HH-98G" secondAttribute="trailing" type="default" id="SEc-BK-E97"/>
+                                    <constraint firstItem="NR1-Ns-hdh" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="24" id="Sw2-g2-NpP"/>
+                                    <constraint firstItem="NR1-Ns-hdh" firstAttribute="baseline" secondItem="jcT-Xf-hVU" secondAttribute="baseline" type="default" id="TAj-Lp-Lrg"/>
+                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="leading" secondItem="vrq-SH-EPA" secondAttribute="leading" type="default" id="V1r-rz-DoL"/>
                                     <constraint firstItem="tz3-Ti-exS" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XpQ-gw-vt3"/>
-                                    <constraint firstItem="B2G-ku-dTf" firstAttribute="leading" secondItem="lRR-ll-QLq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="YC6-pO-O4N"/>
-                                    <constraint firstItem="jcT-Xf-hVU" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Yvn-jT-7mR"/>
-                                    <constraint firstItem="05k-HH-98G" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="176" id="a6l-1t-nbM"/>
-                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="leading" secondItem="vrq-SH-EPA" secondAttribute="leading" type="default" id="beI-CC-YNz"/>
-                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="leading" secondItem="05k-HH-98G" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="eLd-uB-Hf7"/>
-                                    <constraint firstItem="B2G-ku-dTf" firstAttribute="leading" secondItem="kjB-9h-BfR" secondAttribute="leading" type="default" id="eQi-T5-yrX"/>
-                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="top" secondItem="vrq-SH-EPA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hfO-su-6Ke"/>
+                                    <constraint firstAttribute="trailing" secondItem="NR1-Ns-hdh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="aEp-aw-aKX"/>
+                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="leading" secondItem="B2G-ku-dTf" secondAttribute="leading" type="default" id="c96-P5-aoa"/>
+                                    <constraint firstItem="lRR-ll-QLq" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="142" id="cEq-to-GWV"/>
+                                    <constraint firstItem="NR1-Ns-hdh" firstAttribute="leading" secondItem="vrq-SH-EPA" secondAttribute="leading" type="default" id="cud-zx-fhs"/>
+                                    <constraint firstItem="jcT-Xf-hVU" firstAttribute="trailing" secondItem="eeg-Kd-Wfc" secondAttribute="trailing" type="default" id="gQ9-a1-ZhP"/>
+                                    <constraint firstItem="vrq-SH-EPA" firstAttribute="top" secondItem="NR1-Ns-hdh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gWU-qa-UNu"/>
                                     <constraint firstItem="4Nh-Xt-Rkx" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hu9-Nd-jGO"/>
-                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="leading" secondItem="4Nh-Xt-Rkx" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="iND-c5-DE5"/>
-                                    <constraint firstItem="NR1-Ns-hdh" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="20" symbolic="YES" type="default" id="jvL-FX-rHA"/>
-                                    <constraint firstAttribute="trailing" secondItem="NR1-Ns-hdh" secondAttribute="trailing" constant="35" id="l5S-WR-jCC"/>
-                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="leading" secondItem="B2G-ku-dTf" secondAttribute="leading" type="default" id="mef-AR-Rz3"/>
+                                    <constraint firstAttribute="trailing" secondItem="vrq-SH-EPA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kmz-S3-CHF"/>
+                                    <constraint firstItem="05k-HH-98G" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="180" id="ltS-dK-IqG"/>
+                                    <constraint firstItem="kjB-9h-BfR" firstAttribute="baseline" secondItem="4Nh-Xt-Rkx" secondAttribute="baseline" type="default" id="lyT-0W-qd0"/>
+                                    <constraint firstItem="jcT-Xf-hVU" firstAttribute="leading" secondItem="lRR-ll-QLq" secondAttribute="leading" type="default" id="mbV-IB-3TZ"/>
+                                    <constraint firstItem="05k-HH-98G" firstAttribute="trailing" secondItem="lRR-ll-QLq" secondAttribute="trailing" type="default" id="oRB-w8-2ez"/>
                                     <constraint firstItem="8gS-x3-pNC" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="324" id="r2j-wg-ICJ"/>
-                                    <constraint firstItem="lRR-ll-QLq" firstAttribute="leading" secondItem="LNf-GP-7ry" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ro8-LO-suu"/>
-                                    <constraint firstItem="vrq-SH-EPA" firstAttribute="leading" secondItem="eeg-Kd-Wfc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="sUz-Pd-71a"/>
-                                    <constraint firstItem="J4k-K1-1uW" firstAttribute="leading" secondItem="tz3-Ti-exS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="thn-pw-lnX"/>
-                                    <constraint firstItem="J4k-K1-1uW" firstAttribute="leading" secondItem="BLP-DM-HJE" secondAttribute="leading" type="default" id="z08-FK-HzJ"/>
+                                    <constraint firstItem="J4k-K1-1uW" firstAttribute="top" secondItem="BLP-DM-HJE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sbo-BI-wy7"/>
+                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="leading" secondItem="J4k-K1-1uW" secondAttribute="leading" type="default" id="yW9-XO-K80"/>
                                     <constraint firstAttribute="bottom" secondItem="8gS-x3-pNC" secondAttribute="bottom" constant="64" id="z2U-w4-4Tu"/>
-                                    <constraint firstItem="jcT-Xf-hVU" firstAttribute="top" secondItem="LNf-GP-7ry" secondAttribute="top" constant="24" id="zsO-8b-33w"/>
+                                    <constraint firstItem="BLP-DM-HJE" firstAttribute="trailing" secondItem="J4k-K1-1uW" secondAttribute="trailing" type="default" id="zgI-Be-ux1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -1933,7 +1934,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-9W-T3n">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8wl-xO-L0H">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8wl-xO-L0H">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="161" id="MXF-Ad-Pgt"/>
                                             <constraint firstAttribute="height" constant="30" id="QF8-c5-qmG"/>
@@ -1941,14 +1942,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTX-Zl-bxA">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTX-Zl-bxA">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="0Vw-h1-vbj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9d-Xx-kgb">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9d-Xx-kgb">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="khf-QM-MJb"/>
                                         </constraints>
@@ -1980,14 +1981,14 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-WV-fbg">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-WV-fbg">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="MnR-DS-1O4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8o-Hg-n8D">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8o-Hg-n8D">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="1yV-xc-0Gy"/>
                                         </constraints>
@@ -2065,7 +2066,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1E-yZ-dQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456" y="-3053"/>
+            <point key="canvasLocation" x="1472" y="-3061"/>
         </scene>
         <!--Own Jobs View Controller-->
         <scene sceneID="x8A-Jh-a1X">
@@ -2589,7 +2590,7 @@
         <scene sceneID="eDt-Q2-luR">
             <objects>
                 <viewController storyboardIdentifier="soforAdminDetailViewController" id="608-6p-E1L" customClass="SoforAdminDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sby-aB-OyD">
+                    <view key="view" tag="7" contentMode="scaleToFill" id="Sby-aB-OyD">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -2636,11 +2637,11 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DmU-aY-LzW">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DmU-aY-LzW">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-Rc-4aB">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-Rc-4aB">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2648,22 +2649,22 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-q8-Xgv">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-q8-Xgv">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuF-vD-duc">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuF-vD-duc">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="159" id="H8U-Jz-AYw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRS-qK-ouP">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRS-qK-ouP">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LSZ-q8-Ag7">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LSZ-q8-Ag7">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -3040,7 +3041,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-R9-iuK">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yjZ-OT-VhV">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yjZ-OT-VhV">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="hJl-wn-PNe"/>
                                             <constraint firstAttribute="height" constant="30" id="vrC-M5-CAf"/>
@@ -3048,40 +3049,40 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3f-TE-XAf">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3f-TE-XAf">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="vLX-JM-aX6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6i4-ep-9CU">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6i4-ep-9CU">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="75v-A5-fhm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MHX-rf-ach">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MHX-rf-ach">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bYp-32-GEP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x89-EE-una">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x89-EE-una">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4UN-qa-E0E"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaC-A5-Kmv">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaC-A5-Kmv">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ACD-aQ-cED"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nev:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLR-KD-dnA">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -3113,12 +3114,12 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAK-HU-fiu">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAK-HU-fiu">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ceX-kT-trW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tif-wp-u0b">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -3674,8 +3675,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hEs-qA-9Qp"/>
         <segue reference="cwD-00-IBw"/>
+        <segue reference="by4-cB-3RL"/>
         <segue reference="kww-q9-2CX"/>
         <segue reference="4k1-KE-Gjt"/>
     </inferredMetricsTieBreakers>
