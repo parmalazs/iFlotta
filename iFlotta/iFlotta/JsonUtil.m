@@ -173,10 +173,12 @@
             [object setObject:[aktMunka valueForKey:@"telephelyID"] forKey:@"telephelyID"];
             [object setObject:[aktMunka valueForKey:@"munkaComment"] forKey:@"munkaComment"];
             [object setObject:[aktMunka valueForKey:@"munkaIsActive"] forKey:@"munkaIsActive"];
-            [object setObject:[aktMunka valueForKey:@"munkatipusID"] forKey:@"munkatipusID"];
+            //[object setObject:[aktMunka valueForKey:@"munkatipusID"] forKey:@"munkatipusID"];
+            [object setObject:@"1" forKey:@"munkatipusID"];
             [object setObject:[aktMunka valueForKey:@"munkaKoltseg"] forKey:@"munkaKoltseg"];
             [object setObject:[aktMunka valueForKey:@"munkaUzemanyagState"] forKey:@"munkaUzemanyagState"];
             [object setObject:[aktMunka valueForKey:@"munkaBevetel"] forKey:@"munkaBevetel"];
+            [object setObject:[aktMunka valueForKey:@"munkaEstimatedTime"] forKey:@"munkaEstimatedTime"];
         }
         
         [json setObject:@"munka" forKey:@"tableName"];

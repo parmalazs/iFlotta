@@ -997,13 +997,21 @@ static NSString *foglaltautoID;
     [newMunka setValue: [NSNumber numberWithInt: [ munkaIsActive intValue ]] forKey:@"munkaIsActive"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaKoltseg intValue ]] forKey:@"munkaKoltseg"];
     
-    [newMunka setValue: [NSNumber numberWithInt: [ munkatipusID intValue ]] forKey:@"munkatipusID"];
+    [newMunka setValue: [NSNumber numberWithInt:1 ] forKey:@"munkatipusID"];
     [newMunka setValue: [NSNumber numberWithInt: [ munkaUzemanyagState intValue ]] forKey:@"munkaUzemanyagState"];
     [newMunka setValue: [NSNumber numberWithInt: [ partnerID intValue ]] forKey:@"partnerID"];
     [newMunka setValue: [NSNumber numberWithInt: [ soforID intValue ]] forKey:@"soforID"];
     [newMunka setValue: [NSNumber numberWithInt: [ telephelyID intValue ]] forKey:@"telephelyID"];
     
     [self saveContext:context];
+    
+    
+    NSArray *munkat = [self fetchRequestEntity:@"Munka" :@"munkaID" :[munkaID stringValue]];
+    //Munka* newMunkat= [munkat objectAtIndex:0];
+    
+    NSLog(@"%@",[munkat objectAtIndex:0]);
+    [JsonUtil JsonBuilderSender:munkat :@"Munka" :@"update"];
+    
 }
 
 
